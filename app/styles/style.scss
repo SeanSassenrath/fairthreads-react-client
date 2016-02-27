@@ -1,0 +1,9 @@
+@import "~foundation-sites/scss/foundation.scss";
+@include foundation-everything;
+
+h1 {
+  background-color: red;
+}
+.columns {
+  border: 1px solid red;
+}
