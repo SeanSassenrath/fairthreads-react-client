@@ -3,15 +3,12 @@ var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var assetPath = '/assets/'
-var absolutePath = path.join(__dirname, 'build', assetPath)
-
 module.exports = {
   devtool: "source-map",
   entry: {
-    app: './app/components/app.jsx',
+    app: './index.jsx',
     vendor: [ '!!script!jquery/dist/jquery.min.js',
-    '!!script!foundation-sites/dist/foundation.min.js'
+    '!!script!foundation-sites/dist/foundation.js'
     ]
   },
   output: {
@@ -29,7 +26,7 @@ module.exports = {
       },
       { test: /\.css$/,
         loader: "style!css"
-      },      
+      },
       {
         test: /\.scss$/,
         loaders: ["style", "css?sourceMap", "sass?sourceMap"]
@@ -50,7 +47,7 @@ module.exports = {
     modulesDirectories: ['node_modules']
   },
   externals: {
-    jquery: "jQuery"
+    jquery: "jQuery",
   }
 }
 
