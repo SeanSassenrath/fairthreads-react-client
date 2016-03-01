@@ -14,7 +14,7 @@ import {
 const initialState = Immutable({
   loading: false,
   gender: 'women',
-  products: []
+  items: []
 });
 
 function products(state = initialState, action) {
@@ -25,7 +25,7 @@ function products(state = initialState, action) {
       console.log("In receive products reducer", action.products)
       return state
         .set('loading', false)
-        .set('products', action.products);
+        .set('items', action.products);
     default:
       return state;
   }
