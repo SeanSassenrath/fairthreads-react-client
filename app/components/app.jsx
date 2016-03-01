@@ -12,12 +12,17 @@ class App extends Component {
     return (
       <div className="app-container">
         <nav style={{borderBottom: "1px solid gray"}}>
-          <div className="row" style={{border: "1px solid red"}}>
-            <div className="top-nav" style={{border: "1px solid yellow"}}>
-              <h3>FairThreads</h3>
+          <div className="row">
+            <div className="top-nav">
+              <h5>FairThreads</h5>
             </div>
             <div className="bottom-nav" style={{border: "1px solid purple"}}>
-              <h3>Test</h3>
+              <ul>
+                <li>Women / Men</li>
+                <li>All Clothes</li>
+                <li>All Prices</li>
+                <li>Sale</li>
+              </ul>
             </div>
           </div>
         </nav>
