@@ -1,18 +1,20 @@
+var Webpack = require('webpack');
 var path = require('path');
-var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var nodeModulesPath = path.resolve(__dirname, 'node_modules');
+var buildPath = path.resolve(__dirname, 'public', 'build');
+var mainPath = path.resolve(__dirname, './index.jsx');
 
-module.exports = {
-  devtool: "source-map",
-  entry: {
-    app: './index.jsx',
-    vendor: [ '!!script!jquery/dist/jquery.min.js',
-    '!!script!foundation-sites/dist/foundation.js'
-    ]
-  },
+var config = {
+  devtool: 'eval',
+  entry: [
+    'webpack/hot/dev-server',
+    'webpack-dev-server/client?http://localhost:8080',
+    mainPath
+  ],
   output: {
-    filename: 'public/[name].js'
+    path: buildPath,
+    filname: 'bundle.js',
+    publicPath: '/build/'
   },
   module: {
     loaders: [
@@ -33,40 +35,7 @@ module.exports = {
       }
     ]
   },
-  sassLoader: {
-    includePaths: [path.resolve(__dirname, "node_modules")]
-  },
-  plugins: [
-    new webpack.ProvidePlugin({
-      '$': 'jquery',
-      jQuery: 'jquery'
-    })
-  ],
-  resolve: {
-    extensions: ['', '.js', '.jsx'],
-    modulesDirectories: ['node_modules']
-  },
-  externals: {
-    jquery: "jQuery",
-  }
-}
+  plugins: [new Webpack.HotModuleReplacementPlugin()]
+};
 
-//     {
-//       test: /\.scss$/,
-//       exclude: [/node_modules/],
-//       loader: ExtractTextPlugin.extract('style', 'css!postcss!sass?outputStyle=expanded')
-//     },
-//     {
-//       test: /\.css$/,
-//       loader: ExtractTextPlugin.extract('style', 'css!postcss')
-//     }
-//   ]
-// },
-// postcss: function(webpack) {
-//   return [
-//     autoprefixer()
-//   ]
-// },
-// sassLoader: {
-//   includePaths: [path.resolve(__dirname, "node_modules")]
-// },
+module.exports = config;
