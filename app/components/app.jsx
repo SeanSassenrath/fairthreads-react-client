@@ -1,12 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-require("../styles/style.scss");
+import Row from './row.jsx'
 import { makeFourColumns } from '../helpers.js'
+require("../styles/style.scss");
 
 class App extends Component {
 
   render() {
     const { loading, items } = this.props;
+    const productRows = makeFourColumns(items);
+    let counter = 0;
 
     return (
       <div className="app-container">
@@ -27,7 +30,9 @@ class App extends Component {
         </nav>
         <div className={ loading ? "spinner" : null } >
           {
-            console.log(makeFourColumns(items))
+            productRows.map(function(productRow ) {
+              return <Row key={counter++} row={productRow} />
+            })
           }
         </div>
       </div>
