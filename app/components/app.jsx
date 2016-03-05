@@ -1,14 +1,13 @@
 import React, { Component, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 require("../styles/style.scss");
-
+import { makeFourColumns } from '../helpers.js'
 
 class App extends Component {
+
   render() {
     const { loading, items } = this.props;
-    console.log('loading', loading)
-    console.log('items', items)
+
     return (
       <div className="app-container">
         <nav style={{borderBottom: "1px solid gray"}}>
@@ -27,15 +26,9 @@ class App extends Component {
           </div>
         </nav>
         <div className={ loading ? "spinner" : null } >
-        {
-          items ?
-            items.asMutable().map(function(item) {
-              return (
-                <img src={item.imageOriginal} />
-              )
-            })
-          : console.log('no items')
-        }
+          {
+            console.log(makeFourColumns(items))
+          }
         </div>
       </div>
       // <div className="row">
