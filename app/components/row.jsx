@@ -1,9 +1,11 @@
 import React, { Component, PropTypes} from 'react';
+import ProductCard from './product-card.jsx';
 
 export default class Row extends Component {
 
-  render() {
 
+  render() {
+    let itemKey = 0;
     let {
       row
     } = this.props;
@@ -12,7 +14,12 @@ export default class Row extends Component {
 
     return(
       <div className="row">
-        <h4>Row Component</h4>
+          <h4>Row Component</h4>
+          {
+            row.map(function(item) {
+              return <ProductCard key={itemKey++} item={item}/>
+            })
+          }
       </div>
     )
   }

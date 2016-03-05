@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     const { loading, items } = this.props;
     const productRows = makeFourColumns(items);
-    let counter = 0;
+    let rowKey = 0;
 
     return (
       <div className="app-container">
@@ -31,7 +31,7 @@ class App extends Component {
         <div className={ loading ? "spinner" : null } >
           {
             productRows.map(function(productRow ) {
-              return <Row key={counter++} row={productRow} />
+              return <Row key={rowKey++} row={productRow} />
             })
           }
         </div>
