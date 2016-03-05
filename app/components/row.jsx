@@ -5,7 +5,7 @@ export default class Row extends Component {
 
 
   render() {
-    let itemKey = 0;
+    let productKey = 0;
     let {
       row
     } = this.props;
@@ -16,8 +16,8 @@ export default class Row extends Component {
       <div className="row">
           <h4>Row Component</h4>
           {
-            row.map(function(item) {
-              return <ProductCard key={itemKey++} item={item}/>
+            row.map(function(product) {
+              return <ProductCard key={productKey++} product={product}/>
             })
           }
       </div>

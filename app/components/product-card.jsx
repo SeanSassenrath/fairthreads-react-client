@@ -7,9 +7,11 @@ export default class ProductCard extends Component {
       product
     } = this.props;
 
+    console.log('product', product.name);
+
     return(
       <div className="small-6 large-3 columns">
-        <h4>Hello</h4>
+          <img src={product.imageOriginal} style={{width: "80%", display: "block", margin: "0 auto", objectFit: "contain" ,maxHeight:"281px"}} />
       </div>
     )
   }
