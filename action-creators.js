@@ -4,7 +4,7 @@ import {
   RECIEVE_PRODUCTS,
   LOWEST_TO_HIGHEST_PRODUCTS,
   HIGHEST_TO_LOWEST_PRODUCTS,
-  SET_SORTED_ITEMS
+  SHOW_SALE_ONLY,
  } from './constants';
 
 function requestProducts(gender) {
@@ -40,6 +40,12 @@ export function lowToHighProducts() {
 export function highToLowProducts() {
   return {
     type: HIGHEST_TO_LOWEST_PRODUCTS
+  }
+}
+
+export function showSaleOnly() {
+  return {
+    type: SHOW_SALE_ONLY
   }
 }
 

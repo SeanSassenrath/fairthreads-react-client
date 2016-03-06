@@ -11,11 +11,12 @@ import {
   RECIEVE_PRODUCTS,
   LOWEST_TO_HIGHEST_PRODUCTS,
   HIGHEST_TO_LOWEST_PRODUCTS,
-  SET_SORTED_ITEMS
+  SHOW_SALE_ONLY,
 } from '../constants'
 
 const initialState = Immutable({
   loading: false,
+  showSaleOnly: false,
   gender: 'women',
   items: []
 });
@@ -25,7 +26,6 @@ function products(state = initialState, action) {
     case REQUEST_PRODUCTS:
       return state.set('loading', true);
     case RECIEVE_PRODUCTS:
-      console.log("In receive products reducer", action.products)
       return state
         .set('loading', false)
         .set('items', action.products)
@@ -35,9 +35,9 @@ function products(state = initialState, action) {
     case HIGHEST_TO_LOWEST_PRODUCTS:
       return state
         .set('sortProducts', 'highToLow')
-    case SET_SORTED_ITEMS:
+    case SHOW_SALE_ONLY:
       return state
-        .set('items', action.sortedItems)
+        .set('showSaleOnly', !state.showSaleOnly)
     default:
       return state;
   }

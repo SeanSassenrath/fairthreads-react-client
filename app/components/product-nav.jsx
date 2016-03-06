@@ -10,7 +10,8 @@ export default class ProductNav extends Component {
   render() {
 
     let {
-      fetchProducts
+      fetchProducts,
+      showSaleOnly
     } = this.props;
 
     return(
@@ -19,10 +20,10 @@ export default class ProductNav extends Component {
           <nav>
             <ul>
               <li>
-                <span onClick={() =>      fetchProducts("womens-clothes")}>Ladies</span> / <span onClick={() => fetchProducts("men")}>Gents</span></li>
+                <span onClick={() => fetchProducts("womens-clothes")}>Ladies</span> / <span onClick={() => fetchProducts("men")}>Gents</span></li>
               <li>All Clothes</li>
               <li>All Prices</li>
-              <li>Sale</li>
+              <li onClick={() => showSaleOnly()}>Sale</li>
             </ul>
           </nav>
         </div>

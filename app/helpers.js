@@ -46,3 +46,10 @@ export function dynamicSortLow(property, sortType) {
         return result * sortOrder;
     }
 }
+
+export function onSale(item) {
+  if (item.salePrice) {
+    console.log("sale item", item.salePrice)
+    return item
+  }
+}

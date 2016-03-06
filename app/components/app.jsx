@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as actionCreators from '../../action-creators.js'
 import Row from './row.jsx'
 import ProductNav from './product-nav.jsx'
-import { makeFourColumns, dynamicSortHigh, dynamicSortLow } from '../helpers.js'
+import { makeFourColumns, dynamicSortHigh, dynamicSortLow, onSale } from '../helpers.js'
 require("../styles/style.scss");
 
 const selectActions = dispatch => bindActionCreators(actionCreators, dispatch)
@@ -15,7 +15,8 @@ class App extends Component {
     let {
       fetchProducts,
       lowToHighProducts,
-      highToLowProducts
+      highToLowProducts,
+      showSaleOnly
     } = this.props;
 
     let rowKey = 0;
@@ -32,7 +33,7 @@ class App extends Component {
             </div>
           </div>
         </nav>
-        <ProductNav fetchProducts={fetchProducts}/>
+        <ProductNav fetchProducts={fetchProducts} showSaleOnly={showSaleOnly}/>
         <span className={ loading ? "spinner" : null } />
         <div className={ loading ? "loading" : null}>
           <div className="row">
@@ -45,14 +46,6 @@ class App extends Component {
           }
         </div>
       </div>
-      // <div className="row">
-      //   <>
-      // </div>
-      // <div className="row">
-      //   <div className="small-2 large-4 columns">...</div>
-      //   <div className="small-4 large-4 columns">...</div>
-      //   <div className="small-6 large-4 columns">...</div>
-      // </div>
     )
   }
 }
@@ -62,6 +55,24 @@ App.propTypes = {
   dispatch: PropTypes.func.isRequired
 }
 
+const showProducts = (state) => {
+  if (state.sortProducts === 'lowToHigh' && state.showSaleOnly) {
+    var sortedItems = state.items.asMutable().sort(dynamicSortLow('price'));
+    return sortedItems.filter(onSale);
+  } else if (state.sortProducts === 'highToLow' && state.showSaleOnly) {
+    var sortedItems = state.items.asMutable().sort(dynamicSortHigh('price'));
+    return sortedItems.filter(onSale);
+  } else if (state.sortProducts === 'lowToHigh' && !state.showSaleOnly) {
+    return state.items.asMutable().sort(dynamicSortLow('price'));
+  } else if (state.sortProducts === 'highToLow' && !state.showSaleOnly) {
+    return state.items.asMutable().sort(dynamicSortHigh('price'));
+  } else if (state.showSaleOnly && !state.sortProducts) {
+    return state.items.filter(onSale);
+  } else {
+    return state.items
+  }
+}
+
 function mapStateToProps(state) {
   const { products } = state;
   const {
@@ -69,23 +80,9 @@ function mapStateToProps(state) {
     items
   } = products;
 
-  if (products.sortProducts === 'lowToHigh') {
-    var sortedItems = items.asMutable().sort(dynamicSortLow('price'));
-    return {
-      loading,
-      items: sortedItems
-    }
-  } else if (products.sortProducts === 'highToLow') {
-    var sortedItems = items.asMutable().sort(dynamicSortHigh('price'))
-    return {
-      loading,
-      items: sortedItems
-    }
-  } else {
-    return {
-      loading,
-      items
-    }
+  return {
+    loading,
+    items: showProducts(products)
   }
 }
 
