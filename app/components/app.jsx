@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as actionCreators from '../../action-creators.js'
 import Row from './row.jsx'
 import ProductNav from './product-nav.jsx'
-import { makeFourColumns } from '../helpers.js'
+import { makeFourColumns, dynamicSortHigh, dynamicSortLow } from '../helpers.js'
 require("../styles/style.scss");
 
 const selectActions = dispatch => bindActionCreators(actionCreators, dispatch)
@@ -13,7 +13,9 @@ class App extends Component {
 
   render() {
     let {
-      fetchProducts
+      fetchProducts,
+      lowToHighProducts,
+      highToLowProducts
     } = this.props;
 
     let rowKey = 0;
@@ -33,6 +35,9 @@ class App extends Component {
         <ProductNav fetchProducts={fetchProducts}/>
         <span className={ loading ? "spinner" : null } />
         <div className={ loading ? "loading" : null}>
+          <div className="row">
+            <h6 style={{margin: ".75em 1.25em"}}>Sort by price: <span onClick={() => lowToHighProducts()}>Lowest</span> / <span onClick={() => highToLowProducts()}>Highest</span></h6>
+          </div>
           {
             productRows.map(function(productRow ) {
               return <Row key={rowKey++} row={productRow} />
@@ -64,9 +69,23 @@ function mapStateToProps(state) {
     items
   } = products;
 
-  return {
-    loading,
-    items
+  if (products.sortProducts === 'lowToHigh') {
+    var sortedItems = items.asMutable().sort(dynamicSortLow('price'));
+    return {
+      loading,
+      items: sortedItems
+    }
+  } else if (products.sortProducts === 'highToLow') {
+    var sortedItems = items.asMutable().sort(dynamicSortHigh('price'))
+    return {
+      loading,
+      items: sortedItems
+    }
+  } else {
+    return {
+      loading,
+      items
+    }
   }
 }
 

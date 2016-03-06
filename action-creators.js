@@ -1,5 +1,11 @@
 import fetch from 'isomorphic-fetch';
-import { REQUEST_PRODUCTS, RECIEVE_PRODUCTS } from './constants';
+import {
+  REQUEST_PRODUCTS,
+  RECIEVE_PRODUCTS,
+  LOWEST_TO_HIGHEST_PRODUCTS,
+  HIGHEST_TO_LOWEST_PRODUCTS,
+  SET_SORTED_ITEMS
+ } from './constants';
 
 function requestProducts(gender) {
   return {
@@ -22,6 +28,18 @@ export function fetchProducts(gender) {
     return fetch('https://fairthreads-api.herokuapp.com/products/gender/' + gender)
     .then(req => req.json())
     .then(json => dispatch(receiveProducts(gender, json)))
+  }
+}
+
+export function lowToHighProducts() {
+  return {
+    type: LOWEST_TO_HIGHEST_PRODUCTS
+  }
+}
+
+export function highToLowProducts() {
+  return {
+    type: HIGHEST_TO_LOWEST_PRODUCTS
   }
 }
 
