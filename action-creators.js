@@ -19,7 +19,7 @@ function receiveProducts(gender, json) {
 export function fetchProducts(gender) {
   return dispatch => {
     dispatch(requestProducts(gender))
-    return fetch('https://fairthreads-api.herokuapp.com/products/gender/men')
+    return fetch('https://fairthreads-api.herokuapp.com/products/gender/' + gender)
     .then(req => req.json())
     .then(json => dispatch(receiveProducts(gender, json)))
   }

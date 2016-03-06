@@ -1,15 +1,25 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actionCreators from '../../action-creators.js'
+import $ from 'jquery';
 import Row from './row.jsx'
 import { makeFourColumns } from '../helpers.js'
 require("../styles/style.scss");
 
+const selectActions = dispatch => bindActionCreators(actionCreators, dispatch)
+
 class App extends Component {
 
   render() {
+    let {
+      fetchProducts
+    } = this.props;
+
+    let rowKey = 0;
+
     const { loading, items } = this.props;
     const productRows = makeFourColumns(items);
-    let rowKey = 0;
 
     return (
       <div className="app-container">
@@ -20,7 +30,7 @@ class App extends Component {
             </div>
             <div className="bottom-nav" style={{border: "1px solid purple"}}>
               <ul>
-                <li>Women / Men</li>
+                <li><span onClick={() => fetchProducts("womens-clothes")}>Women</span> / <span onClick={() => fetchProducts("men")}>Men</span></li>
                 <li>All Clothes</li>
                 <li>All Prices</li>
                 <li>Sale</li>
@@ -28,7 +38,8 @@ class App extends Component {
             </div>
           </div>
         </nav>
-        <div className={ loading ? "spinner" : null } >
+        <span className={ loading ? "spinner" : null } />
+        <div className={ loading ? "loading" : null}>
           {
             productRows.map(function(productRow ) {
               return <Row key={rowKey++} row={productRow} />
@@ -66,4 +77,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, selectActions)(App);
