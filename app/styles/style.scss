@@ -1,21 +1,44 @@
 @import "~foundation-sites/scss/foundation.scss";
+// @import "./nav.scss";
 @include foundation-everything;
+
+$desktop-width: 1023px;
+
+//To-Do - adjust min height for screens below 1023 to around 400px to untangle row columns
 
 h1 {
   background-color: red;
 }
-.columns {
-  border: 1px solid red;
+// Main nav
+#main-nav {
+  .logo-nav {
+    padding: 1em 1.25em;
+    max-width: 200px;
+  }
 }
 
-.bottom-nav {
+// Product nav
+#product-nav-container {
+  background-color: black;
+  color: white;
+  z-index: 100;
+  width: 100%;
   ul {
+    margin: .75em 1.25em;
     li {
       list-style: none;
       display: inline;
       margin-right: 25px;
+      font-size: 20px;
+      cursor: pointer;
     }
   }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .loading {
@@ -30,7 +53,6 @@ h1 {
   background-color: gray;
   position: fixed;
   right: 47%;
-  z-index: 100;
 
   border-radius: 100%;
   -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
@@ -55,3 +77,56 @@ h1 {
     opacity: 0;
   }
 }
+
+.product {
+  opacity:0;
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+  -webkit-animation-delay: 1.2s;
+  -moz-animation-delay:1.2s;
+  animation-delay: 1.2s;
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+// Product Card
+//   .card-container {
+//     width: 95%;
+//     margin: 0 auto;
+//     padding: 20px 0;
+//   }
+//
+//   .img-container {
+//     width: 89%;
+//     border: 1px solid gray;
+//     position: relative;
+//     margin: 0 auto;
+//   }
+//
+//   .img-container img {
+//       width: 100%;
+//       display: block;
+//       margin: 0 auto;
+//       object-fit: contain;
+//   }
+//
+// .price {
+//   background: "black";
+//   opacity: .6;
+//   color: white;
+//   width: 30%;
+//   text-align: right;
+//   position: absolute;
+//   bottom: 5%;
+//   padding-right: 8px;
+// }

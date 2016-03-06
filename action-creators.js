@@ -24,3 +24,9 @@ export function fetchProducts(gender) {
     .then(json => dispatch(receiveProducts(gender, json)))
   }
 }
+
+export function stickyNav() {
+  return {
+    type: STICKY_NAV,
+  }
+}

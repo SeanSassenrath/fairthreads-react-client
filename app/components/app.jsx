@@ -2,8 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actionCreators from '../../action-creators.js'
-import $ from 'jquery';
 import Row from './row.jsx'
+import ProductNav from './product-nav.jsx'
 import { makeFourColumns } from '../helpers.js'
 require("../styles/style.scss");
 
@@ -23,21 +23,14 @@ class App extends Component {
 
     return (
       <div className="app-container">
-        <nav style={{borderBottom: "1px solid gray"}}>
+        <nav id="main-nav">
           <div className="row">
-            <div className="top-nav">
-              <h5>FairThreads</h5>
-            </div>
-            <div className="bottom-nav" style={{border: "1px solid purple"}}>
-              <ul>
-                <li><span onClick={() => fetchProducts("womens-clothes")}>Women</span> / <span onClick={() => fetchProducts("men")}>Men</span></li>
-                <li>All Clothes</li>
-                <li>All Prices</li>
-                <li>Sale</li>
-              </ul>
+            <div className="logo-nav">
+              <img src={"./img/fairthreads-logo.png"} />
             </div>
           </div>
         </nav>
+        <ProductNav fetchProducts={fetchProducts}/>
         <span className={ loading ? "spinner" : null } />
         <div className={ loading ? "loading" : null}>
           {

@@ -13,7 +13,7 @@ import { fetchProducts } from './action-creators';
 let loggerMiddleware = createLogger();
 let createStoreWithMiddleware = applyMiddleware(thunkMiddleware, loggerMiddleware)(createStore);
 let store = createStoreWithMiddleware(rootReducer)
-store.dispatch(fetchProducts('men'))
+store.dispatch(fetchProducts('womens-clothes'))
 
 ReactDOM.render(
   <Provider store = { store }>

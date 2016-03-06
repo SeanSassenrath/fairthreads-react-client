@@ -14,7 +14,6 @@ export default class Row extends Component {
 
     return(
       <div className="row">
-          <h4>Row Component</h4>
           {
             row.map(function(product) {
               return <ProductCard key={productKey++} product={product}/>
