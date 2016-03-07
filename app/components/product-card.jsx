@@ -13,16 +13,18 @@ export default class ProductCard extends Component {
       <div className="small-6 large-3 columns">
         <div className="product" style={{width: "95%", margin: "0 auto", padding: "20px 0"}}>
           <a href={product.vendUrl}>
-              <div style={{width: "89%", position: "relative", margin: "0 auto"}}>
-                <img src={product.imageOriginal} style={{width: "100%", display: "block", margin: "0 auto", objectFit: "contain" ,maxHeight:"281px", border: "1px solid gray"}} />
-                <h5 style={{background: "black", opacity: ".6", color: "white", width: "30%", textAlign: "right", position: "absolute", bottom: "5%", paddingRight: "8px"}}>${product.price}</h5>
+              <div style={{width: "86%", position: "relative", margin: "0 auto"}}>
+                <img src={product.imageOriginal} style={{width: "100%", display: "block", margin: "0 auto", objectFit: "contain" ,maxHeight:"281px", border: "1px solid #ccc"}} />
+                <h6 style={{background: "black", opacity: ".6", color: "white", width: "100%", textAlign: "left", position: "absolute", bottom: "-3%", padding: "5px 0 5px 8px"}}>${product.price}</h6>
                 {
                   product.salePrice ?
-                    <h5 style={{background: "black", opacity: ".6", color: "white", width: "30%", textAlign: "right", position: "absolute", bottom: "5%", right: "0", paddingRight: "8px"}}>${product.salePrice}</h5>
+                    <h6 style={{color: "white", textAlign: "right", position: "absolute", bottom: "-3%", right: "0", padding: "5px 8px 5px 0"}}>${product.salePrice}</h6>
                   : null
                 }
               </div>
-              <h5 style={{textAlign: "center"}}>{product.name}</h5>
+              <div style={{paddingTop: "15px"}}>
+                <h5 style={{textAlign: "center", color: "#2d2d34"}}>{product.name}</h5>
+              </div>
             </a>
           </div>
       </div>

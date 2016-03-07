@@ -13,27 +13,30 @@ class App extends Component {
 
   render() {
     let {
+      loading,
+      items,
+      showSaleOnly,
+      gender,
       fetchProducts,
       lowToHighProducts,
       highToLowProducts,
-      showSaleOnly
+      toggleSaleOnly
     } = this.props;
 
     let rowKey = 0;
 
-    const { loading, items } = this.props;
     const productRows = makeFourColumns(items);
 
     return (
       <div className="app-container">
         <nav id="main-nav">
           <div className="row">
-            <div className="logo-nav">
+            <div className="logo-nav" style={{margin: "0 auto"}}>
               <img src={"./img/fairthreads-logo.png"} />
             </div>
           </div>
         </nav>
-        <ProductNav fetchProducts={fetchProducts} showSaleOnly={showSaleOnly}/>
+        <ProductNav fetchProducts={fetchProducts} toggleSaleOnly={toggleSaleOnly} showSaleOnly={showSaleOnly}/>
         <span className={ loading ? "spinner" : null } />
         <div className={ loading ? "loading" : null}>
           <div className="row">
@@ -77,11 +80,15 @@ function mapStateToProps(state) {
   const { products } = state;
   const {
     loading,
+    gender,
+    showSaleOnly,
     items
   } = products;
 
   return {
     loading,
+    gender,
+    showSaleOnly,
     items: showProducts(products)
   }
 }

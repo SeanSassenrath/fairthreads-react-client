@@ -11,7 +11,7 @@ import {
   RECIEVE_PRODUCTS,
   LOWEST_TO_HIGHEST_PRODUCTS,
   HIGHEST_TO_LOWEST_PRODUCTS,
-  SHOW_SALE_ONLY,
+  TOGGLE_SALE_ONLY,
 } from '../constants'
 
 const initialState = Immutable({
@@ -35,7 +35,7 @@ function products(state = initialState, action) {
     case HIGHEST_TO_LOWEST_PRODUCTS:
       return state
         .set('sortProducts', 'highToLow')
-    case SHOW_SALE_ONLY:
+    case TOGGLE_SALE_ONLY:
       return state
         .set('showSaleOnly', !state.showSaleOnly)
     default:
