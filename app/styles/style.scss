@@ -17,6 +17,7 @@ h5 {
 }
 // Main nav
 #main-nav {
+  background-color: black;
   .logo-nav {
     padding: 1em 1.25em;
     max-width: 200px;
@@ -42,6 +43,19 @@ h5 {
       color: white;
       cursor: pointer;
       opacity: .6;
+    }
+  }
+}
+
+#product-filter-container {
+  ul {
+    margin: .75em 1.25em;
+    li {
+      list-style: none;
+      display: inline;
+      margin: 0 45px;
+      font-size: .9em;
+      text-transform: uppercase;
     }
   }
 }

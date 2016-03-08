@@ -1,10 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actionCreators from '../../action-creators.js'
-import Row from './row.jsx'
-import ProductNav from './product-nav.jsx'
-import { makeFourColumns, dynamicSortHigh, dynamicSortLow, onSale } from '../helpers.js'
+import * as actionCreators from '../../action-creators.js';
+import Row from './row.jsx';
+import ProductNav from './product-nav.jsx';
+import ProductFilters from './product-filters.jsx'
+import { makeFourColumns, dynamicSortHigh, dynamicSortLow, onSale } from '../helpers.js';
 require("../styles/style.scss");
 
 const selectActions = dispatch => bindActionCreators(actionCreators, dispatch)
@@ -32,15 +33,15 @@ class App extends Component {
         <nav id="main-nav">
           <div className="row">
             <div className="logo-nav" style={{margin: "0 auto"}}>
-              <img src={"./img/fairthreads-logo.png"} />
+              <img src={"./img/fairthreads-white.png"} />
             </div>
           </div>
         </nav>
-        <ProductNav fetchProducts={fetchProducts} toggleSaleOnly={toggleSaleOnly} showSaleOnly={showSaleOnly}/>
+        <ProductNav fetchProducts={fetchProducts} toggleSaleOnly={toggleSaleOnly} />
+        <ProductFilters lowToHighProducts={lowToHighProducts} highToLowProducts={highToLowProducts} toggleSaleOnly={toggleSaleOnly} showSaleOnly={showSaleOnly}/>
         <span className={ loading ? "spinner" : null } />
         <div className={ loading ? "loading" : null}>
           <div className="row">
-            <h6 style={{margin: ".75em 1.25em"}}>Sort by price: <span onClick={() => lowToHighProducts()}>Lowest</span> / <span onClick={() => highToLowProducts()}>Highest</span></h6>
           </div>
           {
             productRows.map(function(productRow ) {

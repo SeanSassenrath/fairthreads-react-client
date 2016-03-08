@@ -4,7 +4,7 @@ export default class ProductCard extends Component {
 
   render() {
     let {
-      product
+      product,
     } = this.props;
 
     console.log('product', product.name);
@@ -15,7 +15,7 @@ export default class ProductCard extends Component {
           <a href={product.vendUrl}>
               <div style={{width: "86%", position: "relative", margin: "0 auto"}}>
                 <img src={product.imageOriginal} style={{width: "100%", display: "block", margin: "0 auto", objectFit: "contain" ,maxHeight:"281px", border: "1px solid #ccc"}} />
-                <h6 style={{background: "black", opacity: ".6", color: "white", width: "100%", textAlign: "left", position: "absolute", bottom: "-3%", padding: "5px 0 5px 8px"}}>${product.price}</h6>
+                <h6 style={{background: "black", opacity: ".6", color: "white", width: "100%", textAlign: "left", position: "absolute", bottom: "-3%", padding: "5px 0 5px 8px"}}>${product.salePrice ? <strike>{product.price}</strike> : product.price}</h6>
                 {
                   product.salePrice ?
                     <h6 style={{color: "white", textAlign: "right", position: "absolute", bottom: "-3%", right: "0", padding: "5px 8px 5px 0"}}>${product.salePrice}</h6>
