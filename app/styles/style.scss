@@ -66,6 +66,12 @@ h5 {
   font-weight: bold;
 }
 
+.filter-nav-active {
+  border-bottom: 2px solid black;
+  // opacity: .9 !important;
+  // font-weight: bold;
+}
+
 select {
   width: 200px;
   background-color: black;

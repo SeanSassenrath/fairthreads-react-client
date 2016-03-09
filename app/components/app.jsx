@@ -21,7 +21,11 @@ class App extends Component {
       fetchProducts,
       lowToHighProducts,
       highToLowProducts,
-      toggleSaleOnly
+      sortProducts,
+      toggleSaleOnly,
+      priceRangeFilter,
+      priceRangeFilterValues,
+      priceRange,
     } = this.props;
 
     let rowKey = 0;
@@ -38,7 +42,15 @@ class App extends Component {
           </div>
         </nav>
         <ProductNav fetchProducts={fetchProducts} toggleSaleOnly={toggleSaleOnly} />
-        <ProductFilters lowToHighProducts={lowToHighProducts} highToLowProducts={highToLowProducts} toggleSaleOnly={toggleSaleOnly} showSaleOnly={showSaleOnly}/>
+        <ProductFilters
+          lowToHighProducts={lowToHighProducts}
+          highToLowProducts={highToLowProducts}
+          toggleSaleOnly={toggleSaleOnly}
+          showSaleOnly={showSaleOnly}
+          priceRangeFilterValues={priceRangeFilterValues}
+          priceRange={priceRange}
+          priceRangeFilter={priceRangeFilter}
+          sortProducts={sortProducts} />
         <span className={ loading ? "spinner" : null } />
         <div className={ loading ? "loading" : null}>
           <div className="row">
@@ -83,13 +95,19 @@ function mapStateToProps(state) {
     loading,
     gender,
     showSaleOnly,
-    items
+    items,
+    sortProducts,
+    priceRange,
+    priceRangeFilterValues,
   } = products;
 
   return {
     loading,
     gender,
     showSaleOnly,
+    sortProducts,
+    priceRangeFilterValues,
+    priceRange,
     items: showProducts(products)
   }
 }

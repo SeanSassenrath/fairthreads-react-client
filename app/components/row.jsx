@@ -10,7 +10,7 @@ export default class Row extends Component {
       row
     } = this.props;
 
-    console.log("Row Props", row);
+    // console.log("Row Props", row);
 
     return(
       <div className="row">

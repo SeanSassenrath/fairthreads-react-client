@@ -7,7 +7,7 @@ export default class ProductCard extends Component {
       product,
     } = this.props;
 
-    console.log('product', product.name);
+    // console.log('product', product.name);
 
     return(
       <div className="small-6 large-3 columns">

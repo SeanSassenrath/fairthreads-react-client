@@ -5,6 +5,8 @@ import {
   LOWEST_TO_HIGHEST_PRODUCTS,
   HIGHEST_TO_LOWEST_PRODUCTS,
   TOGGLE_SALE_ONLY,
+  SET_PRICE_RANGE_FILTER,
+  REMOVE_PRICE_RANGE_FILTER
  } from './constants';
 
 function requestProducts(gender) {
@@ -52,5 +54,34 @@ export function toggleSaleOnly() {
 export function stickyNav() {
   return {
     type: STICKY_NAV,
+  }
+}
+
+function setPriceRangeFilter(lowestPrice, highestPrice, priceRange) {
+  return {
+    type: SET_PRICE_RANGE_FILTER,
+    lowestPrice: lowestPrice,
+    highestPrice: highestPrice,
+    priceRange: priceRange
+  }
+}
+
+function removePriceRangeFilter() {
+  return {
+    type: REMOVE_PRICE_RANGE_FILTER,
+  }
+}
+
+export function priceRangeFilter(lowestPrice, highestPrice, newPriceRange, currentPriceRange) {
+  if(currentPriceRange === newPriceRange) {
+    console.log("should remove pricingFilter")
+    return dispatch => {
+      dispatch(removePriceRangeFilter())
+    }
+  } else {
+    console.log("should set pricingFilter")
+    return dispatch => {
+      dispatch(setPriceRangeFilter(lowestPrice, highestPrice, newPriceRange))
+    }
   }
 }
