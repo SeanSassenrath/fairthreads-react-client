@@ -17,14 +17,15 @@ import {
 } from '../constants'
 
 const initialState = Immutable({
-  loading: false,
-  showSaleOnly: false,
-  gender: 'women',
-  items: [],
-  priceRangeFilterValues: {}
+  products: {
+    loading: false,
+    showSaleOnly: false,
+    gender: 'women',
+    items: [],
+  }
 });
 
-function products(state = initialState, action) {
+function products(state = initialState.products, action) {
   switch (action.type) {
     case REQUEST_PRODUCTS:
       return state.set('loading', true);

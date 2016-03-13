@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import { Provider, connect } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
@@ -18,6 +18,6 @@ store.dispatch(fetchProducts('womens-clothes'))
 ReactDOM.render(
   <Provider store = { store }>
     <App />
-  </Provider>
-  , document.getElementById('app')
+  </Provider>,
+  document.getElementById('app')
 );

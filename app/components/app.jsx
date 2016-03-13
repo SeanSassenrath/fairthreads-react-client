@@ -1,18 +1,17 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as actionCreators from '../../action-creators.js';
+import { selectActions } from '../../selectors.js';
+import { testSelector } from '../../selectors.js';
 import Row from './row.jsx';
 import ProductNav from './product-nav.jsx';
 import ProductFilters from './product-filters.jsx'
 import { makeFourColumns, dynamicSortHigh, dynamicSortLow, onSale } from '../helpers.js';
 require("../styles/style.scss");
 
-const selectActions = dispatch => bindActionCreators(actionCreators, dispatch)
-
 class App extends Component {
 
   render() {
+    console.log('props', this.props)
     let {
       loading,
       items,
@@ -112,4 +111,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, selectActions)(App);
+export default connect(testSelector, selectActions)(App);
