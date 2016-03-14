@@ -1,33 +1,43 @@
 import { createSelector } from 'reselect';
-import { get } from 'lodash/fp';
+import { get, sortBy } from 'lodash/fp';
 import { bindActionCreators } from 'redux';
+import { dynamicSortLow, dynamicSortHigh } from './app/helpers.js';
 import * as actionCreators from './action-creators.js';
 
-// const productsSelector = state => state.get('products');
-// const itemsSelector = state => state.get('products', 'items');
 const productsSelector = get('products');
 const itemsSelector = createSelector(productsSelector, get('items'));
 const sortProductsSelector = createSelector(productsSelector, get('sortProducts'));
 const loadingSelector = createSelector(productsSelector, get('loading'));
 const saleSelector = createSelector(productsSelector, get('showSaleOnly'));
 const filterSelector = createSelector(productsSelector, get('priceRangeFilterValues'));
-// const priceSortSelector = createSelector(productsSelector, get('sortproducts'));
-// const saleSortSelector = state => state.get('products', 'showSaleOnly');
 
+const itemsSortSelector = createSelector(
+  sortProductsSelector, itemsSelector, (sortProducts, items) => {
+    if (sortProducts === "highToLow") {
+      return items.asMutable().sort(dynamicSortHigh('price'))
+    } else if (sortProducts === "lowToHigh") {
+      return items.asMutable().sort(dynamicSortLow('price'))
+    } else {
+      return items;
+    }
+  }
+)
+
+const itemsTransformSelector = createSelector(
+  itemsSortSelector,
+  (items) => (items)
+)
 
 export const testSelector = createSelector(
-  itemsSelector,
-  sortProductsSelector,
+  itemsTransformSelector,
   loadingSelector,
   saleSelector,
   (
   items,
-  sortProducts,
   loading,
   showSaleOnly
   ) => ({
     items,
-    sortProducts,
     loading,
     showSaleOnly
   })
