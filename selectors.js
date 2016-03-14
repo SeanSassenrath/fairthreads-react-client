@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 import { get, sortBy } from 'lodash/fp';
 import { bindActionCreators } from 'redux';
-import { dynamicSortLow, dynamicSortHigh } from './app/helpers.js';
+import { dynamicSortLow, dynamicSortHigh, onSale } from './app/helpers.js';
 import * as actionCreators from './action-creators.js';
 
 const productsSelector = get('products');
@@ -9,7 +9,7 @@ const itemsSelector = createSelector(productsSelector, get('items'));
 const sortProductsSelector = createSelector(productsSelector, get('sortProducts'));
 const loadingSelector = createSelector(productsSelector, get('loading'));
 const saleSelector = createSelector(productsSelector, get('showSaleOnly'));
-const filterSelector = createSelector(productsSelector, get('priceRangeFilterValues'));
+const filterPriceSelector = createSelector(productsSelector, get('priceRangeFilterValues'));
 
 const itemsSortSelector = createSelector(
   sortProductsSelector, itemsSelector, (sortProducts, items) => {
@@ -23,8 +23,19 @@ const itemsSortSelector = createSelector(
   }
 )
 
+const itemsSaleFilterSelector = createSelector(
+  saleSelector, itemsSortSelector, (saleProducts, items) => {
+    console.log(items)
+    if(saleProducts === true) {
+      return items.filter(onSale)
+    } else {
+      return items
+    }
+  }
+)
+
 const itemsTransformSelector = createSelector(
-  itemsSortSelector,
+  itemsSaleFilterSelector,
   (items) => (items)
 )
 
