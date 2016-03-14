@@ -8,9 +8,6 @@ $desktop-width: 1023px;
 body {
   font-family: 'Open Sans', sans-serif;
 }
-h1 {
-  background-color: red;
-}
 
 h5 {
   font-size: .9em;
@@ -84,6 +81,17 @@ select {
   position: fixed;
   top: 0;
   width: 100%;
+}
+
+.homepage-container {
+  border: 1px solid purple;
+  .hero {
+    height: 400px;
+    border: 1px solid red;
+  }
+  .sub-hero-container {
+    padding-top: 60px;
+  }
 }
 
 .loading {

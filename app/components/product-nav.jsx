@@ -11,8 +11,7 @@ export default class ProductNav extends Component {
 
     let {
       fetchProducts,
-      toggleSaleOnly,
-      showSaleOnly,
+      mainNav
     } = this.props;
 
     return(
@@ -20,8 +19,8 @@ export default class ProductNav extends Component {
         <div className="row">
           <nav>
             <ul style={{textAlign: "center"}}>
-              <li><span onClick={() => fetchProducts("womens-clothes")}>Women</span></li>
-              <li><span onClick={() => fetchProducts("men")}>Men</span></li>
+              <li><span onClick={() => mainNav("womens-clothes")}>Women</span></li>
+              <li><span onClick={() => mainNav("men")}>Men</span></li>
               <li><span>About Us</span></li>
             </ul>
           </nav>

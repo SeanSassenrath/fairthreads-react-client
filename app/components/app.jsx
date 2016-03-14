@@ -13,6 +13,9 @@ class App extends Component {
   render() {
     console.log('props', this.props)
     let {
+      homepage,
+      addHomepage,
+      mainNav,
       loading,
       items,
       showSaleOnly,
@@ -36,11 +39,11 @@ class App extends Component {
         <nav id="main-nav">
           <div className="row">
             <div className="logo-nav" style={{margin: "0 auto"}}>
-              <img src={"./img/fairthreads-white.png"} />
+              <img src={"./img/fairthreads-white.png"} onClick={()=> addHomepage()} />
             </div>
           </div>
         </nav>
-        <ProductNav fetchProducts={fetchProducts} toggleSaleOnly={toggleSaleOnly} />
+        <ProductNav fetchProducts={fetchProducts} mainNav={mainNav} />
         <ProductFilters
           lowToHighProducts={lowToHighProducts}
           highToLowProducts={highToLowProducts}
@@ -49,11 +52,26 @@ class App extends Component {
           priceRangeFilterValues={priceRangeFilterValues}
           priceRange={priceRange}
           priceRangeFilter={priceRangeFilter}
-          sortProducts={sortProducts} />
+          sortProducts={sortProducts}
+          homepage={homepage}
+          />
         <span className={ loading ? "spinner" : null } />
-        <div className={ loading ? "loading" : null}>
-          <div className="row">
+        <div className="homepage-container" style={{display: homepage === true ? "block" : "none"}}>
+          <div className="hero">
+            <h1>This is the hero</h1>
           </div>
+          <div className="sub-hero-container">
+            <div className="row">
+              <div className="small-12 medium-5 columns" style={{border: "1px solid green"}}>
+                test box 1
+              </div>
+              <div className="small-12 medium-5 columns" style={{border: "1px solid green"}}>
+                test box 2
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={ loading ? "loading" : null} style={{display: homepage === true ? "none" : "block"}}>
           {
             productRows.map(function(productRow ) {
               return <Row key={rowKey++} row={productRow} />
@@ -68,47 +86,6 @@ class App extends Component {
 App.propTypes = {
   items: PropTypes.array.isRequired,
   dispatch: PropTypes.func.isRequired
-}
-
-const showProducts = (state) => {
-  if (state.sortProducts === 'lowToHigh' && state.showSaleOnly) {
-    var sortedItems = state.items.asMutable().sort(dynamicSortLow('price'));
-    return sortedItems.filter(onSale);
-  } else if (state.sortProducts === 'highToLow' && state.showSaleOnly) {
-    var sortedItems = state.items.asMutable().sort(dynamicSortHigh('price'));
-    return sortedItems.filter(onSale);
-  } else if (state.sortProducts === 'lowToHigh' && !state.showSaleOnly) {
-    return state.items.asMutable().sort(dynamicSortLow('price'));
-  } else if (state.sortProducts === 'highToLow' && !state.showSaleOnly) {
-    return state.items.asMutable().sort(dynamicSortHigh('price'));
-  } else if (state.showSaleOnly && !state.sortProducts) {
-    return state.items.filter(onSale);
-  } else {
-    return state.items
-  }
-}
-
-function mapStateToProps(state) {
-  const { products } = state;
-  const {
-    loading,
-    gender,
-    showSaleOnly,
-    items,
-    sortProducts,
-    priceRange,
-    priceRangeFilterValues,
-  } = products;
-
-  return {
-    loading,
-    gender,
-    showSaleOnly,
-    sortProducts,
-    priceRangeFilterValues,
-    priceRange,
-    items: showProducts(products)
-  }
 }
 
 export default connect(testSelector, selectActions)(App);

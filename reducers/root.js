@@ -13,7 +13,9 @@ import {
   HIGHEST_TO_LOWEST_PRODUCTS,
   TOGGLE_SALE_ONLY,
   SET_PRICE_RANGE_FILTER,
-  REMOVE_PRICE_RANGE_FILTER
+  REMOVE_PRICE_RANGE_FILTER,
+  REMOVE_HOMEPAGE,
+  ADD_HOMEPAGE
 } from '../constants'
 
 const initialState = Immutable({
@@ -22,6 +24,7 @@ const initialState = Immutable({
     showSaleOnly: false,
     gender: 'women',
     items: [],
+    homepage: true,
   }
 });
 
@@ -54,6 +57,12 @@ function products(state = initialState.products, action) {
       return state
         .set('priceRange', null)
         .set('priceRangeFilterValues', {})
+    case REMOVE_HOMEPAGE:
+      return state
+        .set('homepage', false)
+    case ADD_HOMEPAGE:
+      return state
+        .set('homepage', true)
     default:
       return state;
   }

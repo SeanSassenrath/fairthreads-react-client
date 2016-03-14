@@ -8,6 +8,7 @@ const productsSelector = get('products');
 const itemsSelector = createSelector(productsSelector, get('items'));
 const sortProductsSelector = createSelector(productsSelector, get('sortProducts'));
 const loadingSelector = createSelector(productsSelector, get('loading'));
+const homepageSelector = createSelector(productsSelector, get('homepage'));
 const saleSelector = createSelector(productsSelector, get('showSaleOnly'));
 const filterPriceSelector = createSelector(productsSelector, get('priceRangeFilterValues'));
 
@@ -43,14 +44,17 @@ export const testSelector = createSelector(
   itemsTransformSelector,
   loadingSelector,
   saleSelector,
+  homepageSelector,
   (
   items,
   loading,
-  showSaleOnly
+  showSaleOnly,
+  homepage
   ) => ({
     items,
     loading,
-    showSaleOnly
+    showSaleOnly,
+    homepage
   })
 );
 export const selectActions = dispatch => bindActionCreators(actionCreators, dispatch)
