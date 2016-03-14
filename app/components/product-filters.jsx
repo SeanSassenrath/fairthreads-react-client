@@ -16,6 +16,8 @@ export default class ProductFilters extends Component {
       homepage
     } = this.props;
 
+    console.log('sortProducts', sortProducts)
+
     return(
       <div id="product-filter-container" style={{display: homepage === true ? "none" : "block"}}>
         <div className="row">

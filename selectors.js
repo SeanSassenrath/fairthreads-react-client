@@ -45,16 +45,19 @@ export const testSelector = createSelector(
   loadingSelector,
   saleSelector,
   homepageSelector,
+  sortProductsSelector,
   (
   items,
   loading,
   showSaleOnly,
-  homepage
+  homepage,
+  sortProducts
   ) => ({
     items,
     loading,
     showSaleOnly,
-    homepage
+    homepage,
+    sortProducts
   })
 );
 export const selectActions = dispatch => bindActionCreators(actionCreators, dispatch)

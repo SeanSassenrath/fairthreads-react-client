@@ -29,7 +29,10 @@ var config = {
       { test: /\.css$/,
         loader: "style!css"
       },
-      {
+      { test: /\.jpg$/,
+        loader: "url-loader?limit=10000&minetype=image/jpg"
+      }
+      ,{
         test: /\.scss$/,
         loaders: ["style", "css?sourceMap", "sass?sourceMap"]
       }
