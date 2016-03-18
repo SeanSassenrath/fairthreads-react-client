@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { selectActions } from '../../selectors.js';
-import { testSelector } from '../../selectors.js';
+import { selectActions } from '../selectors.js';
+import { testSelector } from '../selectors.js';
 import Row from './row.jsx';
 import ProductNav from './product-nav.jsx';
 import ProductFilters from './product-filters.jsx'

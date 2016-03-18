@@ -1,18 +1,16 @@
-var Webpack = require('webpack');
+var webpack = require('webpack');
 var path = require('path');
-var nodeModulesPath = path.resolve(__dirname, 'node_modules');
-var buildPath = path.resolve(__dirname, 'public', 'build');
-var mainPath = path.resolve(__dirname, './index.jsx');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var config = {
+module.exports = {
   devtool: 'eval',
   entry: [
-    'webpack/hot/dev-server',
-    'webpack-dev-server/client?http://localhost:8080',
-    mainPath
+    'webpack/hot/only-dev-server',
+    'webpack-dev-server/client?http://localhost:3000',
+    './app/index.jsx'
   ],
   output: {
-    path: buildPath,
+    path: path.join(__dirname, 'build'),
     filname: 'bundle.js',
     publicPath: '/build/'
   },
@@ -27,10 +25,10 @@ var config = {
         }
       },
       { test: /\.css$/,
-        loader: "style!css"
+        loader: ["style!css", 'resolve-url']
       },
       { test: /\.jpg$/,
-        loader: "url-loader?limit=10000&minetype=image/jpg"
+        loader: "url-loader?limit=1000"
       }
       ,{
         test: /\.scss$/,
@@ -38,7 +36,13 @@ var config = {
       }
     ]
   },
-  plugins: [new Webpack.HotModuleReplacementPlugin()]
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: __dirname + "/app/index.tmpl.html"
+    }),
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  }
 };
-
-module.exports = config;
