@@ -6,8 +6,7 @@ module.exports = {
   devtool: 'eval',
   entry: [
     'webpack/hot/only-dev-server',
-    'webpack-dev-server/client?http://localhost:3000',
-    './app/index.jsx'
+    './src/index.jsx'
   ],
   output: {
     path: __dirname + '/build',
@@ -41,7 +40,8 @@ module.exports = {
   ],
   plugins: [
     new HtmlWebpackPlugin({
-      template: __dirname + "/app/index.tmpl.html"
+      template: __dirname + "/src/index.tmpl.html",
+      filename: 'build/index.html'
     }),
     new webpack.HotModuleReplacementPlugin()
   ],

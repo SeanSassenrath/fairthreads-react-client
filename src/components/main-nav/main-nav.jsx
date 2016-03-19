@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import { stickyNav } from '../helpers.js';
+import { stickyNav } from '../../helpers.js';
 
-export default class ProductNav extends Component {
+export default class MainNav extends Component {
 
   componentDidMount() {
     stickyNav('#product-nav-container', 28)

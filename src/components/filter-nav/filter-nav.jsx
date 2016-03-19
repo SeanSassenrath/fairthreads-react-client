@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-export default class ProductFilters extends Component {
+export default class FilterNav extends Component {
 
   render() {
 

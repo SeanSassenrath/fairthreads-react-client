@@ -1,5 +1,5 @@
 import React, { Component, PropTypes} from 'react';
-import ProductCard from './product-card.jsx';
+import ProductCard from '../product-card/product-card.jsx';
 
 export default class Row extends Component {
 
