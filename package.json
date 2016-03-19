@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "webdev": "webpack-dev-server --progress",
     "postinstall": "webpack --config ./webpack.production.config.js --progress --colors"
   },
   "author": "sean.sassenrath@gmail.com",
@@ -28,6 +29,7 @@
     "webpack": "^1.12.14"
   },
   "dependencies": {
+    "autoprefixer": "^6.3.3",
     "babel-polyfill": "^6.6.1",
     "babel-register": "^6.6.0",
     "body-parser": "^1.15.0",
@@ -41,7 +43,9 @@
     "lodash": "^4.6.1",
     "lodash-fp": "^0.10.4",
     "morgan": "^1.7.0",
+    "postcss-loader": "^0.8.2",
     "react": "^0.14.7",
+    "react-css-modules": "^3.7.6",
     "react-dom": "^0.14.7",
     "react-redux": "^4.4.0",
     "redux": "^3.3.1",

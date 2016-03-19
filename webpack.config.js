@@ -10,7 +10,7 @@ module.exports = {
     './app/index.jsx'
   ],
   output: {
-    path: path.join(__dirname, 'build'),
+    path: __dirname + '/build',
     filname: 'bundle.js',
     publicPath: '/build/'
   },
@@ -25,7 +25,7 @@ module.exports = {
         }
       },
       { test: /\.css$/,
-        loader: ["style!css", 'resolve-url']
+        loader: 'style!css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss'
       },
       { test: /\.jpg$/,
         loader: "url-loader?limit=1000"
@@ -36,6 +36,9 @@ module.exports = {
       }
     ]
   },
+  postcss: [
+    require('autoprefixer')
+  ],
   plugins: [
     new HtmlWebpackPlugin({
       template: __dirname + "/app/index.tmpl.html"
