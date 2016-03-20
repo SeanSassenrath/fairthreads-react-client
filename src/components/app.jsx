@@ -6,6 +6,7 @@ import Row from './product-row/product-row.jsx';
 import MainNav from './main-nav/main-nav.jsx';
 import FilterNav from './filter-nav/filter-nav.jsx'
 import { makeFourColumns, dynamicSortHigh, dynamicSortLow, onSale } from '../helpers.js';
+var url = require("file!../img/fairthreads-white.png");
 require("../styles/style.scss");
 
 class App extends Component {
@@ -39,7 +40,7 @@ class App extends Component {
         <nav id="main-nav">
           <div className="row">
             <div className="logo-nav" style={{margin: "0 auto"}}>
-              <img src={"./img/fairthreads-white.png"} onClick={()=> addHomepage()} />
+              <img src={url} onClick={()=> addHomepage()} />
             </div>
           </div>
         </nav>

@@ -6,6 +6,7 @@ module.exports = {
   devtool: 'eval',
   entry: [
     'webpack/hot/only-dev-server',
+    'webpack-dev-server/client?http://localhost:3000',
     './src/index.jsx'
   ],
   output: {
@@ -26,8 +27,9 @@ module.exports = {
       { test: /\.css$/,
         loader: 'style!css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss'
       },
-      { test: /\.jpg$/,
-        loader: "url-loader?limit=1000"
+      { test: /\.jpg$|\.png$|\.svg$/,
+        exclude: /node_modules
+        loader: "file-loader?[name].[hash].[ext]"
       }
       ,{
         test: /\.scss$/,
