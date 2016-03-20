@@ -1,20 +1,17 @@
-var Webpack = require('webpack');
+var webpack = require('webpack');
 var path = require('path');
-var nodeModulesPath = path.resolve(__dirname, 'node_modules');
-var buildPath = path.resolve(__dirname, 'public', 'build');
-var mainPath = path.resolve(__dirname, './index.jsx');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var config = {
+module.exports = {
   devtool: 'eval',
   entry: [
-    'webpack/hot/dev-server',
-    'webpack-dev-server/client?http://localhost:8080',
-    mainPath
+    'webpack/hot/only-dev-server',
+    'webpack-dev-server/client?http://localhost:3000',
+    './src/index.jsx'
   ],
   output: {
-    path: buildPath,
+    path: __dirname + '/build',
     filname: 'bundle.js',
-    publicPath: '/build/'
   },
   module: {
     loaders: [
@@ -27,10 +24,11 @@ var config = {
         }
       },
       { test: /\.css$/,
-        loader: "style!css"
+        loader: 'style!css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss'
       },
-      { test: /\.jpg$/,
-        loader: "url-loader?limit=10000&minetype=image/jpg"
+      { test: /\.jpg$|\.png$|\.svg$/,
+        exclude: /node_modules/,
+        loader: "file-loader?[name].[hash].[ext]"
       }
       ,{
         test: /\.scss$/,
@@ -38,7 +36,17 @@ var config = {
       }
     ]
   },
-  plugins: [new Webpack.HotModuleReplacementPlugin()]
+  postcss: [
+    require('autoprefixer')
+  ],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: __dirname + "/src/index.tmpl.html",
+      filename: './index.html'
+    }),
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  }
 };
-
-module.exports = config;

@@ -2,11 +2,12 @@
   "name": "fairthreads-react-client",
   "version": "1.0.0",
   "description": "React / Redux client for fairthreads",
-  "main": "index.js",
+  "main": "app/index.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server",
-    "postinstall": "node deploy"
+    "start": "node server.js",
+    "webdev": "webpack-dev-server --progress",
+    "postinstall": "webpack --config ./webpack.production.config.js --progress --colors"
   },
   "author": "sean.sassenrath@gmail.com",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "css-loader": "^0.18.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
+    "html-webpack-plugin": "^2.10.0",
     "node-sass": "^3.4.2",
     "redux-logger": "^2.6.0",
     "sass-loader": "^3.1.2",
@@ -27,6 +29,7 @@
     "webpack": "^1.12.14"
   },
   "dependencies": {
+    "autoprefixer": "^6.3.3",
     "babel-polyfill": "^6.6.1",
     "babel-register": "^6.6.0",
     "body-parser": "^1.15.0",
@@ -40,12 +43,15 @@
     "lodash": "^4.6.1",
     "lodash-fp": "^0.10.4",
     "morgan": "^1.7.0",
+    "postcss-loader": "^0.8.2",
     "react": "^0.14.7",
+    "react-css-modules": "^3.7.6",
     "react-dom": "^0.14.7",
     "react-redux": "^4.4.0",
     "redux": "^3.3.1",
     "redux-thunk": "^1.0.3",
     "reselect": "^2.1.0",
+    "resolve-url-loader": "^1.4.3",
     "seamless-immutable": "^5.1.0",
     "url-loader": "^0.5.7",
     "webpack-dev-server": "^1.14.1",
