@@ -6,7 +6,7 @@ import Row from './product-row/product-row.jsx';
 import MainNav from './main-nav/main-nav.jsx';
 import FilterNav from './filter-nav/filter-nav.jsx'
 import { makeFourColumns, dynamicSortHigh, dynamicSortLow, onSale } from '../helpers.js';
-var logo = require("file!../img/fairthreads-white.png");
+var logo = require("../img/fairthreads-white.png");
 require("../styles/style.scss");
 
 class App extends Component {
