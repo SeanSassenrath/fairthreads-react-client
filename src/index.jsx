@@ -1,5 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Router, Route, hashHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux'
 import { Provider, connect } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
@@ -16,9 +18,13 @@ let createStoreWithMiddleware = applyMiddleware(thunkMiddleware, loggerMiddlewar
 let store = createStoreWithMiddleware(rootReducer)
 store.dispatch(fetchProducts('womens-clothes'))
 
+const history = syncHistoryWithStore(hashHistory, store);
+
 render(
   <Provider store = { store }>
-    <App />
+    <Router history={ history }>
+      <Route path="/" component={App} />
+    </Router>
   </Provider>,
   document.getElementById('app')
 );
