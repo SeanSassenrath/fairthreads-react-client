@@ -12,7 +12,6 @@ module.exports = {
   output: {
     path: __dirname + '/build',
     filname: 'bundle.js',
-    publicPath: '/build/'
   },
   module: {
     loaders: [
@@ -28,7 +27,7 @@ module.exports = {
         loader: 'style!css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss'
       },
       { test: /\.jpg$|\.png$|\.svg$/,
-        exclude: /node_modules
+        exclude: /node_modules/,
         loader: "file-loader?[name].[hash].[ext]"
       }
       ,{
@@ -43,7 +42,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: __dirname + "/src/index.tmpl.html",
-      filename: 'build/index.html'
+      filename: './index.html'
     }),
     new webpack.HotModuleReplacementPlugin()
   ],
