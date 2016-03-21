@@ -8,6 +8,7 @@ import createLogger from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers/root';
 import App from './components/app.jsx';
+import ProductsContainer from './components/products-container/products-container'
 import 'babel-polyfill';
 import { fetchProducts } from './action-creators';
 require('./styles/style.scss');
@@ -23,7 +24,9 @@ const history = syncHistoryWithStore(hashHistory, store);
 render(
   <Provider store = { store }>
     <Router history={ history }>
-      <Route path="/" component={App} />
+      <Route path="/" component={ App } />
+        <Route path="/womens" component={ ProductsContainer } />
+        <Route path="/mens" component={ ProductsContainer } />
     </Router>
   </Provider>,
   document.getElementById('app')
