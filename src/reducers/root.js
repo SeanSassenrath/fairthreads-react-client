@@ -5,6 +5,7 @@
 //   products: []
 // }
 import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux';
 import Immutable from "seamless-immutable";
 import {
   REQUEST_PRODUCTS,
@@ -70,6 +71,7 @@ function products(state = initialState.products, action) {
 
 const rootReducer = combineReducers({
   products,
+  routing: routerReducer
 })
 
 export default rootReducer;

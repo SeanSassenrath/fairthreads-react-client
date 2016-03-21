@@ -1,11 +1,14 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Router, Route, hashHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux'
 import { Provider, connect } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers/root';
 import App from './components/app.jsx';
+import ProductsContainer from './components/products-container/products-container'
 import 'babel-polyfill';
 import { fetchProducts } from './action-creators';
 require('./styles/style.scss');
@@ -16,9 +19,15 @@ let createStoreWithMiddleware = applyMiddleware(thunkMiddleware, loggerMiddlewar
 let store = createStoreWithMiddleware(rootReducer)
 store.dispatch(fetchProducts('womens-clothes'))
 
+const history = syncHistoryWithStore(hashHistory, store);
+
 render(
   <Provider store = { store }>
-    <App />
+    <Router history={ history }>
+      <Route path="/" component={ App } />
+        <Route path="/womens" component={ ProductsContainer } />
+        <Route path="/mens" component={ ProductsContainer } />
+    </Router>
   </Provider>,
   document.getElementById('app')
 );

@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { stickyNav } from '../../helpers.js';
+import CSSModules from 'react-css-modules';
+import styles from './main-nav.css';
 
-export default class MainNav extends Component {
+class MainNav extends Component {
 
   componentDidMount() {
     stickyNav('#product-nav-container', 28)
@@ -15,7 +17,7 @@ export default class MainNav extends Component {
     } = this.props;
 
     return(
-      <div id="product-nav-container">
+      <div id="product-nav-container" styleName="product-nav-container">
         <div className="row">
           <nav>
             <ul style={{textAlign: "center"}}>
@@ -29,3 +31,5 @@ export default class MainNav extends Component {
     )
   }
 }
+
+export default CSSModules(MainNav, styles);
