@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import ProductRow from './product-row/product-row.jsx';
-import ProductCard from './product-card/product-card.jsx';
+import ProductRow from '../product-row/product-row.jsx';
+import ProductCard from '../product-card/product-card.jsx';
 import { makeFourColumns } from '../../helpers.js';
 
 
