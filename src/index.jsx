@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, hashHistory } from 'react-router';
+import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux'
 import { Provider, connect } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
@@ -8,6 +8,7 @@ import createLogger from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers/root';
 import App from './components/app.jsx';
+import Home from './components/home/home.jsx';
 import ProductsContainer from './components/products-container/products-container'
 import 'babel-polyfill';
 import { fetchProducts } from './action-creators';
@@ -25,6 +26,7 @@ render(
   <Provider store = { store }>
     <Router history={ history }>
       <Route path="/" component={ App }>
+        <IndexRoute component={ Home } />
         <Route path="/womens" component={ ProductsContainer } />
         <Route path="/mens" component={ ProductsContainer } />
         <Route path="/about-us" component={ ProductsContainer } />
