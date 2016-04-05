@@ -13,8 +13,6 @@ class App extends Component {
   render() {
     console.log('props', this.props)
     let {
-      homepage,
-      addHomepage,
       mainNav,
       loading,
       items,
@@ -39,7 +37,7 @@ class App extends Component {
         <nav id="main-nav">
           <div className="row">
             <div className="logo-nav" style={{margin: "0 auto"}}>
-              <img src={logo} onClick={()=> addHomepage()} />
+              <img src={logo} />
             </div>
           </div>
         </nav>
@@ -53,7 +51,6 @@ class App extends Component {
           priceRange={priceRange}
           priceRangeFilter={priceRangeFilter}
           sortProducts={sortProducts}
-          homepage={homepage}
           />
         <span className={ loading ? "spinner" : null } />
 

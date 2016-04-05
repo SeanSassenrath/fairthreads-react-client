@@ -7,8 +7,6 @@ import {
   TOGGLE_SALE_ONLY,
   SET_PRICE_RANGE_FILTER,
   REMOVE_PRICE_RANGE_FILTER,
-  REMOVE_HOMEPAGE,
-  ADD_HOMEPAGE
  } from './constants';
 
 function requestProducts(gender) {
@@ -29,7 +27,6 @@ function receiveProducts(gender, json) {
 export function mainNav(type) {
   if (type === "men" || "womens-clothes") {
     return dispatch => {
-      dispatch(removeHomepage())
       dispatch(fetchProducts(type))
     }
   }
@@ -94,17 +91,5 @@ export function priceRangeFilter(lowestPrice, highestPrice, newPriceRange, curre
     return dispatch => {
       dispatch(setPriceRangeFilter(lowestPrice, highestPrice, newPriceRange))
     }
-  }
-}
-
-function removeHomepage() {
-  return {
-    type: REMOVE_HOMEPAGE,
-  }
-}
-
-export function addHomepage() {
-  return {
-    type: ADD_HOMEPAGE,
   }
 }

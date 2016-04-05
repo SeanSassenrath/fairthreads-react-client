@@ -84,19 +84,6 @@ select {
   width: 100%;
 }
 
-.homepage-container {
-  border: 1px solid purple;
-  .hero {
-    // background-color: #F3F3F3;
-    height: 450px;
-    // border: 1px solid red;
-    background-image: url('../img/hero-bg.jpg');
-  }
-  .sub-hero-container {
-    padding-top: 60px;
-  }
-}
-
 .loading {
   background-color: white;
   opacity: .05;

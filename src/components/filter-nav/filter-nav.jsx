@@ -13,13 +13,12 @@ export default class FilterNav extends Component {
       priceRangeFilter,
       priceRange,
       sortProducts,
-      homepage
     } = this.props;
 
     console.log('sortProducts', sortProducts)
 
     return(
-      <div id="product-filter-container" style={{display: homepage === true ? "none" : "block"}}>
+      <div id="product-filter-container">
         <div className="row">
           <nav>
             <ul style={{textAlign: "center"}}>

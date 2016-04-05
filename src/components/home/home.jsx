@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 class Home extends Component {
   render() {
     return(
-      <div className="homepage-container" style={{display: homepage === true ? "block" : "none"}}>
+      <div className="homepage-container">
         <div className="hero">
           <h1>This is the hero</h1>
         </div>

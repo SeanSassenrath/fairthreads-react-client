@@ -51,6 +51,7 @@
     "react-router": "^2.0.1",
     "react-router-redux": "^4.0.0",
     "redux": "^3.3.1",
+    "redux-seamless-immutable": "^0.2.0",
     "redux-thunk": "^1.0.3",
     "reselect": "^2.1.0",
     "resolve-url-loader": "^1.4.3",
