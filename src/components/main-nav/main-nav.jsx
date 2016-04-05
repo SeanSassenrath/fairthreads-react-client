@@ -22,9 +22,9 @@ class MainNav extends Component {
         <div className="row">
           <nav>
             <ul style={{textAlign: "center"}}>
-              <li><Link to='/womens' onClick={() => mainNav("womens-clothes")}>Women</Link></li>
-              <li><Link to='mens' onClick={() => mainNav("men")}>Men</Link></li>
-              <li><Link to='about-us'>About Us</Link></li>
+              <li><Link to='/womens' activeStyle={{ color: 'red' }} onClick={() => mainNav("womens-clothes")}>Women</Link></li>
+              <li><Link to='mens' activeStyle={{ color: 'red' }} onClick={() => mainNav("men")}>Men</Link></li>
+              <li><Link to='about-us' activeStyle={{ color: 'red' }}>About Us</Link></li>
             </ul>
           </nav>
         </div>

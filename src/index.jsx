@@ -24,9 +24,11 @@ const history = syncHistoryWithStore(hashHistory, store);
 render(
   <Provider store = { store }>
     <Router history={ history }>
-      <Route path="/" component={ App } />
+      <Route path="/" component={ App }>
         <Route path="/womens" component={ ProductsContainer } />
         <Route path="/mens" component={ ProductsContainer } />
+        <Route path="/about-us" component={ ProductsContainer } />
+      </Route>
     </Router>
   </Provider>,
   document.getElementById('app')

@@ -54,7 +54,7 @@ class App extends Component {
           />
         <span className={ loading ? "spinner" : null } />
 
-
+        { this.props.children }
       </div>
     )
   }
