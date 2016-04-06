@@ -9,11 +9,10 @@ import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers/root';
 import App from './components/app.jsx';
 import Home from './components/home/home.jsx';
-import ProductsContainer from './components/products-container/products-container'
+import ProductsContainer from './components/products-container/products-container.jsx'
 import 'babel-polyfill';
 import { fetchProducts } from './action-creators';
 require('./styles/style.scss');
-
 
 let loggerMiddleware = createLogger();
 let createStoreWithMiddleware = applyMiddleware(thunkMiddleware, loggerMiddleware)(createStore);
@@ -27,8 +26,8 @@ render(
     <Router history={ history }>
       <Route path="/" component={ App }>
         <IndexRoute component={ Home } />
-        <Route path="/womens" component={ ProductsContainer } />
         <Route path="/mens" component={ ProductsContainer } />
+        <Route path="/womens" component={ ProductsContainer } />
         <Route path="/about-us" component={ ProductsContainer } />
       </Route>
     </Router>

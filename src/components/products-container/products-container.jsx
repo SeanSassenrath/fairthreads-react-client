@@ -4,22 +4,25 @@ import ProductCard from '../product-card/product-card.jsx';
 import { makeFourColumns } from '../../helpers.js';
 
 
-class ProductContainer extends Component {
+export default class ProductsContainer extends Component {
 
   render() {
     let {
       items,
     } = this.props;
 
+    console.log('sean', this.props)
     let rowKey = 0;
     const productRows = makeFourColumns(items);
 
-    <div id="products-container">
-      {
-        productRows.map(function(productRow ) {
-          return <Row key={rowKey++} row={productRow} />
-        })
-      }
-    </div>
+    return(
+      <div id="products-container">
+        {
+          productRows.map(function(productRow ) {
+            return <Row key={rowKey++} row={productRow} />
+          })
+        }
+      </div>
+    )
   }
 }
