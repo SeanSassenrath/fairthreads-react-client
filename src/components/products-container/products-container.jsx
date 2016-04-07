@@ -1,10 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import ProductRow from '../product-row/product-row.jsx';
 import ProductCard from '../product-card/product-card.jsx';
+import FilterNav from '../filter-nav/filter-nav.jsx'
 import { connect } from 'react-redux';
 import { selectActions } from '../../selectors.js';
 import { testSelector } from '../../selectors.js';
-import { makeFourColumns } from '../../helpers.js';
+import { makeThreeColumns } from '../../helpers.js';
 
 
 class ProductsContainer extends Component {
@@ -12,19 +13,43 @@ class ProductsContainer extends Component {
   render() {
     let {
       items,
+      lowToHighProducts,
+      highToLowProducts,
+      toggleSaleOnly,
+      showSaleOnly,
+      priceRangeFilterValues,
+      priceRange,
+      priceRangeFilter,
+      sortProducts
     } = this.props;
 
     console.log('sean', this.props)
     let rowKey = 0;
-    const productRows = makeFourColumns(items);
+    const productRows = makeThreeColumns(items);
 
     return(
       <div id="products-container">
-        {
-          productRows.map(function(productRow ) {
-            return <ProductRow key={rowKey++} row={productRow} />
-          })
-        }
+        <div className="row">
+          <div className="small-2 columns">
+            <FilterNav
+              lowToHighProducts={lowToHighProducts}
+              highToLowProducts={highToLowProducts}
+              toggleSaleOnly={toggleSaleOnly}
+              showSaleOnly={showSaleOnly}
+              priceRangeFilterValues={priceRangeFilterValues}
+              priceRange={priceRange}
+              priceRangeFilter={priceRangeFilter}
+              sortProducts={sortProducts}
+              />
+          </div>
+          <div className="small-10 columns">
+            {
+              productRows.map(function(productRow ) {
+                return <ProductRow key={rowKey++} row={productRow} />
+              })
+            }
+          </div>
+        </div>
       </div>
     )
   }

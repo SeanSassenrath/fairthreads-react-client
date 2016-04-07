@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
+import CSSModules from 'react-css-modules';
+import styles from './filter-nav.css';
 
-export default class FilterNav extends Component {
+class FilterNav extends Component {
 
   render() {
 
@@ -18,7 +20,7 @@ export default class FilterNav extends Component {
     console.log('sortProducts', sortProducts)
 
     return(
-      <div id="product-filter-container">
+      <div id="product-filter-container" styleName="filter-nav-container">
         <div className="row">
           <nav>
             <ul style={{textAlign: "center"}}>
@@ -35,3 +37,5 @@ export default class FilterNav extends Component {
     )
   }
 }
+
+export default CSSModules(FilterNav, styles)

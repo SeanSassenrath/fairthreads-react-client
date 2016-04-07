@@ -4,7 +4,6 @@ import { selectActions } from '../selectors.js';
 import { testSelector } from '../selectors.js';
 import Row from './product-row/product-row.jsx';
 import MainNav from './main-nav/main-nav.jsx';
-import FilterNav from './filter-nav/filter-nav.jsx'
 var logo = require("../img/fairthreads-white.png");
 require("../styles/style.scss");
 
@@ -33,7 +32,7 @@ class App extends Component {
     // const productRows = makeFourColumns(items);
 
     return (
-      <div className="app-container">
+      <div className="app-container" style={{backgroundColor: "#F8F8F8"}}>
         <nav id="main-nav">
           <div className="row">
             <div className="logo-nav" style={{margin: "0 auto"}}>
@@ -42,16 +41,6 @@ class App extends Component {
           </div>
         </nav>
         <MainNav fetchProducts={fetchProducts} mainNav={mainNav} />
-        <FilterNav
-          lowToHighProducts={lowToHighProducts}
-          highToLowProducts={highToLowProducts}
-          toggleSaleOnly={toggleSaleOnly}
-          showSaleOnly={showSaleOnly}
-          priceRangeFilterValues={priceRangeFilterValues}
-          priceRange={priceRange}
-          priceRangeFilter={priceRangeFilter}
-          sortProducts={sortProducts}
-          />
         <span className={ loading ? "spinner" : null } />
 
         { this.props.children }

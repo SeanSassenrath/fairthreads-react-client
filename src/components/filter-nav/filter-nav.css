@@ -1,0 +1,14 @@
+.filter-nav-container ul {
+  margin: .75em 1.25em;
+  padding-top: 2em;
+}
+
+.filter-nav-container li {
+  list-style: none;
+  margin-left: 25px;
+  margin-bottom: 25px;
+  text-align: left;
+  font-size: .9em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
