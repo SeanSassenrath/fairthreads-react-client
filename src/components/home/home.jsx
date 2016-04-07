@@ -1,10 +1,12 @@
 import React, { Component, PropTypes } from 'react';
+import CSSModules from 'react-css-modules';
+import styles from './home.css';
 
-export default class Home extends Component {
+class Home extends Component {
   render() {
     return(
       <div className="homepage-container">
-        <div className="hero">
+        <div className="hero" styleName="hero1">
           <h1>This is the hero</h1>
         </div>
         <div className="sub-hero-container">
@@ -21,3 +23,5 @@ export default class Home extends Component {
     )
   }
 }
+
+export default CSSModules(Home, styles);
