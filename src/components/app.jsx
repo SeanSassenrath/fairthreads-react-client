@@ -25,6 +25,7 @@ class App extends Component {
       priceRangeFilter,
       priceRangeFilterValues,
       priceRange,
+      addCategoryFilter
     } = this.props;
 
     var assignCategories = function(items) {
@@ -46,7 +47,7 @@ class App extends Component {
             </div>
           </div>
         </nav>
-        <MainNav fetchProducts={fetchProducts} mainNav={mainNav} categories={categories}/>
+        <MainNav fetchProducts={fetchProducts} mainNav={mainNav} categories={categories} addCategoryFilter={addCategoryFilter}/>
         <span className={ loading ? "spinner" : null } />
 
         { this.props.children }

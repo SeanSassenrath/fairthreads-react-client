@@ -26,7 +26,6 @@ const itemsSortSelector = createSelector(
 
 const itemsSaleFilterSelector = createSelector(
   saleSelector, itemsSortSelector, (saleProducts, items) => {
-    console.log(items)
     if(saleProducts === true) {
       return items.filter(onSale)
     } else {

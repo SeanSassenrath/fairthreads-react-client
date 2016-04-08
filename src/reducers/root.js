@@ -15,6 +15,8 @@ import {
   TOGGLE_SALE_ONLY,
   SET_PRICE_RANGE_FILTER,
   REMOVE_PRICE_RANGE_FILTER,
+  SET_CATEGORY_FILTER,
+  REMOVE_CATEGORY_FILTER
 } from '../constants'
 
 const initialState = Immutable({
@@ -55,6 +57,12 @@ function products(state = initialState.products, action) {
       return state
         .set('priceRange', null)
         .set('priceRangeFilterValues', {})
+    case SET_CATEGORY_FILTER:
+      return state
+        .set('categoryFilter', action.category)
+    case REMOVE_CATEGORY_FILTER:
+      return state
+        .set('categoryFilter', null)
     default:
       return state;
   }
