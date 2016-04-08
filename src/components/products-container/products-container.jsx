@@ -44,16 +44,17 @@ class ProductsContainer extends Component {
               />
           </div>
           <div className="small-10 columns">
-            {
-              productRows.map(function(productRow ) {
-                return (
-                  <LazyLoad height={380} offsetVertical={3000} onContentVisible={() => console.log('look ma I have been lazyloaded!')}>
-                    <ProductRow key={rowKey++} row={productRow} />
-                  </LazyLoad>
-                )
-              })
-            }
-
+            <div style={{paddingTop: "25px"}}>
+              {
+                productRows.map(function(productRow ) {
+                  return (
+                    <LazyLoad height={380} offsetVertical={2000} onContentVisible={() => console.log('look ma I have been lazyloaded!')}>
+                      <ProductRow key={rowKey++} row={productRow} />
+                    </LazyLoad>
+                  )
+                })
+              }
+            </div>
           </div>
         </div>
       </div>

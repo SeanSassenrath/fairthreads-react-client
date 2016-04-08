@@ -1,8 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './filter-nav.css';
+import { stickyNav } from '../../helpers.js';
 
 class FilterNav extends Component {
+
+  componentDidMount() {
+    stickyNav('#product-filter-container', 28)
+  }
 
   render() {
 
@@ -29,7 +34,7 @@ class FilterNav extends Component {
               <li><span className={sortProducts === "highToLow" ? "filter-nav-active" : null} onClick={() => highToLowProducts()}>Highest</span></li>
               <li><span className={priceRange === "lowPriceRange" ? "filter-nav-active" : null} onClick={() => priceRangeFilter(0, 50, "lowPriceRange", priceRange)}>Under $50</span></li>
               <li><span className={priceRange === "midPriceRange" ? "filter-nav-active" : null} onClick={() => priceRangeFilter(50, 150, "midPriceRange", priceRange)}>$50 - $150</span></li>
-              <li><span className={priceRange === "highPriceRange" ? "filter-nav-active" : null} onClick={() => priceRangeFilter(150, 250, "highPriceRange", priceRange)}>$150 - $250+</span></li>
+              <li><span className={priceRange === "highPriceRange" ? "filter-nav-active" : null} onClick={() => priceRangeFilter(150, 250, "highPriceRange", priceRange)}>Over $150</span></li>
             </ul>
           </nav>
         </div>

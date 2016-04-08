@@ -6,10 +6,6 @@ import styles from './main-nav.css';
 
 class MainNav extends Component {
 
-  componentDidMount() {
-    stickyNav('#product-nav-container', 28)
-  }
-
   render() {
 
     let {
