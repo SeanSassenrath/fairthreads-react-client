@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { selectActions } from '../../selectors.js';
 import { testSelector } from '../../selectors.js';
 import { makeThreeColumns } from '../../helpers.js';
+import LazyLoad from 'react-lazy-load';
 
 
 class ProductsContainer extends Component {
@@ -45,9 +46,14 @@ class ProductsContainer extends Component {
           <div className="small-10 columns">
             {
               productRows.map(function(productRow ) {
-                return <ProductRow key={rowKey++} row={productRow} />
+                return (
+                  <LazyLoad height={380} offsetVertical={3000} onContentVisible={() => console.log('look ma I have been lazyloaded!')}>
+                    <ProductRow key={rowKey++} row={productRow} />
+                  </LazyLoad>
+                )
               })
             }
+
           </div>
         </div>
       </div>

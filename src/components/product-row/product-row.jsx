@@ -1,7 +1,7 @@
 import React, { Component, PropTypes} from 'react';
 import ProductCard from '../product-card/product-card.jsx';
 
-export default class Row extends Component {
+export default class ProductRow extends Component {
 
 
   render() {
@@ -13,13 +13,13 @@ export default class Row extends Component {
     // console.log("Row Props", row);
 
     return(
-      <div className="row">
-          {
-            row.map(function(product) {
-              return <ProductCard key={productKey++} product={product}/>
-            })
-          }
-      </div>
+        <div className="row">
+            {
+              row.map(function(product) {
+                return <ProductCard key={productKey++} product={product}/>
+              })
+            }
+        </div>
     )
   }
 }
