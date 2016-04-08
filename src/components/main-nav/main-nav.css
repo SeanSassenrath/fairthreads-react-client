@@ -1,21 +1,9 @@
-.product-nav-container {
-  /*background-color: black;
-  opacity: .8;
-  z-index: 100;
-  width: 100%;
-  ul {
-    margin: .75em 1.25em;
-    li {
-      list-style: none;
-      display: inline;
-      margin: 0 45px;
-      font-size: .9em;
-      text-transform: uppercase;
-    }
-    span {
-      color: white;
-      cursor: pointer;
-      opacity: .6;
-    }
-  }*/
+.product-nav-container a {
+  color: white;
+  opacity: .4;
+}
+
+.product-nav-container a:hover {
+  color: white;
+  opacity: .7;
 }

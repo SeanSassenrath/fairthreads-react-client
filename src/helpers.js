@@ -53,3 +53,13 @@ export function onSale(item) {
     return item
   }
 }
+
+// export function objectsReducerToArray(items, key) {
+//   var reducedObjectsArray = [];
+//   items.forEach(function(item) {
+//     console.log('key', key)
+//     if(reducedObjectsArray.indexOf(item.key) < 0 && item.key != undefined) return reducedObjectsArray.push(item.key)
+//   })
+//   console.log('in func', reducedObjectsArray)
+//   return reducedObjectsArray;
+// }

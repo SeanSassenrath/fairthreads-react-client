@@ -24,7 +24,6 @@ class ProductsContainer extends Component {
       sortProducts
     } = this.props;
 
-    console.log('sean', this.props)
     let rowKey = 0;
     const productRows = makeThreeColumns(items);
 

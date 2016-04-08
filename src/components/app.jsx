@@ -27,9 +27,15 @@ class App extends Component {
       priceRange,
     } = this.props;
 
-    // let rowKey = 0;
+    var assignCategories = function(items) {
+      var categories = [];
+      items.forEach(function(item) {
+        if(categories.indexOf(item.fairThreadsCategory) < 0 && item.fairThreadsCategory != undefined) categories.push(item.fairThreadsCategory)
+      })
+      return categories;
+    }
 
-    // const productRows = makeFourColumns(items);
+    const categories = assignCategories(items);
 
     return (
       <div className="app-container" style={{backgroundColor: "#F8F8F8"}}>
@@ -40,7 +46,7 @@ class App extends Component {
             </div>
           </div>
         </nav>
-        <MainNav fetchProducts={fetchProducts} mainNav={mainNav} />
+        <MainNav fetchProducts={fetchProducts} mainNav={mainNav} categories={categories}/>
         <span className={ loading ? "spinner" : null } />
 
         { this.props.children }
