@@ -31,8 +31,8 @@ export function mainNav(gender, items) {
 
   if (gender === "men" || "womens-clothes") {
     return dispatch => {
-      dispatch(fetchProducts(gender))
-    }
+        dispatch(fetchProducts(gender))
+      }
   }
 }
 
@@ -99,13 +99,6 @@ export function priceRangeFilter(lowestPrice, highestPrice, newPriceRange, curre
   }
 }
 
-// function showCategoryList(categories) {
-//   return {
-//     type: SET_CATEGORY_LIST,
-//     categories
-//   }
-// }
-
 export function addCategoryFilter(category) {
   return {
     type: SET_CATEGORY_FILTER,
@@ -113,9 +106,9 @@ export function addCategoryFilter(category) {
   }
 }
 
-export function removeCategoryFilter(category) {
-  return {
-    type: REMOVE_CATEGORY_FILTER,
-    category
-  }
-}
+// function removeCategoryFilter() {
+//   console.log('In remove category filter')
+//   return {
+//     type: REMOVE_CATEGORY_FILTER,
+//   }
+// }

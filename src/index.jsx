@@ -17,7 +17,6 @@ require('./styles/style.scss');
 let loggerMiddleware = createLogger();
 let createStoreWithMiddleware = applyMiddleware(thunkMiddleware, loggerMiddleware)(createStore);
 let store = createStoreWithMiddleware(rootReducer)
-store.dispatch(fetchProducts('womens-clothes'))
 
 const history = syncHistoryWithStore(hashHistory, store);
 

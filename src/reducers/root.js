@@ -33,7 +33,9 @@ const initialState = Immutable({
 function products(state = initialState.products, action) {
   switch (action.type) {
     case REQUEST_PRODUCTS:
-      return state.set('loading', true);
+      return state
+        .set('loading', true)
+        .without('categoryFilter')
     case RECIEVE_PRODUCTS:
     console.log()
       return state
@@ -65,9 +67,6 @@ function products(state = initialState.products, action) {
     case SET_CATEGORY_FILTER:
       return state
         .set('categoryFilter', action.category)
-    case REMOVE_CATEGORY_FILTER:
-      return state
-        .set('categoryFilter', null)
     default:
       return state;
   }

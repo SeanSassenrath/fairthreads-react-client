@@ -5,8 +5,8 @@ import styles from './main-nav.css';
 
 class MainNav extends Component {
 
-  componentWillMount() {
-    console.log('mounted')
+  componentDidUpdate() {
+    console.log('Updated')
   }
   render() {
 
@@ -27,12 +27,15 @@ class MainNav extends Component {
               <li><Link to='mens' activeStyle={{ opacity: '1', color: "white" }} onClick={() => mainNav("men", items)}>Men</Link></li>
               <li>
                 <select id="category" onChange={() => addCategoryFilter(document.getElementById('category').value)}>
+                  <option>CATEGORY</option>
                   {
                     categoryList ? categoryList.map(function(category) {
                       return (
                         <option value={category}>{category}</option>
                       )
-                    }) : null
+                    }) : function() {
+                      return <option>Category</option>
+                    }
                   }
                 </select>
               </li>
