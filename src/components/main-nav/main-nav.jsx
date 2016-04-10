@@ -27,15 +27,13 @@ class MainNav extends Component {
               <li><Link to='mens' activeStyle={{ opacity: '1', color: "white" }} onClick={() => mainNav("men", items)}>Men</Link></li>
               <li>
                 <select id="category" onChange={() => addCategoryFilter(document.getElementById('category').value)}>
-                  <option>CATEGORY</option>
+                  <option disabled>CATEGORY</option>
                   {
                     categoryList ? categoryList.map(function(category) {
                       return (
                         <option value={category}>{category}</option>
                       )
-                    }) : function() {
-                      return <option>Category</option>
-                    }
+                    }) : null
                   }
                 </select>
               </li>
