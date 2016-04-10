@@ -5,12 +5,16 @@ import styles from './main-nav.css';
 
 class MainNav extends Component {
 
+  componentWillMount() {
+    console.log('mounted')
+  }
   render() {
 
     let {
       fetchProducts,
       mainNav,
-      categories,
+      items,
+      categoryList,
       addCategoryFilter
     } = this.props;
 
@@ -19,16 +23,16 @@ class MainNav extends Component {
         <div className="row">
           <nav>
             <ul style={{textAlign: "center"}}>
-              <li><Link to='/womens' activeStyle={{ opacity: '1', color: "white" }} onClick={() => mainNav("womens-clothes")}>Women</Link></li>
-              <li><Link to='mens' activeStyle={{ opacity: '1', color: "white" }} onClick={() => mainNav("men")}>Men</Link></li>
+              <li><Link to='/womens' activeStyle={{ opacity: '1', color: "white" }} onClick={() => mainNav("womens-clothes", items)}>Women</Link></li>
+              <li><Link to='mens' activeStyle={{ opacity: '1', color: "white" }} onClick={() => mainNav("men", items)}>Men</Link></li>
               <li>
                 <select id="category" onChange={() => addCategoryFilter(document.getElementById('category').value)}>
                   {
-                    categories.map(function(category) {
+                    categoryList ? categoryList.map(function(category) {
                       return (
                         <option value={category}>{category}</option>
                       )
-                    })
+                    }) : null
                   }
                 </select>
               </li>

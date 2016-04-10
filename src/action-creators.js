@@ -22,19 +22,22 @@ function receiveProducts(gender, json) {
   return {
     type: RECIEVE_PRODUCTS,
     gender,
-    products: json
+    products: json.items,
+    categoryList: json.categoryList
   }
 }
 
-export function mainNav(type) {
-  if (type === "men" || "womens-clothes") {
+export function mainNav(gender, items) {
+
+  if (gender === "men" || "womens-clothes") {
     return dispatch => {
-      dispatch(fetchProducts(type))
+      dispatch(fetchProducts(gender))
     }
   }
 }
 
 export function fetchProducts(gender) {
+
   return dispatch => {
     dispatch(requestProducts(gender))
     return fetch('https://fairthreads-api.herokuapp.com/products/gender/' + gender)
@@ -95,6 +98,13 @@ export function priceRangeFilter(lowestPrice, highestPrice, newPriceRange, curre
     }
   }
 }
+
+// function showCategoryList(categories) {
+//   return {
+//     type: SET_CATEGORY_LIST,
+//     categories
+//   }
+// }
 
 export function addCategoryFilter(category) {
   return {

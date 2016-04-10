@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { selectActions } from '../selectors.js';
 import { testSelector } from '../selectors.js';
+import { asMutable } from 'seamless-immutable';
 import Row from './product-row/product-row.jsx';
 import MainNav from './main-nav/main-nav.jsx';
 var logo = require("../img/fairthreads-white.png");
@@ -10,7 +11,7 @@ require("../styles/style.scss");
 class App extends Component {
 
   render() {
-    console.log('props', this.props)
+    console.log('props', this.props.listOfCategories)
     let {
       mainNav,
       loading,
@@ -25,18 +26,11 @@ class App extends Component {
       priceRangeFilter,
       priceRangeFilterValues,
       priceRange,
+      categoryList,
       addCategoryFilter
     } = this.props;
 
-    var assignCategories = function(items) {
-      var categories = [];
-      items.forEach(function(item) {
-        if(categories.indexOf(item.fairThreadsCategory) < 0 && item.fairThreadsCategory != undefined) categories.push(item.fairThreadsCategory)
-      })
-      return categories;
-    }
-
-    const categories = assignCategories(items);
+    let mutableCategoryList = categoryList.asMutable();
 
     return (
       <div className="app-container" style={{backgroundColor: "#F8F8F8"}}>
@@ -47,7 +41,7 @@ class App extends Component {
             </div>
           </div>
         </nav>
-        <MainNav fetchProducts={fetchProducts} mainNav={mainNav} categories={categories} addCategoryFilter={addCategoryFilter}/>
+        <MainNav fetchProducts={fetchProducts} mainNav={mainNav} items={items} categoryList={mutableCategoryList ? mutableCategoryList : null} addCategoryFilter={addCategoryFilter}/>
         <span className={ loading ? "spinner" : null } />
 
         { this.props.children }

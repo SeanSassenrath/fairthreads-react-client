@@ -15,6 +15,8 @@ import {
   TOGGLE_SALE_ONLY,
   SET_PRICE_RANGE_FILTER,
   REMOVE_PRICE_RANGE_FILTER,
+  SET_CATEGORY_LIST,
+  REMOVE_CATEGORY_LIST,
   SET_CATEGORY_FILTER,
   REMOVE_CATEGORY_FILTER
 } from '../constants'
@@ -23,8 +25,8 @@ const initialState = Immutable({
   products: {
     loading: false,
     showSaleOnly: false,
-    gender: 'women',
     items: [],
+    categoryList: []
   }
 });
 
@@ -33,9 +35,12 @@ function products(state = initialState.products, action) {
     case REQUEST_PRODUCTS:
       return state.set('loading', true);
     case RECIEVE_PRODUCTS:
+    console.log()
       return state
         .set('loading', false)
         .set('items', action.products)
+        .set('categoryList', action.categoryList)
+        .set('gender', action.gender)
     case LOWEST_TO_HIGHEST_PRODUCTS:
       return state
         .set('sortProducts', 'lowToHigh')

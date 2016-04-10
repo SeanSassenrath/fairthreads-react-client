@@ -54,6 +54,9 @@ export function onSale(item) {
   }
 }
 
+// export function categoryMatch(item) {
+//   if (item.fairThreadsCategory)
+// }
 // export function objectsReducerToArray(items, key) {
 //   var reducedObjectsArray = [];
 //   items.forEach(function(item) {
