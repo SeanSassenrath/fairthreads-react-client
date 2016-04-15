@@ -57,6 +57,7 @@
     "reselect": "^2.1.0",
     "resolve-url-loader": "^1.4.3",
     "seamless-immutable": "^5.1.0",
+    "semantic-ui-dropdown": "^2.1.7",
     "url-loader": "^0.5.7",
     "webpack-dev-server": "^1.14.1",
     "what-input": "^1.2.5"

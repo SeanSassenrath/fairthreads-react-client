@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
+import 'semantic-ui-dropdown/dropdown.css'
 import CSSModules from 'react-css-modules';
 import styles from './main-nav.css';
 
