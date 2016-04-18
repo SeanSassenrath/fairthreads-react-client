@@ -8,10 +8,10 @@ class Home extends Component {
       <div className="homepage-container">
         <div className="hero" styleName="hero1">
           <div className="row">
-            <div className="small-5 columns">
+            <div className="large-5 columns">
               <h1>Ethical fashion. Affordable prices.</h1>
             </div>
-            <div className="small-7 columns">
+            <div className="large-7 columns">
               <div styleName="hero-img">
               </div>
             </div>
