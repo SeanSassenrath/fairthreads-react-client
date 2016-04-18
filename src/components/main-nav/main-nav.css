@@ -1,3 +1,27 @@
+
+
+.logo {
+  margin: 0 auto;
+  padding: 1em 1.25em;
+  max-width: 200px;
+}
+
+.product-nav-container {
+  background-color: #444751;
+}
+
+.product-nav-container ul {
+  margin: .75em 1.25em;
+}
+
+.product-nav-container li {
+  list-style: none;
+  display: inline;
+  margin: 0 45px;
+  font-size: .9em;
+  text-transform: uppercase;
+}
+
 .product-nav-container a {
   color: white;
   opacity: .4;

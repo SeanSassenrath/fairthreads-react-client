@@ -1,7 +1,13 @@
 .hero1 {
-  background-image: url('../../img/hero-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 400px;
-  border: 1px solid red;
+  height: 600px;
+}
+
+.hero-img {
+  background-image: url('../../img/hero.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 600px;
 }

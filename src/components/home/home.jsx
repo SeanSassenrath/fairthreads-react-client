@@ -7,15 +7,13 @@ class Home extends Component {
     return(
       <div className="homepage-container">
         <div className="hero" styleName="hero1">
-          <h1>This is the hero</h1>
-        </div>
-        <div className="sub-hero-container">
           <div className="row">
-            <div className="small-12 medium-5 columns" style={{border: "1px solid green"}}>
-              test box 1
+            <div className="small-5 columns">
+              <h1>Ethical fashion. Affordable prices.</h1>
             </div>
-            <div className="small-12 medium-5 columns" style={{border: "1px solid green"}}>
-              test box 2
+            <div className="small-7 columns">
+              <div styleName="hero-img">
+              </div>
             </div>
           </div>
         </div>

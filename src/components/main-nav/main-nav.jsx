@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import 'semantic-ui-dropdown/dropdown.css'
 import CSSModules from 'react-css-modules';
 import styles from './main-nav.css';
+const logo = require("../../img/fairthreads-white.png");
 
 class MainNav extends Component {
 
@@ -22,23 +23,15 @@ class MainNav extends Component {
     return(
       <div id="product-nav-container" styleName="product-nav-container">
         <div className="row">
+          <div styleName="logo">
+            <img src={logo} />
+          </div>
+        </div>
+        <div className="row">
           <nav>
             <ul style={{textAlign: "center"}}>
               <li><Link to='/womens' activeStyle={{ opacity: '1', color: "white" }} onClick={() => mainNav("womens-clothes", items)}>Women</Link></li>
               <li><Link to='mens' activeStyle={{ opacity: '1', color: "white" }} onClick={() => mainNav("men", items)}>Men</Link></li>
-              <li>
-                <select id="category" onChange={() => addCategoryFilter(document.getElementById('category').value)}>
-                  <option disabled>CATEGORY</option>
-                  {
-                    categoryList ? categoryList.map(function(category) {
-                      return (
-                        <option value={category}>{category}</option>
-                      )
-                    }) : null
-                  }
-                </select>
-              </li>
-              <li>Brand</li>
             </ul>
           </nav>
         </div>
