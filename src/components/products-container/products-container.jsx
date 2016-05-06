@@ -47,7 +47,9 @@ class ProductsContainer extends Component {
               {
                 productRows.map(function(productRow ) {
                   return (
-                    <ProductRow key={rowKey++} row={productRow} />
+                    <LazyLoad height={400} offsetVertical={2000} onContentVisible={() => console.log('look ma I have been lazyloaded!')}>
+                      <ProductRow key={rowKey++} row={productRow} />
+                    </LazyLoad>
                   )
                 })
               }
