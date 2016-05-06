@@ -11,9 +11,9 @@ export default class ProductCard extends Component {
 
     return(
       <div className="small-6 large-4 columns">
-        <div className="product" style={{width: "95%", margin: "0 auto", padding: "20px 0"}}>
+        <div className="product" style={{width: "200px", margin: "0 auto", padding: "20px 0"}}>
           <a href={product.vendUrl}>
-              <div style={{width: "86%", position: "relative", margin: "0 auto", backgroundColor: 'white'}}>
+              <div style={{width: "100%", position: "relative", margin: "0 auto", backgroundColor: 'white'}}>
                 <img src={product.imageOriginal} style={{width: "100%", display: "block", margin: "0 auto", objectFit: "contain" ,height:"281px", border: "1px solid #ccc"}} />
                 <h6 style={{background: "black", opacity: ".6", color: "white", width: "100%", textAlign: "left", position: "absolute", bottom: "-3%", padding: "5px 0 5px 8px"}}>${product.salePrice ? <strike>{product.price}</strike> : product.price}</h6>
                 {

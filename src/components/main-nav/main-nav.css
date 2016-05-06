@@ -1,20 +1,19 @@
-
-
 .logo {
-  margin: 0 auto;
   padding: 1em 1.25em;
-  max-width: 200px;
+  max-width: 175px;
+  display: inline-block;
 }
 
-.product-nav-container {
+.main-nav-container {
   background-color: #333333;
 }
 
-.product-nav-container ul {
-  margin: .75em 1.25em;
+.main-nav-container ul {
+  margin: 1.05em 1.25em;
+  display: inline-block;
 }
 
-.product-nav-container li {
+.main-nav-container li {
   list-style: none;
   display: inline;
   margin: 0 45px;
@@ -22,12 +21,12 @@
   text-transform: uppercase;
 }
 
-.product-nav-container a {
+.main-nav-container a {
   color: white;
   opacity: .4;
 }
 
-.product-nav-container a:hover {
+.main-nav-container a:hover {
   color: white;
   opacity: .7;
 }

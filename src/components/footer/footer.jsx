@@ -7,7 +7,6 @@ class Footer extends Component {
   render() {
     return(
       <footer styleName="footer">
-        <h4>Footer text</h4>
       </footer>
     )
   }

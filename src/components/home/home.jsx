@@ -6,7 +6,7 @@ class Home extends Component {
   render() {
     return(
       <div className="homepage-container">
-        <div className="hero" styleName="hero1">
+        <div className="hero" styleName="hero">
           <div className="row">
             <div className="large-5 columns">
               <h1>Ethical fashion. Affordable prices.</h1>
