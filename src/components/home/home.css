@@ -9,11 +9,3 @@
   padding-top: 60px;
   padding-left: 80px;
 }
-
-.hero-img {
-  background-image: url('../../img/hero-backpack.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  /*height: 600px;*/
-}

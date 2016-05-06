@@ -28,7 +28,7 @@ class ProductsContainer extends Component {
     const productRows = makeThreeColumns(items);
 
     return(
-      <div id="products-container">
+      <div id="products-container" style={{minHeight: "700px;"}}>
         <div className="row">
           <div className="small-2 columns">
             <FilterNav
@@ -47,7 +47,7 @@ class ProductsContainer extends Component {
               {
                 productRows.map(function(productRow ) {
                   return (
-                    <LazyLoad height={400} offsetVertical={2000} onContentVisible={() => console.log('look ma I have been lazyloaded!')}>
+                    <LazyLoad height={430} offsetVertical={2000} onContentVisible={() => console.log('look ma I have been lazyloaded!')}>
                       <ProductRow key={rowKey++} row={productRow} />
                     </LazyLoad>
                   )

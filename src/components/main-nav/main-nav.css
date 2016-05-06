@@ -1,15 +1,15 @@
-.logo {
-  padding: 1em 1.25em;
-  max-width: 175px;
-  display: inline-block;
-}
-
 .main-nav-container {
   background-color: #333333;
 }
 
 .main-nav-container ul {
   margin: 1.05em 1.25em;
+  display: inline-block;
+}
+
+.logo {
+  padding: 1em 1.25em;
+  max-width: 175px;
   display: inline-block;
 }
 

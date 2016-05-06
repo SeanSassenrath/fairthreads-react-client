@@ -27,7 +27,7 @@ class MainNav extends Component {
             <div styleName="logo">
               <img src={logo} />
             </div>
-            <ul style={{textAlign: "center"}}>
+            <ul>
               <li><Link to='/womens' activeStyle={{ opacity: '1', color: "white" }} onClick={() => mainNav("womens-clothes", items)}>Women</Link></li>
               <li><Link to='mens' activeStyle={{ opacity: '1', color: "white" }} onClick={() => mainNav("men", items)}>Men</Link></li>
             </ul>
