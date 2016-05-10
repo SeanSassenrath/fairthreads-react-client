@@ -29,7 +29,7 @@ class MainNav extends Component {
             </div>
             <ul>
               <li><Link to='/womens' activeStyle={{ opacity: '1', color: "white" }} onClick={() => mainNav("womens-clothes", items)}>Women</Link></li>
-              <li><Link to='mens' activeStyle={{ opacity: '1', color: "white" }} onClick={() => mainNav("men", items)}>Men</Link></li>
+              <li><Link to='mens' activeStyle={{ opacity: '1', color: "white" }} onClick={() => mainNav("men")}>Men</Link></li>
             </ul>
           </nav>
         </div>

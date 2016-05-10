@@ -11,6 +11,16 @@ import LazyLoad from 'react-lazy-load';
 
 class ProductsContainer extends Component {
 
+  componentDidMount() {
+    let {
+      selectGender,
+      route
+    } = this.props;
+    console.log(this.props)
+    selectGender(route.path);
+    console.log('In producst conatiner CDM', this.props.route.path)
+  }
+
   render() {
     let {
       items,

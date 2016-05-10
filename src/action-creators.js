@@ -27,17 +27,30 @@ function receiveProducts(gender, json) {
   }
 }
 
-export function mainNav(gender, items) {
-
-  if (gender === "men" || "womens-clothes") {
+export function selectGender(gender) {
+  console.log("in ac with ", gender)
+  if (gender === '/womens') {
+    console.log('womens')
     return dispatch => {
-        dispatch(fetchProducts(gender))
+        dispatch(fetchProducts('womens-clothes'))
+      }
+  } else if (gender === '/mens') {
+    return dispatch => {
+        dispatch(fetchProducts('men'))
       }
   }
 }
 
-export function fetchProducts(gender) {
+export function mainNav(gender) {
+  if (gender === 'womens-clothes' || 'men') {
+    return dispatch => {
+      dispatch(fetchProducts(gender))
+    }
+  }
+}
 
+export function fetchProducts(gender) {
+  console.log('in fetch products')
   return dispatch => {
     dispatch(requestProducts(gender))
     return fetch('https://fairthreads-api.herokuapp.com/products/gender/' + gender)
