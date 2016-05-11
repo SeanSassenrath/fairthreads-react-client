@@ -2,10 +2,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 700px;
-    background-image: url('../../img/hero-backpack-w.jpg');
+    background-image: url('../../img/kowtow_hero.png');
 }
 
 .hero h1 {
   padding-top: 60px;
   padding-left: 80px;
+  text-transform: uppercase;
+  color: white;
 }

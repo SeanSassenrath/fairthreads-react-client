@@ -1,16 +1,17 @@
 .main-nav-container {
-  background-color: #333333;
+  background-color: #fff;
 }
 
 .main-nav-container ul {
   margin: 1.05em 1.25em;
-  display: inline-block;
+  text-align: center;
 }
 
 .logo {
   padding: 1em 1.25em;
-  max-width: 175px;
-  display: inline-block;
+  margin: 0 auto;
+  max-width: 200px;
+  opacity: .85;
 }
 
 .main-nav-container li {
@@ -22,11 +23,11 @@
 }
 
 .main-nav-container a {
-  color: white;
+  color: #333;
   opacity: .4;
 }
 
 .main-nav-container a:hover {
-  color: white;
+  color: #333;
   opacity: .7;
 }
