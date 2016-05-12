@@ -1,6 +1,12 @@
-var webpack = require('webpack');
-var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const cssvariables = require('postcss-css-variables');
+const customMedia = require('postcss-custom-media');
+const imports = require('postcss-import');
+const nested = require('postcss-nested');
+const colorFunction = require('postcss-color-function');
 
 module.exports = {
   devtool: 'eval',
@@ -37,9 +43,7 @@ module.exports = {
       }
     ]
   },
-  postcss: [
-    require('autoprefixer')
-  ],
+  postcss: function () { return [ autoprefixer, imports, nested, customMedia, cssvariables ] },
   plugins: [
     new HtmlWebpackPlugin({
       template: __dirname + '/src/index.tmpl.html',

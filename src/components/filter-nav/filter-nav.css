@@ -1,6 +1,17 @@
+@import "../variables.css";
+
+.filter-nav-container {
+  display: none;
+  
+  @media (--larger-than-tablet) {
+    display: block;
+  }
+}
+
 .filter-nav-container ul {
   margin: .75em 1.25em;
   padding-top: 2em;
+
 }
 
 .filter-nav-container li {
