@@ -1,13 +1,21 @@
+
 .hero {
   background-repeat: no-repeat;
   background-size: cover;
-  height: 700px;
-    background-image: url('../../img/hero-5-12-16.jpg');
-}
+  height: 600px;
+  background-image: url('../../img/hero-5-12-16.jpg');
 
-.hero h1 {
-  padding-top: 60px;
-  padding-left: 80px;
-  text-transform: uppercase;
-  color: white;
+  header {
+    text-align: right;
+  }
+
+  h1 {
+    padding-left: 80px;
+    font-size: 8em;
+    margin-right: 5%;
+    margin-top: 2%;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Archivo Narrow', sans-serif;
+  }
 }

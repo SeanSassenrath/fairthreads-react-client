@@ -8,7 +8,9 @@ class Home extends Component {
       <div className="homepage-container">
         <div className="hero" styleName="hero">
           <div className="row">
-            <h1>Ethically Fashionable</h1>
+            <header>
+              <h1>Fashion<br/>With<br/>Integrity</h1>
+            </header>
           </div>
         </div>
       </div>
