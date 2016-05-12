@@ -22,12 +22,12 @@
   text-transform: uppercase;
 }
 
-.main-nav-container a {
+.main-nav-container li a {
   color: #333;
   opacity: .4;
 }
 
-.main-nav-container a:hover {
+.main-nav-container li a:hover {
   color: #333;
   opacity: .7;
 }
