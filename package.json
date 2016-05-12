@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "webdev": "webpack-dev-server --progress",
-    "postinstall": "webpack --config ./webpack.production.config.js --progress --colors"
+    "postinstall": "node deploy"
   },
   "author": "sean.sassenrath@gmail.com",
   "license": "ISC",
