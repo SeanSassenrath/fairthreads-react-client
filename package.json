@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "engines": {
     "npm": "2.14.12"
-  }
+  },
   "description": "React / Redux client for fairthreads",
   "main": "app/index.jsx",
   "scripts": {
