@@ -2,7 +2,7 @@
   "name": "fairthreads-react-client",
   "version": "1.0.0",
   "engines": {
-    "npm": "2.14.x"
+    "node": "4.2.6"
   },
   "description": "React / Redux client for fairthreads",
   "main": "app/index.jsx",
