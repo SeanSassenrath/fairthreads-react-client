@@ -1,6 +1,9 @@
 {
   "name": "fairthreads-react-client",
   "version": "1.0.0",
+  "engines": {
+    "npm": "2.14.x"
+  },
   "description": "React / Redux client for fairthreads",
   "main": "app/index.jsx",
   "scripts": {
@@ -74,8 +77,5 @@
     "url-loader": "^0.5.7",
     "webpack-dev-server": "^1.14.1",
     "what-input": "^1.2.5"
-  },
-  "engines": {
-    "npm": "2.14.12"
   }
 }
