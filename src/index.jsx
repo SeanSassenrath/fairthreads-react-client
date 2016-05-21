@@ -12,7 +12,6 @@ import Home from './components/home/home.jsx';
 import ProductsContainer from './components/products-container/products-container.jsx'
 import 'babel-polyfill';
 import { fetchProducts } from './action-creators';
-require('./styles/style.scss');
 
 let loggerMiddleware = createLogger();
 let createStoreWithMiddleware = applyMiddleware(thunkMiddleware, loggerMiddleware)(createStore);

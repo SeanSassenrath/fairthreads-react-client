@@ -37,10 +37,6 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'file-loader?[name].[hash].[ext]'
       }
-      ,{
-        test: /\.scss$/,
-        loaders: ["style", "css?sourceMap", "sass?sourceMap"]
-      }
     ]
   },
   postcss: function () { return [ autoprefixer, imports, nested, customMedia, cssvariables ] },
