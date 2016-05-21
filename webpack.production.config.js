@@ -9,14 +9,12 @@ const nested = require('postcss-nested');
 const colorFunction = require('postcss-color-function');
 
 module.exports = {
-  devtool: 'eval',
+  devtool: 'source-map',
   entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
-    './src/index.jsx'
+    './src/index'
   ],
   output: {
-    path: __dirname + '/build',
+    path: path.join(__dirname, 'build'),
     filename: '[name].js',
     publicPath: '/build/'
   },
@@ -41,6 +39,12 @@ module.exports = {
   },
   postcss: function () { return [ autoprefixer, imports, nested, customMedia, cssvariables ] },
   plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
+      compress: {
+        warnings: false
+      }
+    })
     new HtmlWebpackPlugin({
       template: __dirname + '/src/index.tmpl.html',
       filename: './index.html'
