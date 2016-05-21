@@ -14,7 +14,7 @@
   },
   "author": "sean.sassenrath@gmail.com",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "autoprefixer": "^6.3.3",
     "babel-core": "^6.5.2",
     "babel-loader": "^6.2.3",
@@ -40,9 +40,7 @@
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.14",
-    "webpack-dev-server": "^1.14.1"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^1.14.1",
     "body-parser": "^1.15.0",
     "es6-promise": "^3.1.2",
     "express": "^4.13.4",
