@@ -11,12 +11,11 @@ const colorFunction = require('postcss-color-function');
 module.exports = {
   devtool: 'eval',
   entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
-    './src/index.jsx'
+    'webpack-hot-middleware/client',
+    './src/index'
   ],
   output: {
-    path: __dirname + '/build',
+    path: path.join(__dirname, 'build'),
     filename: '[name].js',
     publicPath: '/build/'
   },
