@@ -1,20 +1,15 @@
-const Server = require('./server.js');
-const port = (process.env.PORT || 8080);
-const app = Server.app();
+var express = require('express');
+var path = require('path');
 
-if (process.env.NODE_ENV !== 'production') {
-  const webpack = require('webpack');
-  const webpackDevMiddleware = require('webpack-dev-middleware');
-  const webpackHotMiddleware = require('webpack-hot-middleware');
-  const config = require('./webpack.config.js');
-  const complier = webpack(config);
+module.exports = {
+  app: function() {
+    const app = express();
+    const indexPath = path.join(__dirname, './build/index.html');
+    const publicPath = express.static(path.join(__dirname, './build'));
 
-  app.use(webpackHotMiddleware(complier))
-  app.use(webpackDevMiddleware(complier, {
-    noInfo: true,
-    publicPath: config.output.publicPath
-  }))
+    app.use('/build', publicPath);
+    app.get('/', function(_, res) { res.sendFile(indexPath) });
 
-  app.listen(port)
-  console.log(`Dev server running on ${port}`)
-}
+    return app;
+  }
+};
