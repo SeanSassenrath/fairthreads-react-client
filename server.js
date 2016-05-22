@@ -16,7 +16,7 @@ if (process.env.NODE_ENV !== 'production') {
     noInfo: true,
     publicPath: config.output.publicPath
   }))
-
-  app.listen(port)
-  console.log(`Dev server running on ${port}`)
 }
+
+app.listen(port);
+console.log(`Dev server running on ${port}`);
