@@ -1,6 +1,6 @@
-@import "~foundation-sites/scss/foundation.scss";
+<!-- @import "~foundation-sites/scss/foundation.scss";
 // @import "./nav.scss";
-@include foundation-everything;
+@include foundation-everything; -->
 
 $desktop-width: 1023px;
 
