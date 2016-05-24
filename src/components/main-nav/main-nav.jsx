@@ -21,15 +21,17 @@ class MainNav extends Component {
     } = this.props;
 
     return(
-      <div id="main-nav-container" styleName="main-nav-container">
-        <div className="row">
+      <div id="main-nav" styleName="main-nav">
+        <div className="wrapper" styleName="wrapper">
           <nav>
-            <div styleName="logo">
-              <Link to='/'><img src={logo} /></Link>
-            </div>
             <ul>
               <li><Link to='/womens' activeStyle={{ opacity: '1', color: "#333" }} onClick={() => mainNav("womens-clothes", items)}>Women</Link></li>
               <li><Link to='mens' activeStyle={{ opacity: '1', color: "#333" }} onClick={() => mainNav("men")}>Men</Link></li>
+              <li>
+                <Link to='/'><img src={logo} styleName="logo" /></Link>
+              </li>
+              <li>About</li>
+              <li>Connect</li>
             </ul>
           </nav>
         </div>

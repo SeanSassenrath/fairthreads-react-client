@@ -9,8 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "webdev": "webpack-dev-server --progress",
-    "postinstall": "node deploy"
+    "build": "webpack --config ./webpack.prod.config.js --progress --colors"
   },
   "author": "sean.sassenrath@gmail.com",
   "license": "ISC",

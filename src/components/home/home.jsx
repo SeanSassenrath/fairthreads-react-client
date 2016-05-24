@@ -5,12 +5,10 @@ import styles from './home.css';
 class Home extends Component {
   render() {
     return(
-      <div className="homepage-container">
+      <div className="homepage-container" styleName="homepage">
         <div className="hero" styleName="hero">
-          <div className="row">
-            <header>
-              <h1>Fashion<br/>With<br/>Integrity</h1>
-            </header>
+          <div className="wrapper" styleName="wrapper">
+              <h1>Fashion with integrity</h1>
           </div>
         </div>
       </div>
