@@ -2,23 +2,29 @@
 
 .filter-nav-container {
   display: none;
-
   @media (--larger-than-tablet) {
     display: block;
   }
-}
 
-.filter-nav-container ul {
-  margin: .75em 1.25em;
-  padding: 2em 0 0 0;
+  nav {
+    display: flex;
+    justify-content: space-between;
 
-}
+    ul {
+      display: inline-block;
+      padding-left: 20px;
 
-.filter-nav-container li {
-  list-style: none;
-  margin-bottom: 25px;
-  text-align: left;
-  font-size: .9em;
-  text-transform: uppercase;
-  cursor: pointer;
+      li {
+        list-style: none;
+        margin-bottom: 25px;
+        text-align: left;
+        font-size: .9em;
+        cursor: pointer;
+        display: inline;
+      }
+      li:nth-child(n+2) {
+        padding-left: 40px;
+      }
+    }
+  }
 }

@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { asMutable } from "seamless-immutable";
+import Immutable from "seamless-immutable";
 import CSSModules from 'react-css-modules';
 import ProductCard from '../product-card/product-card.jsx';
 import FilterNav from '../filter-nav/filter-nav.jsx'
@@ -36,13 +36,13 @@ class ProductsContainer extends Component {
       sortProducts
     } = this.props;
 
-    let mutableItems = items.asMutable();
+    let mutableItems = Immutable(items).asMutable();
     let productKey = 0;
 
     return(
       <div id="products-container" styleName="products-container">
         <div styleName="wrapper">
-          <div styleName="filter-nav">
+          <div>
             <FilterNav
               lowToHighProducts={lowToHighProducts}
               highToLowProducts={highToLowProducts}
@@ -55,7 +55,7 @@ class ProductsContainer extends Component {
               />
           </div>
           <div>
-            <div style={{paddingTop: "25px", display: 'flex', flexWrap: 'wrap'}}>
+            <div styleName="products" style={{paddingTop: "25px"}}>
               {
                 mutableItems.map(function(item) {
                   return <ProductCard key={productKey++} product={item}/>
