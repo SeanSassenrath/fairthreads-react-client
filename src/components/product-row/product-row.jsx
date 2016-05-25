@@ -7,7 +7,7 @@ export default class ProductRow extends Component {
   render() {
     let productKey = 0;
     let {
-      row
+      products
     } = this.props;
 
     // console.log("Row Props", row);

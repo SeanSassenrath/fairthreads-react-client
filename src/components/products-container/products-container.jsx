@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import { asMutable } from "seamless-immutable";
 import CSSModules from 'react-css-modules';
-import ProductRow from '../product-row/product-row.jsx';
 import ProductCard from '../product-card/product-card.jsx';
 import FilterNav from '../filter-nav/filter-nav.jsx'
 import { connect } from 'react-redux';
@@ -36,13 +36,13 @@ class ProductsContainer extends Component {
       sortProducts
     } = this.props;
 
-    let rowKey = 0;
-    const productRows = makeThreeColumns(items);
+    let mutableItems = items.asMutable();
+    let productKey = 0;
 
     return(
       <div id="products-container" styleName="products-container">
         <div styleName="wrapper">
-          <div>
+          <div styleName="filter-nav">
             <FilterNav
               lowToHighProducts={lowToHighProducts}
               highToLowProducts={highToLowProducts}
@@ -55,14 +55,10 @@ class ProductsContainer extends Component {
               />
           </div>
           <div>
-            <div style={{paddingTop: "25px"}}>
+            <div style={{paddingTop: "25px", display: 'flex', flexWrap: 'wrap'}}>
               {
-                productRows.map(function(productRow ) {
-                  return (
-                    <LazyLoad height={430} offsetVertical={2000} onContentVisible={() => console.log('look ma I have been lazyloaded!')}>
-                      <ProductRow key={rowKey++} row={productRow} />
-                    </LazyLoad>
-                  )
+                mutableItems.map(function(item) {
+                  return <ProductCard key={productKey++} product={item}/>
                 })
               }
             </div>
