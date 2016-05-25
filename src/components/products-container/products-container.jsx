@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import CSSModules from 'react-css-modules';
 import ProductRow from '../product-row/product-row.jsx';
 import ProductCard from '../product-card/product-card.jsx';
 import FilterNav from '../filter-nav/filter-nav.jsx'
@@ -7,6 +8,7 @@ import { selectActions } from '../../selectors.js';
 import { testSelector } from '../../selectors.js';
 import { makeThreeColumns } from '../../helpers.js';
 import LazyLoad from 'react-lazy-load';
+import styles from './products-container.css';
 
 
 class ProductsContainer extends Component {
@@ -38,9 +40,9 @@ class ProductsContainer extends Component {
     const productRows = makeThreeColumns(items);
 
     return(
-      <div id="products-container" style={{minHeight: "700px;"}}>
-        <div className="row">
-          <div className="small-2 columns">
+      <div id="products-container" styleName="products-container">
+        <div styleName="wrapper">
+          <div>
             <FilterNav
               lowToHighProducts={lowToHighProducts}
               highToLowProducts={highToLowProducts}
@@ -52,7 +54,7 @@ class ProductsContainer extends Component {
               sortProducts={sortProducts}
               />
           </div>
-          <div className="small-10 columns">
+          <div>
             <div style={{paddingTop: "25px"}}>
               {
                 productRows.map(function(productRow ) {
@@ -71,4 +73,6 @@ class ProductsContainer extends Component {
   }
 }
 
-export default connect(testSelector, selectActions)(ProductsContainer);
+const StyledProductsContainer = CSSModules(ProductsContainer, styles)
+
+export default connect(testSelector, selectActions)(StyledProductsContainer);

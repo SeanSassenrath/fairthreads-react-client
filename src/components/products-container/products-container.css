@@ -1,0 +1,12 @@
+.products-container {
+  min-height: 700px;
+  padding-top: 84px;
+
+  .wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    border: 1px solid red;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
