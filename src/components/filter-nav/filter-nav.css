@@ -10,6 +10,14 @@
     display: flex;
     justify-content: space-between;
 
+    .styles {
+      padding-left: 20px;
+    }
+
+    .price {
+      padding-right: 20px;
+    }
+
     ul {
       display: inline-block;
       padding-left: 20px;

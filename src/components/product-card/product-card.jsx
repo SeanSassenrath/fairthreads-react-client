@@ -12,18 +12,18 @@ class ProductCard extends Component {
     // console.log('product', product.name);
 
     return(
-      <div className="product" style={{width: "250px", margin: "0 auto", padding: "20px 0"}}>
+      <div styleName="product">
         <a href={product.vendUrl}>
-            <div style={{width: "100%", position: "relative", margin: "0 auto", backgroundColor: 'white'}}>
-              <img src={product.imageOriginal} style={{width: "100%", display: "block", margin: "0 auto", objectFit: "contain", height:"320px"}} />
+            <div styleName="img-container">
+              <img src={product.imageOriginal} />
             </div>
-            <div style={{paddingTop: "15px"}}>
-              <h5 style={{textAlign: "center", color: "#2d2d34"}}>{product.name}</h5>
-              <div style={{display: "flex", margin: "0 auto", justifyContent: "space-around", width: "40%"}}>
-                <h6 style={{color: "#2d2d34", padding: "5px 0 5px 8px", fontSize: "14px"}}>${product.salePrice ? <strike>{product.price}</strike> : product.price}</h6>
+            <div styleName="description">
+              <h5>{product.name}</h5>
+              <div>
+                <h6 styleName="reg-price">${product.salePrice ? <strike>{product.price}</strike> : product.price}</h6>
                 {
                   product.salePrice ?
-                    <h6 style={{color: "#2d2d34", padding: "5px 8px 5px 0", fontSize: "14px"}}>${product.salePrice}</h6>
+                    <h6 styleName="sale-price">${product.salePrice}</h6>
                   : null
                 }
               </div>

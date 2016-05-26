@@ -1,0 +1,47 @@
+.product {
+  width: 280px;
+  margin: 0 auto;
+  padding: 20px 0;
+
+  .img-container {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    background-color: white;
+
+    img {
+      width: 100%;
+      display: block;
+      margin: 0 auto;
+      object-fit: contain;
+      height: 358px;
+    }
+  }
+
+  .description {
+    padding-top: 15px;
+
+    h5 {
+      text-align: center;
+      color: #2d2d34;
+    }
+    div {
+      display: flex;
+      margin: 0 auto;
+      justify-content: space-around;
+      width: 40%;
+
+      .reg-price {
+        color: #2d2d34;
+        padding: 5px 0 5px 8px;
+        font-size: 14px;
+      }
+
+      .sale-price {
+        color: #2d2d34;
+        padding: 5px 8px 5px 0;
+        font-size: 14px;
+      }
+    }
+  }
+}
