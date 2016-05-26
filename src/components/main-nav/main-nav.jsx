@@ -30,8 +30,8 @@ class MainNav extends Component {
               <li>
                 <Link to='/'><img src={logo} styleName="logo" /></Link>
               </li>
-              <li>About</li>
-              <li>Connect</li>
+              <li><Link to='about' activeStyle={{ opacity: '1', color: "#333" }} onClick={() => mainNav("about")}>About</Link></li>
+              <li><Link to='connect' activeStyle={{ opacity: '1', color: "#333" }} onClick={() => mainNav("connect")}>Connect</Link></li>
             </ul>
           </nav>
         </div>

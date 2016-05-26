@@ -55,7 +55,7 @@ class ProductsContainer extends Component {
               />
           </div>
           <div>
-            <div styleName="products" style={{paddingTop: "25px"}}>
+            <div styleName="products">
               {
                 mutableItems.map(function(item) {
                   return <ProductCard key={productKey++} product={item}/>
