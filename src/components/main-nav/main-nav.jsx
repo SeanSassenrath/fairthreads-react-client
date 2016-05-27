@@ -25,7 +25,16 @@ class MainNav extends Component {
         <div className="wrapper" styleName="wrapper">
           <nav>
             <ul>
-              <li><Link to='/womens' activeStyle={{ opacity: '1', color: "#333" }} onClick={() => mainNav("womens-clothes", items)}>Women</Link></li>
+              <li>
+                <div styleName="dropdown">
+                  <Link to='/womens' activeStyle={{ opacity: '1', color: "#333" }} onClick={() => mainNav("womens-clothes", items)}>Women</Link>
+                  <div styleName="dropdown-content">
+                    <Link to='/womens' activeStyle={{ opacity: '1', color: "#333" }} onClick={() => mainNav("womens-clothes", items)}>Tops</Link>
+                    <Link to='/womens' activeStyle={{ opacity: '1', color: "#333" }} onClick={() => mainNav("womens-clothes", items)}>Bottoms</Link>
+                    <Link to='/womens' activeStyle={{ opacity: '1', color: "#333" }} onClick={() => mainNav("womens-clothes", items)}>Dresses</Link>
+                  </div>
+                </div>
+              </li>
               <li><Link to='mens' activeStyle={{ opacity: '1', color: "#333" }} onClick={() => mainNav("men")}>Men</Link></li>
               <li>
                 <Link to='/'><img src={logo} styleName="logo" /></Link>
