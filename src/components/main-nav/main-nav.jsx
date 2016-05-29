@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
+import $ from 'jquery';
 import 'semantic-ui-dropdown/dropdown.css'
 import CSSModules from 'react-css-modules';
 import styles from './main-nav.css';
@@ -7,9 +8,6 @@ const logo = require("../../img/fairthreads-logo.png");
 
 class MainNav extends Component {
 
-  componentDidUpdate() {
-    console.log('Updated')
-  }
   render() {
 
     let {
@@ -27,20 +25,45 @@ class MainNav extends Component {
             <ul>
               <li>
                 <div styleName="dropdown">
-                  <Link to='/womens' activeStyle={{ opacity: '1', color: "#333" }} onClick={() => mainNav("womens-clothes", items)}>Women</Link>
-                  <div styleName="dropdown-content">
-                    <Link to='/womens' activeStyle={{ opacity: '1', color: "#333" }} onClick={() => mainNav("womens-clothes", items)}>Tops</Link>
-                    <Link to='/womens' activeStyle={{ opacity: '1', color: "#333" }} onClick={() => mainNav("womens-clothes", items)}>Bottoms</Link>
-                    <Link to='/womens' activeStyle={{ opacity: '1', color: "#333" }} onClick={() => mainNav("womens-clothes", items)}>Dresses</Link>
+                  <Link to='/womens' activeStyle={{ opacity: '1', color: "#333" }} styleName="dropdown-action" onClick={() => mainNav("womens-clothes")}>Women</Link>
+                  <div id="womens-dropdown" styleName="dropdown-content">
+                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Tops</Link>
+                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Bottoms</Link>
+                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Dresses</Link>
+                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Shoes</Link>
+                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Underware</Link>
                   </div>
                 </div>
               </li>
-              <li><Link to='mens' activeStyle={{ opacity: '1', color: "#333" }} onClick={() => mainNav("men")}>Men</Link></li>
+              <li>
+                <div styleName="dropdown">
+                  <Link to='/mens' activeStyle={{ opacity: '1', color: "#333" }} styleName="dropdown-action" onClick={() => mainNav("men")}>Men</Link>
+                  <div id="mens-dropdown" styleName="dropdown-content">
+                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Tops</Link>
+                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Bottoms</Link>
+                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Shoes</Link>
+                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Underware</Link>
+                  </div>
+                </div>
+              </li>
               <li>
                 <Link to='/'><img src={logo} styleName="logo" /></Link>
               </li>
-              <li><Link to='about' activeStyle={{ opacity: '1', color: "#333" }} onClick={() => mainNav("about")}>About</Link></li>
-              <li><Link to='connect' activeStyle={{ opacity: '1', color: "#333" }} onClick={() => mainNav("connect")}>Connect</Link></li>
+              <li>
+                <Link to='about' activeStyle={{ opacity: '1', color: "#333" }} onClick={() => mainNav("about")}>About</Link>
+              </li>
+              <li>
+                <div styleName="dropdown">
+                  <Link to='/connect' activeStyle={{ opacity: '1', color: "#333" }} styleName="dropdown-action" onClick={() => mainNav("men")}>Connect</Link>
+                  <div id="connect-dropdown" styleName="dropdown-content">
+                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Message</Link>
+                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Instagram</Link>
+                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Facebook</Link>
+                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Snapchat</Link>
+                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Blog</Link>
+                  </div>
+                </div>
+              </li>
             </ul>
           </nav>
         </div>

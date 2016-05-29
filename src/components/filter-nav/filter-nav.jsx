@@ -6,7 +6,7 @@ import { stickyNav } from '../../helpers.js';
 class FilterNav extends Component {
 
   componentDidMount() {
-    stickyNav('#product-filter-container', 28)
+    stickyNav('#product-filter', 28)
   }
 
   render() {
@@ -25,20 +25,20 @@ class FilterNav extends Component {
     console.log('sortProducts', sortProducts)
 
     return(
-      <div id="product-filter-container" styleName="filter-nav-container">
+      <div id="product-filter" styleName="filter-nav-container">
         <nav>
           <div styleName="styles">
             <ul>
-              <li>Slim</li>
-              <li>Straight</li>
-              <li>Classic</li>
+              <li><span>Slim</span></li>
+              <li><span>Straight</span></li>
+              <li><span>Classic</span></li>
             </ul>
           </div>
           <div styleName="price">
             <ul>
-              <li onClick={() => toggleSaleOnly()}><span className={showSaleOnly ? "filter-nav-active" : null}>Sale</span></li>
-              <li><span className={sortProducts === "lowToHigh" ? "filter-nav-active" : null} onClick={() => lowToHighProducts()}>Lowest</span></li>
-              <li><span className={sortProducts === "highToLow" ? "filter-nav-active" : null} onClick={() => highToLowProducts()}>Highest</span></li>
+              <li onClick={() => toggleSaleOnly()}><span styleName={showSaleOnly ? "filter-active" : null}>Sale</span></li>
+              <li><span styleName={sortProducts === "lowToHigh" ? "filter-active" : null} onClick={() => lowToHighProducts()}>Lowest</span></li>
+              <li><span styleName={sortProducts === "highToLow" ? "filter-active" : null} onClick={() => highToLowProducts()}>Highest</span></li>
             </ul>
           </div>
         </nav>

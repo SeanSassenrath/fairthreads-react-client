@@ -25,17 +25,20 @@
         font-size: .9em;
         cursor: pointer;
         display: inline;
-        opacity: .4;
+        span {
+          opacity: .4;
+          position: relative;
+          &:hover {
+            opacity: .8;
+          }
+        }
+        .filter-active {
+          color: red;
+        }
       }
       li:nth-child(n+2) {
         padding-left: 40px;
       }
     }
   }
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
 }
