@@ -12,7 +12,7 @@ class ProductCard extends Component {
     // console.log('product', product.name);
 
     return(
-      <div id={product._id} styleName="product">
+      <div styleName="product">
         <a href={product.vendUrl}>
             <div styleName="img-container">
               <img src={product.imageOriginal} style={{objectFit: product.objectFit}} />
