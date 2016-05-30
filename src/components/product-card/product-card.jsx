@@ -15,7 +15,7 @@ class ProductCard extends Component {
       <div styleName="product">
         <a href={product.vendUrl}>
             <div styleName="img-container">
-              <img src={product.imageOriginal} />
+              <img src={product.imageOriginal} style={{objectFit: product.objectFit}} />
             </div>
             <div styleName="description">
               <h5>{product.name}</h5>
