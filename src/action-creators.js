@@ -11,7 +11,7 @@ import {
   REMOVE_CATEGORY_FILTER,
  } from './constants';
 
-function requestProducts(gender) {
+function requestProducts(gender, category) {
   return {
     type: REQUEST_PRODUCTS,
     gender
@@ -19,11 +19,12 @@ function requestProducts(gender) {
 }
 
 function receiveProducts(gender, json) {
+  console.log('json', json)
   return {
     type: RECIEVE_PRODUCTS,
     gender,
     products: json.items,
-    categoryList: json.categoryList
+    // categoryList: json.categoryList
   }
 }
 
@@ -41,19 +42,19 @@ export function selectGender(gender) {
   }
 }
 
-export function mainNav(gender) {
+export function mainNav(gender, category) {
   if (gender === 'womens-clothes' || 'men') {
     return dispatch => {
-      dispatch(fetchProducts(gender))
+      dispatch(fetchProducts(gender, category))
     }
   }
 }
 
-export function fetchProducts(gender) {
+export function fetchProducts(gender, category) {
   console.log('in fetch products')
   return dispatch => {
-    dispatch(requestProducts(gender))
-    return fetch('https://fairthreads-api.herokuapp.com/products/gender/' + gender)
+    dispatch(requestProducts(gender, category))
+    return fetch('https://fairthreads-api.herokuapp.com/products/gender/' + gender + '/category/' + category)
     .then(req => req.json())
     .then(json => dispatch(receiveProducts(gender, json)))
   }
