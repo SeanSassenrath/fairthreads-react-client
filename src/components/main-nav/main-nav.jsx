@@ -13,9 +13,6 @@ class MainNav extends Component {
     let {
       fetchProducts,
       mainNav,
-      items,
-      categoryList,
-      addCategoryFilter
     } = this.props;
 
     return(
@@ -39,10 +36,10 @@ class MainNav extends Component {
                 <div styleName="dropdown">
                   <Link to='/mens' activeStyle={{ opacity: '1', color: "#333" }} styleName="dropdown-action" onClick={() => mainNav("men")}>Men</Link>
                   <div id="mens-dropdown" styleName="dropdown-content">
-                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Tops</Link>
-                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Bottoms</Link>
-                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Shoes</Link>
-                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Underware</Link>
+                    <Link to='/womens' onClick={() => mainNav("womens-clothes")}>Tops</Link>
+                    <Link to='/womens' onClick={() => mainNav("womens-clothes")}>Bottoms</Link>
+                    <Link to='/womens' onClick={() => mainNav("womens-clothes")}>Shoes</Link>
+                    <Link to='/womens' onClick={() => mainNav("womens-clothes")}>Underware</Link>
                   </div>
                 </div>
               </li>

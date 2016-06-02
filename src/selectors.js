@@ -11,24 +11,9 @@ const sortProductsSelector = createSelector(productsSelector, get('sortProducts'
 const loadingSelector = createSelector(productsSelector, get('loading'));
 const saleSelector = createSelector(productsSelector, get('showSaleOnly'));
 const filterPriceSelector = createSelector(productsSelector, get('priceRangeFilterValues'));
-const categoryListSelector = createSelector(productsSelector, get('categoryList'));
-const categoryFilterSelector = createSelector(productsSelector, get('categoryFilter'));
-
-const itemsCategoryFilterSelector = createSelector(
-  categoryFilterSelector, itemsSelector, (category, items) => {
-    if(category) {
-      return items.filter(function(item) {
-        if(item.fairThreadsCategory === category) {
-          return items
-        }
-      })
-    }
-    return items;
-  }
-)
 
 const itemsSortSelector = createSelector(
-  sortProductsSelector, itemsCategoryFilterSelector, (sortProducts, items) => {
+  sortProductsSelector, itemsSelector, (sortProducts, items) => {
     if (sortProducts === "highToLow") {
       return items.asMutable().sort(dynamicSortHigh('price'))
     } else if (sortProducts === "lowToHigh") {
@@ -60,24 +45,18 @@ export const testSelector = createSelector(
   saleSelector,
   sortProductsSelector,
   genderSelector,
-  categoryListSelector,
-  categoryFilterSelector,
   (
   items,
   loading,
   showSaleOnly,
   sortProducts,
-  gender,
-  categoryList,
-  category
+  gender
   ) => ({
     items,
     loading,
     showSaleOnly,
     sortProducts,
-    gender,
-    categoryList,
-    category
+    gender
   })
 );
 export const selectActions = dispatch => bindActionCreators(actionCreators, dispatch)

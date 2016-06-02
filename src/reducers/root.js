@@ -1,9 +1,3 @@
-// state = {
-//   loading: false,
-//   gender: women, men
-//   filter: category, price, sale,
-//   products: []
-// }
 import { combineReducers } from 'redux';
 import { routerReducer } from 'redux-seamless-immutable';
 import Immutable from "seamless-immutable";
@@ -15,10 +9,6 @@ import {
   TOGGLE_SALE_ONLY,
   SET_PRICE_RANGE_FILTER,
   REMOVE_PRICE_RANGE_FILTER,
-  SET_CATEGORY_LIST,
-  REMOVE_CATEGORY_LIST,
-  SET_CATEGORY_FILTER,
-  REMOVE_CATEGORY_FILTER
 } from '../constants'
 
 const initialState = Immutable({
@@ -26,7 +16,6 @@ const initialState = Immutable({
     loading: false,
     showSaleOnly: false,
     items: [],
-    categoryList: []
   }
 });
 
@@ -35,7 +24,6 @@ function products(state = initialState.products, action) {
     case REQUEST_PRODUCTS:
       return state
         .set('loading', true)
-        .without('categoryFilter')
     case RECIEVE_PRODUCTS:
     console.log()
       return state
@@ -64,9 +52,6 @@ function products(state = initialState.products, action) {
       return state
         .set('priceRange', null)
         .set('priceRangeFilterValues', {})
-    case SET_CATEGORY_FILTER:
-      return state
-        .set('categoryFilter', action.category)
     default:
       return state;
   }

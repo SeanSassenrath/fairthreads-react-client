@@ -7,8 +7,6 @@ import {
   TOGGLE_SALE_ONLY,
   SET_PRICE_RANGE_FILTER,
   REMOVE_PRICE_RANGE_FILTER,
-  SET_CATEGORY_FILTER,
-  REMOVE_CATEGORY_FILTER,
  } from './constants';
 
 function requestProducts(gender, category) {
@@ -112,17 +110,3 @@ export function priceRangeFilter(lowestPrice, highestPrice, newPriceRange, curre
     }
   }
 }
-
-export function addCategoryFilter(category) {
-  return {
-    type: SET_CATEGORY_FILTER,
-    category
-  }
-}
-
-// function removeCategoryFilter() {
-//   console.log('In remove category filter')
-//   return {
-//     type: REMOVE_CATEGORY_FILTER,
-//   }
-// }
