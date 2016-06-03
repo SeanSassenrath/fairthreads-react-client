@@ -37,7 +37,7 @@ class ProductsContainer extends Component {
     } = this.props;
 
     let mutableItems = Immutable(items).asMutable();
-    let productKey = 0;
+    let key = 0;
 
     return(
       <div id="products-container" styleName="products-container">
@@ -58,7 +58,11 @@ class ProductsContainer extends Component {
             <div styleName="products">
               {
                 mutableItems.map(function(item) {
-                  return <ProductCard key={productKey++} product={item}/>
+                  return (
+                    <LazyLoad key={key++} offset={1000}>
+                      <ProductCard product={item}/>
+                    </LazyLoad>
+                  )
                 })
               }
             </div>
