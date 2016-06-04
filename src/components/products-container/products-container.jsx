@@ -18,9 +18,8 @@ class ProductsContainer extends Component {
       selectGender,
       route
     } = this.props;
-    console.log(this.props)
-    selectGender(route.path);
-    console.log('In producst conatiner CDM', this.props.route.path)
+    var pathArray = this.props.route.path.split("/");
+    selectGender(pathArray[1], pathArray[2]);
   }
 
   render() {

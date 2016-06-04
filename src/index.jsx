@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, hashHistory, IndexRoute } from 'react-router';
+import { Router, Route, browserHistory, hashHistory, IndexRoute } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux'
 import { Provider, connect } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
@@ -25,7 +25,11 @@ render(
       <Route path="/" component={ App }>
         <IndexRoute component={ Home } />
         <Route path="/mens" component={ ProductsContainer } />
-        <Route path="/womens" component={ ProductsContainer } />
+        <Route path="/womens/tops" component={ ProductsContainer } />
+        <Route path="/womens/bottoms" component={ ProductsContainer } />
+        <Route path="/womens/dresses" component={ ProductsContainer } />
+        <Route path="/womens/shoes" component={ ProductsContainer } />
+        <Route path="/womens/underwear" component={ ProductsContainer } />
         <Route path="/about-us" component={ ProductsContainer } />
       </Route>
     </Router>

@@ -26,16 +26,16 @@ function receiveProducts(gender, json) {
   }
 }
 
-export function selectGender(gender) {
+export function selectGender(gender, category) {
   console.log("in ac with ", gender)
-  if (gender === '/womens') {
+  if (gender === 'womens') {
     console.log('womens')
     return dispatch => {
-        dispatch(fetchProducts('womens-clothes'))
+        dispatch(fetchProducts('womens-clothes', category))
       }
-  } else if (gender === '/mens') {
+  } else if (gender === 'mens') {
     return dispatch => {
-        dispatch(fetchProducts('men'))
+        dispatch(fetchProducts('men', category))
       }
   }
 }
