@@ -17,7 +17,7 @@ let loggerMiddleware = createLogger();
 let createStoreWithMiddleware = applyMiddleware(thunkMiddleware, loggerMiddleware)(createStore);
 let store = createStoreWithMiddleware(rootReducer)
 
-const history = syncHistoryWithStore(hashHistory, store);
+const history = syncHistoryWithStore(browserHistory, store);
 
 render(
   <Provider store = { store }>
