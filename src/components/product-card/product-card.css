@@ -19,10 +19,13 @@
     .description {
       padding-top: 15px;
       font-family: 'Open Sans', sans-serif;
+      .brand {
+        opacity: .4;
+      }
       h5 {
         text-align: center;
         color: #2d2d34;
-        margin: 0 0 10px 0;
+        margin: 0 0 5px 0;
         font-weight: 400;
         opacity: .9;
       }

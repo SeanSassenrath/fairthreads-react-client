@@ -19,7 +19,7 @@ class ProductCard extends Component {
             </div>
             <div styleName="description">
               <h5>{product.name}</h5>
-              <h5>{product.brand}</h5>
+              <h5 styleName="brand">{product.brand}</h5>
               <div>
                 <h6 styleName="reg-price">${product.salePrice ? <strike>{product.price}</strike> : product.price}</h6>
                 {
