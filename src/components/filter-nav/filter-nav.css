@@ -28,12 +28,28 @@
         span {
           opacity: .4;
           position: relative;
+          padding: 3px 8px 3px 30px;
           &:hover {
-            opacity: .8;
+            opacity: .6;
           }
         }
         .filter-active {
-          color: red;
+          border-radius: 3px;
+          font-weight: 300;
+          color: rgb(107, 107, 107);
+          background-color: rgb(234, 234, 234);
+          opacity: 1;
+          &:before {
+            content: "";
+              background-image: url(/build/a48f089646cdd0a780e758794cd80602.png);
+              height: 20px;
+              background-size: 13px;
+              width: 20px;
+              position: absolute;
+              top: 6px;
+              left: 9px;
+              background-repeat: no-repeat;
+          }
         }
       }
       li:nth-child(n+2) {
