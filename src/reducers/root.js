@@ -25,18 +25,27 @@ function products(state = initialState.products, action) {
       return state
         .set('loading', true)
     case RECIEVE_PRODUCTS:
-    console.log()
       return state
         .set('loading', false)
         .set('items', action.products)
         .set('categoryList', action.categoryList)
         .set('gender', action.gender)
     case LOWEST_TO_HIGHEST_PRODUCTS:
-      return state
-        .set('sortProducts', 'lowToHigh')
+      if(state.sortProducts != 'lowToHigh') {
+        return state
+          .set('sortProducts', 'lowToHigh')
+      } else {
+        return state
+          .set('sortProducts', null)
+      }
     case HIGHEST_TO_LOWEST_PRODUCTS:
+    if(state.sortProducts != 'highToLow') {
       return state
         .set('sortProducts', 'highToLow')
+    } else {
+      return state
+        .set('sortProducts', null)
+    }
     case TOGGLE_SALE_ONLY:
       return state
         .set('showSaleOnly', !state.showSaleOnly)

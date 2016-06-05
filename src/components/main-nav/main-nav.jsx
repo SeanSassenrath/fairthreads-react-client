@@ -28,7 +28,8 @@ class MainNav extends Component {
                     <Link to='/womens/bottoms' onClick={() => mainNav("womens-clothes", "bottoms")}>Bottoms</Link>
                     <Link to='/womens/dresses' onClick={() => mainNav("womens-clothes", "dresses")}>Dresses</Link>
                     <Link to='/womens/shoes' onClick={() => mainNav("womens-clothes", "shoes")}>Shoes</Link>
-                    <Link to='/womens/underwear' onClick={() => mainNav("womens-clothes", "underwear")}>Underware</Link>
+                    <Link to='/womens/underwear' onClick={() => mainNav("womens-clothes", "underwear")}>Athleisure</Link>
+                    <Link to='/womens/underwear' onClick={() => mainNav("womens-clothes", "underwear")}>Underwear</Link>
                   </div>
                 </div>
               </li>
@@ -39,6 +40,7 @@ class MainNav extends Component {
                     <Link to='/womens' onClick={() => mainNav("womens-clothes")}>Tops</Link>
                     <Link to='/womens' onClick={() => mainNav("womens-clothes")}>Bottoms</Link>
                     <Link to='/womens' onClick={() => mainNav("womens-clothes")}>Shoes</Link>
+                    <Link to='/womens' onClick={() => mainNav("womens-clothes")}>Active</Link>
                     <Link to='/womens' onClick={() => mainNav("womens-clothes")}>Underware</Link>
                   </div>
                 </div>

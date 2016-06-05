@@ -97,16 +97,14 @@ function removePriceRangeFilter() {
   }
 }
 
-export function priceRangeFilter(lowestPrice, highestPrice, newPriceRange, currentPriceRange) {
-  if(currentPriceRange === newPriceRange) {
-    console.log("should remove pricingFilter")
-    return dispatch => {
-      dispatch(removePriceRangeFilter())
-    }
-  } else {
-    console.log("should set pricingFilter")
-    return dispatch => {
-      dispatch(setPriceRangeFilter(lowestPrice, highestPrice, newPriceRange))
-    }
-  }
-}
+// export function priceRangeFilter(lowestPrice, highestPrice, newPriceRange, currentPriceRange) {
+//   if(currentPriceRange === newPriceRange) {
+//     return dispatch => {
+//       dispatch(removePriceRangeFilter())
+//     }
+//   } else {
+//     return dispatch => {
+//       dispatch(setPriceRangeFilter(lowestPrice, highestPrice, newPriceRange))
+//     }
+//   }
+// }
