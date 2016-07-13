@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import $ from 'jquery';
-import 'semantic-ui-dropdown/dropdown.css'
 import CSSModules from 'react-css-modules';
 import styles from './main-nav.css';
 const logo = require("../../img/fairthreads-logo.png");
@@ -26,7 +25,7 @@ class MainNav extends Component {
                   <div id="womens-dropdown" styleName="dropdown-content">
                     <Link to='/womens/tops' onClick={() => mainNav("womens-clothes", "tops")}>Tops</Link>
                     <Link to='/womens/bottoms' onClick={() => mainNav("womens-clothes", "bottoms")}>Bottoms</Link>
-                    <Link to='/womens/dresses' onClick={() => mainNav("womens-clothes", "dresses")}>Dresses</Link>
+                    <Link to='/womens/dresses' onClick={() => mainNav("womens-clothes", "dresses")}>Dresses & Jumpsuits</Link>
                     <Link to='/womens/shoes' onClick={() => mainNav("womens-clothes", "shoes")}>Shoes</Link>
                     <Link to='/womens/underwear' onClick={() => mainNav("womens-clothes", "underwear")}>Athleisure</Link>
                     <Link to='/womens/underwear' onClick={() => mainNav("womens-clothes", "underwear")}>Underwear</Link>
@@ -41,7 +40,7 @@ class MainNav extends Component {
                     <Link to='/womens' onClick={() => mainNav("womens-clothes")}>Bottoms</Link>
                     <Link to='/womens' onClick={() => mainNav("womens-clothes")}>Shoes</Link>
                     <Link to='/womens' onClick={() => mainNav("womens-clothes")}>Active</Link>
-                    <Link to='/womens' onClick={() => mainNav("womens-clothes")}>Underware</Link>
+                    <Link to='/womens' onClick={() => mainNav("womens-clothes")}>Underwear</Link>
                   </div>
                 </div>
               </li>

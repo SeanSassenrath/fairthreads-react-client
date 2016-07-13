@@ -16,13 +16,17 @@
         margin-bottom: 25px;
         text-align: left;
         font-family: 'Open Sans', sans-serif;
-        font-size: .9em;
+        font-size: 1em;
+        line-height: 1.9em;
         cursor: pointer;
         display: inline;
+        &.sort-by {
+          color:#333;
+        }
         span {
           opacity: .4;
           position: relative;
-          padding: 3px 8px 3px 30px;
+          border-bottom:1px solid #333;
           &:hover {
             opacity: .6;
           }
@@ -31,7 +35,7 @@
           border-radius: 3px;
           font-weight: 300;
           color: rgb(107, 107, 107);
-          background-color: rgb(234, 234, 234);
+          /*background-color: rgb(234, 234, 234);*/
           opacity: 1;
           &:before {
             content: "";
@@ -46,6 +50,7 @@
           }
         }
       }
+      
       li:nth-child(n+2) {
         padding-left: 40px;
       }
