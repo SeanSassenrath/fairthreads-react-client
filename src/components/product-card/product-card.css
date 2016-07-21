@@ -1,7 +1,10 @@
 .product {
   width: 225px;
   margin: 0 auto;
+  /*height:430px;*/
   padding: 20px 0;
+  /*border:1px solid blue;*/
+  /*position:relative;*/
   a {
     text-decoration: none;
     .img-container {
@@ -9,6 +12,7 @@
       position: relative;
       margin: 20px auto 0;
       background-color: white;
+      position:relative;
       img {
         width: 100%;
         display: block;
@@ -19,6 +23,7 @@
     .description {
       padding-top: 15px;
       font-family: 'Open Sans', sans-serif;
+      font-size:18px;
       .brand {
         opacity: .4;
       }
@@ -42,13 +47,19 @@
         .reg-price {
           color: #2d2d34;
           padding: 5px 0 5px 8px;
-          font-size: 14px;
+          font-size: 16px;
+        }
+        strike {
+          padding-right:15px;
+          color:grey;
         }
         .sale-price {
           color: #2d2d34;
           padding: 5px 8px 5px 0;
-          font-size: 14px;
+          font-size:16px;
+
         }
+
       }
     }
   }

@@ -18,7 +18,7 @@ class MainNav extends Component {
       <div id="main-nav" styleName="main-nav">
         <div className="wrapper" styleName="wrapper">
           <nav>
-            <ul>
+            <ul> 
               <li>
                 <div styleName="dropdown">
                   <Link to='/womens' activeStyle={{ opacity: '1', color: "#333" }} styleName="dropdown-action" onClick={() => mainNav("womens-clothes", "favorites")}>Women</Link>
@@ -52,7 +52,7 @@ class MainNav extends Component {
               </li>
               <li>
                 <div styleName="dropdown">
-                  <Link to='/connect' activeStyle={{ opacity: '1', color: "#333" }} styleName="dropdown-action" onClick={() => mainNav("men")}>Connect</Link>
+                  <Link to='/contact' activeStyle={{ opacity: '1', color: "#333" }} styleName="dropdown-action" onClick={() => mainNav("men")}>Connect</Link>
                   <div id="connect-dropdown" styleName="dropdown-content">
                     <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Message</Link>
                     <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Instagram</Link>

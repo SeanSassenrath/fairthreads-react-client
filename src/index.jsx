@@ -9,7 +9,8 @@ import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers/root';
 import App from './components/app.jsx';
 import Home from './components/home/home.jsx';
-import ProductsContainer from './components/products-container/products-container.jsx'
+import ProductsContainer from './components/products-container/products-container.jsx';
+import Contact from './components/contact/contact.jsx';
 import 'babel-polyfill';
 import { fetchProducts } from './action-creators';
 
@@ -31,6 +32,7 @@ render(
         <Route path="/womens/shoes" component={ ProductsContainer } />
         <Route path="/womens/underwear" component={ ProductsContainer } />
         <Route path="/about-us" component={ ProductsContainer } />
+        <Route path="/contact" component={ Contact } />
       </Route>
     </Router>
   </Provider>,
