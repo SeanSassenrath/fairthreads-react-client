@@ -12,19 +12,26 @@ class Home extends Component {
           </div>
         </div>
         <div styleName="about">
-          <h2>Ethical practices. Quality products. Killer fashion.</h2>
-          <div>
-            <h3>The Ethical Way</h3>
-            <p>At fairthreads, we believe our ethics shouldn’t be compromised for great style. We showcase products from fashion brands that uphold strong ethical manufacturing standards. No sweatshop labor. No unfair wages.</p>
+          <h1>Shopping for Fair Threads</h1>
+          <p>Easily find ethical clothes with style. Each of our brands have been curated to ensure that they provide:</p>
+          <div styleName="pillars-container">
+            <div>
+              <h3>Ethical Practices</h3>
+              <p>We believe our ethics shouldn’t be compromised for great style. We showcase products from fashion brands that uphold strong ethical manufacturing standards. No sweatshop labor. No unfair wages.</p>
+            </div>
+            <div>
+              <h3>Quality Clothing</h3>
+              <p>Quality clothes are essential for having long-lasting wardrobe. Our brands strive to have the best quality possible. Many of our brands pride themselves on using only organic, non-toxic, recycled, or upcycled materials. </p>
+            </div>
+            <div>
+              <h3>Transcendent Fashion</h3>
+              <p>Great fashion is at the core of our identity. We offer fashion-forward styles from cutting-edge brands that are changing the industry.</p>
+            </div>
           </div>
-          <div>
-            <h3>Quality Matters</h3>
-            <p>Quality products are essential for having long-lasting wardrobe. Our brands strive to have the best quality possible. This doesn’t only speak to the garment's construction, but also the fabric itself. Many of our brands pride themselves on using only organic, non-toxic, recycled, or upcycled materials.</p>
-          </div>
-          <div>
-            <h3>No Compromises</h3>
-            <p>Great fashion is at the core of our identity. We offer fashion-forward styles from cutting-edge brands that are changing the industry. You don’t even need to think twice about shopping ethically, we make it second nature.</p>
-          </div>
+        </div>
+        <div styleName="request-products">
+          <h1>Request a Brand</h1>
+          <p>Not seeing your favorite ethically made brand? Send us a request!</p>
         </div>
       </div>
     )

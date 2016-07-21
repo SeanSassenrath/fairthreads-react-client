@@ -21,13 +21,13 @@ class MainNav extends Component {
             <ul> 
               <li>
                 <div styleName="dropdown">
-                  <Link to='/womens' activeStyle={{ opacity: '1', color: "#333" }} styleName="dropdown-action" onClick={() => mainNav("womens-clothes", "favorites")}>Women</Link>
+                  <Link to='/womens' activeStyle={{ opacity: '1', color: "#333" }} styleName="dropdown-action" onClick={() => mainNav("womens-clothes")}>Women</Link>
                   <div id="womens-dropdown" styleName="dropdown-content">
                     <Link to='/womens/tops' onClick={() => mainNav("womens-clothes", "tops")}>Tops</Link>
                     <Link to='/womens/bottoms' onClick={() => mainNav("womens-clothes", "bottoms")}>Bottoms</Link>
                     <Link to='/womens/dresses' onClick={() => mainNav("womens-clothes", "dresses")}>Dresses & Jumpsuits</Link>
                     <Link to='/womens/shoes' onClick={() => mainNav("womens-clothes", "shoes")}>Shoes</Link>
-                    <Link to='/womens/underwear' onClick={() => mainNav("womens-clothes", "underwear")}>Athleisure</Link>
+                    <Link to='/womens/active-wear' onClick={() => mainNav("womens-clothes", "active-wear")}>Athleisure</Link>
                     <Link to='/womens/underwear' onClick={() => mainNav("womens-clothes", "underwear")}>Underwear</Link>
                   </div>
                 </div>
@@ -36,11 +36,11 @@ class MainNav extends Component {
                 <div styleName="dropdown">
                   <Link to='/mens' activeStyle={{ opacity: '1', color: "#333" }} styleName="dropdown-action" onClick={() => mainNav("men")}>Men</Link>
                   <div id="mens-dropdown" styleName="dropdown-content">
-                    <Link to='/womens' onClick={() => mainNav("womens-clothes")}>Tops</Link>
-                    <Link to='/womens' onClick={() => mainNav("womens-clothes")}>Bottoms</Link>
-                    <Link to='/womens' onClick={() => mainNav("womens-clothes")}>Shoes</Link>
-                    <Link to='/womens' onClick={() => mainNav("womens-clothes")}>Active</Link>
-                    <Link to='/womens' onClick={() => mainNav("womens-clothes")}>Underwear</Link>
+                    <Link to='/mens/tops' onClick={() => mainNav("men", "tops")}>Tops</Link>
+                    <Link to='/mens/bottoms' onClick={() => mainNav("men", "bottoms")}>Bottoms</Link>
+                    <Link to='/mens/shoes' onClick={() => mainNav("men", "shoes")}>Shoes</Link>
+                    <Link to='/womens/active-wear' onClick={() => mainNav("men", "active-wear")}>Active</Link>
+                    <Link to='/womens/underwear' onClick={() => mainNav("men", "underwear")}>Underwear</Link>
                   </div>
                 </div>
               </li>

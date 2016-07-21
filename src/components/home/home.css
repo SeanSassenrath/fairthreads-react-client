@@ -1,10 +1,11 @@
 .wrapper {
-  max-width: 960px;
+  max-width: 1180px;
+  padding: 60px;
   border: 1px solid transparent;
   margin: 0 auto;
   height: 100%;
     font-family: 'Open Sans', sans-serif;
-  
+
 }
 
 .hero {
@@ -30,6 +31,7 @@
 .about {
   composes: wrapper;
   color:#333;
+  text-align: center;
   h2 {
     text-align: center;
     font-weight: normal;
@@ -41,7 +43,7 @@
   ul {
 
       padding:0;
-     
+
     }
   .aboutGrid {
 
@@ -65,5 +67,28 @@
        }
 
     }
+  }
+}
+
+.pillars-container {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  h3 {
+    font-weight: bold;
+  }
+  > div {
+    flex: 1 1 350px;
+    margin: 0 20px;
+  }
+}
+
+.request-products {
+  composes: wrapper;
+  color:#333;
+  text-align: center;
+  h2 {
+    text-align: center;
+    font-weight: normal;
   }
 }

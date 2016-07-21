@@ -26,6 +26,13 @@ render(
       <Route path="/" component={ App }>
         <IndexRoute component={ Home } />
         <Route path="/mens" component={ ProductsContainer } />
+        <Route path="/mens/tops" component={ ProductsContainer } />
+        <Route path="/mens/bottoms" component={ ProductsContainer } />
+        <Route path="/mens/dresses" component={ ProductsContainer } />
+        <Route path="/mens/shoes" component={ ProductsContainer } />
+        <Route path="/mens/underwear" component={ ProductsContainer } />
+        <Route path="/mens/active" component={ ProductsContainer } />
+        <Route path="/womens" component={ ProductsContainer } />
         <Route path="/womens/tops" component={ ProductsContainer } />
         <Route path="/womens/bottoms" component={ ProductsContainer } />
         <Route path="/womens/dresses" component={ ProductsContainer } />

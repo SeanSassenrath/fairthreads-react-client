@@ -49,12 +49,20 @@ export function mainNav(gender, category) {
 }
 
 export function fetchProducts(gender, category) {
-  console.log('in fetch products')
-  return dispatch => {
-    dispatch(requestProducts(gender, category))
-    return fetch('https://fairthreads-api.herokuapp.com/products/gender/' + gender + '/category/' + category)
-    .then(req => req.json())
-    .then(json => dispatch(receiveProducts(gender, json)))
+  if (category) {
+    return dispatch => {
+      dispatch(requestProducts(gender, category))
+      return fetch('https://fairthreads-api.herokuapp.com/products/gender/' + gender + '/category/' + category)
+      .then(req => req.json())
+      .then(json => dispatch(receiveProducts(gender, json)))
+    }
+  } else {
+    return dispatch => {
+      dispatch(requestProducts(gender))
+      return fetch('https://fairthreads-api.herokuapp.com/products/gender/' + gender)
+      .then(req => req.json())
+      .then(json => dispatch(receiveProducts(gender, json)))
+    }
   }
 }
 
@@ -97,14 +105,15 @@ function removePriceRangeFilter() {
   }
 }
 
-// export function priceRangeFilter(lowestPrice, highestPrice, newPriceRange, currentPriceRange) {
-//   if(currentPriceRange === newPriceRange) {
-//     return dispatch => {
-//       dispatch(removePriceRangeFilter())
-//     }
-//   } else {
-//     return dispatch => {
-//       dispatch(setPriceRangeFilter(lowestPrice, highestPrice, newPriceRange))
-//     }
-//   }
-// }
+export function priceRangeFilter(lowestPrice, highestPrice, newPriceRange, currentPriceRange) {
+  if(currentPriceRange === newPriceRange) {
+    return dispatch => {
+      dispatch(removePriceRangeFilter())
+    }
+  } else {
+    console.log("should set pricingFilter")
+    return dispatch => {
+      dispatch(setPriceRangeFilter(lowestPrice, highestPrice, newPriceRange))
+    }
+  }
+}
