@@ -10,7 +10,6 @@ import Footer from './footer/footer.jsx';
 class App extends Component {
 
   render() {
-    console.log('props', this.props.listOfCategories)
     let {
       mainNav,
       loading,
@@ -28,7 +27,7 @@ class App extends Component {
     } = this.props;
 
     return (
-      <div className="app-container" style={{backgroundColor: "#F8F8F8"}}>
+      <div className="app-container" style={{backgroundColor: "#f4f4f4"}}>
         <MainNav fetchProducts={fetchProducts} mainNav={mainNav} />
         <span className={ loading ? "spinner" : null } />
         { this.props.children }

@@ -18,10 +18,10 @@ class MainNav extends Component {
       <div id="main-nav" styleName="main-nav">
         <div className="wrapper" styleName="wrapper">
           <nav>
-            <ul> 
+            <ul>
               <li>
                 <div styleName="dropdown">
-                  <Link to='/womens' activeStyle={{ opacity: '1', color: "#333" }} styleName="dropdown-action" onClick={() => mainNav("womens-clothes")}>Women</Link>
+                  <Link to='/womens' activeStyle={{ borderBottom: '1px solid #C7625B' }} styleName="dropdown-action" onClick={() => mainNav("womens-clothes")}>Women</Link>
                   <div id="womens-dropdown" styleName="dropdown-content">
                     <Link to='/womens/tops' onClick={() => mainNav("womens-clothes", "tops")}>Tops</Link>
                     <Link to='/womens/bottoms' onClick={() => mainNav("womens-clothes", "bottoms")}>Bottoms</Link>
