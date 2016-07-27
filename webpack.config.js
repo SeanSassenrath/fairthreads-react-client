@@ -11,13 +11,11 @@ const colorFunction = require('postcss-color-function');
 module.exports = {
   devtool: 'eval',
   entry: [
-    'webpack-hot-middleware/client',
     './src/index.jsx'
   ],
   output: {
     path: path.join(__dirname, 'build'),
     filename: '[name].js',
-    publicPath: '/build/'
   },
   module: {
     loaders: [
@@ -41,7 +39,6 @@ module.exports = {
       template: __dirname + '/src/index.tmpl.html',
       filename: './index.html'
     }),
-    new webpack.HotModuleReplacementPlugin()
   ],
   resolve: {
     extensions: ['', '.js', '.jsx']

@@ -24,11 +24,12 @@
     font-family: 'Heebo', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
-    color: white;
+    color: #db5461;
   }
 }
 
 .about {
+  background-color: white;
   color: #333;
   text-align: center;
   h1 {
@@ -36,12 +37,12 @@
     font-weight: 300;
     font-size: 50px;
     margin: 0;
-    color: #C7625B;
+    color: #333;
   }
   h3 {
     font-weight: 400;
     opacity: .9;
-    color: #C7625B;
+    color: #EE2E31;
   }
   ul {
       padding:0;
@@ -88,7 +89,7 @@
 }
 
 .request-products {
-  background: linear-gradient(130deg, #F08B5C, #C7625B);
+  background: linear-gradient(130deg, #F3752B, #A20021);
   color: white;
   text-align: center;
   h1 {

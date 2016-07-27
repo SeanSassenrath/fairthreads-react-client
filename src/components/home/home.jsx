@@ -32,13 +32,14 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div styleName="request-products">
+        {/* <div styleName="request-products">
           <div styleName="container">
             <h1>Request a Brand</h1>
             <p>Not seeing your favorite ethically made brand? Send us a request!</p>
             <input type="text" />
           </div>
         </div>
+        */}
       </div>
     )
   }
