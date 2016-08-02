@@ -28,11 +28,16 @@ class FilterNav extends Component {
       <div id="product-filter" styleName="filter-nav-container">
         <nav>
           <div>
+            <p styleName="sort-by">Sort By:</p>
             <ul>
-              <li styleName="sort-by">Sort By:</li>
-              <li onClick={() => toggleSaleOnly()}><span styleName={showSaleOnly ? "filter-active" : null}>Sale</span></li>
               <li><span styleName={sortProducts === "lowToHigh" ? "filter-active" : null} onClick={() => lowToHighProducts()}>Lowest</span></li>
               <li><span styleName={sortProducts === "highToLow" ? "filter-active" : null} onClick={() => highToLowProducts()}>Highest</span></li>
+            </ul>
+          </div>
+          <div>
+            <p styleName="filter-by">Filter By:</p>
+            <ul>
+              <li onClick={() => toggleSaleOnly()}><span styleName={showSaleOnly ? "filter-active" : null}>Sale</span></li>
             </ul>
           </div>
         </nav>
