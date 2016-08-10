@@ -1,16 +1,13 @@
 .product {
-  width: 225px;
-  margin: 0 auto;
-  /*height:430px;*/
-  padding: 20px 0;
-  /*border:1px solid blue;*/
-  /*position:relative;*/
+  width: 300px;
+  margin: 40px 0 auto;
+  border: 1px solid #efefef;
+  background-color: white;
   a {
     text-decoration: none;
     .img-container {
       width: 100%;
       position: relative;
-      margin: 20px auto 0;
       background-color: white;
       position:relative;
       img {

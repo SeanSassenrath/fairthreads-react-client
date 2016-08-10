@@ -27,7 +27,7 @@ class App extends Component {
     } = this.props;
 
     return (
-      <div className="app-container" style={{backgroundColor: "#f9f9f9"}}>
+      <div className="app-container" style={{backgroundColor: "#fafafa"}}>
         <MainNav fetchProducts={fetchProducts} mainNav={mainNav} />
         <span className={ loading ? "spinner" : null } />
         { this.props.children }

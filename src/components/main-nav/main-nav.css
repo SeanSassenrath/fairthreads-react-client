@@ -1,11 +1,8 @@
 .main-nav {
   .wrapper {
+    border: 1px solid #dbdbdb;
     background-color: white;
-    /*background-color: red;*/
-    /*position: absolute;*/
     width: 100%;
-    /*left: 0;*/
-    /*right: 0;*/
     padding: 10px;
     margin: 0 auto;
   }
