@@ -9,7 +9,14 @@
     .products {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      align-items: stretch;
     }
+  }
+}
+
+.lazy-product {
+  margin: 0 auto;
+  @media(min-width: 468px) {
+    margin: 0;
   }
 }

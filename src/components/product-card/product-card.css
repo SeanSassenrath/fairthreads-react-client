@@ -1,5 +1,6 @@
 .product {
   width: 300px;
+  height: 91%;
   margin: 40px 0 auto;
   border: 1px solid #efefef;
   background-color: white;
@@ -18,23 +19,25 @@
       }
     }
     .description {
-      padding-top: 15px;
-      font-family: 'Open Sans', sans-serif;
+      padding: 15px 15px 10px 15px;
+      font-family: 'Heebo', sans-serif;
       font-size:18px;
       .brand {
         opacity: .4;
+        font-weight: 400;
       }
       h5 {
         text-align: center;
         color: #2d2d34;
         margin: 0 0 5px 0;
-        font-weight: 400;
+        font-weight: 600;
         opacity: .9;
       }
       div {
         display: flex;
         margin: 0 auto;
         justify-content: space-around;
+        align-items: center;
         width: 40%;
         h6 {
           margin: 0;
@@ -45,18 +48,20 @@
           color: #2d2d34;
           padding: 5px 0 5px 8px;
           font-size: 16px;
+          font-weight: 600;
         }
-        strike {
-          padding-right:15px;
-          color:grey;
+        .old-price {
+          padding-right: 15px;
+          color: #2d2d34;
+          font-size: 16px;
+          opacity: .4;
         }
         .sale-price {
           color: #2d2d34;
           padding: 5px 8px 5px 0;
-          font-size:16px;
-
+          font-size: 16px;
+          font-weight: 600;
         }
-
       }
     }
   }

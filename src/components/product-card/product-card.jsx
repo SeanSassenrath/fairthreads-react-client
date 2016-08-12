@@ -20,14 +20,17 @@ class ProductCard extends Component {
             <div styleName="description">
               <h5>{product.name}</h5>
               <h5 styleName="brand">{product.brand}</h5>
-              <div>
-                <h6 styleName="reg-price">${product.salePrice ? <strike>{product.price}</strike> : product.price}</h6>
-                {
-                  product.salePrice ?
-                    <h6 styleName="sale-price">${product.salePrice}</h6>
-                  : null
+                {product.salePrice
+                  ?
+                    <div>
+                      <h6 styleName="old-price">{`$${Math.ceil(product.price)}`}</h6>
+                      <h6 styleName="sale-price">{`$${Math.ceil(product.salePrice)}`}</h6>
+                    </div>
+                  :
+                    <div>
+                      <h6 styleName="reg-price">{`$${Math.ceil(product.price)}`}</h6>
+                    </div>
                 }
-              </div>
             </div>
           </a>
         </div>

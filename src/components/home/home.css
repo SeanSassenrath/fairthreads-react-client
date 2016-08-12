@@ -17,19 +17,28 @@
 
 .hero-content {
   composes: container;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   h1 {
-    margin-top: 110px;
-    text-align: center;
+    margin: 0px;
     font-size: 13em;
     font-family: 'Heebo', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     color: #db5461;
   }
+  a {
+    padding: 8px 20px;
+    color: #333;
+    border: 2px solid #333;
+    border-radius: 2px;
+    text-decoration: none;
+  }
 }
 
 .about {
-  background-color: white;
+  background-color: #474747;
   color: #333;
   text-align: center;
   h1 {
@@ -37,12 +46,17 @@
     font-weight: 300;
     font-size: 50px;
     margin: 0;
-    color: #333;
+    color: white;
   }
   h3 {
-    font-weight: 400;
-    opacity: .9;
+    font-weight: 300;
     color: #EE2E31;
+  }
+  h4 {
+    color: white;
+    margin: 0px;
+    font-weight: 300;
+    opacity: .9;
   }
   ul {
       padding:0;
@@ -50,9 +64,9 @@
   p {
     margin: 0;
     opacity: .7;
+    color: white;
   }
   .aboutGrid {
-
     list-style-type: none;
     display:flex;
     flex-wrap: wrap;
@@ -80,11 +94,15 @@
   text-align: left;
   margin-top: 40px;
   h3 {
-    font-weight: 700;
+    font-weight: 400;
+    color: white;
+  }
+  p {
+    letter-spacing: .2px;
   }
   > div {
     flex: 1 1 350px;
-    margin: 0 20px;
+    margin: 0 30px;
   }
 }
 

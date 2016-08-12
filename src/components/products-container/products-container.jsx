@@ -58,7 +58,7 @@ class ProductsContainer extends Component {
               {
                 mutableItems.map(function(item) {
                   return (
-                    <LazyLoad key={key++} offset={1000}>
+                    <LazyLoad key={key++} offset={1000} styleName="lazy-product">
                       <ProductCard product={item}/>
                     </LazyLoad>
                   )

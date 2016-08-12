@@ -10,11 +10,14 @@ class Home extends Component {
         <div styleName="hero">
           <div styleName="hero-content">
             <h1>Dresses</h1>
+            <div>
+              <a href="./womens/dresses">Shop Dresses</a>
+            </div>
           </div>
         </div>
         <div styleName="about">
           <div styleName="container">
-            <h1>Shopping for Fair Threads</h1>
+            <h1>Fashion with Integrity</h1>
             <p>Easily find ethical clothes with style. Each of our brands have been curated to ensure that they provide:</p>
             <div styleName="pillars-container">
               <div>
