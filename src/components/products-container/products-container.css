@@ -4,7 +4,7 @@
   .wrapper {
     max-width: 1020px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px 0;
 
     .products {
       display: flex;
@@ -17,6 +17,7 @@
 .lazy-product {
   margin: 0 auto;
   @media(min-width: 468px) {
-    margin: 0;
+    margin: 0 17.6px;
+    flex: 1 1 auto;
   }
 }
