@@ -12,6 +12,7 @@ class MainNav extends Component {
     let {
       fetchProducts,
       mainNav,
+      picks,
     } = this.props;
 
     return(

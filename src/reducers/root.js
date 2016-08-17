@@ -4,6 +4,7 @@ import Immutable from "seamless-immutable";
 import {
   REQUEST_PRODUCTS,
   RECIEVE_PRODUCTS,
+  RECIEVE_STYLIST_PICK_TEASERS,
   LOWEST_TO_HIGHEST_PRODUCTS,
   HIGHEST_TO_LOWEST_PRODUCTS,
   TOGGLE_SALE_ONLY,
@@ -30,6 +31,9 @@ function products(state = initialState.products, action) {
         .set('items', action.products)
         .set('categoryList', action.categoryList)
         .set('gender', action.gender)
+    case RECIEVE_STYLIST_PICK_TEASERS:
+      return state
+        .set('stylistPickTeasers', action.picks)
     case LOWEST_TO_HIGHEST_PRODUCTS:
       if(state.sortProducts != 'lowToHigh') {
         return state

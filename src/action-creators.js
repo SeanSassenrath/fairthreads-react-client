@@ -2,6 +2,7 @@ import fetch from 'isomorphic-fetch';
 import {
   REQUEST_PRODUCTS,
   RECIEVE_PRODUCTS,
+  RECIEVE_STYLIST_PICK_TEASERS,
   LOWEST_TO_HIGHEST_PRODUCTS,
   HIGHEST_TO_LOWEST_PRODUCTS,
   TOGGLE_SALE_ONLY,
@@ -17,19 +18,22 @@ function requestProducts(gender, category) {
 }
 
 function receiveProducts(gender, json) {
-  console.log('json', json)
   return {
     type: RECIEVE_PRODUCTS,
     gender,
     products: json.items,
-    // categoryList: json.categoryList
+  }
+}
+
+export function receiveStylistPickTeasers(json) {
+  return {
+    type: RECIEVE_STYLIST_PICK_TEASERS,
+    picks: json,
   }
 }
 
 export function selectGender(gender, category) {
-  console.log("in ac with ", gender)
   if (gender === 'womens') {
-    console.log('womens')
     return dispatch => {
         dispatch(fetchProducts('womens-clothes', category))
       }
@@ -63,6 +67,14 @@ export function fetchProducts(gender, category) {
       .then(req => req.json())
       .then(json => dispatch(receiveProducts(gender, json)))
     }
+  }
+}
+
+export function fetchStylistPickTeasers() {
+  return dispatch => {
+    return fetch('https://fairthreads-api.herokuapp.com/products/stylistpick')
+      .then(req => req.json())
+      .then(json => dispatch(receiveStylistPickTeasers(json)))
   }
 }
 
@@ -111,7 +123,6 @@ export function priceRangeFilter(lowestPrice, highestPrice, newPriceRange, curre
       dispatch(removePriceRangeFilter())
     }
   } else {
-    console.log("should set pricingFilter")
     return dispatch => {
       dispatch(setPriceRangeFilter(lowestPrice, highestPrice, newPriceRange))
     }

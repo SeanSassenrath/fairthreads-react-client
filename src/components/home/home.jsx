@@ -4,7 +4,6 @@ import styles from './home.css';
 
 class Home extends Component {
   render() {
-    console.log('Home component props', this.props)
     return(
       <div>
         <div styleName="hero">

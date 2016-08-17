@@ -9,11 +9,16 @@ import Footer from './footer/footer.jsx';
 
 class App extends Component {
 
+  componentDidMount() {
+    this.props.fetchStylistPickTeasers();
+  }
+
   render() {
     let {
       mainNav,
       loading,
       items,
+      fetchStylistPickTeasers,
       showSaleOnly,
       gender,
       fetchProducts,
