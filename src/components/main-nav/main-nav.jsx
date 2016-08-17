@@ -47,6 +47,9 @@ class MainNav extends Component {
                           <Link to='/womens/underwear' onClick={() => mainNav("womens-clothes", "underwear")}>Underwear</Link>
                         </li>
                       </ul>
+                      <div>
+                        { picks ? <img styleName="stylistPickNav" src={picks.women.imageOriginal} /> : null }
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -75,6 +78,9 @@ class MainNav extends Component {
                           <Link to='/mens/underwear' onClick={() => mainNav("men", "underwear")}>Underwear</Link>
                         </li>
                       </ul>
+                      <div>
+                        { picks ? <img styleName="stylistPickNav" src={picks.men.imageOriginal} /> : null }
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -18,7 +18,7 @@ class App extends Component {
       mainNav,
       loading,
       items,
-      fetchStylistPickTeasers,
+      picks,
       showSaleOnly,
       gender,
       fetchProducts,
@@ -33,7 +33,7 @@ class App extends Component {
 
     return (
       <div className="app-container" style={{backgroundColor: "#fafafa"}}>
-        <MainNav fetchProducts={fetchProducts} mainNav={mainNav} />
+        <MainNav fetchProducts={fetchProducts} mainNav={mainNav} picks={picks} />
         <span className={ loading ? "spinner" : null } />
         { this.props.children }
         <Footer />
