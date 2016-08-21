@@ -4,16 +4,13 @@
   margin: 0 auto;
   height: 100%;
   font-family: 'Open Sans', sans-serif;
-  color:#004080;
   font-size: 16px;
-  /*position:relative;*/
 }
 
 .contact-container {
-	padding-top: 65px;
+  composes: wrapper;
+	padding-top: 40px;
 	margin:0 auto;
-	composes: wrapper;
-	border-radius:10px;
 	form {
 		width:400px;
 		margin:0 auto;
@@ -29,7 +26,7 @@
 		width:400px;
 		height:30px;
 	}
-	
+
 	span.oblig-field{
 		color:red;
 		padding-left:2px;
