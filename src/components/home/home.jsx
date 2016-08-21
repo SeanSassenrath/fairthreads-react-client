@@ -1,9 +1,18 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { testSelector } from '../../selectors.js';
 import CSSModules from 'react-css-modules';
 import styles from './home.css';
 
+
+
 class Home extends Component {
+
   render() {
+    let {
+      picks,
+    } = this.props;
+
     return(
       <div>
         <div styleName="hero">
@@ -17,20 +26,35 @@ class Home extends Component {
         <div styleName="about">
           <div styleName="container">
             <h1>Fashion with Integrity</h1>
-            <p>Easily find ethical clothes with style. Each of our brands have been curated to ensure that they provide:</p>
-            <div styleName="pillars-container">
-              <div>
-                <h3>Ethical Practices</h3>
-                <p>We believe our ethics shouldn’t be compromised for great style. We showcase products from fashion brands that uphold strong ethical manufacturing standards.</p>
-              </div>
-              <div>
-                <h3>Quality Clothing</h3>
-                <p>Quality clothes are essential for having long-lasting wardrobe. Many of our brands pride themselves on using only organic, non-toxic, recycled, or upcycled materials. </p>
-              </div>
-              <div>
-                <h3>Transcendent Fashion</h3>
-                <p>Great fashion is at the core of our identity. We offer fashion-forward styles from cutting-edge brands that are changing the industry.</p>
-              </div>
+            <p>Fairthreads was created to make it easier than ever to find ehtical, stylish clothing. <br />Join us in making the world a better place.</p>
+            <a href="">Learn More</a>
+          </div>
+        </div>
+        <div styleName="stylist-pick">
+          <div styleName="stylist-pick-container">
+            <div styleName="stylist-pick-image-container">
+              <img src={picks ? picks.women.imageOriginal : null} style={{objectFit: picks ? picks.women.objectFit : null}} />
+            </div>
+            <div>
+              <h1>Stylist Pick/Women</h1>
+              <h2>{ picks ? picks.women.name : null }</h2>
+              <p>{ picks ? picks.women.brand : null }</p>
+              <span>${ picks ? picks.women.price : null }</span>
+              <span>{ picks && picks.women.salePrice ? '$' + picks.women.salePrice : null }</span>
+            </div>
+          </div>
+        </div>
+        <div styleName="stylist-pick">
+          <div styleName="stylist-pick-reverse-container">
+            <div>
+              <h1>Stylist Pick/Men</h1>
+              <h2>{ picks ? picks.women.name : null }</h2>
+              <p>{ picks ? picks.women.brand : null }</p>
+              <span>${ picks ? picks.women.price : null }</span>
+              <span>{ picks && picks.women.salePrice ? '$' + picks.women.salePrice : null }</span>
+            </div>
+            <div styleName="stylist-pick-image-container">
+              <img src={picks ? picks.men.imageOriginal : null}  style={{objectFit: picks ? picks.men.objectFit : null}} />
             </div>
           </div>
         </div>
@@ -47,4 +71,6 @@ class Home extends Component {
   }
 }
 
-export default CSSModules(Home, styles);
+const StyledHome = CSSModules(Home, styles);
+
+export default connect(testSelector)(StyledHome);

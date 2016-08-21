@@ -1,6 +1,6 @@
 .container {
   max-width: 1180px;
-  padding: 80px;
+  padding: 60px 40px;
   border: 1px solid transparent;
   margin: 0 auto;
   height: 100%;
@@ -11,7 +11,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 600px;
+  height: 40vw;
+  min-height: 300px;
   background-image: url('../../img/dresses.jpg');
 }
 
@@ -22,87 +23,75 @@
   text-align: center;
   h1 {
     margin: 0px;
-    font-size: 13em;
+    font-size: 13vw;
     font-family: 'Heebo', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     color: #db5461;
   }
   a {
-    padding: 8px 20px;
+    padding: 2px 0;
     color: #333;
-    border: 2px solid #333;
-    border-radius: 2px;
+    border-bottom: 2px solid #333;
     text-decoration: none;
+    text-transform: uppercase;
+    &:hover {
+      border-bottom: 2px solid #474747;
+      color: #474747;
+    }
   }
 }
 
 .about {
-  background-color: #474747;
-  color: #333;
+  background-color: #fafafa;
   text-align: center;
   h1 {
     text-align: center;
     font-weight: 300;
     font-size: 50px;
     margin: 0;
-    color: white;
-  }
-  h3 {
-    font-weight: 300;
-    color: #EE2E31;
-  }
-  h4 {
-    color: white;
-    margin: 0px;
-    font-weight: 300;
-    opacity: .9;
+    color: #474747;
   }
   ul {
       padding:0;
     }
   p {
-    margin: 0;
+    margin: 0 0 40px 0;
     opacity: .7;
-    color: white;
+    color: #474747;
   }
-  .aboutGrid {
-    list-style-type: none;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    li {
-      max-width: 300px;
-      min-width:200px;
-      font-size:16px;
-       h3 {
-        text-align: center;
-        font-size: 22px;
-       }
-       p {
-        line-height: 30px;
-        text-align: justify;
-        opacity: .9;
-       }
-    }
+  a {
+    padding: 8px 20px;
+    margin-top: 40px;
+    border-radius: 2px;
+    background-color: #474747;
+    color: #fafafa;
+    text-decoration: none;
   }
 }
 
-.pillars-container {
+.stylist-pick {
+  background-color: white;
+}
+
+.stylist-pick-container {
+  composes: container;
+  border: 1px solid red;
   display: flex;
-  justify-content: space-between;
-  text-align: left;
-  margin-top: 40px;
-  h3 {
-    font-weight: 400;
-    color: white;
-  }
-  p {
-    letter-spacing: .2px;
-  }
-  > div {
-    flex: 1 1 350px;
-    margin: 0 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stylist-pick-reverse-container {
+  composes: stylist-pick-container;
+}
+
+.stylist-pick-image-container {
+  width: 450px;
+  position: relative;
+  img {
+    width: 100%;
+    height: 350px;
   }
 }
 
