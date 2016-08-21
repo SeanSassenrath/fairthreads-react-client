@@ -5,6 +5,7 @@ import { dynamicSortLow, dynamicSortHigh, onSale } from './helpers.js';
 import * as actionCreators from './action-creators.js';
 
 const productsSelector = get('products');
+const stylistPickTeaserSelector = createSelector(productsSelector, get('stylistPickTeasers'));
 const genderSelector = get('gender');
 const itemsSelector = createSelector(productsSelector, get('items'));
 const sortProductsSelector = createSelector(productsSelector, get('sortProducts'));
@@ -45,18 +46,21 @@ export const testSelector = createSelector(
   saleSelector,
   sortProductsSelector,
   genderSelector,
+  stylistPickTeaserSelector,
   (
   items,
   loading,
   showSaleOnly,
   sortProducts,
-  gender
+  gender,
+  picks
   ) => ({
     items,
     loading,
     showSaleOnly,
     sortProducts,
-    gender
+    gender,
+    picks
   })
 );
 export const selectActions = dispatch => bindActionCreators(actionCreators, dispatch)

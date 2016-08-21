@@ -9,11 +9,16 @@ import Footer from './footer/footer.jsx';
 
 class App extends Component {
 
+  componentDidMount() {
+    this.props.fetchStylistPickTeasers();
+  }
+
   render() {
     let {
       mainNav,
       loading,
       items,
+      picks,
       showSaleOnly,
       gender,
       fetchProducts,
@@ -27,8 +32,8 @@ class App extends Component {
     } = this.props;
 
     return (
-      <div className="app-container" style={{backgroundColor: "#f9f9f9"}}>
-        <MainNav fetchProducts={fetchProducts} mainNav={mainNav} />
+      <div className="app-container" style={{backgroundColor: "#fafafa"}}>
+        <MainNav fetchProducts={fetchProducts} mainNav={mainNav} picks={picks} />
         <span className={ loading ? "spinner" : null } />
         { this.props.children }
         <Footer />

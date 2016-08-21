@@ -12,6 +12,7 @@ class MainNav extends Component {
     let {
       fetchProducts,
       mainNav,
+      picks,
     } = this.props;
 
     return(
@@ -23,12 +24,33 @@ class MainNav extends Component {
                 <div styleName="dropdown">
                   <Link to='/womens' activeStyle={{ borderBottom: '1px solid #C7625B' }} styleName="dropdown-action" onClick={() => mainNav("womens-clothes")}>Women</Link>
                   <div id="womens-dropdown" styleName="dropdown-content">
-                    <Link to='/womens/tops' onClick={() => mainNav("womens-clothes", "tops")}>Tops</Link>
-                    <Link to='/womens/bottoms' onClick={() => mainNav("womens-clothes", "bottoms")}>Bottoms</Link>
-                    <Link to='/womens/dresses' onClick={() => mainNav("womens-clothes", "dresses")}>Dresses & Jumpsuits</Link>
-                    <Link to='/womens/shoes' onClick={() => mainNav("womens-clothes", "shoes")}>Shoes</Link>
-                    <Link to='/womens/active-wear' onClick={() => mainNav("womens-clothes", "active-wear")}>Athleisure</Link>
-                    <Link to='/womens/underwear' onClick={() => mainNav("womens-clothes", "underwear")}>Underwear</Link>
+                    <div styleName="list-container">
+                      <ul>
+                        <li>
+                          <Link to='/womens/tops' onClick={() => mainNav("womens-clothes", "tops")}>Tops</Link>
+                        </li>
+                        <li>
+                          <Link to='/womens/bottoms' onClick={() => mainNav("womens-clothes", "bottoms")}>Bottoms</Link>
+                        </li>
+                        <li>
+                          <Link to='/womens/dresses' onClick={() => mainNav("womens-clothes", "dresses")}>Dresses & Jumpsuits</Link>
+                        </li>
+                      </ul>
+                      <ul>
+                        <li>
+                          <Link to='/womens/shoes' onClick={() => mainNav("womens-clothes", "shoes")}>Shoes</Link>
+                        </li>
+                        <li>
+                          <Link to='/womens/active-wear' onClick={() => mainNav("womens-clothes", "active-wear")}>Athleisure</Link>
+                        </li>
+                        <li>
+                          <Link to='/womens/underwear' onClick={() => mainNav("womens-clothes", "underwear")}>Underwear</Link>
+                        </li>
+                      </ul>
+                      <div>
+                        { picks ? <img styleName="stylistPickNav" src={picks.women.imageOriginal} /> : null }
+                      </div>
+                    </div>
                   </div>
                 </div>
               </li>
@@ -36,11 +58,30 @@ class MainNav extends Component {
                 <div styleName="dropdown">
                   <Link to='/mens' activeStyle={{ opacity: '1', color: "#333" }} styleName="dropdown-action" onClick={() => mainNav("men")}>Men</Link>
                   <div id="mens-dropdown" styleName="dropdown-content">
-                    <Link to='/mens/tops' onClick={() => mainNav("men", "tops")}>Tops</Link>
-                    <Link to='/mens/bottoms' onClick={() => mainNav("men", "bottoms")}>Bottoms</Link>
-                    <Link to='/mens/shoes' onClick={() => mainNav("men", "shoes")}>Shoes</Link>
-                    <Link to='/womens/active-wear' onClick={() => mainNav("men", "active-wear")}>Active</Link>
-                    <Link to='/womens/underwear' onClick={() => mainNav("men", "underwear")}>Underwear</Link>
+                    <div styleName="list-container">
+                      <ul>
+                        <li>
+                          <Link to='/mens/tops' onClick={() => mainNav("men", "tops")}>Tops</Link>
+                        </li>
+                        <li>
+                          <Link to='/mens/bottoms' onClick={() => mainNav("men", "bottoms")}>Bottoms</Link>
+                        </li>
+                        <li>
+                          <Link to='/mens/shoes' onClick={() => mainNav("men", "shoes")}>Shoes</Link>
+                        </li>
+                      </ul>
+                      <ul>
+                        <li>
+                          <Link to='/mens/active-wear' onClick={() => mainNav("men", "active-wear")}>Active</Link>
+                        </li>
+                        <li>
+                          <Link to='/mens/underwear' onClick={() => mainNav("men", "underwear")}>Underwear</Link>
+                        </li>
+                      </ul>
+                      <div>
+                        { picks ? <img styleName="stylistPickNav" src={picks.men.imageOriginal} /> : null }
+                      </div>
+                    </div>
                   </div>
                 </div>
               </li>
@@ -52,14 +93,7 @@ class MainNav extends Component {
               </li>
               <li>
                 <div styleName="dropdown">
-                  <Link to='/contact' activeStyle={{ opacity: '1', color: "#333" }} styleName="dropdown-action" onClick={() => mainNav("men")}>Connect</Link>
-                  <div id="connect-dropdown" styleName="dropdown-content">
-                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Message</Link>
-                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Instagram</Link>
-                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Facebook</Link>
-                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Snapchat</Link>
-                    <Link to='/womens' onClick={() => mainNav("womens-clothes", items)}>Blog</Link>
-                  </div>
+                  <Link to='/contact' activeStyle={{ opacity: '1', color: "#333" }} styleName="dropdown-action" onClick={() => mainNav("men")}>Contact</Link>
                 </div>
               </li>
             </ul>
