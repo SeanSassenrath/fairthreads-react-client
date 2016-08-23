@@ -8,25 +8,37 @@ class Contact extends Component {
 	constructor(...args) {
 		super(...args)
 		this.state = {
-			firstName: '',
-			lastName: '',
+			name: '',
 			email: '',
 			subject: '',
 			message: '',
+			error: false,
 		}
 
 		this.handleInputUpdate = this.handleInputUpdate.bind(this);
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
+		this.sendEmail = this.sendEmail.bind(this);
 	}
 
 	handleInputUpdate(e) {
 		this.setState({[e.target.id]: e.target.value})
 	}
 
-	handleFormSubmit(e) {
-		e.preventDefault();
+	errorValidation(sendEmail) {
+		for (var key in this.state) {
+			if (this.state[key].length <= 0 && key !== "subject" && key !== "error") {
+				this.setState({error: true})
+				return;
+			} else {
+				this.setState({error: false});
+			}
+		}
+		sendEmail();
+	}
+
+	sendEmail() {
 		let email = {
-			name: this.state.firstName + " " + this.state.lastName,
+			name: this.state.name,
 			email: this.state.email,
 			subject: this.state.subject,
 			message: this.state.message
@@ -43,12 +55,18 @@ class Contact extends Component {
 		})
 
 		this.setState({
-			firstName: '',
-			lastName: '',
+			name: '',
 			email: '',
 			subject: '',
 			message: '',
+			error: false,
 		})
+	}
+
+	handleFormSubmit(e) {
+		e.preventDefault();
+
+		this.errorValidation(this.sendEmail);
 	}
 
 	render() {
@@ -56,15 +74,41 @@ class Contact extends Component {
 		return (
 			<div styleName="contact-container">
 				<h1>Contact Us</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec neque nec turpis lobortis mollis non ut magna. Mauris porta, est ut malesuada tempus, erat dolor ullamcorper libero, at gravida mi lorem at nulla.</p>
-				<div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec neque nec turpis lobortis mollis non ut magna. Mauris porta.</p>
+				<div styleName="contact-form">
 					<form onSubmit={this.handleFormSubmit}>
-						<input id='firstName' type="text" placeholder="First name" value={this.state.firstName} onChange={this.handleInputUpdate}/>
-						<input id='lastName' type="text" placeholder="Last name" value={this.state.lastName} onChange={this.handleInputUpdate} />
-						<input id='email' type="email" placeholder="Email" value={this.state.email} onChange={this.handleInputUpdate} />
-						<input id='subject' type="text" placeholder="Subject" value={this.state.subject} onChange={this.handleInputUpdate} />
-						<textarea id='message' placeholder="Questions and feedback here" value={this.state.message} onChange={this.handleInputUpdate} />
-						<input type="submit" value="Submit"/>
+						<input
+							id='name'
+							type="text"
+							placeholder="Name"
+							value={this.state.name}
+							onChange={this.handleInputUpdate}
+							styleName={this.state.error && this.state.name.length <= 0 ? "text-input-error" : "text-input" }
+						/>
+						<input
+							id='email'
+							type="email"
+							placeholder="Email"
+							value={this.state.email}
+							onChange={this.handleInputUpdate}
+							styleName={this.state.error && this.state.email.length <= 0 ? "text-input-error" : "text-input"}
+						/>
+						<input
+							id='subject'
+							type="text"
+							placeholder="Subject"
+							value={this.state.subject}
+							onChange={this.handleInputUpdate}
+							styleName="text-input"
+						/>
+						<textarea
+							id='message'
+							placeholder="Questions and feedback here"
+							value={this.state.message}
+							onChange={this.handleInputUpdate}
+							styleName={this.state.error && this.state.message.length <= 0 ? "message-error" : "message"}
+						/>
+						<input type="submit" value="Submit" styleName="submit" />
 					</form>
 				</div>
 			</div>
