@@ -15,7 +15,7 @@ if (process.env.NODE_ENV !== 'production') {
     publicPath: config.output.publicPath
   }))
 
-  app.use('/', function(req, res, next) {
+  app.use('*', function(req, res, next) {
     var filename = path.join(complier.outputPath, 'index.html');
     complier.outputFileSystem.readFile(filename, function(err, result){
       if(err) {

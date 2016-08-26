@@ -28,7 +28,7 @@ class Home extends Component {
         </div>
         <div styleName="banner">
           <div styleName="banner-container">
-            <p>Something to go here, but what.</p>
+            <p>Fashion with integrity.</p>
           </div>
         </div>
         <div id="about">
