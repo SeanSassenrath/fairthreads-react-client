@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { testSelector } from '../../selectors.js';
 import CSSModules from 'react-css-modules';
 import styles from './home.css';
+const quality = require("../../img/quality-white.svg");
+const ethical = require("../../img/ethical.svg");
+const fashion = require("../../img/fashion.svg");
 
 
 
@@ -23,13 +26,43 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div styleName="about">
-          <div styleName="container">
-            <h1>Fashion with Integrity</h1>
-            <p>Fairthreads was created to make it easier than ever to find ehtical, stylish clothing. <br />Join us in making the world a better place.</p>
-            <a href="">Learn More</a>
+        <div styleName="banner">
+          <div styleName="banner-container">
+            <p>Something to go here, but what.</p>
           </div>
         </div>
+        <div id="about">
+          <div styleName="about-container">
+            <div>
+              <h1>Ethical Practices</h1>
+              <p>At fairthreads, we believe our ethics shouldn’t be compromised for great style. We showcase products from fashion brands that uphold strong ethical manufacturing standards. No sweatshop labor. No unfair wages.</p>
+            </div>
+            <div>
+              <img src={ethical} styleName="about-img" alt="Ethical" />
+            </div>
+          </div>
+          <div styleName="full-width-container">
+            <div styleName="about-container-alternate">
+              <div>
+                <img src={quality} styleName="about-img-reverse" alt="Quality" />
+              </div>
+              <div>
+                <h1>Quality Products</h1>
+                <p>Quality products are essential for having long-lasting wardrobe. Our brands strive to have the best quality possible. This doesn’t only speak to the garment's construction, but also the fabric itself. Many of our brands pride themselves on using only organic, non-toxic, recycled, or upcycled materials.</p>
+              </div>
+            </div>
+          </div>
+          <div styleName="about-container">
+            <div>
+              <h1>Incredible Fashion</h1>
+              <p>Great fashion is at the core of our identity. We offer fashion-forward styles from cutting-edge brands that are changing the industry. You don’t even need to think twice about shopping ethically, we make it second nature.</p>
+            </div>
+            <div>
+              <img src={fashion} styleName="about-img" alt="Quality" />
+            </div>
+          </div>
+        </div>
+        {/*
         <div styleName="stylist-pick">
           <div styleName="stylist-pick-container">
             <div styleName="stylist-pick-image-container">
@@ -58,7 +91,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        {/* <div styleName="request-products">
+        <div styleName="request-products">
           <div styleName="container">
             <h1>Request a Brand</h1>
             <p>Not seeing your favorite ethically made brand? Send us a request!</p>

@@ -42,32 +42,59 @@
   }
 }
 
-.about {
-  background-color: #fafafa;
+.banner {
+  background-color: #474747;
+}
+
+.banner-container {
+  composes: container;
   text-align: center;
+  color: white;
+  padding: 5px 40px;
+}
+
+.about-container {
+  composes: container;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  div {
+    flex: 1 1 200px;
+  }
   h1 {
-    text-align: center;
     font-weight: 300;
-    font-size: 50px;
+    font-size: 40px;
     margin: 0;
     color: #474747;
   }
-  ul {
-      padding:0;
-    }
   p {
-    margin: 0 0 40px 0;
+    margin: 0;
     opacity: .7;
     color: #474747;
   }
-  a {
-    padding: 8px 20px;
-    margin-top: 40px;
-    border-radius: 2px;
-    background-color: #474747;
-    color: #fafafa;
-    text-decoration: none;
+}
+
+.about-container-alternate {
+  composes: about-container;
+  h1 {
+    color: white;
   }
+  p {
+    color: white;
+  }
+}
+
+.about-img {
+  padding-left: 60px;
+}
+
+.about-img-reverse {
+  padding-right: 60px;
+}
+
+.full-width-container {
+  background-color: #474747;
 }
 
 .stylist-pick {
