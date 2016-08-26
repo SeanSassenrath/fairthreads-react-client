@@ -1,10 +1,15 @@
+@import '../common.css';
+
 .container {
   max-width: 1180px;
-  padding: 60px 40px;
+  padding: 40px 30px;
   border: 1px solid transparent;
   margin: 0 auto;
   height: 100%;
   font-family: 'Heebo', sans-serif;
+  @media (--larger-than-tablet) {
+    padding: 60px 40px;
+  }
 }
 
 .hero {
@@ -57,6 +62,7 @@
   composes: container;
   max-width: 900px;
   display: flex;
+  flex-wrap: wrap-reverse;;
   justify-content: space-between;
   align-items: center;
   div {
@@ -67,16 +73,31 @@
     font-size: 40px;
     margin: 0;
     color: #474747;
+    text-align: center;
+    @media (--larger-than-tablet) {
+      text-align: left;
+    }
   }
   p {
     margin: 0;
     opacity: .7;
     color: #474747;
+    text-align: center;
+    @media (--larger-than-tablet) {
+      text-align: left;
+    }
+  }
+  @media (--larger-than-tablet) {
+    flex-wrap: nowrap;
   }
 }
 
 .about-container-alternate {
   composes: about-container;
+  flex-wrap: wrap;
+  @media (--larger-than-tablet) {
+    flex-wrap: nowrap;
+  }
   h1 {
     color: white;
   }
@@ -86,11 +107,29 @@
 }
 
 .about-img {
-  padding-left: 60px;
+  margin: 0 auto;
+  width: 40%;
+  padding-bottom: 20px;
+  display: block;
+
+  @media (--larger-than-tablet) {
+    margin: 0;
+    width: auto;
+  }
 }
 
-.about-img-reverse {
-  padding-right: 60px;
+.about-img-right {
+  composes: about-img;
+  @media (--larger-than-tablet) {
+    padding-left: 100px;
+  }
+}
+
+.about-img-left {
+  composes: about-img;
+  @media (--larger-than-tablet) {
+    padding-right: 60px;
+  }
 }
 
 .full-width-container {
