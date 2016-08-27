@@ -10,7 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --progress --inline --hot",
     "start": "node server.js",
-    "build": "webpack --config ./webpack.prod.config.js --progress --colors"
+    "build": "webpack --config ./webpack.prod.config.js --progress --colors",
+    "heroku-postbuild": "npm run build",
   },
   "author": "sean.sassenrath@gmail.com",
   "license": "ISC",
