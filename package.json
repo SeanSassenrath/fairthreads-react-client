@@ -1,6 +1,6 @@
 {
   "name": "fairthreads-react-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fairthreads client application",
   "main": "app/index.jsx",
   "scripts": {
