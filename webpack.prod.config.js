@@ -23,7 +23,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /(node_modules)/,
-        loader: 'babel',
+        loader: 'babel?cacheDirectory',
       },
       { test: /\.css$/,
         loader: 'style!css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss'
