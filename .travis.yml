@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- '0.11'
+- '0.10'
+install:
+- npm install
+script:
+- npm run build
+deploy:
+  provider: heroku
+  api_key:
+    secure: nPCBqQlEc8BU3oRngTr1HBoqju/LTVnoe1WL3iMClOkvVlVQG8AMOJtVoABL1BqW8Vh1bkqoaCh8LNboA77DwPqHPUkIEx0s8bDy8utSmZoKxnGVpxebgtNMT5i7Blg1OdBn8apsIyYxS1FdYmjZeUVWJWJdTV3VfnAUy2V7CUu6v+SkqohxOw6cAcGHbiRzdGaLjVhKf9aDwA9W0NbZyrBDOiJwH+vsRm5AcbXU0uPQj/uxaj6h+WfaEv/oN/UuAb9yKVccfJwQ1Gu2RUkzwVIsFRrUUFgoKFl8RrA2M4wod05jU+daEF+OkUptCJahwiMjDh0LJ15RQirZJzdqnBuNLO8R7PJ+YxdyI77bZwsAX7sDN4tCHO+/ABme+Uxq78bPq1xKSiHy8C4ekv9NFgBGcIKoKMi+8TRJLMFinsQVKlCtDrnlZIgDt5d3DSLPyzWrqDK52ruehHIWKG0OIgsE3a4ykCoEmbF/LpxrQEbPKFuxKLCdqrS5rZmF1ULCcuugIYEnS/Rq7JqldSrC0yLmSzbfCb7/Pz9Dd6wKfUzcJx/buVk6jTlZo4RQlVIpUVjCOJ0s2xzAGTuKHeLjmfd8q8wPD71X6f0RmvKWXUloSyT8Y2MtZOG63FbAIiREeQq0zxGQUCJJCf/o4ju3FyPTpA2sma3LvStJDUZN+Bs=
+  app: fairthreads-react-client
+  on:
+    repo: SeanSassenrath/fairthreads-react-client
