@@ -48,7 +48,6 @@ const colorFunction = require('postcss-color-function');
     "webpack": "^1.13.1"
   },
   "devDependencies": {
-    "autoprefixer": "^6.3.3",
     "babel-core": "^6.7.4",
     "babel-polyfill": "^6.7.4",
     "babel-loader": "^6.2.4",
