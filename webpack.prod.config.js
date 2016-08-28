@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const cssvariables = require('postcss-css-variables');
 const customMedia = require('postcss-custom-media');
@@ -17,7 +16,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'build'),
     filename: '[name].js',
-    publicPath: '/build/'
+    publicPath: "http://www.shopfairthreads.com/"
   },
   module: {
     loaders: [
@@ -26,11 +25,8 @@ module.exports = {
         exclude: /(node_modules)/,
         loader: 'babel?cacheDirectory',
       },
-      { test: /\.css$/, loader: ExtractTextPlugin.extract({
-        fallbackLoader: 'style-loader',
-        loader: 'css-loader'
-      })
-        // loader: 'style!css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss'
+      { test: /\.css$/,
+        loader: 'style!css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss'
       },
       { test: /\.jpg$|\.png$|\.svg$/,
         exclude: /node_modules/,
