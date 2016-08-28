@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 const autoprefixer = require('autoprefixer');
 const cssvariables = require('postcss-css-variables');
 const customMedia = require('postcss-custom-media');
@@ -39,6 +40,7 @@ module.exports = {
       template: __dirname + '/src/index.tmpl.html',
       filename: './index.html'
     }),
+    new DashboardPlugin(),
   ],
   resolve: {
     extensions: ['', '.js', '.jsx']
