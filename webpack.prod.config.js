@@ -16,14 +16,14 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'build'),
     filename: '[name].js',
-    publicPath: "http://www.shopfairthreads.com/"
+    publicPath: '/build/'
   },
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
         exclude: /(node_modules)/,
-        loader: 'babel?cacheDirectory',
+        loader: 'babel',
       },
       { test: /\.css$/,
         loader: 'style!css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss'
