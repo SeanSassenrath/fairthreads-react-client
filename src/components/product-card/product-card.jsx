@@ -9,8 +9,6 @@ class ProductCard extends Component {
       product,
     } = this.props;
 
-    // console.log('product', product.name);
-
     return(
       <div id={product._id} styleName="product">
         <a href={product.vendUrl}>

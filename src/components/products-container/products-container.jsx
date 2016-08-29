@@ -6,7 +6,6 @@ import FilterNav from '../filter-nav/filter-nav.jsx'
 import { connect } from 'react-redux';
 import { selectActions } from '../../selectors.js';
 import { testSelector } from '../../selectors.js';
-import { makeThreeColumns } from '../../helpers.js';
 import LazyLoad from 'react-lazy-load';
 import styles from './products-container.css';
 
@@ -20,6 +19,17 @@ class ProductsContainer extends Component {
     } = this.props;
     var pathArray = this.props.route.path.split("/");
     selectGender(pathArray[1], pathArray[2]);
+    console.log("Products-container mounting...")
+  }
+
+  componentWillUpdate() {
+    console.log("Products-container will update...")
+    console.log('this.props', this.props)
+  }
+
+  componentDidUpdate() {
+    console.log("Products-container did update...")
+    console.log('this.props', this.props)
   }
 
   render() {
@@ -58,9 +68,9 @@ class ProductsContainer extends Component {
               {
                 mutableItems.map(function(item) {
                   return (
-                    <LazyLoad key={key++} offset={1000} styleName="lazy-product">
+                    <div styleName="lazy-product">
                       <ProductCard product={item}/>
-                    </LazyLoad>
+                    </div>
                   )
                 })
               }

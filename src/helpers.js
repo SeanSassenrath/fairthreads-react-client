@@ -1,9 +1,4 @@
-import chunk from 'lodash/chunk';
 import $ from 'jquery';
-
-export function makeThreeColumns(products) {
-  return chunk(products, 3)
-}
 
 export function stickyNav(nav, offset=0) {
   var nav = $(nav);
