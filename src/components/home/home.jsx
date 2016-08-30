@@ -15,6 +15,7 @@ class Home extends Component {
   render() {
     let {
       picks,
+      mainNav
     } = this.props;
 
     return(
@@ -23,7 +24,7 @@ class Home extends Component {
           <div styleName="hero-content">
             <h1>Dresses</h1>
             <div>
-              <a href="./womens/dresses">Shop Dresses</a>
+              <Link to='/womens/dresses' onClick={() => mainNav("womens-clothes", "dresses")} styleName="shop-now">Shop Now</Link>
             </div>
           </div>
         </div>

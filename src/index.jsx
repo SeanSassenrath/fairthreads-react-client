@@ -38,7 +38,7 @@ render(
         <Route path="/womens/dresses" component={ ProductsContainer } />
         <Route path="/womens/shoes" component={ ProductsContainer } />
         <Route path="/womens/underwear" component={ ProductsContainer } />
-        <Route path="/about-us" component={ ProductsContainer } />
+        <Route path="/about" component={ ProductsContainer } />
         <Route path="/contact" component={ Contact } />
       </Route>
     </Router>

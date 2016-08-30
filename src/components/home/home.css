@@ -34,16 +34,18 @@
     text-transform: uppercase;
     color: #db5461;
   }
-  a {
-    padding: 2px 0;
-    color: #333;
-    border-bottom: 2px solid #333;
-    text-decoration: none;
-    text-transform: uppercase;
-    &:hover {
-      border-bottom: 2px solid #474747;
-      color: #474747;
-    }
+}
+
+.shop-now {
+  padding: 8px 15px 6px;
+  border-radius: 2px;
+  background-color: #474747;
+  color: #fafafa;
+  font-weight: 300;
+  text-decoration: none;
+  text-transform: uppercase;
+  &:hover {
+    background-color: #6b6b6b;
   }
 }
 
