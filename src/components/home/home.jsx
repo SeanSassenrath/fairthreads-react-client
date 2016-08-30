@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { testSelector } from '../../selectors.js';
+import { Link } from 'react-router';
 import CSSModules from 'react-css-modules';
 import styles from './home.css';
 const quality = require("../../img/quality-white.svg");
@@ -28,7 +29,11 @@ class Home extends Component {
         </div>
         <div styleName="banner">
           <div styleName="banner-container">
-            <p>Fashion with integrity.</p>
+            <h1>Fashion with integrity</h1>
+            <p>We believe that fashion doesn't have to compromise morals</p>
+            <div>
+              <Link to='/about'>Learn More</Link>
+            </div>
           </div>
         </div>
         <div id="about">

@@ -6,8 +6,8 @@ import FilterNav from '../filter-nav/filter-nav.jsx'
 import { connect } from 'react-redux';
 import { selectActions } from '../../selectors.js';
 import { testSelector } from '../../selectors.js';
-import LazyLoad from 'react-lazy-load';
 import styles from './products-container.css';
+var Waypoint = require('react-waypoint');
 
 
 class ProductsContainer extends Component {
@@ -66,15 +66,23 @@ class ProductsContainer extends Component {
           <div>
             <div styleName="products">
               {
-                mutableItems.map(function(item) {
+                mutableItems.map((item, i) => {
                   return (
+                    i <= 29 ?
                     <div styleName="lazy-product">
                       <ProductCard product={item}/>
                     </div>
+                    : null
                   )
                 })
               }
             </div>
+            {
+              /* TODO - Add WayPoint for infinite scroll
+              i.e. Load the first 30 items > 60 items > 90...
+              <Waypoint onEnter={() => console.log("entered")}/>
+              */
+            }
           </div>
         </div>
       </div>
