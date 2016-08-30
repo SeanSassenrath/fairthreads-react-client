@@ -24,17 +24,15 @@ class Home extends Component {
           <div styleName="hero-content">
             <h1>Dresses</h1>
             <div>
-              <Link to='/womens/dresses' onClick={() => mainNav("womens-clothes", "dresses")} styleName="shop-now">Shop Now</Link>
+              <Link to='/womens/dresses' styleName="shop-now">Shop Now</Link>
             </div>
           </div>
         </div>
-        <div styleName="banner">
-          <div styleName="banner-container">
-            <h1>Fashion with integrity</h1>
-            <p>We believe that fashion doesn't have to compromise morals</p>
-            <div>
-              <Link to='/about'>Learn More</Link>
-            </div>
+        <div styleName="banner-container">
+          <h1>Fashion with integrity</h1>
+          <p>We believe that fashion doesn't have to compromise morals</p>
+          <div styleName="learn-more-container">
+            <Link to='/about' styleName="learn-more">Learn More</Link>
           </div>
         </div>
         <div id="about">
