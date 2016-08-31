@@ -28,11 +28,29 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div styleName="banner-container">
+        <div styleName="banner">
           <h1>Fashion with integrity</h1>
           <p>We believe that fashion doesn't have to compromise morals</p>
-          <div styleName="learn-more-container">
-            <Link to='/about' styleName="learn-more">Learn More</Link>
+          <Link to='/about' styleName="learn-more">Learn More</Link>
+        </div>
+        <div styleName="editorial">
+          <div styleName="promo">
+            <div>
+              <h1>Summer is almost over.</h1>
+              <p>Score some great deals before they're gone!</p>
+              <div styleName="promo-buttons">
+                <div>Womens</div>
+                <div>Mens</div>
+              </div>
+            </div>
+          </div>
+          <div styleName="blog">
+            <div styleName="blog-content">
+              <p>Lorem ipsum is a placeholder for times such as these, as we do not yet have copy for this section.</p>
+              <div>
+                <Link to='/about' styleName="blog-button">Discover Fair Fashion</Link>
+              </div>
+            </div>
           </div>
         </div>
         <div id="about">
