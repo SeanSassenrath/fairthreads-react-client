@@ -41,7 +41,8 @@ class Home extends Component {
           </div>
           <div styleName="blog">
             <div styleName="blog-content">
-              <p>Lorem ipsum is a placeholder for times such as these, as we do not yet have copy for this section.</p>
+              <h1>Ethics + Fashion</h1>
+              <p>The Fashion Revolution has begun. Discover why fairtrade matters</p>
               <div>
                 <Link to='/about' styleName="blog-button">Discover Fair Fashion</Link>
               </div>

@@ -1,4 +1,26 @@
+@import '../common.css';
+
+.container {
+  max-width: 1180px;
+  padding: 20px 0;
+  font-family: 'Heebo', sans-serif;
+}
+
 .footer {
-  height: 75px;
   border-top: 1px solid #dbdbdb;
+}
+
+.footer-content {
+  composes: container;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #6b6b6b;
+}
+
+.social-icon {
+  width: 30px;
+  padding: 0 10px;
 }

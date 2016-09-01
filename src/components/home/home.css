@@ -109,7 +109,7 @@ a.learn-more {
     }
   }
   @media (--larger-than-tablet) {
-    flex: 0 0 48%;
+    flex: 0 0 49%;
   }
 }
 
@@ -136,7 +136,7 @@ a.learn-more {
   background-position: center;
   @media (--larger-than-tablet) {
     margin-top: 0;
-    flex: 0 0 48%;
+    flex: 0 0 49%;
   }
 }
 
@@ -144,6 +144,9 @@ a.learn-more {
   margin-top: 250px;
   padding: 40px;
   background-color: rgba(255, 255, 255, .7);
+  h1 {
+    margin: 0;
+  }
   p {
     margin-top: 0;
     margin-bottom: 30px;

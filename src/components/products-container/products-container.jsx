@@ -68,11 +68,9 @@ class ProductsContainer extends Component {
               {
                 mutableItems.map((item, i) => {
                   return (
-                    i <= 29 ?
                     <div styleName="lazy-product">
                       <ProductCard product={item}/>
                     </div>
-                    : null
                   )
                 })
               }
