@@ -35,7 +35,9 @@
   background-color: white;
   margin-left: -20px;
   border-right: 1px solid #dbdbdb;
+  transition-timing-function: ease-out;
   transition-duration: 400ms;
+  overflow: scroll;
 }
 
 .mobile-nav-list {
@@ -44,7 +46,7 @@
 }
 
 .mobile-nav-item {
-  padding: 20px 150px 20px 25px;
+  padding: 20px 130px 20px 25px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.07);
   font-family: 'Heebo', sans-serif;
   cursor: pointer;
@@ -52,7 +54,10 @@
 
 .mobile-nav-logo {
   composes: mobile-nav-item;
-  padding: 10px 150px 10px 15px
+  padding: 10px 130px 10px 15px
+  img {
+    width: 150px;
+  }
 }
 
 .mobile-nav-sub-list {

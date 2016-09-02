@@ -8,19 +8,31 @@ class MobileNav extends Component {
   constructor() {
     super();
     this.state = {
-      isNavOpen: false
+      isNavOpen: false,
+      subNav: null
     }
 
     this.openNav = this.openNav.bind(this);
     this.closeNav = this.closeNav.bind(this);
+    this.openSubNav = this.openSubNav.bind(this);
   }
 
   openNav() {
-    this.setState({isNavOpen: true})
+    this.setState({isNavOpen: true});
   }
 
   closeNav() {
-    this.setState({isNavOpen: false})
+    this.setState({isNavOpen: false});
+  }
+
+  openSubNav(n) {
+    console.log('n', n)
+    console.log('subNav', this.state.subNav)
+    if (n === this.state.subNav) {
+      this.setState({subNav: null})
+    } else {
+      this.setState({subNav: n})
+    }
   }
 
   render() {
@@ -36,17 +48,29 @@ class MobileNav extends Component {
           <ul styleName='mobile-nav-list'>
             <li styleName='mobile-nav-logo'><img src={logo} alt="Fairthreads logo" style={{width: '150px'}}/></li>
             <li>
-              <div styleName='mobile-nav-item'>Womens</div>
-              <ul styleName='mobile-nav-sub-list'>
+              <div styleName='mobile-nav-item' onClick={() => this.openSubNav(1)}>Womens</div>
+              <ul styleName='mobile-nav-sub-list' style={{display: this.state.subNav === 1 ? 'block' : 'none'}}>
                 <li styleName='mobile-nav-sub-item'>Tops</li>
                 <li styleName='mobile-nav-sub-item'>Bottoms</li>
                 <li styleName='mobile-nav-sub-item'>Dresses</li>
                 <li styleName='mobile-nav-sub-item'>Shoes</li>
               </ul>
             </li>
-            <li styleName='mobile-nav-item'>Mens</li>
-            <li styleName='mobile-nav-item'>About</li>
-            <li styleName='mobile-nav-item'>Contact</li>
+            <li>
+              <div styleName='mobile-nav-item' onClick={() => this.openSubNav(2)}>Mens</div>
+              <ul styleName='mobile-nav-sub-list' style={{display: this.state.subNav === 2 ? 'block' : 'none'}}>
+                <li styleName='mobile-nav-sub-item'>Tops</li>
+                <li styleName='mobile-nav-sub-item'>Bottoms</li>
+                <li styleName='mobile-nav-sub-item'>Dresses</li>
+                <li styleName='mobile-nav-sub-item'>Shoes</li>
+              </ul>
+            </li>
+            <li>
+              <div styleName='mobile-nav-item'>About</div>
+            </li>
+            <li>
+              <div styleName='mobile-nav-item'>Contact</div>
+            </li>
           </ul>
         </nav>
       </div>
