@@ -55,9 +55,6 @@
 .mobile-nav-logo {
   composes: mobile-nav-item;
   padding: 10px 130px 10px 15px
-  img {
-    width: 150px;
-  }
 }
 
 .mobile-nav-sub-list {
