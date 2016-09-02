@@ -43,6 +43,7 @@ class MobileNav extends Component {
             <div styleName="menu" />
           </div>
         </div>
+        <div styleName="overlay" style={{display: this.state.isNavOpen ? 'block' : 'none'}} onClick={this.closeNav}></div>
         <nav styleName='mobile-nav' style={{transform: this.state.isNavOpen ? 'translateX(0%)' : 'translateX(-100%)'}}>
           <ul styleName='mobile-nav-list'>
             <li styleName='mobile-nav-logo'><img src={logo} alt="Fairthreads logo" style={{width: '150px'}}/></li>
