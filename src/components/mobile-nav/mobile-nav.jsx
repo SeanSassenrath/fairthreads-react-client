@@ -7,7 +7,9 @@ class MobileNav extends Component {
   render() {
     return (
       <div>
-        hello
+        <div styleName="menu" />
+        <div>
+        </div>
       </div>
     )
   }
