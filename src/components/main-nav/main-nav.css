@@ -1,8 +1,5 @@
 .main-nav {
   .wrapper {
-    border: 1px solid #dbdbdb;
-    background-color: white;
-    margin: 0 auto;
   }
   nav {
     max-width: 600px;

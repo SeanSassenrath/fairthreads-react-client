@@ -1,3 +1,8 @@
+.mobile-nav-container {
+  position: absolute;
+  width: 100%;
+}
+
 .menu-container {
   padding: 0px 10px;
   height: 56px;
@@ -16,20 +21,35 @@
   left: 0px;
   top: 1em;
   width: 2em;
-  height: 0.30em;
-  background: black;
-  box-shadow: 0 0.5em 0 0 black, 0 1em 0 0 black;
+  height: 0.15em;
+  background: #6b6b6b;
+  box-shadow: 0 0.5em 0 0 #6b6b6b, 0 1em 0 0 #6b6b6b;
+}
+
+.logo {
+  /*center aligned*/
+  margin: 0 auto;
+  padding-top: 10px;
+  width: 140px;
+  display: block;
+
+  /*right aligned*/
+  /*padding-top: 9px;
+  position: absolute;
+  width: 140px;
+  right: 10px;*/
 }
 
 .overlay {
   width: 100%;
   background-color: rgba(255, 255, 255, .8);
   height: 100vh;
-  position: absolute;
+  position: fixed;
+  z-index: 10;
 }
 
 .mobile-nav {
-  position: absolute;
+  position: fixed;
   height: 100vh;
   left: -30px;
   background-color: white;
@@ -37,6 +57,17 @@
   border-right: 1px solid #dbdbdb;
   transition: transform 0.4s ease-out;
   overflow: scroll;
+}
+
+.mobile-nav-hidden {
+  composes: mobile-nav;
+  transform: translateX(-100%);
+}
+
+.mobile-nav-active {
+  composes: mobile-nav;
+  transform: translateX(0%);
+  z-index: 10;
 }
 
 .mobile-nav-list {
@@ -65,4 +96,8 @@
   composes: mobile-nav-item;
   background-color: rgba(211, 211, 211, 0.2);
   font-size: 14px;
+  a {
+    text-decoration: none;
+    color: #2d2d34;
+  }
 }

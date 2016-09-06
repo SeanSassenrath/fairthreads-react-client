@@ -53,7 +53,7 @@ class App extends Component {
           {
             (this.state.windowSize > 760) ?
               <MainNav fetchProducts={fetchProducts} mainNav={mainNav} picks={picks} />
-            : <MobileNav />
+            : <MobileNav fetchProducts={fetchProducts} mainNav={mainNav} picks={picks} />
           }
         </MainNavContainer>
         { this.props.children }
