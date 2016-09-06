@@ -4,6 +4,9 @@ import { testSelector } from '../../selectors.js';
 import { Link } from 'react-router';
 import CSSModules from 'react-css-modules';
 import styles from './home.css';
+const blog = require("../../img/who-made-it.jpg");
+const promo = require("../../img/editorial.png");
+
 
 class Home extends Component {
 
@@ -30,17 +33,17 @@ class Home extends Component {
         </div>
         <div styleName="editorial">
           <div styleName="promo">
-            <div>
-              <h1>Summer is almost over.</h1>
-              <p>Score some great deals before they're gone!</p>
-              <div styleName="promo-buttons">
-                <div>Womens</div>
-                <div>Mens</div>
-              </div>
+            <img src={promo} alt="Promo items" />
+            <h1>Summer is almost over.</h1>
+            <p>Score some great deals before they're gone!</p>
+            <div styleName="promo-buttons">
+              <div>Womens</div>
+              <div>Mens</div>
             </div>
           </div>
           <div styleName="blog">
             <div styleName="blog-content">
+              <img src={blog} alt="Ethics and Fashion" />
               <h1>Ethics + Fashion</h1>
               <p>The Fashion Revolution has begun. Discover why fairtrade matters</p>
               <div>
