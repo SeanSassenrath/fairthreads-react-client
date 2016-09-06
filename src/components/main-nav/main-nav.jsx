@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
-import $ from 'jquery';
 import CSSModules from 'react-css-modules';
 import styles from './main-nav.css';
 const logo = require("../../img/fairthreads-logo.png");
@@ -48,7 +47,9 @@ class MainNav extends Component {
                         </li>
                       </ul>
                       <div>
+                        {/*
                         { picks ? <img styleName="stylistPickNav" src={picks.women.imageOriginal} /> : null }
+                        */}
                       </div>
                     </div>
                   </div>
@@ -78,9 +79,11 @@ class MainNav extends Component {
                           <Link to='/mens/underwear' onClick={() => mainNav("men", "underwear")}>Underwear</Link>
                         </li>
                       </ul>
+                      {/*
                       <div>
                         { picks ? <img styleName="stylistPickNav" src={picks.men.imageOriginal} /> : null }
                       </div>
+                      */}
                     </div>
                   </div>
                 </div>

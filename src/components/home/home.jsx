@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { testSelector } from '../../selectors.js';
 import { Link } from 'react-router';
+import Slider from 'react-slick';
 import CSSModules from 'react-css-modules';
 import styles from './home.css';
 const blog = require("../../img/who-made-it.jpg");
@@ -15,6 +16,14 @@ class Home extends Component {
       picks,
       mainNav
     } = this.props;
+
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
 
     return(
       <div>
@@ -52,6 +61,19 @@ class Home extends Component {
             </div>
           </div>
         </div>
+
+        {/*
+        <div>
+          <Slider {...settings}>
+            <div><h3>1</h3></div>
+            <div><h3>2</h3></div>
+            <div><h3>3</h3></div>
+            <div><h3>4</h3></div>
+            <div><h3>5</h3></div>
+            <div><h3>6</h3></div>
+          </Slider>
+        </div>
+
         {/*
         <div styleName="stylist-pick">
           <div styleName="stylist-pick-container">
