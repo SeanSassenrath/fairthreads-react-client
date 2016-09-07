@@ -3,25 +3,11 @@ import { connect } from 'react-redux';
 import { testSelector } from '../../selectors.js';
 import { Link } from 'react-router';
 import Slider from 'react-slick';
+import SlickNextArrow from '../slick-next-arrow/slick-next-arrow.jsx';
+import SlickPrevArrow from '../slick-prev-arrow/slick-prev-arrow.jsx';
 import CSSModules from 'react-css-modules';
 import styles from './home.css';
 const blog = require("../../img/who-made-it.jpg");
-
-class PrevArrow extends Component {
-  render() {
-    return (
-      <div {...this.props} style={{display: 'block', backgroundColor: 'black'}}></div>
-    )
-  }
-}
-
-class NextArrow extends Component {
-  render() {
-    return (
-      <div {...this.props} style={{display: 'block', backgroundColor: 'black'}}></div>
-    )
-  }
-}
 
 class Home extends Component {
 
@@ -32,13 +18,12 @@ class Home extends Component {
     } = this.props;
 
     const settings = {
-      dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 1,
+      slidesToShow: 3,
       slidesToScroll: 1,
-      prevArrow: <PrevArrow />,
-      nextArrow: <NextArrow />
+      prevArrow: <SlickPrevArrow />,
+      nextArrow: <SlickNextArrow />
     };
 
     return(
@@ -83,16 +68,16 @@ class Home extends Component {
           </div>*/}
         </div>
 
-        <div styleName="slideshow-container">
+        {/*<div styleName="slideshow-container">
           <Slider {...settings}>
-            <div><h3>1</h3></div>
-            <div><h3>2</h3></div>
-            <div><h3>3</h3></div>
-            <div><h3>4</h3></div>
-            <div><h3>5</h3></div>
-            <div><h3>6</h3></div>
+            <div style={{background: 'red'}}><h3>1</h3></div>
+            <div style={{background: 'red'}}><h3>2</h3></div>
+            <div style={{background: 'red'}}><h3>3</h3></div>
+            <div style={{background: 'red'}}><h3>4</h3></div>
+            <div style={{background: 'red'}}><h3>5</h3></div>
+            <div style={{background: 'red'}}><h3>6</h3></div>
           </Slider>
-        </div>
+        </div>*/}
 
         {/*
         <div styleName="stylist-pick">
