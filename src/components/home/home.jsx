@@ -6,8 +6,22 @@ import Slider from 'react-slick';
 import CSSModules from 'react-css-modules';
 import styles from './home.css';
 const blog = require("../../img/who-made-it.jpg");
-const promo = require("../../img/editorial.png");
 
+class PrevArrow extends Component {
+  render() {
+    return (
+      <div {...this.props} style={{display: 'block', backgroundColor: 'black'}}></div>
+    )
+  }
+}
+
+class NextArrow extends Component {
+  render() {
+    return (
+      <div {...this.props} style={{display: 'block', backgroundColor: 'black'}}></div>
+    )
+  }
+}
 
 class Home extends Component {
 
@@ -22,7 +36,9 @@ class Home extends Component {
       infinite: true,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      prevArrow: <PrevArrow />,
+      nextArrow: <NextArrow />
     };
 
     return(
@@ -41,16 +57,21 @@ class Home extends Component {
           <Link to='/about' styleName="learn-more">Learn More</Link>
         </div>
         <div styleName="editorial">
-          <div styleName="promo">
-            <img src={promo} alt="Promo items" />
-            <h1>Summer is almost over.</h1>
-            <p>Score some great deals before they're gone!</p>
-            <div styleName="promo-buttons">
-              <div>Womens</div>
-              <div>Mens</div>
+          <div styleName="promo-women">
+            <div styleName="promo-overlay">
+              <h1>Shop Women</h1>
+              <p>Score some great deals before they're gone!</p>
+              <div styleName="promo-button">Women</div>
             </div>
           </div>
-          <div styleName="blog">
+          <div styleName="promo-men">
+            <div styleName="promo-overlay">
+              <h1>Shop Men</h1>
+              <p>Score some great deals before they're gone!</p>
+              <div styleName="promo-button">Men</div>
+            </div>
+          </div>
+          {/*<div styleName="blog">
             <div styleName="blog-content">
               <img src={blog} alt="Ethics and Fashion" />
               <h1>Ethics + Fashion</h1>
@@ -59,11 +80,10 @@ class Home extends Component {
                 <Link to='/about' styleName="blog-button">Discover Fair Fashion</Link>
               </div>
             </div>
-          </div>
+          </div>*/}
         </div>
 
-        {/*
-        <div>
+        <div styleName="slideshow-container">
           <Slider {...settings}>
             <div><h3>1</h3></div>
             <div><h3>2</h3></div>

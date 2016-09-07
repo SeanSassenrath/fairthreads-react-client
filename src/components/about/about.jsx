@@ -10,6 +10,9 @@ class About extends Component {
   render() {
     return(
       <div>
+        <div styleName="about-hero">
+
+        </div>
         <div styleName="about-container">
           <div>
             <h1>Ethical Practices</h1>

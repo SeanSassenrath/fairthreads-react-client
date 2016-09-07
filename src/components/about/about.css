@@ -16,6 +16,18 @@
   background-color: #474747;
 }
 
+.about-hero {
+  composes: container;
+  background-image: url('../../img/about-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  max-width: none;
+  @media(--larger-than-tablet) {
+    height: 200px;
+  }
+}
+
 .about-container {
   composes: container;
   max-width: 900px;
