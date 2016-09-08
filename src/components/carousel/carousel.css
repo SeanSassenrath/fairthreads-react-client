@@ -1,0 +1,9 @@
+.slide-container {
+  height: 400px;
+}
+
+.slide-image {
+  width: 225px;
+  height: 400px;
+  background-color: white;
+}

@@ -2,29 +2,40 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { testSelector } from '../../selectors.js';
 import { Link } from 'react-router';
-import Slider from 'react-slick';
-import SlickNextArrow from '../slick-next-arrow/slick-next-arrow.jsx';
-import SlickPrevArrow from '../slick-prev-arrow/slick-prev-arrow.jsx';
+import $ from 'jquery';
+import Carousel from '../carousel/carousel.jsx';
 import CSSModules from 'react-css-modules';
 import styles from './home.css';
 const blog = require("../../img/who-made-it.jpg");
 
 class Home extends Component {
 
+  constructor(...props) {
+    super(...props);
+    this.state = {
+      womensCarousel: [],
+      mensCarousel: []
+    }
+  }
+
+  componentDidMount() {
+    $.ajax({
+      method: 'GET',
+      url: 'https://fairthreads-api.herokuapp.com/products/home-carousel',
+      dataType: 'json'
+    }).done((carouselProducts) => {
+      console.log('Done with getting home carousel products');
+      this.setState({mensCarousel: carouselProducts.mens, womensCarousel: carouselProducts.womens});
+    }).fail((e) => {
+      console.log('Error', e);
+    })
+  }
+
   render() {
     let {
       picks,
       mainNav
     } = this.props;
-
-    const settings = {
-      infinite: true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      prevArrow: <SlickPrevArrow />,
-      nextArrow: <SlickNextArrow />
-    };
 
     return(
       <div>
@@ -68,16 +79,15 @@ class Home extends Component {
           </div>*/}
         </div>
 
-        {/*<div styleName="slideshow-container">
-          <Slider {...settings}>
-            <div style={{background: 'red'}}><h3>1</h3></div>
-            <div style={{background: 'red'}}><h3>2</h3></div>
-            <div style={{background: 'red'}}><h3>3</h3></div>
-            <div style={{background: 'red'}}><h3>4</h3></div>
-            <div style={{background: 'red'}}><h3>5</h3></div>
-            <div style={{background: 'red'}}><h3>6</h3></div>
-          </Slider>
-        </div>*/}
+        <div style={{background: '#f6f6f6'}}>
+          <div styleName="slideshow-container">
+            {
+              this.state.womensCarousel.length > 0 ?
+                <Carousel products={this.state.womensCarousel} />
+              : null
+            }
+          </div>
+        </div>
 
         {/*
         <div styleName="stylist-pick">
