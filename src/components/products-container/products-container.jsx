@@ -22,15 +22,20 @@ class ProductsContainer extends Component {
     console.log("Products-container mounting...")
   }
 
-  componentWillUpdate() {
-    console.log("Products-container will update...")
+  componentWillReceiveProps() {
+    console.log("Products-container will receive props...")
     console.log('this.props', this.props)
   }
 
-  componentDidUpdate() {
-    console.log("Products-container did update...")
-    console.log('this.props', this.props)
-  }
+  // componentWillUpdate() {
+  //   console.log("Products-container will update...")
+  //   console.log('this.props', this.props)
+  // }
+  //
+  // componentDidUpdate() {
+  //   console.log("Products-container did update...")
+  //   console.log('this.props', this.props)
+  // }
 
   render() {
     let {
