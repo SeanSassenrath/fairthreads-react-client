@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, browserHistory, hashHistory, IndexRoute } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux'
+// import { syncHistoryWithStore } from 'react-router-redux'
 import { Provider, connect } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
@@ -19,13 +19,16 @@ let loggerMiddleware = createLogger();
 let createStoreWithMiddleware = applyMiddleware(thunkMiddleware, loggerMiddleware)(createStore);
 let store = createStoreWithMiddleware(rootReducer)
 
-const history = syncHistoryWithStore(browserHistory, store);
+// const history = syncHistoryWithStore(browserHistory, store);
 
 render(
   <Provider store = { store }>
-    <Router history={ history }>
+    <Router history={ browserHistory }>
       <Route path="/" component={ App }>
         <IndexRoute component={ Home } />
+        <Route path="/(:store)/(:category)/filter/(:filter)/sort/(:sort)" />
+        <Route path="/(:store)/(:category)/product/(:id)/image/(:index)" />
+        <Route path="/(:store)/(:user)/(:showcase)" />
         <Route path="/mens" component={ ProductsContainer } />
         <Route path="/mens/tops" component={ ProductsContainer } />
         <Route path="/mens/bottoms" component={ ProductsContainer } />
