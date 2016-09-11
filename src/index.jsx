@@ -1,25 +1,21 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, browserHistory, hashHistory, IndexRoute } from 'react-router';
-// import { syncHistoryWithStore } from 'react-router-redux'
 import { Provider, connect } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers/root';
-import App from './components/app.jsx';
-import Home from './components/home/home.jsx';
-import ProductsContainer from './components/products-container/products-container.jsx';
-import About from './components/about/about.jsx';
-import Contact from './components/contact/contact.jsx';
+import App from './app/app.jsx';
+import Home from './app/pages/home/home.jsx';
+import ProductsContainer from './app/components/products-container/products-container.jsx';
+import About from './app/pages/about/about.jsx';
+import Contact from './app/pages/contact/contact.jsx';
 import 'babel-polyfill';
-import { fetchProducts } from './action-creators';
 
 let loggerMiddleware = createLogger();
 let createStoreWithMiddleware = applyMiddleware(thunkMiddleware, loggerMiddleware)(createStore);
 let store = createStoreWithMiddleware(rootReducer)
-
-// const history = syncHistoryWithStore(browserHistory, store);
 
 render(
   <Provider store = { store }>

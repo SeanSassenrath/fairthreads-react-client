@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './filter-nav.css';
-import { stickyNav } from '../../helpers.js';
+import { stickyNav } from '../../../helpers.js';
 
 class FilterNav extends Component {
 

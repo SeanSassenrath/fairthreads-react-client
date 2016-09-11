@@ -4,8 +4,8 @@ import CSSModules from 'react-css-modules';
 import ProductCard from '../product-card/product-card.jsx';
 import FilterNav from '../filter-nav/filter-nav.jsx'
 import { connect } from 'react-redux';
-import { selectActions } from '../../selectors.js';
-import { testSelector } from '../../selectors.js';
+import { selectActions } from '../../../selectors.js';
+import { testSelector } from '../../../selectors.js';
 import styles from './products-container.css';
 var Waypoint = require('react-waypoint');
 

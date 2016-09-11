@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import CSSModules from 'react-css-modules';
 import styles from './mobile-nav.css';
-const logo = require("../../img/fairthreads-logo.png");
+const logo = require("../../../img/fairthreads-logo.png");
 
 class MobileNav extends Component {
 

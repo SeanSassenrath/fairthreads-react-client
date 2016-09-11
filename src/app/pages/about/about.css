@@ -1,4 +1,4 @@
-@import '../common.css';
+@import '../../common.css';
 
 .container {
   max-width: 1180px;
@@ -18,7 +18,7 @@
 
 .about-hero {
   composes: container;
-  background-image: url('../../img/about-hero.jpg');
+  background-image: url('../../../img/about-hero.jpg');
   background-size: cover;
   background-position: center;
   height: 150px;

@@ -1,12 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { testSelector } from '../../selectors.js';
+import { testSelector } from '../../../selectors.js';
 import { Link } from 'react-router';
 import $ from 'jquery';
-import Carousel from '../carousel/carousel.jsx';
+import Carousel from '../../components/carousel/carousel.jsx';
 import CSSModules from 'react-css-modules';
 import styles from './home.css';
-const blog = require("../../img/who-made-it.jpg");
+const blog = require("../../../img/who-made-it.jpg");
 
 class Home extends Component {
 

@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import CSSModules from 'react-css-modules'
 import styles from './footer.css';
-const facebookFooter = require("../../img/facebook-footer.png");
-const instagramFooter = require("../../img/instagram-footer.png");
-const twitterFooter = require("../../img/twitter-footer.png");
+const facebookFooter = require("../../../img/facebook-footer.png");
+const instagramFooter = require("../../../img/instagram-footer.png");
+const twitterFooter = require("../../../img/twitter-footer.png");
 
 class Footer extends Component {
 

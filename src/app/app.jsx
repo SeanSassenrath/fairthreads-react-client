@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import { selectActions } from '../selectors.js';
 import { testSelector } from '../selectors.js';
 import Immutable from 'seamless-immutable';
-import Row from './product-row/product-row.jsx';
-import MainNavContainer from './main-nav-container/main-nav-container.jsx';
-import MainNav from './main-nav/main-nav.jsx';
-import MobileNav from './mobile-nav/mobile-nav';
-import Footer from './footer/footer.jsx';
+import Row from './components/product-row/product-row.jsx';
+import MainNavContainer from './components/main-nav-container/main-nav-container.jsx';
+import MainNav from './components/main-nav/main-nav.jsx';
+import MobileNav from './components/mobile-nav/mobile-nav';
+import Footer from './components/footer/footer.jsx';
 
 class App extends Component {
 
@@ -25,7 +25,6 @@ class App extends Component {
 
   componentDidMount() {
     this.props.fetchStylistPickTeasers();
-    console.log("Window width", window.innerWidth)
     window.onresize = () => this.getWindowSize();
   }
 
@@ -53,7 +52,8 @@ class App extends Component {
           {
             (this.state.windowSize > 760) ?
               <MainNav fetchProducts={fetchProducts} mainNav={mainNav} picks={picks} />
-            : <MobileNav fetchProducts={fetchProducts} mainNav={mainNav} picks={picks} />
+            :
+              <MobileNav fetchProducts={fetchProducts} mainNav={mainNav} picks={picks} />
           }
         </MainNavContainer>
         { this.props.children }

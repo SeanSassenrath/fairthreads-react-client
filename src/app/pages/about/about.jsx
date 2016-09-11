@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './about.css';
-const quality = require("../../img/quality-white.svg");
-const ethical = require("../../img/ethical.svg");
-const fashion = require("../../img/fashion.svg");
+const quality = require("../../../img/quality-white.svg");
+const ethical = require("../../../img/ethical.svg");
+const fashion = require("../../../img/fashion.svg");
 
 class About extends Component {
 
