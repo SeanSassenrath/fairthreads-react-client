@@ -23,6 +23,7 @@ render(
     <Router history={ browserHistory }>
       <Route path="/" component={ App }>
         <IndexRoute component={ Home } />
+        <Route path="/(:store)" component={ Products }/>
         <Route path="/(:store)/(:category)" component={ Products }/>
         {/*
         <Route path="/(:store)/(:category)/filter/(:filter)/sort/(:sort)" component={ Products }/>
