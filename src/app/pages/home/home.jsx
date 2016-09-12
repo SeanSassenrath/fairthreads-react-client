@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { testSelector } from '../../../selectors.js';
+import { appSelectors } from '../../../selectors.js';
 import { Link } from 'react-router';
 import $ from 'jquery';
 import Carousel from '../../components/carousel/carousel.jsx';
@@ -133,4 +133,4 @@ class Home extends Component {
 
 const StyledHome = CSSModules(Home, styles);
 
-export default connect(testSelector)(StyledHome);
+export default connect(appSelectors)(StyledHome);

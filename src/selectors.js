@@ -40,7 +40,7 @@ const itemsTransformSelector = createSelector(
   (items) => (items)
 )
 
-export const testSelector = createSelector(
+export const appSelectors = createSelector(
   itemsTransformSelector,
   loadingSelector,
   saleSelector,

@@ -11,6 +11,7 @@ import Home from './app/pages/home/home.jsx';
 import ProductsContainer from './app/components/products-container/products-container.jsx';
 import About from './app/pages/about/about.jsx';
 import Contact from './app/pages/contact/contact.jsx';
+import Products from './app/pages/products/products.jsx';
 import 'babel-polyfill';
 
 let loggerMiddleware = createLogger();
@@ -22,11 +23,13 @@ render(
     <Router history={ browserHistory }>
       <Route path="/" component={ App }>
         <IndexRoute component={ Home } />
-        <Route path="/(:store)/(:category)/filter/(:filter)/sort/(:sort)" />
+        <Route path="/(:store)/(:category)" component={ Products }/>
+        {/*
+        <Route path="/(:store)/(:category)/filter/(:filter)/sort/(:sort)" component={ Products }/>
         <Route path="/(:store)/(:category)/product/(:id)/image/(:index)" />
         <Route path="/(:store)/(:user)/(:showcase)" />
         <Route path="/mens" component={ ProductsContainer } />
-        <Route path="/mens/tops" component={ ProductsContainer } />
+        <Route path="/mens/tops" component={ Products } />
         <Route path="/mens/bottoms" component={ ProductsContainer } />
         <Route path="/mens/dresses" component={ ProductsContainer } />
         <Route path="/mens/shoes" component={ ProductsContainer } />
@@ -38,6 +41,7 @@ render(
         <Route path="/womens/dresses" component={ ProductsContainer } />
         <Route path="/womens/shoes" component={ ProductsContainer } />
         <Route path="/womens/underwear" component={ ProductsContainer } />
+        */}
         <Route path="/about" component={ About } />
         <Route path="/contact" component={ Contact } />
       </Route>

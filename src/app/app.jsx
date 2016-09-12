@@ -44,10 +44,11 @@ class App extends Component {
       priceRangeFilter,
       priceRangeFilterValues,
       priceRange,
+      props,
     } = this.props;
 
     return (
-      <div className="app-container" style={{backgroundColor: "#fafafa"}}>
+      <div className="app-container" style={{backgroundColor: "#fafafa"}} {...props}>
         <MainNavContainer>
           {
             (this.state.windowSize > 760) ?
@@ -65,7 +66,6 @@ class App extends Component {
 
 App.propTypes = {
   items: PropTypes.array.isRequired,
-  dispatch: PropTypes.func.isRequired
 }
 
 export default connect(testSelector, selectActions)(App);

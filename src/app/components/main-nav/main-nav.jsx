@@ -25,26 +25,14 @@ class MainNav extends Component {
                   <div id="womens-dropdown" styleName="dropdown-content">
                     <div styleName="list-container">
                       <ul>
-                        <li>
-                          <Link to='/womens/tops' onClick={() => mainNav("womens-clothes", "tops")}>Tops</Link>
-                        </li>
-                        <li>
-                          <Link to='/womens/bottoms' onClick={() => mainNav("womens-clothes", "bottoms")}>Bottoms</Link>
-                        </li>
-                        <li>
-                          <Link to='/womens/dresses' onClick={() => mainNav("womens-clothes", "dresses")}>Dresses & Jumpsuits</Link>
-                        </li>
+                        <li><Link to='/womens/tops'>Tops</Link></li>
+                        <li><Link to='/womens/bottoms'>Bottoms</Link></li>
+                        <li><Link to='/womens/dresses'>Dresses & Jumpsuits</Link></li>
                       </ul>
                       <ul>
-                        <li>
-                          <Link to='/womens/shoes' onClick={() => mainNav("womens-clothes", "shoes")}>Shoes</Link>
-                        </li>
-                        <li>
-                          <Link to='/womens/active-wear' onClick={() => mainNav("womens-clothes", "active-wear")}>Athleisure</Link>
-                        </li>
-                        <li>
-                          <Link to='/womens/underwear' onClick={() => mainNav("womens-clothes", "underwear")}>Underwear</Link>
-                        </li>
+                        <li><Link to='/womens/shoes'>Shoes</Link></li>
+                        <li><Link to='/womens/active-wear'>Athleisure</Link></li>
+                        <li><Link to='/womens/underwear'>Underwear</Link></li>
                       </ul>
                       <div>
                         {/*
@@ -61,23 +49,13 @@ class MainNav extends Component {
                   <div id="mens-dropdown" styleName="dropdown-content">
                     <div styleName="list-container">
                       <ul>
-                        <li>
-                          <Link to='/mens/tops' onClick={() => mainNav("men", "tops")}>Tops</Link>
-                        </li>
-                        <li>
-                          <Link to='/mens/bottoms' onClick={() => mainNav("men", "bottoms")}>Bottoms</Link>
-                        </li>
-                        <li>
-                          <Link to='/mens/shoes' onClick={() => mainNav("men", "shoes")}>Shoes</Link>
-                        </li>
+                        <li><Link to='/mens/tops'>Tops</Link></li>
+                        <li><Link to='/mens/bottoms'>Bottoms</Link></li>
+                        <li><Link to='/mens/shoes'>Shoes</Link></li>
                       </ul>
                       <ul>
-                        <li>
-                          <Link to='/mens/active-wear' onClick={() => mainNav("men", "active-wear")}>Active</Link>
-                        </li>
-                        <li>
-                          <Link to='/mens/underwear' onClick={() => mainNav("men", "underwear")}>Underwear</Link>
-                        </li>
+                        <li><Link to='/mens/active-wear'>Active</Link></li>
+                        <li><Link to='/mens/underwear'>Underwear</Link></li>
                       </ul>
                       {/*
                       <div>
@@ -91,14 +69,8 @@ class MainNav extends Component {
               <li>
                 <Link to='/'><img src={logo} styleName="logo" /></Link>
               </li>
-              <li>
-                <Link to='/about' activeStyle={{ opacity: '1', color: "#333" }} onClick={() => mainNav("about")}>About</Link>
-              </li>
-              <li>
-                <div styleName="dropdown">
-                  <Link to='/contact' activeStyle={{ opacity: '1', color: "#333" }} styleName="dropdown-action" onClick={() => mainNav("men")}>Contact</Link>
-                </div>
-              </li>
+              <li><Link to='/about' activeStyle={{ opacity: '1', color: "#333" }}>About</Link></li>
+              <li><Link to='/contact' activeStyle={{ opacity: '1', color: "#333" }}>Contact</Link></li>
             </ul>
           </nav>
         </div>
