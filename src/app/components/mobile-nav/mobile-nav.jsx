@@ -16,7 +16,6 @@ class MobileNav extends Component {
     this.openNav = this.openNav.bind(this);
     this.closeNav = this.closeNav.bind(this);
     this.openSubNav = this.openSubNav.bind(this);
-    this.selectCategory = this.selectCategory.bind(this);
   }
 
   openNav() {
@@ -33,11 +32,6 @@ class MobileNav extends Component {
     } else {
       this.setState({subNav: n})
     }
-  }
-
-  selectCategory(gender, category) {
-    this.props.mainNav(gender, category);
-    this.closeNav();
   }
 
   render() {
@@ -65,54 +59,26 @@ class MobileNav extends Component {
             <li>
               <div styleName='mobile-nav-item' onClick={() =>  this.openSubNav(1)}>Womens</div>
               <ul styleName='mobile-nav-sub-list' style={{display: this.state.subNav === 1 ? 'block' : 'none'}}>
-                <li styleName='mobile-nav-sub-item' >
-                  <Link to='/womens/tops' onClick={() => this.selectCategory("womens-clothes", "tops")}
-                  >Tops</Link>
-                </li>
-                <li styleName='mobile-nav-sub-item' onClick={() => this.closeNav}>
-                  <Link to='/womens/bottoms' onClick={() => this.selectCategory("womens-clothes", "bottoms")}>Bottoms</Link>
-                </li>
-                <li styleName='mobile-nav-sub-item'>
-                  <Link to='/womens/dresses' onClick={() =>this.selectCategory("womens-clothes", "dresses")}
-                >Dresses</Link></li>
-                <li styleName='mobile-nav-sub-item'>
-                  <Link to='/womens/shoes' onClick={() => this.selectCategory("womens-clothes", "shoes")}>Shoes</Link>
-                </li>
-                <li styleName='mobile-nav-sub-item'>
-                  <Link to='/womens/active-wear' onClick={() => this.selectCategory("womens-clothes", "active-wear")}>Active Wear</Link>
-                </li>
-                <li styleName='mobile-nav-sub-item'>
-                  <Link to='/womens/underwear' onClick={() => this.selectCategory("womens-clothes", "underwear")}>Underwear</Link>
-                </li>
+                <li styleName='mobile-nav-sub-item'><Link to='/womens/tops' onClick={() => this.closeNav()}>Tops</Link></li>
+                <li styleName='mobile-nav-sub-item'><Link to='/womens/bottoms' onClick={() => this.closeNav()}>Bottoms</Link></li>
+                <li styleName='mobile-nav-sub-item'><Link to='/womens/dresses' onClick={() => this.closeNav()}>Dresses</Link></li>
+                <li styleName='mobile-nav-sub-item'><Link to='/womens/shoes' onClick={() => this.closeNav()}>Shoes</Link></li>
+                <li styleName='mobile-nav-sub-item'><Link to='/womens/active-wear' onClick={() => this.closeNav()}>Active Wear</Link></li>
+                <li styleName='mobile-nav-sub-item'><Link to='/womens/underwear' onClick={() => this.closeNav()}>Underwear</Link></li>
               </ul>
             </li>
             <li>
               <div styleName='mobile-nav-item' onClick={() => this.openSubNav(2)}>Mens</div>
               <ul styleName='mobile-nav-sub-list' style={{display: this.state.subNav === 2 ? 'block' : 'none'}}>
-                <li styleName='mobile-nav-sub-item' >
-                  <Link to='/mens/tops' onClick={() =>this.selectCategory("men", "tops")}
-                  >Tops</Link>
-                </li>
-                <li styleName='mobile-nav-sub-item' onClick={() => this.closeNav}>
-                  <Link to='/mens/bottoms' onClick={() => mainNav("men", "bottoms")}>Bottoms</Link>
-                </li>
-                <li styleName='mobile-nav-sub-item'>
-                  <Link to='/mens/shoes' onClick={() => mainNav("men", "shoes")}>Shoes</Link>
-                </li>
-                <li styleName='mobile-nav-sub-item'>
-                  <Link to='/mens/active-wear' onClick={() => mainNav("men", "active-wear")}>Active</Link>
-                </li>
-                <li styleName='mobile-nav-sub-item'>
-                  <Link to='/mens/underwear' onClick={() => mainNav("men", "underwear")}>Underwear</Link>
-                </li>
+                <li styleName='mobile-nav-sub-item'><Link to='/mens/tops' onClick={() => this.closeNav()}>Tops</Link></li>
+                <li styleName='mobile-nav-sub-item'><Link to='/mens/bottoms' onClick={() => this.closeNav()}>Bottoms</Link></li>
+                <li styleName='mobile-nav-sub-item'><Link to='/mens/shoes' onClick={() => this.closeNav()}>Shoes</Link></li>
+                <li styleName='mobile-nav-sub-item'><Link to='/mens/active-wear' onClick={() => this.closeNav()}>Active</Link></li>
+                <li styleName='mobile-nav-sub-item'><Link to='/mens/underwear' onClick={() => this.closeNav()}>Underwear</Link></li>
               </ul>
             </li>
-            <li>
-              <div styleName='mobile-nav-item'>About</div>
-            </li>
-            <li>
-              <div styleName='mobile-nav-item'>Contact</div>
-            </li>
+            <li><div styleName='mobile-nav-item'><Link to='/about' onClick={() => this.closeNav()}>About</Link></div></li>
+            <li><div styleName='mobile-nav-item'><Link to='/contact' onClick={() => this.closeNav()}>Contact</Link></div></li>
           </ul>
         </nav>
       </div>
