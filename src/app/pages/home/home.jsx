@@ -6,6 +6,7 @@ import $ from 'jquery';
 import Carousel from '../../components/carousel/carousel.jsx';
 import CSSModules from 'react-css-modules';
 import styles from './home.css';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 const blog = require("../../../img/who-made-it.jpg");
 
 class Home extends Component {
