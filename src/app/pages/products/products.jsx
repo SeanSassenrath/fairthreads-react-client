@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import FilterNav from '../../components/filter-nav/filter-nav.jsx';
+import ProductsNav from '../../components/products-nav/products-nav.jsx';
 import ProductsContainer from '../../components/products-container/products-container.jsx';
 import { connect } from 'react-redux';
 import { appSelectors, selectActions } from '../../../selectors.js';
@@ -28,6 +28,11 @@ class Products extends Component {
     }
   }
 
+  getBreadCrumbs() {
+    let breadCrumbs = [];
+
+  }
+
   render() {
 
     let {
@@ -45,7 +50,7 @@ class Products extends Component {
 
     return (
       <div {...props}>
-        <FilterNav
+        <ProductsNav
           lowToHighProducts={lowToHighProducts}
           highToLowProducts={highToLowProducts}
           toggleSaleOnly={toggleSaleOnly}
@@ -54,6 +59,7 @@ class Products extends Component {
           priceRange={priceRange}
           priceRangeFilter={priceRangeFilter}
           sortProducts={sortProducts}
+          breadCrumbs={this.props.params}
         />
         <ProductsContainer products={items} />
       </div>
