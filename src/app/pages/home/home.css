@@ -88,6 +88,9 @@ a.learn-more {
   @media (--larger-than-tablet) {
     flex-wrap: nowrap;
   }
+  a {
+    text-decoration: none;
+  }
 }
 
 .promo {
@@ -96,12 +99,14 @@ a.learn-more {
   text-align: center;
   background-position: center;
   background-size: cover;
+  color: #333;
   h1 {
     margin: 0;
     font-size: 70px;
+    font-family: 'Poiret One', cursive;
+    font-style: normal;
     font-weight: 400;
     line-height: 70px;
-    color: #db5461;
   }
   p {
     margin: 0;
