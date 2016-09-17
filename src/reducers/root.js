@@ -2,10 +2,11 @@ import { combineReducers } from 'redux';
 import Immutable from "seamless-immutable";
 import {
   REQUEST_PRODUCT,
-  RECIEVE_PRODUCT,
+  RECEIVE_PRODUCT,
   REQUEST_PRODUCTS,
-  RECIEVE_PRODUCTS,
-  RECIEVE_STYLIST_PICK_TEASERS,
+  RECEIVE_INITIAL_PRODUCTS,
+  RECEIVE_ADDITIONAL_PRODUCTS,
+  RECEIVE_STYLIST_PICK_TEASERS,
   LOWEST_TO_HIGHEST_PRODUCTS,
   HIGHEST_TO_LOWEST_PRODUCTS,
   TOGGLE_SALE_ONLY,
@@ -26,7 +27,7 @@ function products(state = initialState.products, action) {
     case REQUEST_PRODUCT:
       return state
         .set('loading', true)
-    case RECIEVE_PRODUCT:
+    case RECEIVE_PRODUCT:
       console.log('Action product', action)
       return state
         .set('loading', false)
@@ -34,13 +35,18 @@ function products(state = initialState.products, action) {
     case REQUEST_PRODUCTS:
       return state
         .set('loading', true)
-    case RECIEVE_PRODUCTS:
+    case RECEIVE_INITIAL_PRODUCTS:
       return state
         .set('loading', false)
         .set('items', action.products)
         .set('categoryList', action.categoryList)
         .set('gender', action.gender)
-    case RECIEVE_STYLIST_PICK_TEASERS:
+        .set('page', 1)
+    case RECEIVE_ADDITIONAL_PRODUCTS:
+      return state
+        .set('items': action.products)
+        .set('page': action.page)
+    case RECEIVE_STYLIST_PICK_TEASERS:
       return state
         .set('stylistPickTeasers', action.picks)
     case LOWEST_TO_HIGHEST_PRODUCTS:

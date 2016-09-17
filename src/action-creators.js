@@ -1,10 +1,11 @@
 import fetch from 'isomorphic-fetch';
 import {
   REQUEST_PRODUCT,
-  RECIEVE_PRODUCT,
+  RECEIVE_PRODUCT,
   REQUEST_PRODUCTS,
-  RECIEVE_PRODUCTS,
-  RECIEVE_STYLIST_PICK_TEASERS,
+  RECEIVE_INITIAL_PRODUCTS,
+  RECEIVE_ADDITIONAL_PRODUCTS,
+  RECEIVE_STYLIST_PICK_TEASERS,
   LOWEST_TO_HIGHEST_PRODUCTS,
   HIGHEST_TO_LOWEST_PRODUCTS,
   TOGGLE_SALE_ONLY,
@@ -21,7 +22,7 @@ function requestProduct(id) {
 
 function receiveProduct(id, json) {
  return {
-   type: RECIEVE_PRODUCT,
+   type: RECEIVE_PRODUCT,
    product: json[0],
  }
 }
@@ -33,17 +34,26 @@ function requestProducts(gender, category) {
   }
 }
 
-function receiveProducts(gender, json) {
+function receiveInitialProducts(gender, json) {
   return {
-    type: RECIEVE_PRODUCTS,
+    type: RECEIVE_INITIAL_PRODUCTS,
     gender,
     products: json.items,
   }
 }
 
+function receiveAdditionalProducts(gender, page, items, json) {
+  return {
+    type: RECEIVE_ADDITIONAL_PRODUCTS,
+    gender,
+    page: page++,
+    products: items.push(json.items),
+  }
+}
+
 export function receiveStylistPickTeasers(json) {
   return {
-    type: RECIEVE_STYLIST_PICK_TEASERS,
+    type: RECEIVE_STYLIST_PICK_TEASERS,
     picks: json,
   }
 }
@@ -57,20 +67,38 @@ export function fetchProduct(id) {
   }
 }
 
-export function fetchProducts(gender, category) {
+export function initialFetchProducts(gender, category, page) {
   if (category) {
     return dispatch => {
       dispatch(requestProducts(gender, category))
-      return fetch('https://fairthreads-api.herokuapp.com/products/gender/' + gender + '/category/' + category)
+      return fetch('https://fairthreads-api.herokuapp.com/products/gender/' + gender + '/category/' + category + '/page/' + page)
       .then(req => req.json())
-      .then(json => dispatch(receiveProducts(gender, json)))
+      .then(json => dispatch(receiveInitialProducts(gender, json)))
+    }
+  } else {
+    return dispatch => {
+      dispatch(requestProducts(gender))
+      return fetch('https://fairthreads-api.herokuapp.com/products/gender/' + gender + '/page/1')
+      .then(req => req.json())
+      .then(json => dispatch(receiveInitialProducts(gender, json)))
+    }
+  }
+}
+
+export function additionalFetchProducts(gender, category, page, items) {
+  if (category) {
+    return dispatch => {
+      dispatch(requestProducts(gender, category))
+      return fetch('https://fairthreads-api.herokuapp.com/products/gender/' + gender + '/category/' + category + '/page/' + page)
+      .then(req => req.json())
+      .then(json => dispatch(receiveAdditionalProducts(gender, page, items, json)))
     }
   } else {
     return dispatch => {
       dispatch(requestProducts(gender))
       return fetch('https://fairthreads-api.herokuapp.com/products/gender/' + gender)
       .then(req => req.json())
-      .then(json => dispatch(receiveProducts(gender, json)))
+      .then(json => dispatch(receiveAdditionalProducts(gender, json)))
     }
   }
 }

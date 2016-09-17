@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import shallowCompare from 'react-addons-shallow-compare';
 import ProductsNav from '../../components/products-nav/products-nav.jsx';
 import ProductsContainer from '../../components/products-container/products-container.jsx';
 import { connect } from 'react-redux';
@@ -8,23 +9,27 @@ import styles from './products.css';
 
 class Products extends Component {
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return shallowCompare(this, nextProps, nextState);
+  }
+
   componentDidMount() {
     let {
-      fetchProducts,
+      initialFetchProducts,
       params
     } = this.props;
 
-    fetchProducts(params.store, params.category)
+    initialFetchProducts(params.store, params.category)
   }
 
   componentWillReceiveProps(nextProps) {
     let {
-      fetchProducts,
+      initialFetchProducts,
       params
     } = this.props;
 
     if (nextProps.params !== params) {
-      fetchProducts(nextProps.params.store, nextProps.params.category)
+      initialFetchProducts(nextProps.params.store, nextProps.params.category)
     }
   }
 
