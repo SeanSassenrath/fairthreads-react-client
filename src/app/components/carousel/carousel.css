@@ -2,12 +2,34 @@
   height: 300px;
 }
 
-.slide-image {
+.slide-image-container {
+  position: relative;
   width: 90%;
   height: 300px;
   margin: 0 auto;
   background-color: white;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%; height:100%;
+    top:0; left:0;
+    background:rgba(0,0,0,0.7);
+    opacity: 0;
+    transition: all 500ms;
+    -webkit-transition: all 500ms;
+  }
+  &:hover:before {
+    opacity: 1;
+  }
 }
+
+
 
 a {
   text-decoration: none;
@@ -17,8 +39,14 @@ a {
   margin: 0 auto;
   margin-top: -190px;
   width: 200px;
+  position: relative;
   text-align: center;
+  color: white;
   div {
     padding: 5px 0;
   }
+}
+
+.none {
+  display: none;
 }

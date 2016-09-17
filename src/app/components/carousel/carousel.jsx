@@ -9,11 +9,19 @@ class Carousel extends Component {
 
   constructor(...args) {
     super(...args)
-    this.onSlideHover = this.onSlideHover.bind(this)
+    this.state = {
+      hoveredSlide: null
+    }
+    this.onMouseOver = this.onMouseOver.bind(this)
+    this.onMouseOut = this.onMouseOut.bind(this)
   }
 
-  onSlideHover(i) {
+  onMouseOver(i) {
     this.setState({hoveredSlide: i})
+  }
+
+  onMouseOut() {
+    this.setState({hoveredSlide: null})
   }
 
   render() {
@@ -42,17 +50,19 @@ class Carousel extends Component {
                   target='_blank'
                   key={key++}
                   styleName="slide-container"
-                  onMouseOver={this.onSlideHover(i)}
+                  onMouseOver={() => this.onMouseOver(i)}
+                  onMouseOut={() => this.onMouseOut()}
                 >
-                  <img
-                    src={product.imageOriginal}
-                    styleName='slide-image'
-                    style={{objectFit: product.objectFit}}
-                  />
-                  <div styleName={this.state.hoveredSlide ? 'product-details' : display: 'none'}>
-                    <div>{product.name}</div>
-                    <div>{product.brand}</div>
-                    <div>{product.salePrice ? `$${Math.ceil(product.salePrice)}` : `$${Math.ceil(product.price)}`}</div>
+                  <div styleName='slide-image-container'>
+                    <img
+                      src={product.imageOriginal}
+                      style={{objectFit: product.objectFit}}
+                    />
+                    <div styleName={this.state.hoveredSlide === i ? 'product-details' : 'none'}>
+                      <div>{product.name}</div>
+                      <div>{product.brand}</div>
+                      <div>{product.salePrice ? `$${Math.ceil(product.salePrice)}` : `$${Math.ceil(product.price)}`}</div>
+                    </div>
                   </div>
                 </a>
               )
