@@ -30,10 +30,10 @@ class ProductsNav extends Component {
       <div id="product-filter" styleName="filter-nav-container">
         <nav>
           <div styleName="breadcrumbs">
-            <Link to="">{breadCrumbs.store}</Link>
+            <Link to={`/products/${breadCrumbs.store}`}>{breadCrumbs.store}</Link>
             {
               breadCrumbs.category ?
-                <Link to=""> / {breadCrumbs.category}</Link>
+                <Link to={`/products/${breadCrumbs.category}`}> / {breadCrumbs.category}</Link>
               : null
             }
           </div>
