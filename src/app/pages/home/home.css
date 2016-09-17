@@ -187,8 +187,16 @@ a.blog-button {
   }
 }
 
+.slideshow-section {
+  background-color: #f6f6f6;
+  padding-bottom: 60px;
+}
+
 .slideshow-container {
-  composes: container;
+  composes: banner;
+  h1 {
+    margin-bottom: 40px;
+  }
 }
 
 /*global: (

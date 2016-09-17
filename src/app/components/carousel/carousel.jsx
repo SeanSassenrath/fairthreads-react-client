@@ -50,10 +50,12 @@ class Carousel extends Component {
                   target='_blank'
                   key={key++}
                   styleName="slide-container"
-                  onMouseOver={() => this.onMouseOver(i)}
-                  onMouseOut={() => this.onMouseOut()}
                 >
-                  <div styleName='slide-image-container'>
+                  <div
+                    styleName='slide-image-container'
+                    onMouseOver={() => this.onMouseOver(i)}
+                    onMouseOut={() => this.onMouseOut()}
+                  >
                     <img
                       src={product.imageOriginal}
                       style={{objectFit: product.objectFit}}

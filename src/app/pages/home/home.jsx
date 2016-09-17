@@ -78,13 +78,16 @@ class Home extends Component {
           </div>*/}
         </div>
 
-        <div style={{background: '#f6f6f6'}}>
-          <div styleName="slideshow-container">
-            {
-              this.state.womensCarousel.length > 0 ?
-                <Carousel products={this.state.womensCarousel} />
-              : null
-            }
+        <div styleName='slideshow-section'>
+          <div styleName='slideshow-container'>
+            <h1>Fall Favorites</h1>
+            <div>
+              {
+                this.state.womensCarousel.length > 0 ?
+                  <Carousel products={this.state.womensCarousel} />
+                : null
+              }
+            </div>
           </div>
         </div>
 
