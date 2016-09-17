@@ -21,18 +21,18 @@ class MainNav extends Component {
             <ul>
               <li>
                 <div styleName="dropdown">
-                  <Link to='/womens' activeStyle={{ borderBottom: '1px solid #C7625B' }}>Women</Link>
+                  <Link to='products/womens' activeStyle={{ borderBottom: '1px solid #C7625B' }}>Women</Link>
                   <div id="womens-dropdown" styleName="dropdown-content">
                     <div styleName="list-container">
                       <ul>
-                        <li><Link to='/womens/tops'>Tops</Link></li>
-                        <li><Link to='/womens/bottoms'>Bottoms</Link></li>
-                        <li><Link to='/womens/dresses'>Dresses & Jumpsuits</Link></li>
+                        <li><Link to='/products/womens/tops'>Tops</Link></li>
+                        <li><Link to='/products/womens/bottoms'>Bottoms</Link></li>
+                        <li><Link to='/products/womens/dresses'>Dresses & Jumpsuits</Link></li>
                       </ul>
                       <ul>
-                        <li><Link to='/womens/shoes'>Shoes</Link></li>
-                        <li><Link to='/womens/active-wear'>Athleisure</Link></li>
-                        <li><Link to='/womens/underwear'>Underwear</Link></li>
+                        <li><Link to='products/womens/shoes'>Shoes</Link></li>
+                        <li><Link to='products/womens/active-wear'>Athleisure</Link></li>
+                        <li><Link to='products/womens/underwear'>Underwear</Link></li>
                       </ul>
                       <div>
                         {/*
@@ -45,17 +45,17 @@ class MainNav extends Component {
               </li>
               <li>
                 <div styleName="dropdown">
-                  <Link to='/mens' activeStyle={{ opacity: '1', color: "#333" }} styleName="dropdown-action">Men</Link>
+                  <Link to='products/mens' activeStyle={{ opacity: '1', color: "#333" }} styleName="dropdown-action">Men</Link>
                   <div id="mens-dropdown" styleName="dropdown-content">
                     <div styleName="list-container">
                       <ul>
-                        <li><Link to='/mens/tops'>Tops</Link></li>
-                        <li><Link to='/mens/bottoms'>Bottoms</Link></li>
-                        <li><Link to='/mens/shoes'>Shoes</Link></li>
+                        <li><Link to='products/mens/tops'>Tops</Link></li>
+                        <li><Link to='products/mens/bottoms'>Bottoms</Link></li>
+                        <li><Link to='products/mens/shoes'>Shoes</Link></li>
                       </ul>
                       <ul>
-                        <li><Link to='/mens/active-wear'>Active</Link></li>
-                        <li><Link to='/mens/underwear'>Underwear</Link></li>
+                        <li><Link to='products/mens/active-wear'>Active</Link></li>
+                        <li><Link to='products/mens/underwear'>Underwear</Link></li>
                       </ul>
                       {/*
                       <div>
