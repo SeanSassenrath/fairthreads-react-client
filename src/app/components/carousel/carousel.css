@@ -8,3 +8,17 @@
   margin: 0 auto;
   background-color: white;
 }
+
+a {
+  text-decoration: none;
+}
+
+.product-details {
+  margin: 0 auto;
+  margin-top: -190px;
+  width: 200px;
+  text-align: center;
+  div {
+    padding: 5px 0;
+  }
+}

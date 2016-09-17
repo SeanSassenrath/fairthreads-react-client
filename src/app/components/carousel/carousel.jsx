@@ -7,6 +7,15 @@ import styles from './carousel.css';
 
 class Carousel extends Component {
 
+  constructor(...args) {
+    super(...args)
+    this.onSlideHover = this.onSlideHover.bind(this)
+  }
+
+  onSlideHover(i) {
+    this.setState({hoveredSlide: i})
+  }
+
   render() {
     let {
       products,
@@ -28,10 +37,24 @@ class Carousel extends Component {
           {
             products.map((product, i) => {
               return (
-                <div key={key++} styleName="slide-container">
-                {console.log('key', key)}
-                  <img src={product.imageOriginal} styleName='slide-image' style={{objectFit: product.objectFit}}/>
-                </div>
+                <a
+                  href={product.vendUrl}
+                  target='_blank'
+                  key={key++}
+                  styleName="slide-container"
+                  onMouseOver={this.onSlideHover(i)}
+                >
+                  <img
+                    src={product.imageOriginal}
+                    styleName='slide-image'
+                    style={{objectFit: product.objectFit}}
+                  />
+                  <div styleName={this.state.hoveredSlide ? 'product-details' : display: 'none'}>
+                    <div>{product.name}</div>
+                    <div>{product.brand}</div>
+                    <div>{product.salePrice ? `$${Math.ceil(product.salePrice)}` : `$${Math.ceil(product.price)}`}</div>
+                  </div>
+                </a>
               )
             })
           }
