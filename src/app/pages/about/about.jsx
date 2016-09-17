@@ -10,11 +10,8 @@ class About extends Component {
   render() {
     return(
       <div>
-        <div styleName="about-hero">
-
-        </div>
         <div styleName="about-container">
-          <div>
+          {/*<div>
             <h1>Ethical Practices</h1>
             <p>At fairthreads, we believe our ethics shouldn’t be compromised for great style. We showcase products from fashion brands that uphold strong ethical manufacturing standards. No sweatshop labor. No unfair wages.</p>
           </div>
@@ -40,7 +37,7 @@ class About extends Component {
           </div>
           <div>
             <img src={fashion} styleName="about-img-right" alt="Fashion" />
-          </div>
+          </div>*/}
         </div>
       </div>
     )
