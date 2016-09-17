@@ -12,7 +12,8 @@ class ProductCard extends Component {
 
     return(
       <div id={product._id} styleName="product">
-        <Link to={`/product/${product._id}`}>
+        <a href={product.vendUrl} target='_blank'>
+        {/*<Link to={`/product/${product._id}`}>*/}
             <div styleName="img-container">
               <img src={product.imageOriginal} style={{objectFit: product.objectFit}} />
             </div>
@@ -31,7 +32,8 @@ class ProductCard extends Component {
                     </div>
                 }
             </div>
-          </Link>
+          </a>
+          {/*</Link>*/}
         </div>
       )
   }
