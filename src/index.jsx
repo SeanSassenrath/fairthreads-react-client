@@ -11,6 +11,7 @@ import Home from './app/pages/home/home.jsx';
 import ProductsContainer from './app/components/products-container/products-container.jsx';
 import About from './app/pages/about/about.jsx';
 import Contact from './app/pages/contact/contact.jsx';
+import Product from './app/pages/product/product.jsx';
 import Products from './app/pages/products/products.jsx';
 import 'babel-polyfill';
 
@@ -27,6 +28,7 @@ render(
         <Route path="products/(:store)/(:category)" component={ Products }/>
         <Route path="products/(:store)/(:category)/(:filter)" component={ Products }/>
         <Route path="products/(:store)/(:category)/(:filter)/(:sort)" component={ Products }/>
+        <Route path="product/(:id)" component={ Product } />
         {/*
         <Route path="/(:store)/(:category)/filter/(:filter)/sort/(:sort)" component={ Products }/>
         <Route path="/(:store)/(:category)/product/(:id)/image/(:index)" />

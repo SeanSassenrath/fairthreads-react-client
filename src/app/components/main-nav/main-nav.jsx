@@ -30,9 +30,9 @@ class MainNav extends Component {
                         <li><Link to='/products/womens/dresses'>Dresses & Jumpsuits</Link></li>
                       </ul>
                       <ul>
-                        <li><Link to='products/womens/shoes'>Shoes</Link></li>
-                        <li><Link to='products/womens/active-wear'>Athleisure</Link></li>
-                        <li><Link to='products/womens/underwear'>Underwear</Link></li>
+                        <li><Link to='/products/womens/shoes'>Shoes</Link></li>
+                        <li><Link to='/products/womens/active-wear'>Athleisure</Link></li>
+                        <li><Link to='/products/womens/underwear'>Underwear</Link></li>
                       </ul>
                       <div>
                         {/*
@@ -49,9 +49,9 @@ class MainNav extends Component {
                   <div id="mens-dropdown" styleName="dropdown-content">
                     <div styleName="list-container">
                       <ul>
-                        <li><Link to='products/mens/tops'>Tops</Link></li>
-                        <li><Link to='products/mens/bottoms'>Bottoms</Link></li>
-                        <li><Link to='products/mens/shoes'>Shoes</Link></li>
+                        <li><Link to='/products/mens/tops'>Tops</Link></li>
+                        <li><Link to='/products/mens/bottoms'>Bottoms</Link></li>
+                        <li><Link to='/products/mens/shoes'>Shoes</Link></li>
                       </ul>
                       <ul>
                         <li><Link to='products/mens/active-wear'>Active</Link></li>

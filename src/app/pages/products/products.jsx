@@ -67,5 +67,5 @@ class Products extends Component {
   }
 }
 
-const StyledProducts = CSSModules(Products, styles)
-export default connect(appSelectors, selectActions)(StyledProducts);
+const styledProducts = CSSModules(Products, styles)
+export default connect(appSelectors, selectActions)(styledProducts);

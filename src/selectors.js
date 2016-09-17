@@ -7,6 +7,7 @@ import * as actionCreators from './action-creators.js';
 const productsSelector = get('products');
 const stylistPickTeaserSelector = createSelector(productsSelector, get('stylistPickTeasers'));
 const genderSelector = get('gender');
+const itemSelector = createSelector(productsSelector, get('item'));
 const itemsSelector = createSelector(productsSelector, get('items'));
 const sortProductsSelector = createSelector(productsSelector, get('sortProducts'));
 const loadingSelector = createSelector(productsSelector, get('loading'));
@@ -47,20 +48,23 @@ export const appSelectors = createSelector(
   sortProductsSelector,
   genderSelector,
   stylistPickTeaserSelector,
+  itemSelector,
   (
   items,
   loading,
   showSaleOnly,
   sortProducts,
   gender,
-  picks
+  picks,
+  item
   ) => ({
     items,
     loading,
     showSaleOnly,
     sortProducts,
     gender,
-    picks
+    picks,
+    item
   })
 );
 export const selectActions = dispatch => bindActionCreators(actionCreators, dispatch)

@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 import CSSModules from 'react-css-modules';
 import styles from './product-card.css';
 
@@ -11,7 +12,7 @@ class ProductCard extends Component {
 
     return(
       <div id={product._id} styleName="product">
-        <a href={product.vendUrl}>
+        <Link to={`/product/${product._id}`}>
             <div styleName="img-container">
               <img src={product.imageOriginal} style={{objectFit: product.objectFit}} />
             </div>
@@ -30,7 +31,7 @@ class ProductCard extends Component {
                     </div>
                 }
             </div>
-          </a>
+          </Link>
         </div>
       )
   }

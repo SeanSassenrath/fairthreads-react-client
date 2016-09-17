@@ -1,5 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import {
+  REQUEST_PRODUCT,
+  RECIEVE_PRODUCT,
   REQUEST_PRODUCTS,
   RECIEVE_PRODUCTS,
   RECIEVE_STYLIST_PICK_TEASERS,
@@ -9,6 +11,20 @@ import {
   SET_PRICE_RANGE_FILTER,
   REMOVE_PRICE_RANGE_FILTER,
  } from './constants';
+
+function requestProduct(id) {
+ return {
+   type: REQUEST_PRODUCT,
+   id
+ }
+}
+
+function receiveProduct(id, json) {
+ return {
+   type: RECIEVE_PRODUCT,
+   product: json[0],
+ }
+}
 
 function requestProducts(gender, category) {
   return {
@@ -32,23 +48,12 @@ export function receiveStylistPickTeasers(json) {
   }
 }
 
-export function selectGender(gender, category) {
-  if (gender === 'womens') {
-    return dispatch => {
-        dispatch(fetchProducts('womens-clothes', category))
-      }
-  } else if (gender === 'mens') {
-    return dispatch => {
-        dispatch(fetchProducts('men', category))
-      }
-  }
-}
-
-export function mainNav(gender, category) {
-  if (gender === 'womens-clothes' || 'men') {
-    return dispatch => {
-      dispatch(fetchProducts(gender, category))
-    }
+export function fetchProduct(id) {
+  return dispatch => {
+    dispatch(requestProduct(id))
+    return fetch('https://fairthreads-api.herokuapp.com/products/product/' + id)
+    .then(req => req.json())
+    .then(json => dispatch(receiveProduct(id, json)))
   }
 }
 

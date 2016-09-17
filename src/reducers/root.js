@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 import Immutable from "seamless-immutable";
 import {
+  REQUEST_PRODUCT,
+  RECIEVE_PRODUCT,
   REQUEST_PRODUCTS,
   RECIEVE_PRODUCTS,
   RECIEVE_STYLIST_PICK_TEASERS,
@@ -21,6 +23,14 @@ const initialState = Immutable({
 
 function products(state = initialState.products, action) {
   switch (action.type) {
+    case REQUEST_PRODUCT:
+      return state
+        .set('loading', true)
+    case RECIEVE_PRODUCT:
+      console.log('Action product', action)
+      return state
+        .set('loading', false)
+        .set('item', action.product)
     case REQUEST_PRODUCTS:
       return state
         .set('loading', true)
