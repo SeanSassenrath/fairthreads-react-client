@@ -11,6 +11,9 @@ class About extends Component {
     return(
       <div>
         <div styleName="about-container">
+          <p>
+            
+          </p>
           {/*<div>
             <h1>Ethical Practices</h1>
             <p>At fairthreads, we believe our ethics shouldn’t be compromised for great style. We showcase products from fashion brands that uphold strong ethical manufacturing standards. No sweatshop labor. No unfair wages.</p>
