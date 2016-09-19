@@ -45,6 +45,7 @@ class Carousel extends Component {
           {
             products.map((product, i) => {
               return (
+                product ?
                 <a
                   href={product.vendUrl}
                   target='_blank'
@@ -67,6 +68,7 @@ class Carousel extends Component {
                     </div>
                   </div>
                 </a>
+                : null
               )
             })
           }
