@@ -9,6 +9,7 @@ const stylistPickTeaserSelector = createSelector(productsSelector, get('stylistP
 const genderSelector = get('gender');
 const itemSelector = createSelector(productsSelector, get('item'));
 const itemsSelector = createSelector(productsSelector, get('items'));
+const pageSelector = createSelector(productsSelector, get('page'));
 const sortProductsSelector = createSelector(productsSelector, get('sortProducts'));
 const loadingSelector = createSelector(productsSelector, get('loading'));
 const saleSelector = createSelector(productsSelector, get('showSaleOnly'));
@@ -49,6 +50,7 @@ export const appSelectors = createSelector(
   genderSelector,
   stylistPickTeaserSelector,
   itemSelector,
+  pageSelector,
   (
   items,
   loading,
@@ -56,7 +58,8 @@ export const appSelectors = createSelector(
   sortProducts,
   gender,
   picks,
-  item
+  item,
+  page
   ) => ({
     items,
     loading,
@@ -64,7 +67,8 @@ export const appSelectors = createSelector(
     sortProducts,
     gender,
     picks,
-    item
+    item,
+    page
   })
 );
 export const selectActions = dispatch => bindActionCreators(actionCreators, dispatch)

@@ -43,9 +43,10 @@ function products(state = initialState.products, action) {
         .set('gender', action.gender)
         .set('page', 1)
     case RECEIVE_ADDITIONAL_PRODUCTS:
+      console.log('action products', action)
       return state
-        .set('items': action.products)
-        .set('page': action.page)
+        .set('items', state.items.concat(action.products))
+        .set('page', action.page)
     case RECEIVE_STYLIST_PICK_TEASERS:
       return state
         .set('stylistPickTeasers', action.picks)

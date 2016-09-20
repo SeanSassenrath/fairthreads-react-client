@@ -1,4 +1,6 @@
 import fetch from 'isomorphic-fetch';
+import Immutable from "seamless-immutable";
+
 import {
   REQUEST_PRODUCT,
   RECEIVE_PRODUCT,
@@ -43,11 +45,12 @@ function receiveInitialProducts(gender, json) {
 }
 
 function receiveAdditionalProducts(gender, page, items, json) {
+  console.log('json items', page)
   return {
     type: RECEIVE_ADDITIONAL_PRODUCTS,
     gender,
-    page: page++,
-    products: items.push(json.items),
+    page: page,
+    products: Immutable(json.items),
   }
 }
 
@@ -96,9 +99,9 @@ export function additionalFetchProducts(gender, category, page, items) {
   } else {
     return dispatch => {
       dispatch(requestProducts(gender))
-      return fetch('https://fairthreads-api.herokuapp.com/products/gender/' + gender)
+      return fetch('https://fairthreads-api.herokuapp.com/products/gender/' + gender + '/page/' + page)
       .then(req => req.json())
-      .then(json => dispatch(receiveAdditionalProducts(gender, json)))
+      .then(json => dispatch(receiveAdditionalProducts(gender, page, items, json)))
     }
   }
 }

@@ -2,13 +2,13 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import CSSModules from 'react-css-modules';
 import styles from './products-nav.css';
-import { stickyNav } from '../../../helpers.js';
+// import { stickyNav } from '../../../helpers.js';
 
 class ProductsNav extends Component {
 
-  componentDidMount() {
-    stickyNav('#product-filter', 28)
-  }
+  // componentDidMount() {
+  //   stickyNav('#product-filter', 28)
+  // }
 
   render() {
 

@@ -50,6 +50,9 @@ class Products extends Component {
       priceRange,
       priceRangeFilter,
       sortProducts,
+      additionalFetchProducts,
+      page,
+      params,
       props
     } = this.props;
 
@@ -66,7 +69,13 @@ class Products extends Component {
           sortProducts={sortProducts}
           breadCrumbs={this.props.params}
         />
-        <ProductsContainer products={items} />
+        <ProductsContainer
+          products={items}
+          additionalFetchProducts={additionalFetchProducts}
+          page={page}
+          gender={params.store}
+          category={params.category}
+        />
       </div>
     )
   }

@@ -18,10 +18,17 @@ class ProductsContainer extends Component {
   }
 
   render() {
+
+    console.log('products container props', this.props)
     let {
       products,
+      additionalFetchProducts,
+      gender,
+      category,
+      page
     } = this.props;
 
+    console.log('products container productssss', products)
     let mutableItems = Immutable(products).asMutable();
 
     return(
@@ -38,12 +45,7 @@ class ProductsContainer extends Component {
               })
             }
           </div>
-          {
-            /* TODO - Add WayPoint for infinite scroll
-            i.e. Load the first 30 items > 60 items > 90...
-            <Waypoint onEnter={() => console.log("entered")}/>
-            */
-          }
+          <Waypoint onEnter={() => additionalFetchProducts(gender, category, 2, products)}/>
         </div>
       </div>
     )
