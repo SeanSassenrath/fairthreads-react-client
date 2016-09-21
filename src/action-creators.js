@@ -49,7 +49,7 @@ function receiveAdditionalProducts(gender, page, items, json) {
   return {
     type: RECEIVE_ADDITIONAL_PRODUCTS,
     gender,
-    page: page,
+    page: page + 1,
     products: Immutable(json.items),
   }
 }
@@ -70,11 +70,11 @@ export function fetchProduct(id) {
   }
 }
 
-export function initialFetchProducts(gender, category, page) {
+export function initialFetchProducts(gender, category) {
   if (category) {
     return dispatch => {
       dispatch(requestProducts(gender, category))
-      return fetch('https://fairthreads-api.herokuapp.com/products/gender/' + gender + '/category/' + category + '/page/' + page)
+      return fetch('https://fairthreads-api.herokuapp.com/products/gender/' + gender + '/category/' + category + '/page/1')
       .then(req => req.json())
       .then(json => dispatch(receiveInitialProducts(gender, json)))
     }
@@ -99,6 +99,7 @@ export function additionalFetchProducts(gender, category, page, items) {
   } else {
     return dispatch => {
       dispatch(requestProducts(gender))
+      console.log('PAGE', page)
       return fetch('https://fairthreads-api.herokuapp.com/products/gender/' + gender + '/page/' + page)
       .then(req => req.json())
       .then(json => dispatch(receiveAdditionalProducts(gender, page, items, json)))

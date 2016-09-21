@@ -41,7 +41,7 @@ function products(state = initialState.products, action) {
         .set('items', action.products)
         .set('categoryList', action.categoryList)
         .set('gender', action.gender)
-        .set('page', 1)
+        .set('page', 2)
     case RECEIVE_ADDITIONAL_PRODUCTS:
       console.log('action products', action)
       return state

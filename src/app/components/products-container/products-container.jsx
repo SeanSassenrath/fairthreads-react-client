@@ -45,7 +45,7 @@ class ProductsContainer extends Component {
               })
             }
           </div>
-          <Waypoint onEnter={() => additionalFetchProducts(gender, category, 2, products)}/>
+          <Waypoint onEnter={() => additionalFetchProducts(gender, category, page, products)}/>
         </div>
       </div>
     )
