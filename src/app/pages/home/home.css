@@ -13,33 +13,45 @@
 }
 
 .hero {
+  position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  height: 40vw;
-  min-height: 300px;
-  background-image: url('../../../img/dresses.jpg');
+  background-position: top;
+  height: 600px;
+  background-image: url('../../../img/fall-2016.jpg');
 }
 
 .hero-content {
   composes: container;
+  position: absolute;
+  right: 100px;
   display: flex;
   flex-direction: column;
   text-align: center;
   h1 {
+    line-height: 120px;
+    text-align: left;
     margin: 0px;
-    font-size: 13vw;
+    font-size: 100px;
     font-family: 'Heebo', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
-    color: #db5461;
+    color: #fafafa;
   }
 }
 
+.shop-now-container {
+  margin-top: 20px;
+  position: relative;
+}
+
 .shop-now {
-  padding: 8px 15px 6px;
+  padding: 17px 15px;
+  position: absolute;
+  left: 0;
+  font-size: 20px;
   border-radius: 2px;
-  background-color: #474747;
+  background-color: #7d5c54;
   color: #fafafa;
   font-weight: 300;
   text-decoration: none;

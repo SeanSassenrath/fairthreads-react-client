@@ -21,7 +21,7 @@ class MainNav extends Component {
             <ul>
               <li>
                 <div styleName="dropdown">
-                  <Link to='products/womens' activeStyle={{ borderBottom: '1px solid #C7625B' }}>Women</Link>
+                  <Link to='products/womens'>Women</Link>
                   <div id="womens-dropdown" styleName="dropdown-content">
                     <div styleName="list-container">
                       <ul>

@@ -42,8 +42,8 @@ class Home extends Component {
       <div>
         <div styleName="hero">
           <div styleName="hero-content">
-            <h1>Dresses</h1>
-            <div>
+            <h1>Winter<br />is<br />Coming</h1>
+            <div styleName="shop-now-container">
               <Link to='/womens/dresses' styleName="shop-now">Shop Now</Link>
             </div>
           </div>
