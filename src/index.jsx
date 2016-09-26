@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, browserHistory, hashHistory, IndexRoute } from 'react-router';
+import { Router, Route, browserHistory, hashHistory, IndexRoute, applyRouterMiddleware } from 'react-router';
+import { useScroll } from 'react-router-scroll';
 import { Provider, connect } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
@@ -21,13 +22,13 @@ let store = createStoreWithMiddleware(rootReducer)
 
 render(
   <Provider store = { store }>
-    <Router history={ browserHistory }>
+    <Router history={ browserHistory } render={applyRouterMiddleware(useScroll())}>
       <Route path="/" component={ App }>
         <IndexRoute component={ Home } />
-        <Route path="/products/(:store)" component={ Products }/>
-        <Route path="/products/(:store)/(:category)" component={ Products }/>
-        <Route path="/products/(:store)/(:category)/(:filter)" component={ Products }/>
-        <Route path="/products/(:store)/(:category)/(:filter)/(:sort)" component={ Products }/>
+        <Route path="/products/(:store)" component={ Products } />
+        <Route path="/products/(:store)/(:category)" component={ Products } />
+        <Route path="/products/(:store)/(:category)/(:filter)" component={ Products } />
+        <Route path="/products/(:store)/(:category)/(:filter)/(:sort)" component={ Products } />
         <Route path="/product/(:id)" component={ Product } />
         {/*
         <Route path="/(:store)/(:category)/filter/(:filter)/sort/(:sort)" component={ Products }/>

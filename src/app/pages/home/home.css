@@ -24,7 +24,8 @@
 .hero-content {
   composes: container;
   position: absolute;
-  right: 100px;
+  right: 50px;
+  max-height: 400px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -38,6 +39,10 @@
     text-transform: uppercase;
     color: #fafafa;
   }
+
+  @media (--larger-than-tablet) {
+    right: 250px;
+  }
 }
 
 .shop-now-container {
@@ -46,7 +51,7 @@
 }
 
 .shop-now {
-  padding: 17px 15px;
+  padding: 15px 35px;
   position: absolute;
   left: 0;
   font-size: 20px;
@@ -57,7 +62,7 @@
   text-decoration: none;
   text-transform: uppercase;
   &:hover {
-    background-color: #6b6b6b;
+    background-color: #977c76;
   }
 }
 
@@ -67,28 +72,32 @@
   color: #6b6b6b;
   padding: 10px 40px;
   h1 {
+    font-family: 'Poiret One', cursive;
+    text-transform: uppercase;
     font-weight: 300;
-    font-size: 40px;
+    font-size: 60px;
     margin-bottom: 0;
   }
   p {
-    margin-top: 0;
+    margin-top: 10px;
     margin-bottom: 40px;
+    font-size: 18px;
   }
 }
 
 a.learn-more {
   margin-top: 30px;
-  padding: 6px 15px 4px;
-  border: 1px solid #6b6b6b;
+  padding: 10px 30px;
+  background-color: #6b6b6b;
+  color: white;
+  font-size: 18px;
   border-radius: 2px;
-  color: #6b6b6b;
   text-decoration: none;
   &:visited {
-    color: #6b6b6b;
+    color: white;
   }
   &:hover {
-    color: #474747;
+    background-color: #474747;
   }
 }
 
@@ -205,14 +214,16 @@ a.blog-button {
 }
 
 .slideshow-section {
-  background-color: #f6f6f6;
+  /*background-color: #f6f6f6;*/
   padding-bottom: 60px;
 }
 
 .slideshow-container {
   composes: banner;
   h1 {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    font-size: 50px;
+    text-transform: capitalize;
   }
 }
 

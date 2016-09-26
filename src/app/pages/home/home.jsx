@@ -50,17 +50,17 @@ class Home extends Component {
         </div>
         <div styleName="banner">
           <h1>Fashion with integrity</h1>
-          <p>We believe that fashion doesn't have to compromise morals</p>
+          <p>Discover eithical &amp; sustainable fashion from all over the globe.</p>
           <Link to='/about' styleName="learn-more">Learn More</Link>
         </div>
         <div styleName="editorial">
-          <Link to="/womens" styleName="promo-women">
+          <Link to="/products/womens" styleName="promo-women">
             <div styleName="promo-overlay">
               <h1>Shop Women</h1>
               <p>Score some great deals before they're gone!</p>
             </div>
           </Link>
-          <Link to="/mens" styleName="promo-men">
+          <Link to="/products/mens" styleName="promo-men">
             <div styleName="promo-overlay">
               <h1>Shop Men</h1>
               <p>Score some great deals before they're gone!</p>
