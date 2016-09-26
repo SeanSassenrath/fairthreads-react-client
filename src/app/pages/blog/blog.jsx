@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import contentful from 'contentful';
 import CSSModules from 'react-css-modules';
 import styles from './blog.css';
 
