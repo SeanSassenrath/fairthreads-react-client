@@ -36,27 +36,29 @@ class MainNav extends Component {
                           <MainNavLink to={route.path}>
                             {route.name}
                           </MainNavLink>
-                          <div styleName="dropdown-content">
-                            <div styleName="list-container">
                               {
                                 route.subNav ?
-                                  route.subNav.map((i) => {
-                                    return (
-                                      <ul>
-                                        { i.column.map((subRoute) => {
-                                            return (
-                                              <li>
-                                                <Link to={subRoute.path}>{subRoute.name}</Link>
-                                              </li>
-                                            )
-                                          })
-                                        }
-                                      </ul>
-                                    )
-                                }) : null
+                                <div styleName="dropdown-content">
+                                  <div styleName="list-container">
+                                    {route.subNav.map((i) => {
+                                      return (
+                                        <ul>
+                                          { i.column.map((subRoute) => {
+                                              return (
+                                                <li>
+                                                  <Link to={subRoute.path}>{subRoute.name}</Link>
+                                                </li>
+                                              )
+                                            })
+                                          }
+                                        </ul>
+                                      )
+                                    })
+                                  }
+                                </div>
+                              </div>
+                              : null
                               }
-                            </div>
-                          </div>
                         </div>
                       </li>
                     )
