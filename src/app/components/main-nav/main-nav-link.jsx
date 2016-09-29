@@ -8,7 +8,7 @@ class MainNavLink extends Component {
 
   render() {
     return (
-      <Link styleName="main-nav-link" activeClassName={styles.active}>
+      <Link styleName="main-nav-link" activeClassName={styles.active} {...this.props}>
         {this.props.children}
       </Link>
     )
