@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { appSelectors } from '../../../selectors.js';
 import { Link } from 'react-router';
+import Button from '../../components/button/button.jsx';
 import $ from 'jquery';
 import Carousel from '../../components/carousel/carousel.jsx';
 import CSSModules from 'react-css-modules';
@@ -42,16 +43,16 @@ class Home extends Component {
       <div>
         <div styleName="hero">
           <div styleName="hero-content">
-            <h1>Fall<br />is<br />Here</h1>
-            <div styleName="shop-now-container">
-              <Link to='/products/womens' styleName="shop-now">Shop Now</Link>
+            <p>Brand New</p>
+            <h2>Fall/Winter `16</h2>
+            <div>
+              <Button link='/products/womens'>Shop now</Button>
             </div>
           </div>
         </div>
         <div styleName="banner">
           <h1>Fashion with integrity</h1>
-          <p>Discover eithical &amp; sustainable fashion from all over the globe.</p>
-          <Link to='/about' styleName="learn-more">Learn More</Link>
+          <p>Discover &amp; shop ethical fashion brands</p>
         </div>
         <div styleName="editorial">
           <Link to="/products/womens" styleName="promo-women">

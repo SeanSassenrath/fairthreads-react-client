@@ -1,5 +1,6 @@
 .main-nav-container {
   /*background-color: #fafafa;*/
   border: 1px solid #dbdbdb;
-  height: 54px;
+  height: 72px;
+  padding: 0 2em;
 }

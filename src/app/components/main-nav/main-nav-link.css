@@ -1,0 +1,18 @@
+.active {
+  border-bottom: 5px solid #585858;
+  opacity: 1;
+}
+
+.main-nav-link {
+  text-decoration: none;
+  padding: 22px 15px;
+  color: #585858;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  opacity: .7;
+
+  &:hover {
+    opacity: 1;
+  }
+}
