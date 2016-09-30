@@ -9,6 +9,7 @@ import CSSModules from 'react-css-modules';
 import styles from './home.css';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 const blog = require("../../../img/who-made-it.jpg");
+const grayHeart = require("../../../img/gray-heart.svg");
 
 class Home extends Component {
 
@@ -79,9 +80,12 @@ class Home extends Component {
           </div>*/}
         </div>
 
+        <div styleName='slideshow-header'>
+          <h1>Fall Favorites we <img src={grayHeart} /></h1>
+        </div>
+
         <div styleName='slideshow-section'>
           <div styleName='slideshow-container'>
-            <h1>Fall Favorites</h1>
             <div>
               {
                 this.state.womensCarousel.length > 0 ?
