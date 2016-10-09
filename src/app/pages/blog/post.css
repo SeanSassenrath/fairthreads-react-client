@@ -1,0 +1,35 @@
+.post-container {
+
+}
+
+.post-content-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+.hero {
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-family: 'Lato', sans-serif;
+}
+
+.hero-date {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+img {
+  width: 100%;
+  margin: 20px 0;
+}
