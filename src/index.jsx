@@ -10,6 +10,8 @@ import rootReducer from './reducers/root';
 import App from './app/app.jsx';
 import Home from './app/pages/home/home.jsx';
 import ProductsContainer from './app/components/products-container/products-container.jsx';
+import Blog from './app/pages/blog/blog.jsx';
+import Post from './app/pages/blog/post.jsx';
 import About from './app/pages/about/about.jsx';
 import Contact from './app/pages/contact/contact.jsx';
 import Product from './app/pages/product/product.jsx';
@@ -48,6 +50,8 @@ render(
         <Route path="/womens/shoes" component={ ProductsContainer } />
         <Route path="/womens/underwear" component={ ProductsContainer } />
         */}
+        <Route path="/blog/(:post)" component={ Post } />
+        <Route path="/blog" component={ Blog } />
         <Route path="/about" component={ About } />
         <Route path="/contact" component={ Contact } />
       </Route>

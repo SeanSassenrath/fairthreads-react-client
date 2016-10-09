@@ -64,8 +64,8 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
-  items: PropTypes.array.isRequired,
-}
+// App.propTypes = {
+//   items: PropTypes.array.isRequired,
+// }
 
 export default connect(testSelector, selectActions)(App);

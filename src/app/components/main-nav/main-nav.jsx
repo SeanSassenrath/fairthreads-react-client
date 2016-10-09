@@ -17,6 +17,8 @@ class MainNav extends Component {
       picks,
     } = this.props;
 
+    let key = 0;
+
     return(
       <div id="main-nav" styleName="main-nav">
         <div>
@@ -31,7 +33,7 @@ class MainNav extends Component {
                 {
                   mainNavRoutes.map((route) => {
                     return (
-                      <li>
+                      <li key={`route-${key++}`}>
                         <div styleName='dropdown'>
                           <MainNavLink to={route.path}>
                             {route.name}
@@ -42,10 +44,10 @@ class MainNav extends Component {
                                   <div styleName="list-container">
                                     {route.subNav.map((i) => {
                                       return (
-                                        <ul>
+                                        <ul key={`i-${key++}`}>
                                           { i.column.map((subRoute) => {
                                               return (
-                                                <li>
+                                                <li key={`subRoute-${key++}`}>
                                                   <Link to={subRoute.path}>{subRoute.name}</Link>
                                                 </li>
                                               )
