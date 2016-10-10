@@ -70,7 +70,7 @@ class Blog extends Component {
         </Link>
         <div styleName="posts-container">
           { this.state.entries ? this.state.entries.map(entry => (
-            <Link to={''} styleName="post" key={entry.sys.id}>
+            <Link to={`/blog/${this.state.featuredPost ? entry.fields.slug : null}`} styleName="post" key={entry.sys.id}>
               <div
                 styleName="post-img"
                 style={{backgroundImage: entry.fields.featuredImage ? `url(http://${entry.fields.featuredImage.fields.file.url})` : null}}

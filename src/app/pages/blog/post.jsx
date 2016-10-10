@@ -58,8 +58,10 @@ class Post extends Component {
                 styleName='hero'
                 style={{backgroundImage: `url(http://${this.state.post.items[0].fields.heroImage.fields.file.url})`}}
               >
-                <h1 styleName='hero-title'>{this.state.post.items[0].fields.title}</h1>
-                <p styleName='hero-date'>{this.state.post.items[0].fields.date}</p>
+                <div styleName='hero-content'>
+                  <h1 styleName='hero-title'>{this.state.post.items[0].fields.title}</h1>
+                  <p styleName='hero-date'>{this.state.post.items[0].fields.date}</p>
+                </div>
               </div>
               <div styleName='post-content-container'>
                 {this.formatBody()}
