@@ -2,12 +2,6 @@
 
 }
 
-.post-content-container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 60px 40px;
-}
-
 .hero {
   height: 350px;
   display: flex;
@@ -50,7 +44,14 @@
   margin: 0;
 }
 
-img {
-  width: 100%;
-  margin: 20px 0;
+.post-content-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  font-family: Droid Sans, sans-serif;
+
+  img {
+    /*width: 100%;*/
+    margin: 20px 0;
+  }
 }
