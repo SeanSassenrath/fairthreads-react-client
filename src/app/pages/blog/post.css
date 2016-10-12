@@ -49,10 +49,9 @@
   max-width: 960px;
   margin: 0 auto;
   padding: 60px 40px;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Lora', serif;
 
   img {
-    /*width: 100%;*/
     margin: 20px 0;
   }
 }

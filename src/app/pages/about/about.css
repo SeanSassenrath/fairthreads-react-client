@@ -1,16 +1,34 @@
 @import '../../common.css';
 
 .container {
-  max-width: 1180px;
+  max-width: 960px;
   padding: 40px 30px;
   border: 1px solid transparent;
   margin: 0 auto;
   height: 100%;
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Droid Sans', sans-serif;
   @media (--larger-than-tablet) {
     padding: 60px 40px;
   }
 }
+
+.pillars {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (--larger-than-tablet) {
+    flex-wrap: nowrap;
+  }
+}
+
+
+
+
+
+
+
+
+
 
 .full-width-container {
   background-color: #474747;
