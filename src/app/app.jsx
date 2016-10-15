@@ -8,6 +8,8 @@ import MainNavContainer from './components/main-nav-container/main-nav-container
 import MainNav from './components/main-nav/main-nav.jsx';
 import MobileNav from './components/mobile-nav/mobile-nav';
 import Footer from './components/footer/footer.jsx';
+import CSSModules from 'react-css-modules';
+import styles from './app.css';
 
 class App extends Component {
 
@@ -64,8 +66,6 @@ class App extends Component {
   }
 }
 
-// App.propTypes = {
-//   items: PropTypes.array.isRequired,
-// }
+const connectedApp = connect(testSelector, selectActions)(App);
 
-export default connect(testSelector, selectActions)(App);
+export default CSSModules(connectedApp, styles);

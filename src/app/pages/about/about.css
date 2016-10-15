@@ -1,121 +1,36 @@
 @import '../../common.css';
 
 .container {
+  border: 1px solid transparent;
+  height: 100%;
+  margin: 0 auto;
   max-width: 960px;
   padding: 40px 30px;
-  border: 1px solid transparent;
-  margin: 0 auto;
-  height: 100%;
-  font-family: 'Droid Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
   @media (--larger-than-tablet) {
     padding: 60px 40px;
   }
 }
 
 .pillars {
+  align-items: baseline;;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 60px;
 
   @media (--larger-than-tablet) {
     flex-wrap: nowrap;
   }
-}
 
+  .center-pillar {
 
-
-
-
-
-
-
-
-
-.full-width-container {
-  background-color: #474747;
-}
-
-.about-hero {
-  composes: container;
-  /*background-image: url('../../../img/about-hero.jpg');*/
-  background-size: cover;
-  background-position: center;
-  height: 150px;
-  max-width: none;
-  @media(--larger-than-tablet) {
-    height: 200px;
-  }
-}
-
-.about-container {
-  composes: container;
-  max-width: 900px;
-  display: flex;
-  flex-wrap: wrap-reverse;;
-  justify-content: space-between;
-  align-items: center;
-  div {
-    flex: 1 1 200px;
-  }
-  h1 {
-    font-weight: 300;
-    font-size: 40px;
-    margin: 0;
-    color: #474747;
-    text-align: center;
     @media (--larger-than-tablet) {
-      text-align: left;
+      margin: 0 5px;
+      padding: 0 5px;
     }
   }
-  p {
-    margin: 0;
-    opacity: .7;
-    color: #474747;
-    text-align: center;
-    @media (--larger-than-tablet) {
-      text-align: left;
-    }
-  }
-  @media (--larger-than-tablet) {
-    flex-wrap: nowrap;
-  }
 }
 
-.about-container-alternate {
-  composes: about-container;
-  flex-wrap: wrap;
-  @media (--larger-than-tablet) {
-    flex-wrap: nowrap;
-  }
-  h1 {
-    color: white;
-  }
-  p {
-    color: white;
-  }
-}
-
-.about-img {
-  margin: 0 auto;
-  width: 40%;
-  padding-bottom: 20px;
-  display: block;
-
-  @media (--larger-than-tablet) {
-    margin: 0;
-    width: auto;
-  }
-}
-
-.about-img-right {
-  composes: about-img;
-  @media (--larger-than-tablet) {
-    padding-left: 100px;
-  }
-}
-
-.about-img-left {
-  composes: about-img;
-  @media (--larger-than-tablet) {
-    padding-right: 60px;
-  }
+.pillar-img {
+  max-height: 50px;
 }
