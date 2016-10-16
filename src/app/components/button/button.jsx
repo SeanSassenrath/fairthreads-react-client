@@ -15,7 +15,7 @@ class Button extends Component {
 
     const TagName = link ? Link : 'div';
     return (
-      <TagName to={ link ? link : null} styleName="button">
+      <TagName to={ link ? link : null} styleName="button" {...this.props}>
         {children}
       </TagName>
     )

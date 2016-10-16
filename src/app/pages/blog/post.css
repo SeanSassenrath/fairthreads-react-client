@@ -1,7 +1,9 @@
 .post-container {
 
 }
-
+h2 {
+  font-family:Lato;
+}
 .hero {
   height: 350px;
   display: flex;
@@ -44,12 +46,20 @@
 .hero-date {
   margin: 0;
 }
-
+h3 {
+  font-size: 1.6em;
+font-family: Droid, sans-serif;
+text-transform: uppercase;
+}
 .post-content-container {
   max-width: 960px;
   margin: 0 auto;
   padding: 60px 40px;
-  font-family: 'Lora', serif;
+  font-family: Lora,serif;
+  font-size: 18px;
+  color: rgba(26,26,26,.7);
+  line-height: 1.6em;
+
 
   img {
     margin: 20px 0;

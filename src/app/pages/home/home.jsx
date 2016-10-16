@@ -44,28 +44,27 @@ class Home extends Component {
       <div>
         <div styleName="hero">
           <div styleName="hero-content">
-            <p>Brand New</p>
-            <h2>Fall/Winter `16</h2>
+            <h3>Discover</h3>
+            <h2>Ethical Fashion</h2>
+            <h3 styleName="season">Fall/Winter `16</h3>
             <div>
-              <Button link='/products/womens'>Shop now</Button>
+              <Button styleName="hero-button" link='/products/womens'>Shop now</Button>
             </div>
           </div>
         </div>
         <div styleName="banner">
-          <h1>Fashion with integrity</h1>
-          <p>Discover &amp; shop ethical fashion brands</p>
+          <h1>Embrace conscious fashion<br />without cramping your style</h1>
+          <p styleName="subtext">Discover fashion brands that put ethics and transparency first</p>
         </div>
         <div styleName="editorial">
           <Link to="/products/womens" styleName="promo-women">
             <div styleName="promo-overlay">
               <h1>Shop Women</h1>
-              <p>Score some great deals before they're gone!</p>
             </div>
           </Link>
           <Link to="/products/mens" styleName="promo-men">
             <div styleName="promo-overlay">
               <h1>Shop Men</h1>
-              <p>Score some great deals before they're gone!</p>
             </div>
           </Link>
           {/*<div styleName="blog">
@@ -81,7 +80,7 @@ class Home extends Component {
         </div>
 
         <div styleName='slideshow-header'>
-          <h1>Fall Favorites we <img src={grayHeart} /></h1>
+          <h1>Our fall favorites</h1>
         </div>
 
         <div styleName='slideshow-section'>
