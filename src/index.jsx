@@ -16,6 +16,7 @@ import About from './app/pages/about/about.jsx';
 import Contact from './app/pages/contact/contact.jsx';
 import Product from './app/pages/product/product.jsx';
 import Products from './app/pages/products/products.jsx';
+import MarketPlace from './app/pages/marketplace/marketplace.jsx';
 import 'babel-polyfill';
 
 let loggerMiddleware = createLogger();
@@ -54,6 +55,7 @@ render(
         <Route path="/blog" component={ Blog } />
         <Route path="/about" component={ About } />
         <Route path="/contact" component={ Contact } />
+        <Route path="/marketplace" component={ MarketPlace } />
       </Route>
     </Router>
   </Provider>,
