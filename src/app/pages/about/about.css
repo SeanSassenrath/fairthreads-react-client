@@ -58,7 +58,7 @@
   align-items: baseline;
   display: flex;
   flex-wrap: wrap;
-  padding-top: 50px;
+  padding-top: 36px;
 
   @media (--larger-than-tablet) {
     flex-wrap: nowrap;
