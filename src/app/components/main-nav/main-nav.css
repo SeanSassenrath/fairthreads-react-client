@@ -3,11 +3,6 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    /*.stylistPickNav {
-      height: 250px;
-      margin: 10px 20px;
-    }*/
     ul {
       padding: 0;
       margin: 0;
@@ -15,9 +10,10 @@
       justify-content: space-between;
       align-items: center;
       li {
-        list-style: none;
         font-family: 'Lato', sans-serif;
         font-weight: 300;
+        list-style: none;
+        margin-right: 20px;
         &:hover a {
           opacity: 1;
         }
@@ -52,11 +48,11 @@
               display: flex;
               ul {
                 display: block;
-                margin-right: 20px;
+                /*margin-right: 20px;*/
                 a {
                   display: block;
-                  opacity: .4;
-                  padding-left: 20px;
+                  opacity: .8;
+                  padding-left: 17px;
                   padding-right: 20px;
                 }
                 a:hover {
@@ -89,6 +85,10 @@
       }
     }
   }
+}
+
+.logo-container {
+  padding-right: 40px;
 }
 
 .logo {

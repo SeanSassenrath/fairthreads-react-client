@@ -11,17 +11,22 @@ export const mainNavRoutes = [
           }, {
             'name': 'Bottoms',
             'path': '/products/womens/bottoms'
-          }, {
-            'name': 'Dresses',
-            'path': '/products/womens/dresses'
           }
         ]
       }, {
         column: [
           {
+            'name': 'Dresses',
+            'path': '/products/womens/dresses'
+          },
+          {
             'name': 'Shoes',
             'path': '/products/womens/shoes'
-          }, {
+          }
+        ]
+      }, {
+        column: [
+          {
             'name': 'Athleisure',
             'path': '/products/womens/athleisure'
           }, {
@@ -44,17 +49,22 @@ export const mainNavRoutes = [
           }, {
             'name': 'Bottoms',
             'path': '/products/mens/bottoms'
-          }, {
-            'name': 'Shoes',
-            'path': '/products/mens/shoes'
           }
         ]
       }, {
         column: [
           {
+            'name': 'Shoes',
+            'path': '/products/mens/shoes'
+          },
+          {
             'name': 'Active',
             'path': '/products/mens/athleisure'
-          }, {
+          }
+        ]
+      }, {
+        column: [
+          {
             'name': 'Underwear',
             'path': '/products/mens/underwear'
           }

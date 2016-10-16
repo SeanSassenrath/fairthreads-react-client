@@ -74,7 +74,7 @@ class Contact extends Component {
 		return (
 			<div styleName="contact-container">
 				<h1>Contact Us</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec neque nec turpis lobortis mollis non ut magna. Mauris porta.</p>
+				<p>Let us know your thoughts and questions. We'd love to hear from you.</p>
 				<div styleName="contact-form">
 					<form onSubmit={this.handleFormSubmit}>
 						<input

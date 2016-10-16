@@ -23,7 +23,7 @@ class MainNav extends Component {
       <div id="main-nav" styleName="main-nav">
         <div>
           <nav>
-            <div>
+            <div styleName='logo-container'>
               <h1 styleName='logo'>
                 <Link to='/'>Fairthreads</Link>
               </h1>
