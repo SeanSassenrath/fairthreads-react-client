@@ -20,7 +20,7 @@ class About extends Component {
         <div styleName='container'>
           <div styleName='who-we-are'>
             <h1>Who we are</h1>
-            <p>Fairthreads is a destination for discovering ethical fashion brands. Frustrated with the lack of resources and availability of websites offering ethical fashion selections from multiple brands, we decided to take action and build one ourselves! We are taking a stand against traditional and fast-fashion retailors who don't put human rights above their profit margins. We believe in fair wages, quality products, and transparency. Welcome to our fashion revolution...
+            <p>Fairthreads is the destination for discovering ethical & sustainable fashion brands from all over the world. Frustrated with the lack of ecommerce websites dedicated to selling and promoting fashion that put ehtics and sustainablility above profit margins, we decided to take action and create one ourselves! We are taking a stand against traditional and fast-fashion retailors who don't put human rights & our environment first. We believe in fair wages, quality products, and transparency. Welcome to our fashion revolution...
             </p>
           </div>
           <div styleName='pillars'>
