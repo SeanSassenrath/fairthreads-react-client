@@ -23,50 +23,57 @@ class MainNav extends Component {
       <div id="main-nav" styleName="main-nav">
         <div>
           <nav>
-            <div styleName='logo-container'>
-              <h1 styleName='logo'>
-                <Link to='/'>Fairthreads</Link>
-              </h1>
+            <div styleName='logo-with-nav-options-container'>
+              <div styleName='logo-container'>
+                <h1 styleName='logo'>
+                  <Link to='/'>Fairthreads</Link>
+                </h1>
+              </div>
+              <div>
+                <ul>
+                  {
+                    mainNavRoutes.map((route) => {
+                      return (
+                        <li key={`route-${key++}`}>
+                          <div styleName='dropdown'>
+                            <MainNavLink to={route.path}>
+                              {route.name}
+                            </MainNavLink>
+                                {
+                                  route.subNav ?
+                                  <div styleName="dropdown-content">
+                                    <div styleName="list-container">
+                                      {route.subNav.map((i) => {
+                                        return (
+                                          <ul key={`i-${key++}`}>
+                                            { i.column.map((subRoute) => {
+                                                return (
+                                                  <li key={`subRoute-${key++}`}>
+                                                    <Link to={subRoute.path}>{subRoute.name}</Link>
+                                                  </li>
+                                                )
+                                              })
+                                            }
+                                          </ul>
+                                        )
+                                      })
+                                    }
+                                  </div>
+                                </div>
+                                : null
+                                }
+                          </div>
+                        </li>
+                      )
+                    })
+                  }
+                </ul>
+              </div>
             </div>
             <div>
-              <ul>
-                {
-                  mainNavRoutes.map((route) => {
-                    return (
-                      <li key={`route-${key++}`}>
-                        <div styleName='dropdown'>
-                          <MainNavLink to={route.path}>
-                            {route.name}
-                          </MainNavLink>
-                              {
-                                route.subNav ?
-                                <div styleName="dropdown-content">
-                                  <div styleName="list-container">
-                                    {route.subNav.map((i) => {
-                                      return (
-                                        <ul key={`i-${key++}`}>
-                                          { i.column.map((subRoute) => {
-                                              return (
-                                                <li key={`subRoute-${key++}`}>
-                                                  <Link to={subRoute.path}>{subRoute.name}</Link>
-                                                </li>
-                                              )
-                                            })
-                                          }
-                                        </ul>
-                                      )
-                                    })
-                                  }
-                                </div>
-                              </div>
-                              : null
-                              }
-                        </div>
-                      </li>
-                    )
-                  })
-                }
-              </ul>
+              <MainNavLink to={'/products/womens'} styleName='sign-up'>
+                Sign In
+              </MainNavLink>
             </div>
           </nav>
         </div>

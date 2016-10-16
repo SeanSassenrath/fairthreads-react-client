@@ -3,6 +3,7 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     ul {
       padding: 0;
       margin: 0;
@@ -87,6 +88,11 @@
   }
 }
 
+.logo-with-nav-options-container {
+  display: flex;
+  align-items: center;
+}
+
 .logo-container {
   padding-right: 40px;
 }
@@ -103,4 +109,8 @@
   a:visited {
     color: #4F4C52;
   }
+}
+
+.sign-up {
+  font-family: 'Lato', sans-serif;
 }
