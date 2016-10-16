@@ -10,13 +10,56 @@
   @media (--larger-than-tablet) {
     padding: 60px 40px;
   }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+.hero {
+  background-image: url("https://srly-merch-new.weebly.com/uploads/8/9/1/7/89179606/background-images/415128342.jpg");
+  background-position: center;
+  padding: 50px 0;
+  position: relative;
+  text-align: center;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    min-height: 100%;
+    height: inherit;
+    background: rgba(0,0,0,0.3);
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+
+  h1 {
+    font-size: 70px;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+  h1, h2, p {
+    color: white;
+  }
+}
+
+.who-we-are {
+  padding-bottom: 50px;
 }
 
 .pillars {
-  align-items: baseline;;
+  align-items: baseline;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 60px;
+  padding-top: 50px;
 
   @media (--larger-than-tablet) {
     flex-wrap: nowrap;

@@ -141,14 +141,10 @@ a.learn-more {
   text-align: center;
   background-position: center;
   background-size: cover;
-  color: #333;
 
   h1 {
     margin: 0;
     font-size: 70px;
-    font-family: 'Poiret One', cursive;
-    font-style: normal;
-    font-weight: 400;
     line-height: 70px;
   }
 
@@ -219,35 +215,12 @@ a.learn-more {
   padding: 20px 0;
   z-index: 1;
   position: relative;
-  color: white;
 
   h1 {
-    font-family: 'Lato', sans-serif;
     text-transform: uppercase;
-    font-weight: 300;
     font-size: 39px;
     margin: 0;
   }
-
-  p {
-    font-family: 'Droid Sans', sans-serif;
-    font-size: 16px;
-  }
-
-  /*background-color: rgba(255, 255, 255, 0.7);*/
-}
-
-.promo-button {
-  margin: 0 auto;
-  margin-top: 20px;
-  padding: 8px 8px;
-  width: 94px;
-  background-color: #474747;
-  color: #fafafa;
-  border-radius: 2px;
-  font-size: 18px;
-  text-transform: uppercase;
-  font-weight: 200;
 }
 
 .slideshow-header {
@@ -267,13 +240,6 @@ a.learn-more {
 .slideshow-container {
   composes: section;
 }
-
-/*global: (
-  .slick-slide {
-    color: black;
-    background-color: red;
-  }
-)*/
 
 .stylist-pick {
   background-color: white;

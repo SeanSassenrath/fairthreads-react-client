@@ -10,8 +10,15 @@ class About extends Component {
   render() {
     return(
       <div>
+        <div styleName='hero'>
+          <div styleName='hero-content'>
+            <p>&mdash; Discover &mdash;</p>
+            <h1>Ethical Fashion</h1>
+            <h2>Ethical Practice.  Quality Products.  Forward Fashion.</h2>
+          </div>
+        </div>
         <div styleName='container'>
-          <div>
+          <div styleName='who-we-are'>
             <h1>Who we are</h1>
             <p>
               Fashion doesn’t just define the way we dress, it’s our story. Every outfit we put on is fueled by our history, our experiences.  Our style tells the story of who we are, where we come from, and what we believe in. At Fairthreads, it’s our empathy for mankind, loathing of excessive waste, and history of challenging the status quo that defines our fashion. We take a stand against traditional retailers and their unethical manufacturing processes. We take a stand against wasteful production and consumption. The #fashionrevolution has begun…
