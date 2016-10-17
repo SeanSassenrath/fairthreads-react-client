@@ -71,8 +71,8 @@ class MainNav extends Component {
               </div>
             </div>
             <div>
-              <MainNavLink to={'/products/womens'} styleName='sign-up'>
-                Sign In
+              <MainNavLink to={'/sign-up'} styleName='sign-up'>
+                Sign Up
               </MainNavLink>
             </div>
           </nav>
