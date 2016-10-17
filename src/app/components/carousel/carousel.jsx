@@ -35,6 +35,7 @@ class Carousel extends Component {
       infinite: true,
       speed: 500,
       slidesToShow: 4,
+      initialSlide:9,
       slidesToScroll: 1,
       prevArrow: <SlickPrevArrow />,
       nextArrow: <SlickNextArrow />,
