@@ -12,16 +12,15 @@ class About extends Component {
       <div>
         <div styleName='hero'>
           <div styleName='hero-content'>
-            <p>&mdash; Discover &mdash;</p>
-            <h1>Ethical Fashion</h1>
-            <h2>Ethical Practice.  Quality Products.  Forward Fashion.</h2>
+            <h3>&mdash; Discover &mdash;</h3>
+            <h1>THE FASHION REVOLUTION</h1>
+            <h2>Ethical Practices.  Quality Products.  Forward Fashion.</h2>
           </div>
         </div>
         <div styleName='container'>
           <div styleName='who-we-are'>
             <h1>Who we are</h1>
-            <p>
-              Fashion doesn’t just define the way we dress, it’s our story. Every outfit we put on is fueled by our history, our experiences.  Our style tells the story of who we are, where we come from, and what we believe in. At Fairthreads, it’s our empathy for mankind, loathing of excessive waste, and history of challenging the status quo that defines our fashion. We take a stand against traditional retailers and their unethical manufacturing processes. We take a stand against wasteful production and consumption. The #fashionrevolution has begun…
+            <p>Fairthreads is the destination for discovering ethical & sustainable fashion brands from all over the world. Frustrated with the lack of ecommerce websites dedicated to selling and promoting fashion that put ehtics and sustainablility above profit margins, we decided to take action and create one ourselves! We are taking a stand against traditional and fast-fashion retailors who don't put human rights & our environment first. We believe in fair wages, quality products, and transparency. Welcome to our fashion revolution...
             </p>
           </div>
           <div styleName='pillars'>

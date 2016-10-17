@@ -1,6 +1,9 @@
 .active {
-  border-bottom: 5px solid #585858;
-  opacity: 1;
+            width:70%;
+            height:1px;
+            left:15%;
+            bottom:0;
+            border-bottom:1px solid black;
 }
 
 .main-nav-link {
@@ -16,3 +19,13 @@
     opacity: 1;
   }
 }
+
+/*&:after {
+            content: "";
+            position:absolute;
+            width:70%;
+            height:1px;
+            left:15%;
+            bottom:0;
+            border-bottom:1px solid black;
+          }*/
