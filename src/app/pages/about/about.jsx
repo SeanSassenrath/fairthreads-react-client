@@ -12,9 +12,9 @@ class About extends Component {
       <div>
         <div styleName='hero'>
           <div styleName='hero-content'>
-            <p>&mdash; Discover &mdash;</p>
-            <h1>Ethical Fashion</h1>
-            <h2>Ethical Practice.  Quality Products.  Forward Fashion.</h2>
+            <h3>&mdash; Discover &mdash;</h3>
+            <h1>THE FASHION REVOLUTION</h1>
+            <h2>Ethical Practices.  Quality Products.  Forward Fashion.</h2>
           </div>
         </div>
         <div styleName='container'>
