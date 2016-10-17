@@ -69,9 +69,9 @@ class SignUp extends Component {
 	render() {
 
 		return (
+			<div styleName="signin-container">
 			<div styleName="contact-container">
-				<h1>Contact Us</h1>
-				<p>Let us know your thoughts and questions. We'd love to hear from you.</p>
+				<h1>Sign up to receive updates, resources, and special offers</h1>
 				<div styleName="contact-form">
 					<form onSubmit={this.handleFormSubmit}>
 						<input
@@ -101,6 +101,7 @@ class SignUp extends Component {
 						<input type="submit" value="Submit" styleName="submit" />
 					</form>
 				</div>
+			</div>
 			</div>
 		)
 	}
