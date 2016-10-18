@@ -77,10 +77,6 @@ export const mainNavRoutes = [
     'path': '/about',
   },
   {
-    'name': 'Marketplace',
-    'path': '/marketplace',
-  },
-  {
     'name': 'Contact',
     'path': '/contact',
   },
