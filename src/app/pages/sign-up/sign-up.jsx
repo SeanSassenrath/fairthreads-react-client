@@ -75,20 +75,12 @@ class SignUp extends Component {
 				<div styleName="contact-form">
 					<form onSubmit={this.handleFormSubmit}>
 						<input
-							id='firstName'
+							id='name'
 							type="text"
-							placeholder="First Name"
-							value={this.state.firstName}
+							placeholder="Name"
+							value={this.state.name}
 							onChange={this.handleInputUpdate}
-							styleName={this.state.error && this.state.firstName.length <= 0 ? "text-input-error" : "text-input" }
-						/>
-						<input
-							id='lastName'
-							type="text"
-							placeholder="Last Name"
-							value={this.state.lastName}
-							onChange={this.handleInputUpdate}
-							styleName={this.state.error && this.state.lastName.length <= 0 ? "text-input-error" : "text-input" }
+							styleName={this.state.error && this.state.name.length <= 0 ? "text-input-error" : "text-input" }
 						/>
 						<input
 							id='email'
@@ -97,6 +89,21 @@ class SignUp extends Component {
 							value={this.state.email}
 							onChange={this.handleInputUpdate}
 							styleName={this.state.error && this.state.email.length <= 0 ? "text-input-error" : "text-input"}
+						/>
+						<input
+							id='subject'
+							type="text"
+							placeholder="Subject"
+							value={this.state.subject}
+							onChange={this.handleInputUpdate}
+							styleName="text-input"
+						/>
+						<textarea
+							id='message'
+							placeholder="Questions and feedback here"
+							value={this.state.message}
+							onChange={this.handleInputUpdate}
+							styleName={this.state.error && this.state.message.length <= 0 ? "message-error" : "message"}
 						/>
 						<input type="submit" value="Submit" styleName="submit" />
 					</form>
