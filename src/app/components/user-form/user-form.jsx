@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import $ from 'jquery';
+import autoBind from 'react-autobind';
 import CSSModules from 'react-css-modules';
-import styles from './sign-up.css';
+import styles from './user-form.css';
 
-class SignUp extends Component {
+class UserForm extends Component {
 
 	constructor(...args) {
 		super(...args)
@@ -13,7 +14,7 @@ class SignUp extends Component {
 			email: '',
 			error: false,
 		}
-
+    // autoBind(this)
 		this.handleInputUpdate = this.handleInputUpdate.bind(this);
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
 		this.sendForm = this.sendForm.bind(this);
@@ -25,7 +26,7 @@ class SignUp extends Component {
 
 	errorValidation(sendForm) {
 		for (var key in this.state) {
-			if (this.state[key].length <= 0 && key !== "subject" && key !== "error") {
+			if (this.state[key].length <= 0 && key !== "error") {
 				this.setState({error: true})
 				return;
 			} else {
@@ -68,11 +69,15 @@ class SignUp extends Component {
 
 	render() {
 
-		return (
-			<div styleName="signin-container">
+    let {
+      onClose
+    } = this.props;
+
+    return (
+			<div styleName="signin-container" {...this.props}>
 				<div styleName="contact-container">
-					<h1>Sign up to receive updates, resources, and special offers</h1>
 					<div styleName="contact-form">
+            <span styleName="close" onClick={() => onClose()} />
 						<form onSubmit={this.handleFormSubmit}>
 							<input
 								id='firstName'
@@ -107,4 +112,4 @@ class SignUp extends Component {
 	}
 }
 
-export default CSSModules(SignUp, styles);
+export default CSSModules(UserForm, styles);
