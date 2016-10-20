@@ -1,0 +1,104 @@
+.wrapper {
+  max-width: 960px;
+  border: 1px solid transparent;
+  margin: 0 auto;
+  height: 100%;
+  font-family: 'Heebo', sans-serif;
+  font-size: 16px;
+}
+
+.signin-container {
+  /*background: url('../../../img/ethicalfashion.jpg');
+  background-size:cover;
+  background-position: 0px 0px;
+  opacity:.9;
+   h1 {
+    color:white;
+    font-size: 2em;
+    font-weight: 400;
+    margin-bottom: 0;
+    margin-top:25px;
+    text-transform: uppercase;
+  }*/
+}
+.contact-container {
+  composes: wrapper;
+	padding-top: 40px;
+	margin:0 auto;
+  max-width: 600px;
+  text-align: center;
+
+	h1 {
+    margin: 0;
+    text-align: center;
+	}
+}
+
+.contact-form {
+  background-color: white;
+  margin: 40px auto;
+  padding: 40px 0;
+  position: relative;
+  border: 1px solid #d7d7d7;
+  border-radius: 2px;
+  max-width: 500px;
+}
+
+.text-input {
+  border: 1px solid #d7d7d7;
+  border-radius: 2px;
+  padding: 12px 5px;
+  margin: 5px;
+  font-size: 15px;
+  width: 400px;
+}
+
+.text-input-error {
+  composes: text-input;
+  border: 1px solid #dd4b5f;
+  &::placeholder {
+    color: #dd4b5f;
+  }
+}
+
+.message {
+  margin: 20px 0 0 0;
+  padding: 12px 5px;
+  border: 1px solid #d7d7d7;
+  border-radius: 2px;
+  font-size: 15px;
+  height: 90px;
+  width: 400px;
+}
+
+.message-error {
+  composes: message;
+  border: 1px solid #dd4b5f;
+  &::placeholder {
+    color: #dd4b5f;
+  }
+}
+
+.submit {
+  padding: 8px 20px;
+  margin-top: 10px;
+  background-color: #474747;
+  border: 1px solid #d7d7d7;
+  border-radius: 2px;
+  font-size: 15px;
+  color: #fafafa;
+  cursor: pointer;
+  &:hover {
+    background-color: #595959;
+  }
+}
+
+.close:before {
+  content: "\D7";
+  cursor: pointer;
+  position: absolute;
+  top: 7px;
+  right: 15px;
+  color: gray;
+  font-size: 22px;
+}
