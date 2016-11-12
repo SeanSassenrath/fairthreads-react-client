@@ -14,7 +14,7 @@ class VendorForm extends Component {
       brandName: '',
 			email: '',
       website: '',
-      message: '',
+      // message: '',
 			error: false,
       visible: false
 		}
@@ -87,7 +87,7 @@ class VendorForm extends Component {
 			<div styleName="signin-container" {...this.props}>
   			<div styleName="contact-container">
   				<div styleName="contact-form">
-            <span styleName="close" onClick={() => onClose()} />
+            {/*<span styleName="close" onClick={() => onClose()} />*/}
   					<form onSubmit={this.handleFormSubmit}>
               <input
                 id='firstName'
@@ -129,13 +129,13 @@ class VendorForm extends Component {
   							onChange={this.handleInputUpdate}
   							styleName="text-input"
   						/>
-  						<textarea
+  						{/*<textarea
   							id='message'
   							placeholder="Comment"
   							value={this.state.message}
   							onChange={this.handleInputUpdate}
   							styleName={this.state.error && this.state.message.length <= 0 ? "message-error" : "message"}
-  						/>
+  						/>*/}
   						<input type="submit" value="Submit" styleName="submit" />
   					</form>
   				</div>

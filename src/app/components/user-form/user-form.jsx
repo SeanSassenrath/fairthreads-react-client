@@ -77,7 +77,7 @@ class UserForm extends Component {
 			<div styleName="signin-container" {...this.props}>
 				<div styleName="contact-container">
 					<div styleName="contact-form">
-            <span styleName="close" onClick={() => onClose()} />
+            {/*<span styleName="close" onClick={() => onClose()} />*/}
 						<form onSubmit={this.handleFormSubmit}>
 							<input
 								id='firstName'
