@@ -1,6 +1,11 @@
+@import '../../common.css';
+
 .main-nav-container {
-  /*background-color: #fafafa;*/
   border: 1px solid #dbdbdb;
-  height: 72px;
-  padding: 0 2em;
+  height: 52px;
+  padding: 0 10px;
+  @media (--larger-than-mobile) {
+    height: 72px;
+    padding: 0 2em;
+  }
 }

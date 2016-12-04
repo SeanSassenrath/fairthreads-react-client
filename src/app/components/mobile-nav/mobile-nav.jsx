@@ -48,14 +48,20 @@ class MobileNav extends Component {
           <div styleName="menu-container" onClick={this.openNav}>
             <div styleName="menu" />
           </div>
-          <Link to='/'>
-            <img src={logo} alt="Fairthreads logo" styleName='logo' />
-          </Link>
+          <div>
+            <h1 styleName='logo'>
+              <Link to='/'>Fairthreads</Link>
+            </h1>
+          </div>
         </div>
         <div styleName="overlay" style={{display: this.state.isNavOpen ? 'block' : 'none'}} onClick={this.closeNav}></div>
         <nav styleName={this.state.isNavOpen ? 'mobile-nav-active' : 'mobile-nav-hidden'}>
           <ul styleName='mobile-nav-list'>
-            <li styleName='mobile-nav-logo'><img src={logo} alt="Fairthreads logo" style={{width: '150px'}}/></li>
+            <li styleName='mobile-nav-logo'>
+              <h1 styleName='logo'>
+                <Link to='/'>Fairthreads</Link>
+              </h1>
+            </li>
             <li>
               <div styleName='mobile-nav-item' onClick={() =>  this.openSubNav(1)}>Womens</div>
               <ul styleName='mobile-nav-sub-list' style={{display: this.state.subNav === 1 ? 'block' : 'none'}}>
