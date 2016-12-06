@@ -34,6 +34,16 @@ export const mainNavRoutes = [
             'path': '/products/womens/underwear'
           }
         ]
+      }, {
+        column: [
+          {
+            'name': 'Accessories',
+            'path': '/products/womens/accessories'
+          }, {
+            'name': 'Outerwear',
+            'path': '/products/womens/outerwear'
+          }
+        ]
       }
     ]
   },
@@ -67,6 +77,17 @@ export const mainNavRoutes = [
           {
             'name': 'Underwear',
             'path': '/products/mens/underwear'
+          },
+          {
+            'name': 'Outerwear',
+            'path': '/products/mens/outerwear'
+          }
+        ]
+      }, {
+        column: [
+          {
+            'name': 'Accessories',
+            'path': '/products/mens/accessories'
           }
         ]
       }

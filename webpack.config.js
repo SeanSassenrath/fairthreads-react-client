@@ -30,9 +30,9 @@ module.exports = {
       },
       { test: /\.jpg$|\.png$|\.svg$/,
         exclude: /node_modules/,
-        loader: [
-          'file-loader?[name].[hash].[ext]',
-          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        loaders: [
+            'file?hash=sha512&digest=hex&name=[hash].[ext]',
+            'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
         ]
       }
     ]
