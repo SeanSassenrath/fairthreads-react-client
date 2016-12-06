@@ -67,6 +67,7 @@
   "devDependencies": {
     "classnames": "^2.2.3",
     "es6-promise": "^3.1.2",
+    "image-webpack-loader": "^3.0.0",
     "lodash": "^4.7.0",
     "lodash-fp": "^0.10.4",
     "seamless-immutable": "^5.1.1",

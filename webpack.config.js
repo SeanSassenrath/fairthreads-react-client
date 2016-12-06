@@ -30,7 +30,10 @@ module.exports = {
       },
       { test: /\.jpg$|\.png$|\.svg$/,
         exclude: /node_modules/,
-        loader: 'file-loader?[name].[hash].[ext]'
+        loader: [
+          'file-loader?[name].[hash].[ext]',
+          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        ]
       }
     ]
   },
