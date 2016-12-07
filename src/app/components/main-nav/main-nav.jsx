@@ -25,9 +25,9 @@ class MainNav extends Component {
           <nav>
             <div styleName='logo-with-nav-options-container'>
               <div styleName='logo-container'>
-                <h1 styleName='logo'>
+                <div styleName='logo'>
                   <Link to='/'>Fairthreads</Link>
-                </h1>
+                </div>
               </div>
               <div>
                 <ul>

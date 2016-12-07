@@ -58,9 +58,9 @@ class MobileNav extends Component {
         <nav styleName={this.state.isNavOpen ? 'mobile-nav-active' : 'mobile-nav-hidden'}>
           <ul styleName='mobile-nav-list'>
             <li styleName='mobile-nav-logo'>
-              <h1 styleName='logo'>
+              <div styleName='logo'>
                 <Link to='/'>Fairthreads</Link>
-              </h1>
+              </div>
             </li>
             <li>
               <div styleName='mobile-nav-item' onClick={() =>  this.openSubNav(1)}>Womens</div>

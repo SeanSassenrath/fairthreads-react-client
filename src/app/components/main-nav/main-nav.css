@@ -32,11 +32,11 @@
           .dropdown-action:hover {
             // background-color: rgb(234, 234, 234);
           }
-       
+
           &:hover .dropdown-content {
             display: block;
           }
-           
+
           .dropdown-content {
             display: none;
             position: absolute;
@@ -102,15 +102,18 @@
 
 .logo {
   padding: 22.5px 0;
-  font-family: 'Lato', sans-serif;
-  text-transform: uppercase;
-  font-size: 22px;
-  color: #4F4C52;
-  letter-spacing: 5px;
   margin: 0;
 
-  a:visited {
+  a {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 22px;
     color: #4F4C52;
+    letter-spacing: 5px;
+    &:visited {
+      color: #4F4C52;
+    }
   }
 }
 
