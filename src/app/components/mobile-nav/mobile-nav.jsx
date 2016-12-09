@@ -49,9 +49,9 @@ class MobileNav extends Component {
             <div styleName="menu" />
           </div>
           <div>
-            <h1 styleName='logo'>
+            <div styleName='logo'>
               <Link to='/'>Fairthreads</Link>
-            </h1>
+            </div>
           </div>
         </div>
         <div styleName="overlay" style={{display: this.state.isNavOpen ? 'block' : 'none'}} onClick={this.closeNav}></div>
