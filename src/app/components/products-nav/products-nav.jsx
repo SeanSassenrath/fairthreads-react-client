@@ -24,8 +24,6 @@ class ProductsNav extends Component {
       breadCrumbs
     } = this.props;
 
-    console.log('sortProducts', sortProducts)
-
     return(
       <div id="product-filter" styleName="filter-nav-container">
         <nav>

@@ -13,13 +13,8 @@ class ProductsContainer extends Component {
     return shallowCompare(this, nextProps, nextState);
   }
 
-  componentDidUpdate() {
-    console.log('ProductsContainer updating')
-  }
-
   render() {
 
-    console.log('products container props', this.props)
     let {
       products,
       additionalFetchProducts,
@@ -28,7 +23,6 @@ class ProductsContainer extends Component {
       page
     } = this.props;
 
-    console.log('products container productssss', products)
     let mutableItems = Immutable(products).asMutable();
 
     return(

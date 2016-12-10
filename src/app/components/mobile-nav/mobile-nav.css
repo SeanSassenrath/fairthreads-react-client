@@ -46,7 +46,7 @@
     }
   }
 
-  @media (--larger-than-mobile) {
+  @media (--larger-than-tablet) {
     padding: 22.5px 0;
   }
 }

@@ -2,9 +2,9 @@
 
 .main-nav-container {
   border: 1px solid #dbdbdb;
-  height: 52px;
+  max-height: 52px;
   padding: 0 10px;
-  @media (--larger-than-mobile) {
+  @media (--larger-than-small-desktop) {
     height: 72px;
     padding: 0 2em;
   }

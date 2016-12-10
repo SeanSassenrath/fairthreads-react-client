@@ -37,6 +37,7 @@ function requestProducts(gender, category) {
 }
 
 function receiveInitialProducts(gender, json) {
+  console.log('json', json)
   return {
     type: RECEIVE_INITIAL_PRODUCTS,
     gender,
@@ -74,8 +75,11 @@ export function initialFetchProducts(gender, category) {
   if (category) {
     return dispatch => {
       dispatch(requestProducts(gender, category))
+      console.log('about to fetch')
       return fetch('https://fairthreads-api.herokuapp.com/products/gender/' + gender + '/category/' + category + '/page/1')
-      .then(req => req.json())
+      .then(req => {
+        console.log('fetched')
+        req.json()})
       .then(json => dispatch(receiveInitialProducts(gender, json)))
     }
   } else {

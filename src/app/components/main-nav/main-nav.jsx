@@ -9,7 +9,6 @@ const logo = require("../../../img/fairthreads-logo.png");
 class MainNav extends Component {
 
   render() {
-    console.log('main nav routes', mainNavRoutes)
 
     let {
       fetchProducts,
