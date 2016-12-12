@@ -13,7 +13,7 @@ class Products extends Component {
     return shallowCompare(this, nextProps, nextState);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     let {
       initialFetchProducts,
       params
@@ -53,7 +53,8 @@ class Products extends Component {
       additionalFetchProducts,
       page,
       params,
-      props
+      props,
+      isLoading,
     } = this.props;
 
     return (
@@ -75,6 +76,7 @@ class Products extends Component {
           page={page}
           gender={params.store}
           category={params.category}
+          isLoading={isLoading}
         />
       </div>
     )

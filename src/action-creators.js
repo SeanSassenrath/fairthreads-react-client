@@ -36,8 +36,6 @@ function receiveProduct(id, json) {
 }
 
 function receiveInitialProducts(gender, json) {
-  console.log('In receiveInitialProducts - gender', gender);
-  console.log('In receiveInitialProducts - json', json);
   return {
     type: RECEIVE_INITIAL_PRODUCTS,
     gender,
@@ -46,8 +44,6 @@ function receiveInitialProducts(gender, json) {
 }
 
 function receiveAdditionalProducts(gender, page, items, json) {
-  console.log('In receiveAdditionalProducts - page', page);
-  console.log('In receiveAdditionalProducts - json', json);
   return {
     type: RECEIVE_ADDITIONAL_PRODUCTS,
     gender,
@@ -73,13 +69,10 @@ export function fetchProduct(id) {
 }
 
 export function initialFetchProducts(gender, category) {
-  console.log('Executing initialFetchProducts');
   const baseURL = 'https://fairthreads-api.herokuapp.com/products/';
   if (category) {
     return (dispatch) => {
       dispatch(requestProducts(gender, category));
-      console.log('In initialFetchProducts - about to fetch');
-      console.log('URL ', `${baseURL}gender/${gender}/category/${category}/page/1`);
       return fetch(`${baseURL}gender/${gender}/category/${category}/page/1`)
       .then(req => req.json())
       .then(json => dispatch(receiveInitialProducts(gender, json)));
@@ -94,7 +87,6 @@ export function initialFetchProducts(gender, category) {
 }
 
 export function additionalFetchProducts(gender, category, page, items) {
-  console.log('Executing additionalFetchProducts');
   const baseURL = 'https://fairthreads-api.herokuapp.com/products/';
   if (category) {
     return (dispatch) => {

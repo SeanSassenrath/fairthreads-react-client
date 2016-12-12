@@ -11,7 +11,7 @@ const itemSelector = createSelector(productsSelector, get('item'));
 const itemsSelector = createSelector(productsSelector, get('items'));
 const pageSelector = createSelector(productsSelector, get('page'));
 const sortProductsSelector = createSelector(productsSelector, get('sortProducts'));
-const loadingSelector = createSelector(productsSelector, get('loading'));
+const loadingSelector = createSelector(productsSelector, get('isLoading'));
 const saleSelector = createSelector(productsSelector, get('showSaleOnly'));
 const filterPriceSelector = createSelector(productsSelector, get('priceRangeFilterValues'));
 
@@ -53,7 +53,7 @@ export const appSelectors = createSelector(
   pageSelector,
   (
   items,
-  loading,
+  isLoading,
   showSaleOnly,
   sortProducts,
   gender,
@@ -62,7 +62,7 @@ export const appSelectors = createSelector(
   page
   ) => ({
     items,
-    loading,
+    isLoading,
     showSaleOnly,
     sortProducts,
     gender,

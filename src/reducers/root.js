@@ -16,7 +16,6 @@ import {
 
 const initialState = Immutable({
   products: {
-    loading: false,
     showSaleOnly: false,
     items: [],
   }
@@ -26,18 +25,18 @@ function products(state = initialState.products, action) {
   switch (action.type) {
     case REQUEST_PRODUCT:
       return state
-        .set('loading', true)
+        .set('isLoading', true)
     case RECEIVE_PRODUCT:
       console.log('Action product', action)
       return state
-        .set('loading', false)
+        .set('isLoading', false)
         .set('item', action.product)
     case REQUEST_PRODUCTS:
       return state
-        .set('loading', true)
+        .set('isLoading', true)
     case RECEIVE_INITIAL_PRODUCTS:
       return state
-        .set('loading', false)
+        .set('isLoading', false)
         .set('items', action.products)
         .set('categoryList', action.categoryList)
         .set('gender', action.gender)
