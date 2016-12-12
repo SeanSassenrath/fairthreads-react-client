@@ -73,16 +73,15 @@ export function fetchProduct(id) {
 }
 
 export function initialFetchProducts(gender, category) {
+  console.log('Executing initialFetchProducts');
   const baseURL = 'https://fairthreads-api.herokuapp.com/products/';
   if (category) {
     return (dispatch) => {
       dispatch(requestProducts(gender, category));
       console.log('In initialFetchProducts - about to fetch');
+      console.log('URL ', `${baseURL}gender/${gender}/category/${category}/page/1`);
       return fetch(`${baseURL}gender/${gender}/category/${category}/page/1`)
-      .then((req) => {
-        console.log('fetched');
-        req.json();
-      })
+      .then(req => req.json())
       .then(json => dispatch(receiveInitialProducts(gender, json)));
     };
   }
@@ -95,6 +94,7 @@ export function initialFetchProducts(gender, category) {
 }
 
 export function additionalFetchProducts(gender, category, page, items) {
+  console.log('Executing additionalFetchProducts');
   const baseURL = 'https://fairthreads-api.herokuapp.com/products/';
   if (category) {
     return (dispatch) => {

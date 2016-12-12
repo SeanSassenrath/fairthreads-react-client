@@ -4,7 +4,7 @@ import Immutable from "seamless-immutable";
 import CSSModules from 'react-css-modules';
 import ProductCard from '../product-card/product-card.jsx';
 import styles from './products-container.css';
-var Waypoint = require('react-waypoint');
+const Waypoint = require('react-waypoint');
 
 
 class ProductsContainer extends Component {
@@ -14,18 +14,17 @@ class ProductsContainer extends Component {
   }
 
   render() {
-
-    let {
+    const {
       products,
       additionalFetchProducts,
       gender,
       category,
-      page
+      page,
     } = this.props;
 
-    let mutableItems = Immutable(products).asMutable();
+    const mutableItems = Immutable(products).asMutable();
 
-    return(
+    return (
       <div id="products-container" styleName="products-container">
         <div styleName="wrapper">
           <div styleName="products">
@@ -35,14 +34,15 @@ class ProductsContainer extends Component {
                   <div styleName="lazy-product" key={i}>
                     <ProductCard product={item} />
                   </div>
-                )
+                );
               })
             }
           </div>
-          <Waypoint onEnter={() => additionalFetchProducts(gender, category, page, products)}/>
+          {/*<Waypoint onEnter={() => additionalFetchProducts(gender, category, page, products)} />*/}
+          <Waypoint onEnter={() => console.log('Hitting Waypoint')} bottomOffset="-40%" />
         </div>
       </div>
-    )
+    );
   }
 }
 
