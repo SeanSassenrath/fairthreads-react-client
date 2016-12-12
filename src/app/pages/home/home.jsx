@@ -27,7 +27,6 @@ class Home extends Component {
       url: 'https://fairthreads-api.herokuapp.com/products/home-carousel',
       dataType: 'json'
     }).done((carouselProducts) => {
-      console.log('Done with getting home carousel products');
       this.setState({mensCarousel: carouselProducts.mens, womensCarousel: carouselProducts.womens});
     }).fail((e) => {
       console.log('Error', e);
