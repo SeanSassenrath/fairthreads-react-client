@@ -106,7 +106,6 @@ export function additionalFetchProducts(gender, category, page, items) {
   }
   return (dispatch) => {
     dispatch(requestProducts(gender));
-    console.log('PAGE', page);
     return fetch(`${baseURL}gender/${gender}/page/${page}`)
     .then(req => req.json())
     .then(json => dispatch(receiveAdditionalProducts(gender, page, items, json)));
@@ -114,11 +113,13 @@ export function additionalFetchProducts(gender, category, page, items) {
 }
 
 export function fetchStylistPickTeasers() {
+/* eslint-disable arrow-body-style*/
   return (dispatch) => {
     return fetch('https://fairthreads-api.herokuapp.com/products/stylistpick')
       .then(req => req.json())
       .then(json => dispatch(receiveStylistPickTeasers(json)));
   };
+/* eslint-disable arrow-body-style*/
 }
 
 export function lowToHighProducts() {
