@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import shallowCompare from 'react-addons-shallow-compare';
-import Immutable from "seamless-immutable";
+import Immutable from 'seamless-immutable';
 import autoBind from 'react-autobind';
 import CSSModules from 'react-css-modules';
-import ProductCard from '../product-card/product-card.jsx';
 import styles from './products-container.css';
+import ProductCard from '../product-card/product-card.jsx';
 const Waypoint = require('react-waypoint');
 
 
@@ -19,7 +19,20 @@ class ProductsContainer extends Component {
     return shallowCompare(this, nextProps, nextState);
   }
 
-  _renderWaypoint() {
+  renderProducts() {
+    const { products } = this.props;
+    const mutableItems = Immutable(products).asMutable();
+
+    mutableItems.map((item, i) => {
+      return (
+        <div styleName="lazy-product" key={i}>
+          <ProductCard product={item} />
+        </div>
+      );
+    });
+  }
+
+  renderWaypoint() {
     const {
       products,
       additionalFetchProducts,
@@ -35,24 +48,13 @@ class ProductsContainer extends Component {
   }
 
   render() {
-    const { products } = this.props;
-    const mutableItems = Immutable(products).asMutable();
-
     return (
       <div id="products-container" styleName="products-container">
         <div styleName="wrapper">
           <div styleName="products">
-            {
-              mutableItems.map((item, i) => {
-                return (
-                  <div styleName="lazy-product" key={i}>
-                    <ProductCard product={item} />
-                  </div>
-                );
-              })
-            }
+            {this.renderProducts()}
           </div>
-          {this._renderWaypoint()}
+          {this.renderWaypoint()}
         </div>
       </div>
     );
