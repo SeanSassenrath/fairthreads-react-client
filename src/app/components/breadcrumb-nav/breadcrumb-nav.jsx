@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
 const BreadcrumbNav = () => {
-  return(
+  return (
     <div className="row">
       <div>
         <select id="category" onChange={() => addCategoryFilter(document.getElementById('category').value)}>
