@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
-
 import CSSModules from 'react-css-modules';
 import styles from './button.css';
 
@@ -24,6 +23,5 @@ Button.propTypes = {
   to: PropTypes.func,
   children: PropTypes.node,
 };
-
 
 export default CSSModules(Button, styles);
