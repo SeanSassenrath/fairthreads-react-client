@@ -3,7 +3,8 @@ import { Link } from 'react-router';
 import CSSModules from 'react-css-modules';
 import styles from './product-card.css';
 
-const ProductCard = (({ product }) =>
+const ProductCard = ({ product }) => {
+return (
   <div id={product._id} styleName="product">
     <a href={product.vendUrl} target="_blank" rel="noopener noreferrer">
       {/* <Link to={`/product/${product._id}`}> */}
@@ -32,7 +33,8 @@ const ProductCard = (({ product }) =>
     </a>
     {/* </Link> */}
   </div>
-);
+  )
+};
 
 ProductCard.propTypes = {
   product: PropTypes.element,
