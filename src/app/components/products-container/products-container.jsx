@@ -7,49 +7,56 @@ import ProductCard from '../product-card/product-card.jsx';
 import styles from './products-container.css';
 const Waypoint = require('react-waypoint');
 
-const renderWaypoint = (props) => {
-  const {
-    products,
-    additionalFetchProducts,
-    gender,
-    category,
-    page,
-    isLoading,
-  } = props;
 
-  if (!isLoading && isLoading !== undefined) {
-    return <Waypoint onEnter={() => additionalFetchProducts(gender, category, page, products)} />;
+class ProductsContainer extends Component {
+
+  constructor() {
+    super();
+    autoBind(this);
   }
-};
 
-const ProductsContainer = (props) => {
-  return (
-    <div id="products-container" styleName="products-container">
-      <div styleName="wrapper">
-        <div styleName="products">
-          {
-            props.products.map((item, i) => {
-              return (
-                <div styleName="lazy-product" key={i}>
-                  <ProductCard product={item} />
-                </div>
-              );
-            })
-          }
+  shouldComponentUpdate(nextProps, nextState) {
+    return shallowCompare(this, nextProps, nextState);
+  }
+
+  _renderWaypoint() {
+    const {
+      products,
+      additionalFetchProducts,
+      gender,
+      category,
+      page,
+      isLoading,
+    } = this.props;
+
+    if (!isLoading && isLoading !== undefined) {
+      return <Waypoint onEnter={() => additionalFetchProducts(gender, category, page, products)} />;
+    }
+  }
+
+  render() {
+    const { products } = this.props;
+    const mutableItems = Immutable(products).asMutable();
+
+    return (
+      <div id="products-container" styleName="products-container">
+        <div styleName="wrapper">
+          <div styleName="products">
+            {
+              mutableItems.map((item, i) => {
+                return (
+                  <div styleName="lazy-product" key={i}>
+                    <ProductCard product={item} />
+                  </div>
+                );
+              })
+            }
+          </div>
+          {this._renderWaypoint()}
         </div>
-        {renderWaypoint(props)}
       </div>
-    </div>
-  );
-};
-
-ProductsContainer.propTypes = {
-  products: PropTypes.array,
-  additionalFetchProducts: PropTypes.func,
-  gender: PropTypes.string,
-  category: PropTypes.string,
-  page: PropTypes.number,
-  isLoading: PropTypes.bool,
-};
+    );
+  }
+}
 
 export default CSSModules(ProductsContainer, styles);
