@@ -8,7 +8,6 @@ const customMedia = require('postcss-custom-media');
 const imports = require('postcss-import');
 const nested = require('postcss-nested');
 const colorFunction = require('postcss-color-function');
-require('es6-promise').polyfill()
 
 module.exports = {
   devtool: 'eval',
@@ -33,7 +32,7 @@ module.exports = {
         exclude: /node_modules/,
         loaders: [
             'file?hash=sha512&digest=hex&name=[hash].[ext]',
-            // 'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+            'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
         ]
       }
     ]
