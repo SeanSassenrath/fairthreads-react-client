@@ -2,14 +2,15 @@ import React, { Component, PropTypes } from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './main-nav-container.css';
 
-const MainNavContainer = (props =>
-  <div styleName="main-nav-container">
-    {props.children}
-  </div>
-);
+class MainNavContainer extends Component {
 
-MainNavContainer.propTypes = {
-  children: PropTypes.node,
-};
+  render() {
+    return(
+      <div styleName="main-nav-container">
+        {this.props.children}
+      </div>
+    )
+  }
+}
 
 export default CSSModules(MainNavContainer, styles);
