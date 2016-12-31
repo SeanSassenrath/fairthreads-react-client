@@ -1,18 +1,16 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
-
 import CSSModules from 'react-css-modules';
 import styles from './main-nav-link.css';
 
-class MainNavLink extends Component {
+const MainNavLink = (props =>
+  <Link styleName="main-nav-link" {...props}>
+    {props.children}
+  </Link>
+);
 
-  render() {
-    return (
-      <Link styleName="main-nav-link" {...this.props}>
-        {this.props.children}
-      </Link>
-    )
-  }
-}
+MainNavLink.propTypes = {
+  children: PropTypes.node,
+};
 
 export default CSSModules(MainNavLink, styles);
