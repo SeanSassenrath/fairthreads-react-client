@@ -17,7 +17,9 @@ const renderWaypoint = (props) => {
     isLoading,
   } = props;
 
-  if (!isLoading && isLoading !== undefined) {
+  // Only render Waypoint if there are products
+  // and the initial product request has loaded
+  if (products.length > 0 && !isLoading && isLoading !== undefined) {
     return <Waypoint onEnter={() => additionalFetchProducts(gender, category, page, products)} />;
   }
 };
