@@ -40,7 +40,7 @@ class MarketPlace extends Component {
           <div styleName="marketplace-container">
             <div styleName="marketplace-content">
               <div>
-                <h1>Welcome to Marketplace</h1>
+                <h1>Welcome to Fairthreads</h1>
                 <p>Fairthreads Marketplace is the ultimate platform to shop & discover brands and retailors from all over the world who are dedicated to promoting ethical, sustainable, and transparent manufacuturing processes. We are currently looking for <i>beta</i> testers (users & sellers). If you are interested in being the first to try our new platform or have a brand, website, or shop you would like to showcase on Fairthreads Marketplace please let us know! Stay tuned for what's to come...</p>
               </div>
             </div>
