@@ -86,8 +86,8 @@ class MobileNav extends Component {
                   </Link>
                 </li>
                 <li>
-                  <Link to='products/womens/active-wear' onClick={() => this.closeNav()}>
-                    <div styleName='mobile-nav-sub-item'>Active Wear</div>
+                  <Link to='products/womens/active' onClick={() => this.closeNav()}>
+                    <div styleName='mobile-nav-sub-item'>Active</div>
                   </Link>
                 </li>
                 <li>
@@ -116,7 +116,7 @@ class MobileNav extends Component {
                   </Link>
                 </li>
                 <li>
-                  <Link to='products/mens/active-wear' onClick={() => this.closeNav()}>
+                  <Link to='products/mens/active' onClick={() => this.closeNav()}>
                     <div styleName='mobile-nav-sub-item'>Active</div>
                   </Link>
                 </li>
