@@ -7,11 +7,6 @@ const logo = require('../../../img/fairthreads-logo.png');
 
 class MobileNav extends Component {
 
-  static propTypes = {
-    fetchProducts: PropTypes.func,
-    mainNav: PropTypes.element,
-  }
-
   constructor() {
     super();
     this.state = {
@@ -151,5 +146,10 @@ class MobileNav extends Component {
     );
   }
 }
+
+MobileNav.propTypes = {
+  fetchProducts: PropTypes.func,
+  mainNav: PropTypes.element,
+};
 
 export default CSSModules(MobileNav, styles);
