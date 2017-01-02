@@ -1,12 +1,12 @@
 @import "../../common.css";
 
 .product {
-  width: 125px;
+  width: 165px;
   height: 91%;
   min-height: 433px;
   margin: 20px auto;
   background-color: white;
-  padding: 0 15px;
+  padding: 0 5px;
   @media (--larger-than-mobile) {
     width: 200px;
     border: 1px solid #efefef;
