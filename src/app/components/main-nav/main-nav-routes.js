@@ -27,8 +27,8 @@ export const mainNavRoutes = [
       }, {
         column: [
           {
-            'name': 'Athleisure',
-            'path': '/products/womens/athleisure'
+            'name': 'Active',
+            'path': '/products/womens/active'
           }, {
             'name': 'Underwear',
             'path': '/products/womens/underwear'
@@ -69,7 +69,7 @@ export const mainNavRoutes = [
           },
           {
             'name': 'Active',
-            'path': '/products/mens/athleisure'
+            'path': '/products/mens/active'
           }
         ]
       }, {
