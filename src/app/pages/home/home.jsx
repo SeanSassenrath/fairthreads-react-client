@@ -43,17 +43,16 @@ class Home extends Component {
       <div>
         <div styleName="hero">
           <div styleName="hero-content">
-            <h3>Discover</h3>
-            <h2>Ethical Fashion</h2>
-            <h3 styleName="season">Fall/Winter `16</h3>
+            <h3>Brand New </h3>
+            <h2>Winter '16</h2>
             <div>
               <Button styleName="hero-button" link='/products/womens'>Shop now</Button>
             </div>
           </div>
         </div>
         <div styleName="banner">
-          <h1>Embrace conscious fashion<br />without cramping your style</h1>
-          <p styleName="subtext">Discover fashion brands that put ethics and transparency first</p>
+          <h1>Ethics<br /> + <br />Sustainability</h1>
+          <p styleName="subtext">Discover brands  & fashion that put ethics and sustainability first. Awesome fashion, zero guilt. </p>
         </div>
         <div styleName="editorial">
           <Link to="/products/womens" styleName="promo-women">
