@@ -7,16 +7,17 @@ const customMedia = require('postcss-custom-media');
 const imports = require('postcss-import');
 const nested = require('postcss-nested');
 const colorFunction = require('postcss-color-function');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
   entry: [
-    './src/index'
+    './src/index',
   ],
   output: {
     path: path.join(__dirname, 'build'),
     filename: '[name].js',
-    publicPath: '/build/'
+    publicPath: '/build/',
   },
   module: {
     loaders: [
@@ -26,39 +27,40 @@ module.exports = {
         loader: 'babel',
       },
       { test: /\.css$/,
-        loader: 'style!css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss'
+        loader: ExtractTextPlugin.extract('style-loader', 'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss'),
       },
       { test: /\.jpg$|\.png$|\.svg$/,
         exclude: /node_modules/,
-        loader: 'file-loader?[name].[hash].[ext]'
-      }
-    ]
+        loader: 'file-loader?[name].[hash].[ext]',
+      },
+    ],
   },
-  postcss: function () { return [ autoprefixer, imports, nested, customMedia, cssvariables ] },
+  postcss: function () { return [autoprefixer, imports, nested, customMedia, cssvariables]; },
   plugins: [
+    new ExtractTextPlugin('styles.css'),
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
       compress: {
-        warnings: false
-      }
+        warnings: false,
+      },
     }),
     new HtmlWebpackPlugin({
       template: __dirname + '/src/index.tmpl.html',
-      filename: './index.html'
+      filename: './index.html',
     }),
     new webpack.optimize.UglifyJsPlugin({
       minimise: true,
       compress: {
-        warnings: false
-      }
+        warnings: false,
+      },
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
-    })
+        NODE_ENV: JSON.stringify('production'),
+      },
+    }),
   ],
   resolve: {
-    extensions: ['', '.js', '.jsx']
-  }
+    extensions: ['', '.js', '.jsx'],
+  },
 };
