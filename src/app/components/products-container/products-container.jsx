@@ -27,7 +27,7 @@ const ProductsContainer = (props) => {
     <div id="products-container" styleName="products-container">
       <div styleName="wrapper">
         <div styleName="products">
-          { props.products.length <= 0 ?
+          { props.products.length <= 0 && props.isLoading === false ?
               <div styleName="oops-container">
                 <h2>Oops!</h2>
                 <p>You caught us updating our {props.category} inventory. Please check back soon.</p>
