@@ -1,15 +1,16 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { appSelectors } from '../../../selectors.js';
 import { Link } from 'react-router';
-import Button from '../../components/button/button.jsx';
-import $ from 'jquery';
-import Carousel from '../../components/carousel/carousel.jsx';
 import CSSModules from 'react-css-modules';
-import styles from './home.css';
+import $ from 'jquery';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-const blog = require("../../../img/who-made-it.jpg");
-const grayHeart = require("../../../img/gray-heart.svg");
+import { appSelectors } from '../../../selectors.js';
+import Button from '../../components/button/button.jsx';
+import Carousel from '../../components/carousel/carousel.jsx';
+import styles from './home.css';
+
+const blog = require('../../../img/who-made-it.jpg');
+const grayHeart = require('../../../img/gray-heart.svg');
 
 class Home extends Component {
 
@@ -17,20 +18,20 @@ class Home extends Component {
     super(...props);
     this.state = {
       womensCarousel: [],
-      mensCarousel: []
-    }
+      mensCarousel: [],
+    };
   }
 
   componentDidMount() {
     $.ajax({
       method: 'GET',
       url: 'https://fairthreads-api.herokuapp.com/products/home-carousel',
-      dataType: 'json'
+      dataType: 'json',
     }).done((carouselProducts) => {
-      this.setState({mensCarousel: carouselProducts.mens, womensCarousel: carouselProducts.womens});
+      this.setState({ mensCarousel: carouselProducts.mens, womensCarousel: carouselProducts.womens });
     }).fail((e) => {
       console.log('Error', e);
-    })
+    });
   }
 
   render() {
@@ -39,20 +40,22 @@ class Home extends Component {
       mainNav
     } = this.props;
 
-    return(
+    return (
       <div>
         <div styleName="hero">
           <div styleName="hero-content">
             <h3>Brand New </h3>
-            <h2>Winter '16</h2>
+            <h2>Winter &apos;16</h2>
             <div>
-              <Button styleName="hero-button" link='/products/womens'>Shop now</Button>
+              <Button styleName="hero-button" link="/products/womens">Shop now</Button>
             </div>
           </div>
         </div>
         <div styleName="banner">
           <h1>Ethics<br /> + <br />Sustainability</h1>
-          <p styleName="subtext">Discover brands  & fashion that put ethics and sustainability first. Awesome fashion, zero guilt. </p>
+          <p styleName="subtext">Discover brands & fashion that put ethics and
+            sustainability first. Awesome fashion, zero guilt.
+          </p>
         </div>
         <div styleName="editorial">
           <Link to="/products/womens" styleName="promo-women">
@@ -65,7 +68,7 @@ class Home extends Component {
               <h1>Shop Men</h1>
             </div>
           </Link>
-          {/*<div styleName="blog">
+          {/* <div styleName="blog">
             <div styleName="blog-content">
               <img src={blog} alt="Ethics and Fashion" />
               <h1>Ethics + Fashion</h1>
@@ -74,15 +77,15 @@ class Home extends Component {
                 <Link to='/about' styleName="blog-button">Discover Fair Fashion</Link>
               </div>
             </div>
-          </div>*/}
+          </div> */}
         </div>
 
-        <div styleName='slideshow-header'>
-          <h1>Our fall favorites</h1>
+        <div styleName="slideshow-header">
+          <h1>Our winter favorites</h1>
         </div>
 
-        <div styleName='slideshow-section'>
-          <div styleName='slideshow-container'>
+        <div styleName="slideshow-section">
+          <div styleName="slideshow-container">
             <div>
               {
                 this.state.womensCarousel.length > 0 ?
@@ -92,7 +95,6 @@ class Home extends Component {
             </div>
           </div>
         </div>
-
         {/*
         <div styleName="stylist-pick">
           <div styleName="stylist-pick-container">
@@ -131,7 +133,7 @@ class Home extends Component {
         </div>
         */}
       </div>
-    )
+    );
   }
 }
 
