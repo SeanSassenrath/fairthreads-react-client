@@ -1,2 +1,7 @@
+.git
+.gitignore
+.editorconfig
 node_modules
 build
+*.log
+*.md
