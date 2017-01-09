@@ -24,6 +24,10 @@ dependencies:
   #   - ~/.yarn
   #   - ~/.cache/yarn
 
+test:
+  override:
+    - docker-compose up -d
+
 deployment:
   hub:
     branch: [staging, master]
