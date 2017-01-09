@@ -25,7 +25,7 @@ deployment:
     branch: [staging, master]
     commands:
       - docker login -e $DOCKER_HUB_EMAIL -u $DOCKER_HUB_USER_ID -p $DOCKER_HUB_PWD
-      - docker tag fairthreadsreactclient_service $DOCKER_HUB_USER_ID/fairthreadsreactclient:$CIRCLE_SHA1
-      - docker tag fairthreadsreactclient_service $DOCKER_HUB_USER_ID/fairthreadsreactclient:latest
+      - docker tag fairthreadsreactclient_fairthreadsreactclient $DOCKER_HUB_USER_ID/fairthreadsreactclient:$CIRCLE_SHA1
+      - docker tag fairthreadsreactclient_fairthreadsreactclient $DOCKER_HUB_USER_ID/fairthreadsreactclient:latest
       - docker push $DOCKER_HUB_USER_ID/fairthreadsreactclient:$CIRCLE_SHA1
       - docker push $DOCKER_HUB_USER_ID/fairthreadsreactclient:latest
