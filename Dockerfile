@@ -8,11 +8,11 @@ COPY . /usr/src/app
 
 # install dependencies
 WORKDIR /usr/src/app
-RUN npm install
+RUN yarn
 
 # build app
 RUN npm run build
 
 EXPOSE 8080
 
-CMD npm start
+CMD yarn start
