@@ -3,8 +3,6 @@ machine:
     - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
   services:
     - docker
-  node:
-    version: 6.7.0
     # environment:
     #   YARN_VERSION: 0.18.1
     #   PATH: "${PATH}:${HOME}/.yarn/bin:${HOME}/${SeanSassenrath}/node_modules/.bin"
@@ -12,8 +10,8 @@ machine:
 dependencies:
   pre:
     - sudo pip install docker-compose
-  override:
-    - nvm install 6 && npm install
+  # override:
+  #   - nvm install 6 && npm install
   #   - |
   #     if [[ ! -e ~/.yarn/bin/yarn || $(yarn --version) != "${YARN_VERSION}" ]]; then
   #       curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version $YARN_VERSION
