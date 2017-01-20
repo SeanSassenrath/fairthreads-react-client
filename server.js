@@ -1,6 +1,7 @@
 const Server = require('./app.js');
 const port = (process.env.PORT || 8080);
 const app = Server.app();
+const path = require('path');
 
 if (process.env.NODE_ENV !== 'production') {
   const webpack = require('webpack');
@@ -9,16 +10,16 @@ if (process.env.NODE_ENV !== 'production') {
   const config = require('./webpack.config.js');
   const complier = webpack(config);
 
-  app.use(webpackHotMiddleware(complier))
+  app.use(webpackHotMiddleware(complier));
   app.use(webpackDevMiddleware(complier, {
     noInfo: false,
-    publicPath: config.output.publicPath
-  }))
+    publicPath: config.output.publicPath,
+  }));
 
-  app.use('*', function(req, res, next) {
-    var filename = path.join(complier.outputPath, 'index.html');
-    complier.outputFileSystem.readFile(filename, function(err, result){
-      if(err) {
+  app.use('*', function (req, res, next) {
+    const filename = path.join(complier.outputPath, 'index.html');
+    complier.outputFileSystem.readFile(filename, function (err, result){
+      if (err) {
         return next(err);
       }
       res.set('content-type', 'text/html');
@@ -26,7 +27,7 @@ if (process.env.NODE_ENV !== 'production') {
       res.end();
     });
   });
-};
+}
 
 app.listen(port);
 console.log(`Server running on ${port}`);
