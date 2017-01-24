@@ -2,11 +2,11 @@ version: '2'
 
 services:
   fairthreadsreactclient:
-    build: .
+    build: app-service
     environment:
       - VIRTUAL_HOST=shopfairthreads.com
   nginx-proxy:
-    image: jwilder/nginx-proxy
+    build: custom-nginx-proxy
     container_name: nginx-proxy
     ports:
       - 80:80

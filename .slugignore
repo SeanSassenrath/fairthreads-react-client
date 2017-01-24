@@ -1,1 +1,3 @@
+# Disables yarn on Heroku builds - defaults to NPM
+
 yarn.lock
