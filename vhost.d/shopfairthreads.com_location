@@ -1,4 +1,0 @@
-location /blog {
-  rewrite ^/blog(/.*)$ $1 break;
-  proxy_pass http://54.67.71.126/;
-}
