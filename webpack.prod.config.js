@@ -1,12 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const autoprefixer = require('autoprefixer');
-const cssvariables = require('postcss-css-variables');
-const customMedia = require('postcss-custom-media');
-const imports = require('postcss-import');
-const nested = require('postcss-nested');
-const colorFunction = require('postcss-color-function');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
@@ -20,36 +14,59 @@ module.exports = {
     publicPath: '/build/',
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
+        use: 'babel-loader',
         exclude: /(node_modules)/,
-        loader: 'babel',
       },
-      { test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss'),
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: [
+            { loader: 'css-loader',
+              query: {
+                modules: true,
+                sourceMaps: true,
+                importLoaders: 1,
+                localIdentName: '[path][name]__[local]--[hash:base64:5]',
+              },
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: function () {
+                  return [
+                    require('postcss-import'),
+                    require('postcss-css-variables'),
+                    require('autoprefixer'),
+                    require('postcss-custom-media'),
+                    require('postcss-import'),
+                    require('postcss-nested'),
+                    require('postcss-color-function'),
+                  ];
+                },
+              },
+            },
+          ],
+        }),
       },
-      { test: /\.jpg$|\.png$|\.svg$/,
+      {
+        use: 'file-loader?[name].[hash].[ext]',
+        test: /\.jpg$|\.png$|\.svg$/,
         exclude: /node_modules/,
-        loader: 'file-loader?[name].[hash].[ext]',
       },
     ],
   },
-  postcss: function () { return [autoprefixer, imports, nested, customMedia, cssvariables]; },
   plugins: [
     new ExtractTextPlugin('styles.css'),
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-      compress: {
-        warnings: false,
-      },
-    }),
     new HtmlWebpackPlugin({
-      template: __dirname + '/src/index.tmpl.html',
+      template: './src/index.tmpl.html',
       filename: './index.html',
     }),
     new webpack.optimize.UglifyJsPlugin({
-      minimise: true,
+      // minimise: true,
       compress: {
         warnings: false,
       },
@@ -61,6 +78,6 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
   },
 };
