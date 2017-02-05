@@ -2,6 +2,10 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const VENDOR_LIBS = require('./vendors.js');
+const VENDOR_LIBS = [
+  'react', 'react-dom',
+];
 
 // const autoprefixer = require('autoprefixer');
 // const cssvariables = require('postcss-css-variables');
@@ -12,9 +16,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'eval',
-  entry: [
-    './src/index.jsx',
-  ],
+  entry: {
+    bundle: './src/index.jsx',
+    vendor: VENDOR_LIBS,
+  },
   output: {
     path: path.join(__dirname, 'build'),
     filename: '[name].js',
@@ -68,6 +73,9 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('styles.css'),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['vendor', 'manifest'],
+    }),
     new HtmlWebpackPlugin({
       template: './src/index.tmpl.html',
       filename: './index.html',

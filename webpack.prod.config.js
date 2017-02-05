@@ -2,15 +2,17 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const VENDOR_LIBS = require('./vendors');
 
 module.exports = {
   devtool: 'source-map',
-  entry: [
-    './src/index',
-  ],
+  entry: {
+    bundle: './src/index.jsx',
+    vendor: VENDOR_LIBS,
+  },
   output: {
     path: path.join(__dirname, 'build'),
-    filename: '[name].js',
+    filename: '[name].[chunkhash].js',
     publicPath: '/build/',
   },
   module: {
@@ -64,6 +66,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.tmpl.html',
       filename: './index.html',
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['vendor', 'manifest'],
     }),
     new webpack.optimize.UglifyJsPlugin({
       // minimise: true,
