@@ -1,9 +1,0 @@
-language: node_js
-node_js:
-- '4'
-deploy:
-  provider: heroku
-  api_key:
-  app: fairthreads-react-client
-  on:
-    repo: SeanSassenrath/fairthreads-react-client
