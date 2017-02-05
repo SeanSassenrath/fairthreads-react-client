@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import CSSModules from 'react-css-modules';
 import $ from 'jquery';
-import { Grid, Row, Col } from 'react-flexbox-grid';
 import { appSelectors } from '../../../selectors.js';
 import Button from '../../components/button/button.jsx';
 import Carousel from '../../components/carousel/carousel.jsx';
