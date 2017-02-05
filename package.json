@@ -8,7 +8,7 @@
   "main": "app/index.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
-    "dev": "webpack-dashboard -- webpack-dev-server --progress --inline --hot",
+    "dev": "webpack-dev-server --progress --inline --hot",
     "start": "node server.js",
     "build": "webpack --config ./webpack.prod.config.js --progress --colors",
     "heroku-postbuild": "npm run build"
@@ -77,7 +77,6 @@
     "image-webpack-loader": "^3.0.0",
     "lodash": "^4.7.0",
     "lodash-fp": "^0.10.4",
-    "webpack-dashboard": "^0.1.8",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "^1.14.1",
     "webpack-hot-middleware": "^2.10.0"
