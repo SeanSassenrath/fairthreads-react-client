@@ -1,7 +1,0 @@
-version: '2'
-
-services:
-  fairthreadsreactclient:
-    image: seansassenrath/fairthreadsreactclient
-    ports:
-      - 8080:8080

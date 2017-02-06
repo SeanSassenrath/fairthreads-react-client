@@ -1,4 +1,9 @@
-const VENDORS_LIBS = [
+// -- Do not include in vendor bundle --
+// 'extract-text-webpack-plugin',
+// 'html-webpack-plugin',
+// 'node-sass',
+
+module.exports = [
   'classnames',
   'contentful',
   'isomorphic-fetch',
@@ -26,10 +31,3 @@ const VENDORS_LIBS = [
   'showdown',
   'slick-carousel',
 ];
-
-// -- Do not include in vendor bundle --
-// 'extract-text-webpack-plugin',
-// 'html-webpack-plugin',
-// 'node-sass',
-
-module.exports = VENDORS_LIBS;
