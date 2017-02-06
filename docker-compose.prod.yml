@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+  fairthreadsreactclient:
+    build: .
+    environment:
+      - VIRTUAL_HOST=shopfairthreads.com,www.shopfairthreads.com
+      - LETSENCRYPT_HOST=shopfairthreads.com,www.shopfairthreads.com
+      - LETSENCRYPT_EMAIL=shopfairthreads@gmail.com
+  nginx-proxy:
+    build: custom-nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - /etc/letsencrypt/live:/etc/nginx/certs:ro
+      - /etc/nginx/vhost.d
+      - /usr/share/nginx/html
+  letsencrypt-nginx-proxy-companion:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    container_name: letsencrypt-nginx-proxy-companion
+    volumes_from:
+      - nginx-proxy
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /etc/letsencrypt/live:/etc/nginx/certs:rw

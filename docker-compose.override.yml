@@ -3,6 +3,8 @@ version: '2'
 services:
   fairthreadsreactclient:
     build: .
+    environment:
+      - VIRTUAL_HOST=138.197.93.21
   nginx-proxy:
     build: custom-nginx-proxy
     container_name: nginx-proxy
