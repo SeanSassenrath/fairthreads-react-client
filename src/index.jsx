@@ -20,9 +20,15 @@ import MarketPlace from './app/pages/marketplace/marketplace.jsx';
 import SignUp from './app/pages/sign-up/sign-up.jsx';
 import 'babel-polyfill';
 
-let loggerMiddleware = createLogger();
-let createStoreWithMiddleware = applyMiddleware(thunkMiddleware, loggerMiddleware)(createStore);
-let store = createStoreWithMiddleware(rootReducer)
+const middlewares = [thunkMiddleware];
+
+if (process.env.NODE_ENV === 'production') {
+  const logger = createLogger();
+  middlewares.push(logger);
+}
+
+const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);
+const store = createStoreWithMiddleware(rootReducer);
 
 render(
   <Provider store = { store }>
