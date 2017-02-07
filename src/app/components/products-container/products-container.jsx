@@ -30,15 +30,13 @@ const ProductsContainer = (props) => {
       <div styleName="wrapper">
         <div styleName="products">
           { props.products.length <= 0 && props.isLoading === false ?
-              <div styleName="oops-container">
-                <h2>Oops!</h2>
-                <p>You caught us updating our {props.category} inventory. Please check back soon.</p>
-              </div>
+            <div styleName="oops-container">
+              <h2>Oops!</h2>
+              <p>You caught us updating our {props.category} inventory. Please check back soon.</p>
+            </div>
             : props.products.map((item, i) => {
               return (
-                <div styleName="lazy-product" key={i}>
-                  <ProductCard product={item} />
-                </div>
+                <ProductCard product={item} key={i} />
               );
             })
           }

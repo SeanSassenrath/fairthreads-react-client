@@ -4,37 +4,35 @@ import CSSModules from 'react-css-modules';
 import styles from './product-card.css';
 
 const ProductCard = ({ product }) => {
-return (
-  <div id={product._id} styleName="product">
-    <a href={product.vendUrl} target="_blank" rel="noopener noreferrer">
-      {/* <Link to={`/product/${product._id}`}> */}
-      <div styleName="img-container">
+  return (
+    <div id={product._id} className={styles.container}>
+      <a href={product.vendUrl} target="_blank" rel="noopener noreferrer">
         <img
           src={product.imageOriginal}
           style={{ objectFit: product.objectFit }}
           role="presentation"
+          className={styles.image}
         />
-      </div>
-      <div styleName="description">
-        <h5>{product.name}</h5>
-        <h5 styleName="brand">{product.brand}</h5>
-        {product.salePrice
-          ?
-            <div>
-              <h6 styleName="old-price">{`$${Math.ceil(product.price)}`}</h6>
-              <h6 styleName="sale-price">{`$${Math.ceil(product.salePrice)}`}</h6>
-            </div>
-          :
-            <div>
-              <h6 styleName="reg-price">{`$${Math.ceil(product.price)}`}</h6>
-            </div>
-          }
-      </div>
-    </a>
-    {/* </Link> */}
-  </div>
-  )
+        <div>
+          <span className={styles.brand}>{product.brand}</span>
+          <span className={styles.name}>{product.name}</span>
+          {product.salePrice
+            ?
+              <div className={styles['price-container']}>
+                <span className={styles['old-price']}>{`$${Math.ceil(product.price)}`}</span>
+                <span>{`$${Math.ceil(product.salePrice)}`}</span>
+              </div>
+            :
+              <div className={styles['price-container']}>
+                <span>{`$${Math.ceil(product.price)}`}</span>
+              </div>
+            }
+        </div>
+      </a>
+    </div>
+  );
 };
+
 
 ProductCard.propTypes = {
   product: PropTypes.element,

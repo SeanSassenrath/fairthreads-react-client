@@ -1,25 +1,19 @@
 .products-container {
   min-height: 700px;
-
-  .wrapper {
-    max-width: 1020px;
-    margin: 0 auto;
-    padding: 20px 0;
-
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: stretch;
-    }
-  }
+  padding: 10px;
 }
 
-.lazy-product {
+.wrapper {
+  max-width: 1020px;
   margin: 0 auto;
-  @media(min-width: 468px) {
-    margin: 0 17.6px;
-    flex: 1 1 auto;
-  }
+  padding: 20px 0;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-between;
 }
 
 .oops-container {

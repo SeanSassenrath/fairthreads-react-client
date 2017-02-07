@@ -1,79 +1,43 @@
 @import "../../common.css";
 
-.product {
-  width: 165px;
-  height: 91%;
-  min-height: 433px;
-  margin: 20px auto;
-  background-color: white;
-  padding: 0 5px;
-  @media (--larger-than-mobile) {
-    width: 200px;
-    border: 1px solid #efefef;
-    padding: 0;
+.container {
+  flex: 0 1 210px;
+  margin: 30px 0;
+}
+
+.image {
+  max-height: 350px;
+  width: 100%;
+  height: 80%;
+}
+
+.copy {
+  display: block;
+  text-align: center;
+  padding: 5px 0;
+  color: #2d2d34;
+}
+
+.brand {
+  composes: copy;
+  font-size: 14px;
+  margin-top: 10px;
+  opacity: .6;
+}
+
+.name {
+  composes: copy;
+  font-weight: 100;
+}
+
+.price-container {
+  composes: copy;
+  span {
+    padding: 0 7px;
+    opacity: .6;
   }
-  @media (--larger-than-tablet) {
-    width: 300px;
-  }
-  a {
-    text-decoration: none;
-    .img-container {
-      width: 100%;
-      position: relative;
-      background-color: white;
-      position:relative;
-      img {
-        width: 100%;
-        display: block;
-        margin: 0 auto;
-        height: 299px;
-      }
-    }
-    .description {
-      padding: 15px 15px 10px 15px;
-      font-family: 'Heebo', sans-serif;
-      font-size:18px;
-      .brand {
-        opacity: .4;
-        font-weight: 400;
-      }
-      h5 {
-        text-align: center;
-        color: #2d2d34;
-        margin: 0 0 5px 0;
-        font-weight: 600;
-        opacity: .9;
-      }
-      div {
-        display: flex;
-        margin: 0 auto;
-        justify-content: space-around;
-        align-items: center;
-        width: 40%;
-        h6 {
-          margin: 0;
-          font-weight: 400;
-          opacity: .9;
-        }
-        .reg-price {
-          color: #2d2d34;
-          padding: 5px 0 5px 8px;
-          font-size: 16px;
-          font-weight: 600;
-        }
-        .old-price {
-          padding-right: 15px;
-          color: #2d2d34;
-          font-size: 16px;
-          opacity: .4;
-        }
-        .sale-price {
-          color: #2d2d34;
-          padding: 5px 8px 5px 0;
-          font-size: 16px;
-          font-weight: 600;
-        }
-      }
-    }
-  }
+}
+
+span.old-price {
+  opacity: .3;
 }
