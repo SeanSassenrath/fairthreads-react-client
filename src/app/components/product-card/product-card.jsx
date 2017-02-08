@@ -15,7 +15,8 @@ const ProductCard = ({ product }) => {
         />
         <div>
           <span className={styles.brand}>{product.brand}</span>
-          <span className={styles.name}>{product.name}</span>
+          {/* Do this in the API */}
+          <span className={styles.name}>{(product.name).replace(`${product.brand} `, '')}</span>
           {product.salePrice
             ?
               <div className={styles['price-container']}>
