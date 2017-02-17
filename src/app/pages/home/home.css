@@ -18,9 +18,9 @@
   align-items: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top;
+  /*background-position: top;*/
   height: 530px;
-  background-image: url('../../../img/fall-2016.jpg');
+  background-image: url('../../../img/spring-2017.jpg');
 
   &:before {
     content: '';

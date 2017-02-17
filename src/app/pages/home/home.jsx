@@ -43,8 +43,8 @@ class Home extends Component {
       <div>
         <div styleName="hero">
           <div styleName="hero-content">
-            <h3>Brand New </h3>
-            <h2>Winter &apos;16</h2>
+            <h3>Last Call </h3>
+            <h2>Winter's End</h2>
             <div>
               <Button styleName="hero-button" link="/products/womens">Shop now</Button>
             </div>
