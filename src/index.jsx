@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { Router, Route, browserHistory, hashHistory, IndexRoute, applyRouterMiddleware } from 'react-router';
 import { useScroll } from 'react-router-scroll';
 import { Provider, connect } from 'react-redux';
+import 'babel-polyfill';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
@@ -10,7 +11,6 @@ import rootReducer from './reducers/root';
 import App from './app/app.jsx';
 import Home from './app/pages/home/home.jsx';
 import ProductsContainer from './app/components/products-container/products-container.jsx';
-import Blog from './app/pages/blog/blog.jsx';
 import Post from './app/pages/blog/post.jsx';
 import About from './app/pages/about/about.jsx';
 import Contact from './app/pages/contact/contact.jsx';
@@ -18,7 +18,6 @@ import Product from './app/pages/product/product.jsx';
 import Products from './app/pages/products/products.jsx';
 import MarketPlace from './app/pages/marketplace/marketplace.jsx';
 import SignUp from './app/pages/sign-up/sign-up.jsx';
-import 'babel-polyfill';
 
 const middlewares = [thunkMiddleware];
 
@@ -65,5 +64,5 @@ render(
       </Route>
     </Router>
   </Provider>,
-  document.getElementById('app')
+  document.getElementById('app'),
 );
