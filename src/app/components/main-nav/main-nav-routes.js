@@ -101,8 +101,8 @@ export const mainNavRoutes = [
     'name': 'Contact',
     'path': '/contact',
   },
-  // {
-  //   'name': 'Blog',
-  //   'path': '/blog',
-  // }
+  {
+    'name': 'Blog',
+    'path': 'https://shopfairthreads.com/blog',
+  }
 ];

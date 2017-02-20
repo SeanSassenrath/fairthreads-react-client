@@ -11,7 +11,6 @@ import rootReducer from './reducers/root';
 import App from './app/app.jsx';
 import Home from './app/pages/home/home.jsx';
 import ProductsContainer from './app/components/products-container/products-container.jsx';
-import Post from './app/pages/blog/post.jsx';
 import About from './app/pages/about/about.jsx';
 import Contact from './app/pages/contact/contact.jsx';
 import Product from './app/pages/product/product.jsx';
