@@ -17,6 +17,12 @@
   }
 }
 
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .copy {
   display: block;
   text-align: center;
@@ -26,6 +32,8 @@
 
 .brand {
   composes: copy;
+  composes: ellipsis;
+  width: 210px;
   font-size: 14px;
   margin-top: 10px;
   opacity: .6;
@@ -33,7 +41,9 @@
 
 .name {
   composes: copy;
+  composes: ellipsis;
   font-weight: 100;
+  width: 210px;
 }
 
 .price-container {
