@@ -22,7 +22,7 @@ import 'babel-polyfill';
 
 const middlewares = [thunkMiddleware];
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV !== 'production') {
   const logger = createLogger();
   middlewares.push(logger);
 }
