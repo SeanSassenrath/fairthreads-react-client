@@ -18,9 +18,13 @@
 }
 
 .ellipsis {
+  width: 165px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  @media (--larger-than-mobile) {
+    height: 210px;
+  }
 }
 
 .copy {
@@ -33,7 +37,6 @@
 .brand {
   composes: copy;
   composes: ellipsis;
-  width: 210px;
   font-size: 14px;
   margin-top: 10px;
   opacity: .6;
@@ -43,7 +46,6 @@
   composes: copy;
   composes: ellipsis;
   font-weight: 100;
-  width: 210px;
 }
 
 .price-container {
