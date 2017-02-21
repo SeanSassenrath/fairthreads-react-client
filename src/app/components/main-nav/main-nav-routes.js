@@ -1,8 +1,8 @@
-export const mainNavRoutes = [
-  {
+export const mainNavRoutes = {
+  womens: {
     'name': 'Womens',
     'path': '/products/womens',
-    'subNav': [
+    'subNavs': [
       {
         column: [
           {
@@ -47,10 +47,10 @@ export const mainNavRoutes = [
       }
     ]
   },
-  {
+  mens: {
     'name': 'Mens',
     'path': '/products/mens',
-    'subNav': [
+    'subNavs': [
       {
         column: [
           {
@@ -93,16 +93,12 @@ export const mainNavRoutes = [
       }
     ]
   },
-  {
+  about: {
     'name': 'About',
     'path': '/about',
   },
-  {
+  contact: {
     'name': 'Contact',
     'path': '/contact',
   },
-  {
-    'name': 'Blog',
-    'path': 'https://shopfairthreads.com/blog',
-  }
-];
+};

@@ -23,7 +23,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   @media (--larger-than-mobile) {
-    height: 210px;
+    width: 210px;
   }
 }
 

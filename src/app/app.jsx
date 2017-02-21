@@ -50,7 +50,7 @@ class App extends Component {
     } = this.props;
 
     return (
-      <div className="app-container" styleName='app' {...props}>
+      <div className={styles.app} {...props}>
         <MainNavContainer>
           {
             (this.state.windowSize > 760) ?

@@ -36,7 +36,7 @@ const ProductCard = ({ product }) => {
 
 
 ProductCard.propTypes = {
-  product: PropTypes.element,
+  product: PropTypes.ReactElement,
 };
 
 export default CSSModules(ProductCard, styles);

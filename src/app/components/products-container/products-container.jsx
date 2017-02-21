@@ -1,10 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import shallowCompare from 'react-addons-shallow-compare';
-import Immutable from "seamless-immutable";
+import Immutable from 'seamless-immutable';
 import autoBind from 'react-autobind';
 import CSSModules from 'react-css-modules';
-import ProductCard from '../product-card/product-card.jsx';
+import ProductCard from '../product-card/product-card';
 import styles from './products-container.css';
+
 const Waypoint = require('react-waypoint');
 
 const renderWaypoint = (props) => {
