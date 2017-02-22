@@ -62,7 +62,7 @@
 .mobile-nav {
   position: fixed;
   height: 100vh;
-  left: -30px;
+  left: 20px;
   background-color: white;
   margin-left: -20px;
   border-right: 1px solid #dbdbdb;
