@@ -37,7 +37,7 @@ const ProductsContainer = (props) => {
             </div>
             : props.products.map((item, i) => {
               return (
-                <ProductCard product={item} key={i} />
+                <ProductCard product={item} key={i} isLoading={props.isLoading} />
               );
             })
           }
