@@ -13,17 +13,20 @@ class ProductCard extends Component {
     };
   }
 
+  componentDidMount() {
+    if (!this.props.isLoading) {
+      setTimeout(() => {
+        this.setState({ loading: false });
+      }, 1000);
+    }
+  }
+
   componentWillUpdate(prevProps) {
-    console.log('Component Updated')
     if (prevProps.isLoading && !this.props.isLoading) {
-      console.log(prevProps);
-      console.log(this.props.isLoading);
       this.setState({ loading: true });
     } else if (!prevProps.isLoading && this.props.isLoading) {
       setTimeout(() => {
         this.setState({ loading: false });
-        console.log(prevProps);
-        console.log(this.props.isLoading);
       }, 1000);
     }
   }
