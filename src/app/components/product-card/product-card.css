@@ -28,14 +28,14 @@
   opacity: 0;
   left: 0;
   position: absolute;
-  transition: all 2s;
+  transition: all 1s;
 }
 
 .image-placeholder-active {
   composes: image-placeholder;
-  background-color: red;
+  background-color: #F3F3F3;
   opacity: 1;
-  transition: all 2s;
+  transition: all 600ms;
 }
 
 .ellipsis {

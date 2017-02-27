@@ -14,12 +14,11 @@ class ProductCard extends Component {
   }
 
   componentWillUpdate(prevProps) {
+    console.log('Component Updated')
     if (prevProps.isLoading && !this.props.isLoading) {
-      setTimeout(() => {
-        console.log(prevProps);
-        console.log(this.props.isLoading);
-        this.setState({ loading: true });
-      })
+      console.log(prevProps);
+      console.log(this.props.isLoading);
+      this.setState({ loading: true });
     } else if (!prevProps.isLoading && this.props.isLoading) {
       setTimeout(() => {
         this.setState({ loading: false });
