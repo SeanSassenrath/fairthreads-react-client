@@ -1,5 +1,5 @@
 location /blog {
-  rewrite ^/blog(.*)$ $1 break;
+  rewrite ^/blog/(.*)$ $1 break;
   proxy_pass https://www.blog.shopfairthreads.com;
   proxy_set_header Host blog.shopfairthreads.com;
   proxy_set_header X-Real-IP $remote_addr;
