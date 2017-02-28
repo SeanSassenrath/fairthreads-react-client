@@ -17,21 +17,17 @@ class ProductsContainer extends Component {
     };
   }
 
-  componentWillMount() {
-    console.log('mounting');
-  }
   componentWillUpdate(prevProps) {
     const sameCategory = (prevProps.category === this.props.category);
     const samePage = (prevProps.page === this.props.page);
-    console.log('this.props', this.props);
-    console.log('prev props', prevProps.page);
-    console.log('prev props cat', prevProps.category);
-    if (prevProps.page !== undefined && samePage && sameCategory && !this.state.lastPage) {
-      console.log('dont update');
-      this.setState({ lastPage: true });
-    } else if (this.state.lastPage && !sameCategory) {
+    console.log('prev props category', prevProps.category);
+    console.log('this.props category', this.props.category);
+    if (this.state.lastPage && !sameCategory) {
       console.log('update');
       this.setState({ lastPage: false });
+    } else if (prevProps.page !== undefined && samePage && sameCategory && !this.state.lastPage) {
+      console.log('dont update');
+      this.setState({ lastPage: true });
     }
   }
 
