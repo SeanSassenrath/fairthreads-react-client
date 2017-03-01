@@ -90,11 +90,11 @@ const MainNav = (props) => {
               </ul>
             </div>
           </div>
-          <div className={styles['sign-up-container']}>
+          {/* <div className={styles['sign-up-container']}>
             <MainNavLink to={'/marketplace'} className={styles['sign-up']}>
               Sign Up
             </MainNavLink>
-          </div>
+          </div> */}
         </nav>
       </div>
     </div>
