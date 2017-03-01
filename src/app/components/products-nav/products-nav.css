@@ -1,7 +1,6 @@
 @import "../../common.css";
 
 .filter-nav-container {
-  display: none;
   margin: 0 20px;
   @media (--larger-than-tablet) {
     display: block;
@@ -12,8 +11,11 @@
   nav {
     display: flex;
     justify-content: space-between;
-    padding: 0 18px;
     font-family: 'Heebo', sans-serif;
+    padding-top: 20px;
+    @media (--larger-than-mobile) {
+      padding: 0 18px;
+    }
     .sort-by {
       color: #333;
       display: inline-block;
@@ -75,5 +77,8 @@
 }
 
 .actions-container {
-  display: flex;
+  display: none;
+  @media (--larger-than-mobile) {
+    display: flex;
+  }
 }

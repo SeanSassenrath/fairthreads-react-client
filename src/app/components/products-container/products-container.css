@@ -6,7 +6,9 @@
 .wrapper {
   max-width: 1060px;
   margin: 0 auto;
-  padding: 20px 0;
+  @media (--larger-than-mobile) {
+    padding: 20px 0;
+  }
 }
 
 .products {
