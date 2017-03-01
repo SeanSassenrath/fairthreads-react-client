@@ -51,14 +51,13 @@
 .copy {
   display: block;
   text-align: center;
-  padding: 5px 0;
   color: #2d2d34;
 }
 
 .brand {
   composes: copy;
   composes: ellipsis;
-  font-size: 14px;
+  font-size: 12px;
   margin-top: 10px;
   opacity: .6;
 }
@@ -67,10 +66,12 @@
   composes: copy;
   composes: ellipsis;
   font-weight: 100;
+  margin-top: 2px;
 }
 
 .price-container {
   composes: copy;
+  padding: 5px 0;
   span {
     padding: 0 7px;
     opacity: .6;
