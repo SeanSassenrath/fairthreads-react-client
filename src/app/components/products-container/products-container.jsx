@@ -20,13 +20,9 @@ class ProductsContainer extends Component {
   componentWillUpdate(prevProps) {
     const sameCategory = (prevProps.category === this.props.category);
     const samePage = (prevProps.page === this.props.page);
-    console.log('prev props category', prevProps.category);
-    console.log('this.props category', this.props.category);
     if (this.state.lastPage && !sameCategory) {
-      console.log('update');
       this.setState({ lastPage: false });
     } else if (prevProps.page !== undefined && samePage && sameCategory && !this.state.lastPage) {
-      console.log('dont update');
       this.setState({ lastPage: true });
     }
   }
