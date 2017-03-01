@@ -19,7 +19,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   /*background-position: top;*/
-  height: 530px;
+  height: 100vh;
   background-image: url('../../../img/spring-2017.jpg');
 
   &:before {
@@ -33,6 +33,9 @@
     min-height: 100%;
     height: inherit;
     background: rgba(0,0,0,0.3);
+  }
+  @media (--larger-than-mobile) {
+    height: 530px;
   }
 }
 
