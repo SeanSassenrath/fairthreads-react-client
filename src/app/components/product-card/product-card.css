@@ -15,7 +15,7 @@
 }
 
 .image-container {
-  height: 260px;
+  height: 100vh;
   width: 100%;
   position: relative;
   @media (--larger-than-mobile) {
