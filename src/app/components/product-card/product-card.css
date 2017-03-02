@@ -66,12 +66,15 @@
 .name {
   composes: copy;
   composes: ellipsis;
-  font-weight: 100;
+  font-weight: 700;
+  font-size: 14px;
+  opacity: .8;
   margin-top: 2px;
 }
 
 .price-container {
   composes: copy;
+  font-size: 14px;
   padding: 5px 0;
   span {
     padding: 0 7px;
