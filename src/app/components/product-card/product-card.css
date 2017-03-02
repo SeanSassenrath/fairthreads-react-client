@@ -1,7 +1,7 @@
 @import "../../common.css";
 
 .container {
-  flex: 0 1 169px;
+  width: 48%;
   margin: 20px 0;
   @media (--larger-than-mobile) {
     max-width: 200px;
@@ -39,10 +39,11 @@
 }
 
 .ellipsis {
-  width: 165px;
-  white-space: nowrap;
+  margin: 0 auto;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 70%;
+  white-space: nowrap;
   @media (--larger-than-mobile) {
     width: 210px;
   }
