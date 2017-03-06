@@ -131,6 +131,11 @@ class MobileNav extends Component {
               </ul>
             </li>
             <li>
+              <a href="https://shopfairthreads.com/blog">
+                <div styleName="mobile-nav-item">Blog</div>
+              </a>
+            </li>
+            <li>
               <Link to="/about" onClick={() => this.closeNav()}>
                 <div styleName="mobile-nav-item">About</div>
               </Link>
