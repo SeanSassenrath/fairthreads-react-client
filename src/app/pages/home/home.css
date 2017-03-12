@@ -20,7 +20,9 @@
   background-size: cover;
   /*background-position: top;*/
   height: 100vh;
-  background-image: url('../../../img/spring-2017.jpg');
+    background-position: center;
+  
+  background-image: url('../../../img/fall-2016.jpg');
 
   &:before {
     content: '';
@@ -36,6 +38,8 @@
   }
   @media (--larger-than-mobile) {
     height: 530px;
+   
+    
   }
 }
 
