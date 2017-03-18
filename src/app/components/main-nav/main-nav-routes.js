@@ -24,17 +24,19 @@ export const mainNavRoutes = {
             'path': '/products/womens/shoes'
           }
         ]
-      }, {
-        column: [
-          {
-            'name': 'Active',
-            'path': '/products/womens/active'
-          }, {
-            'name': 'Underwear',
-            'path': '/products/womens/underwear'
-          }
-        ]
-      }, {
+      },
+      // }, {
+      //   column: [
+      //     {
+      //       'name': 'Active',
+      //       'path': '/products/womens/active'
+      //     }, {
+      //       'name': 'Underwear',
+      //       'path': '/products/womens/underwear'
+      //     }
+      //   ]
+      // }, {
+      {
         column: [
           {
             'name': 'Accessories',
