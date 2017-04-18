@@ -43,9 +43,10 @@ class Home extends Component {
       <div>
         <div styleName="hero">
           <div styleName="hero-content">
-            <h3>Last Call </h3>
-            <h2>Winter's End</h2>
-            <div>
+            <h3>The revolution is here</h3>
+            <h2>Fashion Revolution<br />Week</h2>
+            <h3>April 24th - April 30th</h3>
+            <div styleName="hero-button-container">
               <Button styleName="hero-button" link="/products/womens">Shop now</Button>
             </div>
           </div>

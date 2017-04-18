@@ -18,10 +18,8 @@
   align-items: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /*background-position: top;*/
   height: 100vh;
-  
-  background-image: url('../../../img/spring-2017.jpg');
+  background-image: url('../../../img/fashion-rev-week-hero.jpg');
 
   &:before {
     content: '';
@@ -35,10 +33,13 @@
     height: inherit;
     background: rgba(0,0,0,0.3);
   }
+  @media (--larger-than-tablet) {
+    &:before {
+      background: rgba(0,0,0,0.1);
+    }
+  }
   @media (--larger-than-mobile) {
     height: 530px;
-   
-    
   }
 }
 
@@ -59,8 +60,11 @@
   }
 
   h2 {
-    font-size: 3.4em;
+    font-size: 2.9em;
     margin: 20px 0 40px 0;
+    @media (--larger-than-tablet) {
+      font-size: 3.4em;
+    }
   }
 
   h3 {
@@ -80,6 +84,10 @@
   margin-bottom:0px;
 }
 
+
+.hero-button-container {
+  padding-top: 50px;
+}
 
 .hero-button {
   color: white;
