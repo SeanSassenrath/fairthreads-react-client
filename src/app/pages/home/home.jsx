@@ -47,7 +47,7 @@ class Home extends Component {
             <h2>Fashion Revolution<br />Week</h2>
             <h3>April 24th - April 30th</h3>
             <div styleName="hero-button-container">
-              <Button styleName="hero-button" link="/products/womens">Shop now</Button>
+              <a href="https://shop.wildlifeworks.com/collections/rise_up/products/pret-a-revolt"><Button styleName="hero-button">Get the shirt</Button></a>
             </div>
           </div>
         </div>
@@ -81,7 +81,7 @@ class Home extends Component {
         </div>
 
         <div styleName="slideshow-header">
-          <h1>Our winter favorites</h1>
+          <h1>Our spring favorites</h1>
         </div>
 
         <div styleName="slideshow-section">
