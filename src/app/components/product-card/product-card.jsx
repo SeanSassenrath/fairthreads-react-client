@@ -38,8 +38,8 @@ class ProductCard extends Component {
         <div className={imagePlaceholder} />
         { !isLoading ?
           <img
-            src={product.imageOriginal}
-            style={{ objectFit: product.objectFit }}
+            src={product.images.imageOriginal}
+            style={{ objectFit: product.css.objectFit }}
             role="presentation"
             className={styles.image}
           />
@@ -50,24 +50,25 @@ class ProductCard extends Component {
   }
 
   render() {
-    const { product } = this.props;
+    console.log('product-card props', this.props);
+    const { brand, details, _id, name, prices } = this.props.product;
     const { loading } = this.state;
     return (
-      <div id={product._id} className={styles.container}>
-        <a href={product.vendUrl} target="_blank" rel="noopener noreferrer">
-          {this.renderImageArea(product, loading) }
+      <div id={_id} className={styles.container}>
+        <a href={details.vendUrl} target="_blank" rel="noopener noreferrer">
+          { this.renderImageArea(this.props.product, loading) }
           <div>
-            <span className={styles.brand}>{product.brand}</span>
-            <span className={styles.name}>{product.name}</span>
-            {product.salePrice
+            <span className={styles.brand}>{brand.name}</span>
+            <span className={styles.name}>{details.name}</span>
+            {prices.salePrice
               ?
                 <div className={styles['price-container']}>
-                  <span className={styles['old-price']}>{`$${Math.ceil(product.price)}`}</span>
-                  <span>{`$${Math.ceil(product.salePrice)}`}</span>
+                  <span className={styles['old-price']}>{`$${Math.ceil(prices.price)}`}</span>
+                  <span>{`$${Math.ceil(prices.salePrice)}`}</span>
                 </div>
               :
                 <div className={styles['price-container']}>
-                  <span>{`$${Math.ceil(product.price)}`}</span>
+                  <span>{`$${Math.ceil(prices.price)}`}</span>
                 </div>
               }
           </div>

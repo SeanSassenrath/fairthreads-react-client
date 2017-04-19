@@ -39,7 +39,7 @@ function receiveInitialProducts(gender, json) {
   return {
     type: RECEIVE_INITIAL_PRODUCTS,
     gender,
-    products: json.items,
+    products: json,
   };
 }
 
@@ -69,36 +69,39 @@ export function fetchProduct(id) {
 }
 
 export function initialFetchProducts(gender, category) {
-  const baseURL = 'https://fairthreads-api.herokuapp.com/products/';
+  const baseURL = 'http://localhost:9000/api/v1/products';
+  // const baseURL = 'https://fairthreads-api.herokuapp.com/products/';
   if (category) {
     return (dispatch) => {
       dispatch(requestProducts(gender, category));
-      return fetch(`${baseURL}gender/${gender}/category/${category}/page/1`)
+      return fetch(`${baseURL}?gender=${gender}&category=${category}&page=1`)
+      // return fetch(`${baseURL}?gender=${gender}&category=${category}/page/1`)
       .then(req => req.json())
       .then(json => dispatch(receiveInitialProducts(gender, json)));
     };
   }
   return (dispatch) => {
     dispatch(requestProducts(gender));
-    return fetch(`${baseURL}gender/${gender}/page/1`)
+    return fetch(`${baseURL}?gender=${gender}&page=1`)
+    // return fetch(`${baseURL}gender=${gender}/page/1`)
     .then(req => req.json())
     .then(json => dispatch(receiveInitialProducts(gender, json)));
   };
 }
 
 export function additionalFetchProducts(gender, category, page, items) {
-  const baseURL = 'https://fairthreads-api.herokuapp.com/products/';
+  const baseURL = 'http://localhost:9000/api/v1/products';
   if (category) {
     return (dispatch) => {
       dispatch(requestProducts(gender, category));
-      return fetch(`${baseURL}gender/${gender}/category/${category}/page/${page}`)
+      return fetch(`${baseURL}?gender=${gender}&category=${category}&page=${page}`)
       .then(req => req.json())
       .then(json => dispatch(receiveAdditionalProducts(gender, page, items, json)));
     };
   }
   return (dispatch) => {
     dispatch(requestProducts(gender));
-    return fetch(`${baseURL}gender/${gender}/page/${page}`)
+    return fetch(`${baseURL}?gender=${gender}&page=${page}`)
     .then(req => req.json())
     .then(json => dispatch(receiveAdditionalProducts(gender, page, items, json)));
   };
