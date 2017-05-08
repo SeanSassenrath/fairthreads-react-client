@@ -62,8 +62,9 @@
   h2 {
     font-size: 2.9em;
     margin: 20px 0 40px 0;
+    line-height: 1.4em;
     @media (--larger-than-tablet) {
-      font-size: 3.4em;
+      font-size: 3em;
     }
   }
 

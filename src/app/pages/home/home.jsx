@@ -43,9 +43,7 @@ class Home extends Component {
       <div>
         <div styleName="hero">
           <div styleName="hero-content">
-            <h3>The revolution is here</h3>
-            <h2>Fashion Revolution<br />Week</h2>
-            <h3>April 24th - April 30th</h3>
+            <h2>Made with love, <br />from kenya</h2>
             <div styleName="hero-button-container">
               <a href="https://shop.wildlifeworks.com/collections/rise_up/products/pret-a-revolt"><Button styleName="hero-button">Get the shirt</Button></a>
             </div>
