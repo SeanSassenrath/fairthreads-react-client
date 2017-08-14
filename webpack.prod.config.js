@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const VENDOR_LIBS = require('./vendors');
 
 module.exports = {
@@ -11,9 +12,9 @@ module.exports = {
     vendor: VENDOR_LIBS,
   },
   output: {
-    path: path.join(__dirname, 'build'),
+    path: path.resolve(__dirname, 'build'),
     filename: '[name].[chunkhash].js',
-    publicPath: '/build/',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -76,11 +77,9 @@ module.exports = {
         warnings: false,
       },
     }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production'),
-      },
-    }),
+    new CopyWebpackPlugin([
+      { from: './src/_redirects' },
+    ]),
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
